@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 
 const menuOptionsBase = [
@@ -21,6 +21,15 @@ const menuPlaylist = [
   { file: 'Pokemon RubySapphireEmerald- Littleroot Town.mp3' },
   { file: 'Pokemon DP Music - Canalave City.mp3' },
 ]
+
+// Battle themes keyed by boss `mode`. Filenames are intentionally web-safe
+// (no '&', '()', or spaces) so they serve correctly from any static host —
+// special characters in the original names made Vite return index.html instead
+// of the mp3, so the music never played.
+const battleThemes = {
+  hollow: 'battle-gladion.mp3', // "???"      -> Pokémon Sun & Moon - Rival Gladion
+  school: 'battle-dr-skoo.mp3', // Dr. Skoo   -> Pokémon Black & White - N Final Battle
+}
 
 const aboutText = [
   'Results-driven Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
@@ -72,7 +81,7 @@ function getEffectiveness(moveType, defenderType) {
 
 function getEffectivenessText(effectiveness) {
   if (effectiveness === 2) return 'super effective'
-  if (effectiveness === 0.5) return 'resisted'
+  if (effectiveness === 0.5) return 'not very effective'
   return 'neutral'
 }
 
@@ -88,7 +97,16 @@ function App() {
   const [menuTrackIndex, setMenuTrackIndex] = useState(0)
   const [unlockedSections, setUnlockedSections] = useState(['contact'])
   const [resultOverlay, setResultOverlay] = useState(null)
+  const [victoryStep, setVictoryStep] = useState(0) // 0 = none, 1 = "You Won!", 2 = "Unlocked!"
   const bgMusicRef = useRef(null)
+  // Tracks which music track is currently loaded so we only swap the audio
+  // source when it actually changes (NOT on every state update).
+  const loadedTrackRef = useRef(null)
+
+  // For typewriter effect
+  const [displayedBattleText, setDisplayedBattleText] = useState('')
+  const [isTyping, setIsTyping] = useState(false)
+  const typewriterRef = useRef(null)
 
   const menuOptions = useMemo(() => menuOptionsBase.map((option) => {
     if (option.id === 'battle' || option.id === 'contact') return { ...option, unlocked: true }
@@ -119,42 +137,112 @@ function App() {
     setMenuTrackIndex((value) => (value + 1) % menuPlaylist.length)
   }
 
+  // Typewriter effect for battle text
+  useEffect(() => {
+    if (!battleState || !battleState.battleText) {
+      setDisplayedBattleText('')
+      setIsTyping(false)
+      return
+    }
+
+    const textToDisplay = battleState.battleText
+    setDisplayedBattleText('')
+    setIsTyping(true)
+
+    let charIndex = 0
+    const typingSpeed = 30 // milliseconds per character
+
+    if (typewriterRef.current) {
+      clearTimeout(typewriterRef.current)
+    }
+
+    function typeNextChar() {
+      // Explicitly guard against an out-of-bounds / undefined character so we
+      // can never append the literal string "undefined" to the display.
+      const ch = textToDisplay[charIndex]
+      if (ch === undefined) {
+        setIsTyping(false)
+        return
+      }
+      setDisplayedBattleText((prev) => prev + ch)
+      charIndex += 1
+      if (charIndex < textToDisplay.length) {
+        typewriterRef.current = setTimeout(typeNextChar, typingSpeed)
+      } else {
+        setIsTyping(false)
+      }
+    }
+
+    typewriterRef.current = setTimeout(typeNextChar, typingSpeed)
+
+    return () => {
+      if (typewriterRef.current) {
+        clearTimeout(typewriterRef.current)
+      }
+    }
+  }, [battleState?.battleText])
+
+  function handleButtonHover() {
+    playSoundEffect('hover-button')
+  }
+
+  function handleButtonSelect() {
+    playSoundEffect('select-button')
+  }
+
+  function handleNextSong() {
+    handleButtonSelect()
+    setMenuTrackIndex((value) => (value + 1) % menuPlaylist.length)
+  }
+
   useEffect(() => {
     const audio = bgMusicRef.current
     if (!audio) return undefined
 
-    if (screen === 'battle' && battleState) {
-      const battleTrack = battleState.mode === 'school'
-        ? 'Pokemon Black & White - N Final Battle Music (HQ).mp3'
-        : 'Pokemon Sun & Moon - Rival Gladion Battle Music (HQ).mp3'
-      if (audio.src !== audioUrl(battleTrack)) {
-        audio.src = audioUrl(battleTrack)
-        audio.loop = true
-        audio.play().catch(() => undefined)
+    // Stop music the moment the battle is won or lost (result overlay is up).
+    if (battleState?.result) {
+      audio.pause()
+      loadedTrackRef.current = null
+      return undefined
+    }
+
+    const inBattle = screen === 'battle' && !!battleState
+    // A stable identity for the track we want, e.g. "menu:0" or "battle:hollow".
+    // We compare THIS (not the raw URL) so we don't reload on every state update.
+    const trackKey = inBattle
+      ? `battle:${battleState.mode}`
+      : `menu:${menuTrackIndex}`
+    const desiredSrc = inBattle
+      ? audioUrl(battleThemes[battleState.mode])
+      : audioUrl(menuPlaylist[menuTrackIndex].file)
+
+    const playIfNeeded = () => {
+      const playAttempt = audio.play()
+      if (playAttempt && typeof playAttempt.catch === 'function') {
+        playAttempt.catch(() => undefined)
       }
-      audio.volume = musicMuted ? 0 : musicVolume
-      return () => {
-        audio.pause()
+    }
+
+    if (loadedTrackRef.current !== trackKey) {
+      // Track changed: swap the source once and start it.
+      loadedTrackRef.current = trackKey
+      audio.src = desiredSrc
+      audio.loop = true // both menu and battle themes loop
+      if (!inBattle) {
+        audio.onended = () => {
+          setMenuTrackIndex((value) => (value + 1) % menuPlaylist.length)
+        }
+      } else {
         audio.onended = null
       }
-    }
-
-    const currentTrack = menuPlaylist[menuTrackIndex]
-    if (audio.src !== audioUrl(currentTrack.file)) {
-      audio.src = audioUrl(currentTrack.file)
-      audio.loop = false
-      audio.onended = () => {
-        setMenuTrackIndex((value) => (value + 1) % menuPlaylist.length)
-      }
-      audio.play().catch(() => undefined)
+      playIfNeeded()
+    } else {
+      // Same track already loaded: keep it playing, never restart it.
+      // Resume only if it somehow got paused (e.g. first interaction).
+      if (audio.paused) playIfNeeded()
     }
     audio.volume = musicMuted ? 0 : musicVolume
-
-    return () => {
-      audio.pause()
-      audio.onended = null
-    }
-  }, [screen === 'battle', battleState?.mode, menuTrackIndex, musicMuted, musicVolume])
+  }, [screen, battleState, battleState?.mode, battleState?.result, menuTrackIndex, musicMuted, musicVolume])
 
   useEffect(() => {
     if (screen !== 'start') return undefined
@@ -273,6 +361,17 @@ function App() {
       setBattleMenuView('main')
       return undefined
     }
+
+    // Wait for typing to complete before advancing to next step
+    if (isTyping) {
+      // If still typing, check again soon
+      const timer = window.setTimeout(() => {
+        // This will trigger the effect again when isTyping changes
+      }, 100)
+      return () => window.clearTimeout(timer)
+    }
+
+    // Not typing anymore, proceed with the step after a brief pause to let user read
     const timer = window.setTimeout(() => {
       setBattleState((prev) => {
         if (!prev) return prev
@@ -285,44 +384,52 @@ function App() {
           isResolving: true,
         }
       })
-    }, 900)
+    }, 800) // Wait 800ms after text is fully displayed before moving to next action
     return () => window.clearTimeout(timer)
-  }, [battleState?.isResolving, battleState?.sequenceIndex, battleState?.sequence])
+  }, [battleState?.isResolving, battleState?.sequenceIndex, battleState?.sequence, isTyping])
 
   useEffect(() => {
     if (!battleState || !battleState.result || battleState.isResolving) return undefined
     if (battleState.result === 'victory') {
       playSoundEffect('You Win')
-      if (battleState.unlockSection) playSoundEffect('Unlocked')
+      setVictoryStep(1)
+      setResultOverlay({
+        title: 'YOU WON!',
+        detail: '',
+      })
     } else {
       playSoundEffect('You Lost')
+      setVictoryStep(0)
+      setResultOverlay({
+        title: 'YOU LOST',
+        detail: 'Try again and keep going.',
+      })
     }
-    setResultOverlay({
-      title: battleState.result === 'victory' ? 'YOU WON!' : 'YOU LOST',
-      detail: battleState.result === 'victory' && battleState.unlockSection
-        ? `You unlocked ${battleState.unlockSection.toUpperCase()}!`
-        : battleState.result === 'victory'
-          ? 'You cleared the encounter.'
-          : 'Try again and keep going.',
-    })
     return undefined
-  }, [battleState?.result, battleState?.unlockSection, battleState?.isResolving])
+  }, [battleState?.result, battleState?.isResolving])
+
+  // Keyboard support for the result overlay: pressing Enter/Space advances
+  // through the victory screens (YOU WON! -> UNLOCKED! -> menu) or restarts.
+  useEffect(() => {
+    if (!resultOverlay) return undefined
+    const handleKeyDown = (event) => {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault()
+        if (battleState?.result === 'victory') {
+          handleContinueFromResult()
+        } else {
+          handleRestart()
+        }
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [resultOverlay, battleState?.result, victoryStep])
 
   function handleBattleMove(move) {
     if (!battleState || battleState.result || battleState.isResolving) return
-    const moveSound = {
-      ember: 'Ember',
-      'water-gun': 'Water Gun',
-      'vine-whip': 'Vine Whip',
-      'trick-room': 'Trick Room',
-      study: 'Study',
-      rest: 'Rest',
-      'skip-class': 'Skip Class',
-      'midterm-exam': 'Midterm Exam',
-      'pre-final-exam': 'Pre-Final Exam',
-      'final-examination': 'Final Examination',
-    }[move.id]
-    if (moveSound) playSoundEffect(moveSound)
+
+    // Don't play sound effect immediately - it will be played in the sequence
 
     if (battleState.mode === 'hollow') {
       const steps = []
@@ -341,9 +448,15 @@ function App() {
         const effectiveness = getEffectiveness(enemyMove.type, playerType)
         const damage = effectiveness === 2 ? Math.floor(battleState.player.maxHp * 0.25) : effectiveness === 0.5 ? Math.floor(battleState.player.maxHp * 0.125) : Math.floor(battleState.player.maxHp * 0.2)
         steps.push({ text: 'Protean activated.', apply: (prev) => ({ ...prev }), sound: 'In-Battle Ability Activate' })
+        // Step 1: enemy announces its move (no damage yet)
         steps.push({ text: `${enemyName} used ${enemyMove.label}.`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, type: enemyMove.type, lastMove: enemyMove.id } }), sound: enemyMove.id === 'hydro-pump' ? 'Hydro Pump' : enemyMove.id === 'flamethrower' ? 'Flamethrower' : 'Leaf Storm' })
-        steps.push({ text: `Damage check: ${enemyMove.label} is ${getEffectivenessText(effectiveness)} against User.`, apply: (prev) => ({ ...prev }), sound: effectiveness === 2 ? 'Hit Super Effective' : effectiveness === 0.5 ? 'Hit Weak Not Very Effective' : 'Hit Normal Damage' })
-        steps.push({ text: `${enemyMove.label} dealt ${damage} damage.`, apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: null })
+        // Step 2: blank text + player HP drops + hit sound simultaneously
+        const enemyHitSound = effectiveness === 2 ? 'Hit Super Effective' : effectiveness === 0.5 ? 'Hit Weak Not Very Effective' : 'Hit Normal Damage'
+        steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: enemyHitSound })
+        // Step 3 (only if not neutral): effectiveness text, no sound (damage already done)
+        if (effectiveness !== 1) {
+          steps.push({ text: `It was ${getEffectivenessText(effectiveness)}!`, apply: (prev) => ({ ...prev }), sound: null })
+        }
         if (battleState.player.hp - damage <= 0) steps.push({ text: 'You lost the battle.', apply: (prev) => ({ ...prev, result: 'loss' }), sound: null })
       }
 
@@ -355,9 +468,15 @@ function App() {
         }
         const effectiveness = getEffectiveness(move.type, enemyType)
         playerDamage = effectiveness === 2 ? Math.floor(battleState.enemy.maxHp * 0.34) : effectiveness === 0.5 ? Math.floor(battleState.enemy.maxHp * 0.085) : Math.floor(battleState.enemy.maxHp * 0.17)
-        steps.push({ text: `User used ${move.label}.`, apply: (prev) => ({ ...prev }), sound: null })
-        steps.push({ text: `Damage check: ${move.label} is ${getEffectivenessText(effectiveness)} against ${battleState.enemy.name}.`, apply: (prev) => ({ ...prev }), sound: effectiveness === 2 ? 'Hit Super Effective' : effectiveness === 0.5 ? 'Hit Weak Not Very Effective' : 'Hit Normal Damage' })
-        steps.push({ text: `${move.label} dealt ${playerDamage} damage.`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - playerDamage) } }), sound: null })
+        const playerHitSound = effectiveness === 2 ? 'Hit Super Effective' : effectiveness === 0.5 ? 'Hit Weak Not Very Effective' : 'Hit Normal Damage'
+        // Step 1: announce the move (no damage yet)
+        steps.push({ text: `User used ${move.label}.`, apply: (prev) => ({ ...prev }), sound: move.id === 'ember' ? 'Ember' : move.id === 'water-gun' ? 'Water Gun' : move.id === 'vine-whip' ? 'Vine Whip' : null })
+        // Step 2: blank text + opponent HP drops + hit sound simultaneously
+        steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - playerDamage) } }), sound: playerHitSound })
+        // Step 3 (only if not neutral): effectiveness text, no sound (damage already done)
+        if (effectiveness !== 1) {
+          steps.push({ text: `It was ${getEffectivenessText(effectiveness)}!`, apply: (prev) => ({ ...prev }), sound: null })
+        }
         if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'The foe has been defeated.', apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: null })
       }
 
@@ -407,11 +526,13 @@ function App() {
     const multiplier = getKnowledgeMultiplier(nextKnowledgeStage)
     const damage = dodgeThisTurn ? 0 : Math.floor(battleState.player.maxHp * baseRatio * multiplier)
     damageToPlayer = damage
+    // Step 1: enemy announces its move (no damage yet)
     steps.push({ text: `${battleState.enemy.name} used ${enemyMove}.`, apply: (prev) => ({ ...prev }), sound: enemyMove === 'Midterm Exam' ? 'Midterm Exam' : enemyMove === 'Pre-Final Exam' ? 'Pre-Final Exam' : 'Final Examination' })
     if (dodgeThisTurn) {
       steps.push({ text: 'The incoming attack was dodged.', apply: (prev) => ({ ...prev, player: { ...prev.player, dodgeTurn: false } }), sound: null })
     } else {
-      steps.push({ text: `${enemyMove} dealt ${damage} damage.`, apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: 'Hit Normal Damage' })
+      // Step 2: blank text + player HP drops + hit sound simultaneously
+      steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: 'Hit Normal Damage' })
     }
 
     const newSemesterTurns = Math.max(0, battleState.semesterTurnsLeft - 1)
@@ -463,6 +584,7 @@ function App() {
     setBattleMenuView('main')
     setContentView(null)
     setResultOverlay(null)
+    setVictoryStep(0)
   }
 
   function handleRestart() {
@@ -473,18 +595,42 @@ function App() {
     setBattleMenuView('main')
     setContentView(null)
     setResultOverlay(null)
+    setVictoryStep(0)
   }
 
   function handleContinueFromResult() {
-    if (battleState?.unlockSection) {
-      setUnlockedSections((value) => (value.includes(battleState.unlockSection) ? value : [...value, battleState.unlockSection]))
+    if (battleState?.result === 'victory') {
+      if (victoryStep === 1 && battleState.unlockSection) {
+        // Step 1 -> Step 2: Show unlock screen
+        playSoundEffect('Unlocked')
+        setVictoryStep(2)
+        setResultOverlay({
+          title: 'UNLOCKED!',
+          detail: `You unlocked ${battleState.unlockSection.toUpperCase()}!`,
+        })
+        return
+      }
+      // Step 2 (or victory with no unlock): Go to menu
+      if (battleState.unlockSection) {
+        setUnlockedSections((value) => (value.includes(battleState.unlockSection) ? value : [...value, battleState.unlockSection]))
+      }
+      setVictoryStep(0)
+      setScreen('menu')
+      setMenuIndex(0)
+      setBattleState(null)
+      setBattleMenuView('main')
+      setContentView(null)
+      setResultOverlay(null)
+    } else {
+      // Loss: Go to menu directly
+      setVictoryStep(0)
+      setScreen('menu')
+      setMenuIndex(0)
+      setBattleState(null)
+      setBattleMenuView('main')
+      setContentView(null)
+      setResultOverlay(null)
     }
-    setScreen('menu')
-    setMenuIndex(0)
-    setBattleState(null)
-    setBattleMenuView('main')
-    setContentView(null)
-    setResultOverlay(null)
   }
 
   return (
@@ -649,7 +795,10 @@ function App() {
               <p className="hp-text">HP {battleState.enemy.hp}/{battleState.enemy.maxHp}</p>
             </article>
           </div>
-          <div className="battle-log">{battleState.battleText}</div>
+          <div className="battle-log">
+            {/* Typewriter effect for battle text - only show typed text to prevent overlap/glitching */}
+            <div className="typed-text">{typeof displayedBattleText === 'string' ? displayedBattleText : ''}</div>
+          </div>
           <div className="battle-menu">
             {battleMenuView === 'main' && (
               <div className="menu-buttons">
