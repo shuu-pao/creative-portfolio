@@ -1,11 +1,11 @@
-# Graph Report - creative-portfolio  (2026-07-14)
+# Graph Report - creative-portfolio  (2026-07-13)
 
 ## Corpus Check
-- 9 files · ~8,827 words
+- 9 files · ~7,888 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 73 nodes · 63 edges · 24 communities (9 shown, 15 thin omitted)
+- 72 nodes · 62 edges · 24 communities (9 shown, 15 thin omitted)
 - Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
 
@@ -68,16 +68,16 @@
 ## Communities (24 total, 15 thin omitted)
 
 ### Community 0 - "Portfolio App component"
-Cohesion: 0.15
-Nodes (12): aboutText, App(), audioUrl(), battleThemes, bossOptions, educationText, getEffectiveness(), getTypeColor() (+4 more)
+Cohesion: 0.16
+Nodes (11): aboutText, App(), audioUrl(), battleThemes, bossOptions, educationText, getEffectiveness(), getTypeColor() (+3 more)
 
 ### Community 1 - "package.json config"
 Cohesion: 0.20
-Nodes (9): dependencies, react, react-dom, name, private, type, version, react (+1 more)
+Nodes (9): name, private, scripts, build, dev, lint, preview, type (+1 more)
 
 ### Community 2 - "React dependencies"
 Cohesion: 0.40
-Nodes (5): scripts, build, dev, lint, preview
+Nodes (5): dependencies, react, react-dom, react, react-dom
 
 ### Community 3 - "README / Vite docs"
 Cohesion: 0.50
@@ -87,27 +87,25 @@ Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
 Cohesion: 0.67
 Nodes (3): Claude 4 Sonnet (configured model), Continue.dev model configuration, Qwen2.5-Coder (configured model)
 
-### Community 5 - "ESLint base config"
-Cohesion: 0.67
-Nodes (3): eslint, devDependencies, eslint
-
 ### Community 6 - "Tech brand logos"
 Cohesion: 0.67
 Nodes (3): Favicon (Vite-style lightning logo), React logo (SVG), Vite logo (SVG)
 
+### Community 9 - "React Hooks lint rule"
+Cohesion: 0.67
+Nodes (3): eslint-plugin-react-hooks, devDependencies, eslint-plugin-react-hooks
+
 ## Knowledge Gaps
-- **41 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+36 more)
+- **40 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+35 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `devDependencies` connect `ESLint base config` to `package.json config`, `ESLint JS plugin`, `React Hooks lint rule`, `React Refresh lint rule`, `React type defs`, `React-DOM type defs`, `Vite build tool`, `Vite React plugin`, `Brand / UI assets`?**
-  _High betweenness centrality (0.162) - this node is a cross-community bridge._
-- **Why does `scripts` connect `React dependencies` to `package.json config`?**
+- **Why does `devDependencies` connect `React Hooks lint rule` to `package.json config`, `ESLint base config`, `ESLint JS plugin`, `React Refresh lint rule`, `React type defs`, `React-DOM type defs`, `Vite build tool`, `Vite React plugin`, `Brand / UI assets`?**
+  _High betweenness centrality (0.167) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `React dependencies` to `package.json config`?**
   _High betweenness centrality (0.048) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _41 weakly-connected nodes found - possible documentation gaps or missing edges._
-- **Should `Portfolio App component` be split into smaller, more focused modules?**
-  _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
+  _40 weakly-connected nodes found - possible documentation gaps or missing edges._

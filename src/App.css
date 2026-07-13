@@ -18,6 +18,38 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .start-button, .menu-button, .back-button, .boss-option, .menu-option, .move-card { border: none; border-radius: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
 .start-button:hover, .menu-button:hover, .back-button:hover, .boss-option:hover, .menu-option:hover, .move-card:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.2); }
 .start-button { padding: 14px 24px; background: linear-gradient(135deg, #f97316, #ef4444); color: white; font-weight: 700; letter-spacing: 0.2rem; }
+/* Faint, non-interactive overlay prompt on the start screen. The whole start
+   screen is clickable (and any key starts), so this is intentionally styled as
+   a soft hint rather than a button. */
+.start-prompt-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: min(420px, 80%);
+}
+.start-line {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 100%);
+  animation: start-prompt-pulse 2.4s ease-in-out infinite;
+}
+.start-prompt {
+  margin: 0;
+  padding: 0;
+  color: rgba(255,255,255,0.55);
+  font-size: 0.95rem;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
+  text-align: center;
+  user-select: none;
+  animation: start-prompt-pulse 2.4s ease-in-out infinite;
+}
+@keyframes start-prompt-pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.85; }
+}
 .menu-list, .boss-list, .move-grid { display: flex; flex-direction: column; gap: 10px; }
 .menu-option, .boss-option { padding: 14px 16px; background: rgba(255,255,255,0.08); color: white; display: flex; justify-content: space-between; align-items: center; text-align: left; }
 .menu-option.active, .boss-option.active { background: linear-gradient(135deg, #2563eb, #7c3aed); }
@@ -33,11 +65,36 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .hp-fill { height: 100%; border-radius: 999px; }
 .hp-fill.player { background: linear-gradient(90deg, #34d399, #22c55e); }
 .hp-fill.enemy { background: linear-gradient(90deg, #fb923c, #f43f5e); }
+/* Cards carrying a --type-color (the opponent box, and the player box which is
+   tinted to the opponent's type) recolor as one unit — background, border,
+   name, label, type pill, icon glow, hp number, and hp fill — using
+   getTypeColor(). Protean/type changes recolor the box instantly. */
+.monster-card.type-tinted {
+  background: color-mix(in srgb, var(--type-color, #7dd3fc) 16%, rgba(255,255,255,0.07));
+  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 55%, transparent);
+  box-shadow: 0 0 24px color-mix(in srgb, var(--type-color, #7dd3fc) 30%, transparent);
+}
+.monster-card.type-tinted h3,
+.monster-card.type-tinted .monster-label,
+.monster-card.type-tinted .hp-text { color: var(--type-color, #7dd3fc); }
+.monster-card.type-tinted .type-pill {
+  color: var(--type-color, #7dd3fc);
+  background: color-mix(in srgb, var(--type-color, #7dd3fc) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 45%, transparent);
+}
+.monster-card.type-tinted .monster-emoji {
+  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--type-color, #7dd3fc) 60%, transparent));
+}
+.monster-card.type-tinted .hp-fill {
+  background: linear-gradient(90deg, var(--type-color, #7dd3fc), color-mix(in srgb, var(--type-color, #7dd3fc) 55%, #ffffff));
+}
 .hp-text { margin: 8px 0 0; }
 .school-status { margin-top: 10px; color: #d7e3f7; }
 .battle-log { padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.06); min-height: 56px; }
 .battle-menu { display: flex; flex-direction: column; gap: 12px; }
-.audio-controls { position: absolute; left: 20px; bottom: 20px; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 999px; background: rgba(9,12,26,0.8); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+.audio-controls { position: absolute; left: 20px; bottom: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 10px 12px; border-radius: 18px; background: rgba(9,12,26,0.8); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+.audio-buttons { display: flex; align-items: center; gap: 10px; }
+.now-playing { margin: 0; font-size: 0.72rem; letter-spacing: 0.04rem; color: #cbd5e1; }
 .audio-toggle { border: none; border-radius: 999px; width: 38px; height: 38px; background: rgba(255,255,255,0.12); color: white; cursor: pointer; }
 .audio-toggle.next-song { width: auto; padding: 0 10px; font-size: 0.72rem; letter-spacing: 0.08rem; text-transform: uppercase; }
 .audio-controls input[type='range'] { accent-color: #7dd3fc; cursor: pointer; }
@@ -45,10 +102,49 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .menu-button, .back-button { padding: 14px 16px; background: rgba(255,255,255,0.08); color: white; text-align: center; }
 .menu-button.primary, .back-button { background: linear-gradient(135deg, #2563eb, #7c3aed); }
 .move-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.move-card { padding: 14px; display: flex; flex-direction: column; gap: 4px; text-align: left; background: rgba(255,255,255,0.08); color: white; }
-.move-card span { color: #7dd3fc; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16rem; }
+.move-card { padding: 14px; display: flex; flex-direction: column; gap: 4px; text-align: left; position: relative; background: color-mix(in srgb, var(--type-color, #7dd3fc) 16%, rgba(255,255,255,0.07)); border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 45%, transparent); color: white; }
+.move-card span { color: var(--type-color, #7dd3fc); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16rem; }
+/* Hover tooltip that points at its move. `.move-card .move-tooltip` (higher
+   specificity than `.move-card span`) overrides the inherited uppercase/type
+   styling so the description reads as normal sentence text. */
+.move-card .move-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: 240px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  background: rgba(9,12,26,0.96);
+  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 60%, transparent);
+  color: #d7e3f7;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.01rem;
+  text-transform: none;
+  text-align: center;
+  white-space: normal;
+  line-height: 1.35;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+  z-index: 50;
+}
+.move-card:hover .move-tooltip,
+.move-card:focus-visible .move-tooltip { opacity: 1; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .contact-links a { color: #7dd3fc; text-decoration: none; }
 .result-overlay { position: absolute; inset: 0; background: rgba(3,7,18,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border-radius: 24px; padding: 24px; }
+.result-overlay .result-tip { margin: 4px 0 8px; max-width: 32ch; color: #d7e3f7; font-size: 0.95rem; }
+.result-overlay .result-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
+.result-overlay .result-buttons .menu-button { min-width: 140px; }
 .page-copy { line-height: 1.7; margin: 0 0 12px; }
+.name-entry-screen { display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; text-align: center; min-height: 70vh; }
+.name-entry-form { display: flex; flex-direction: column; gap: 16px; align-items: center; width: min(100%, 420px); }
+.name-input { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; letter-spacing: 0.08rem; outline: none; }
+.name-input:focus { border-color: #7dd3fc; box-shadow: 0 0 0 3px rgba(125,211,252,0.25); }
+.name-input::placeholder { color: #94a3b8; }
+.name-entry-form .start-button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 @media (max-width: 780px) { .menu-screen, .battle-stage, .move-grid, .menu-buttons { grid-template-columns: 1fr; display: grid; } .screen { padding: 20px; } }

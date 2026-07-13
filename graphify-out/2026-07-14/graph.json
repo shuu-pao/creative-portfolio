@@ -99,7 +99,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 2,
+      "community": 1,
       "norm_label": "scripts"
     },
     {
@@ -109,7 +109,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 2,
+      "community": 1,
       "norm_label": "dev"
     },
     {
@@ -119,7 +119,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 2,
+      "community": 1,
       "norm_label": "build"
     },
     {
@@ -129,7 +129,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 2,
+      "community": 1,
       "norm_label": "lint"
     },
     {
@@ -139,7 +139,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_preview",
-      "community": 2,
+      "community": 1,
       "norm_label": "preview"
     },
     {
@@ -149,7 +149,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies",
-      "community": 1,
+      "community": 2,
       "norm_label": "dependencies"
     },
     {
@@ -159,7 +159,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 1,
+      "community": 2,
       "norm_label": "react"
     },
     {
@@ -169,7 +169,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "react",
-      "community": 1,
+      "community": 2,
       "norm_label": "react"
     },
     {
@@ -179,7 +179,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
-      "community": 1,
+      "community": 2,
       "norm_label": "react-dom"
     },
     {
@@ -189,7 +189,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 1,
+      "community": 2,
       "norm_label": "react-dom"
     },
     {
@@ -199,7 +199,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 5,
+      "community": 13,
       "norm_label": "devdependencies"
     },
     {
@@ -463,20 +463,10 @@
       "norm_label": "audiourl()"
     },
     {
-      "label": "MOVE_DESCRIPTIONS",
-      "file_type": "code",
-      "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "_origin": "ast",
-      "id": "src_app_move_descriptions",
-      "community": 0,
-      "norm_label": "move_descriptions"
-    },
-    {
       "label": "getKnowledgeStatus()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L65",
+      "source_location": "L56",
       "_origin": "ast",
       "id": "src_app_getknowledgestatus",
       "community": 0,
@@ -486,7 +476,7 @@
       "label": "getKnowledgeMultiplier()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "src_app_getknowledgemultiplier",
       "community": 0,
@@ -496,7 +486,7 @@
       "label": "normalizeType()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L83",
+      "source_location": "L74",
       "_origin": "ast",
       "id": "src_app_normalizetype",
       "community": 0,
@@ -506,7 +496,7 @@
       "label": "getEffectiveness()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L88",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "src_app_geteffectiveness",
       "community": 0,
@@ -516,7 +506,7 @@
       "label": "getEffectivenessText()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L98",
+      "source_location": "L87",
       "_origin": "ast",
       "id": "src_app_geteffectivenesstext",
       "community": 0,
@@ -526,7 +516,7 @@
       "label": "getTypeColor()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L106",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "src_app_gettypecolor",
       "community": 0,
@@ -536,7 +526,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L119",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "src_app_app",
       "community": 0,
@@ -1161,7 +1151,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L119",
+      "source_location": "L108",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_app",
@@ -1211,7 +1201,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L88",
+      "source_location": "L79",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectiveness",
@@ -1221,7 +1211,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L98",
+      "source_location": "L87",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectivenesstext",
@@ -1231,7 +1221,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_getknowledgemultiplier",
@@ -1241,7 +1231,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L65",
+      "source_location": "L56",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_getknowledgestatus",
@@ -1251,7 +1241,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L106",
+      "source_location": "L95",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_gettypecolor",
@@ -1281,17 +1271,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L53",
-      "weight": 1.0,
-      "source": "src_app",
-      "target": "src_app_move_descriptions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L83",
+      "source_location": "L74",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_normalizetype",
@@ -1313,7 +1293,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L403",
+      "source_location": "L392",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_audiourl",
@@ -1324,7 +1304,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L89",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "src_app_geteffectiveness",
       "target": "src_app_normalizetype",
@@ -1335,7 +1315,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L980",
+      "source_location": "L954",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_gettypecolor",
