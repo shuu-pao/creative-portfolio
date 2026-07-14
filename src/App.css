@@ -15,8 +15,8 @@ h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; }
 h2, h3, h4 { margin: 0; }
 h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .screen-copy, .menu-hint p, .battle-log, .page-copy { color: #d7e3f7; }
-.start-button, .menu-button, .back-button, .boss-option, .menu-option, .move-card { border: none; border-radius: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.start-button:hover, .menu-button:hover, .back-button:hover, .boss-option:hover, .menu-option:hover, .move-card:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.2); }
+.start-button, .menu-button, .back-button, .cancel-button, .boss-option, .menu-option, .move-card { border: none; border-radius: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.start-button:hover, .menu-button:hover, .back-button:hover, .cancel-button:hover, .boss-option:hover, .menu-option:hover, .move-card:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.2); }
 .start-button { padding: 14px 24px; background: linear-gradient(135deg, #f97316, #ef4444); color: white; font-weight: 700; letter-spacing: 0.2rem; }
 /* Faint, non-interactive overlay prompt on the start screen. The whole start
    screen is clickable (and any key starts), so this is intentionally styled as
@@ -147,4 +147,46 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .name-input:focus { border-color: #7dd3fc; box-shadow: 0 0 0 3px rgba(125,211,252,0.25); }
 .name-input::placeholder { color: #94a3b8; }
 .name-entry-form .start-button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+.name-entry-actions { display: flex; flex-direction: row; justify-content: space-between; gap: 16px; width: 100%; }
+.cancel-button { padding: 14px 24px; background: rgba(255,255,255,0.08); color: #cbd5e1; font-weight: 700; letter-spacing: 0.2rem; cursor: pointer; }
+.cancel-button:hover { background: rgba(239,68,68,0.18); color: #fecaca; }
+.name-entry-actions .start-button, .name-entry-actions .cancel-button { flex: 1; }
+.move-card:disabled { opacity: 0.45; cursor: not-allowed; }
 @media (max-width: 780px) { .menu-screen, .battle-stage, .move-grid, .menu-buttons { grid-template-columns: 1fr; display: grid; } .screen { padding: 20px; } }
+
+/* Hover/focus trigger that reveals the hollow battle's Fire/Grass/Water type
+   chart. The small chart doubles as the always-visible badge; the larger
+   labeled chart lives in the popover and appears on hover or keyboard focus. */
+.type-chart-trigger {
+  position: relative;
+  justify-self: end;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.18);
+  cursor: help;
+  width: max-content;
+  margin-left: auto;
+}
+.type-chart-trigger:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 2px; }
+.type-chart-hint { font-size: 0.75rem; letter-spacing: 0.12rem; text-transform: uppercase; color: #cbd5e1; }
+.type-chart-popover {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 60;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(9,12,26,0.96);
+  border: 1px solid rgba(255,255,255,0.18);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-4px);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.type-chart-trigger:hover .type-chart-popover,
+.type-chart-trigger:focus-visible .type-chart-popover { opacity: 1; pointer-events: auto; transform: translateY(0); }

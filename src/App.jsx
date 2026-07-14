@@ -5,14 +5,14 @@ const menuOptionsBase = [
   { id: 'battle', label: 'BATTLE', unlockText: null },
   { id: 'about', label: 'ABOUT ME', unlockText: 'Defeat "PAOLO JANSEN ENRERA" to unlock ABOUT ME.' },
   { id: 'professional', label: 'PROFESSIONAL EXPERIENCE', unlockText: 'This section is still being prepared.' },
-  { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "DR. SKOO L. CEESTIM" to unlock EDUCATION.' },
+  { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "SCHOOL SYSTEM" to unlock EDUCATION.' },
   { id: 'contact', label: 'CONTACT', unlockText: null },
 ]
 
 const bossOptions = [
   { id: 'hollow', label: 'PAOLO JANSEN ENRERA', locked: false },
   { id: 'keeper', label: 'KEEPER OF PROJECTS', locked: true },
-  { id: 'school', label: 'DR. SKOO L. CEESTIM', locked: false },
+  { id: 'school', label: 'SCHOOL SYSTEM', locked: false },
 ]
 
 const menuPlaylist = [
@@ -32,16 +32,16 @@ const battleThemes = {
 }
 
 const aboutText = [
-  'Results-driven Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
+  'Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
   'Skilled in configuring agent actions, Flow logic, and Agent Instructions to deliver scalable, reliable AI-driven support systems.',
   'During my internship, I contributed to the Agentforce Contact Center and Knowledge Center, engineering advanced case lifecycle actions, automating account workflows, and analyzing knowledge article trends to guide content improvements. These contributions enhanced efficiency and reliability in enterprise support environments.',
   'Beyond Salesforce, I bring exposure to AI/ML workflows, embedded systems, and full-stack development, with a proven ability to redesign inefficient logic and resolve systemic bottlenecks. Known for a fast learning curve and problem-solving mindset, I aim to drive measurable improvements in automation, enterprise AI agent deployments, and intelligent customer experience solutions.',
 ]
 
 const educationText = [
-  'University: University of San Carlos',
-  'Degree: Bachelor of Science in Computer Engineering',
-  'Course Dates: 2021 - Jul 2026',
+  'SCHOOL: University of San Carlos',
+  'DEGREE: Bachelor of Science in Computer Engineering',
+  'DURATION: 2021 - Jul 2026',
 ]
 
 function audioUrl(fileName) {
@@ -61,24 +61,6 @@ const MOVE_DESCRIPTIONS = {
 // mute/volume controls with the background music (see `playSoundEffect` and the
 // background-music effect). The single button + slider govern ALL audio.
 
-
-function getKnowledgeStatus(stage) {
-  if (stage >= 3) return 'Knowledge: Graduating'
-  if (stage === 2) return 'Knowledge: Knowledgable'
-  if (stage === 1) return 'Knowledge: Learned'
-  if (stage === 0) return 'Knowledge: Neutral'
-  if (stage === -1) return 'Knowledge: Dunce'
-  return 'Knowledge: Beyond Saving'
-}
-
-function getKnowledgeMultiplier(stage) {
-  if (stage >= 3) return 0.125
-  if (stage === 2) return 0.25
-  if (stage === 1) return 0.5
-  if (stage === 0) return 1
-  if (stage === -1) return 1.5
-  return 2
-}
 
 function normalizeType(type) {
   if (type === 'Unknown' || type === 'Student') return 'Normal'
@@ -111,9 +93,221 @@ function getTypeColor(type) {
     Psychic: '#a855f7',
     Normal: '#7dd3fc',
     Unknown: '#7dd3fc',
-    Student: '#7dd3fc',
+    Student: '#6fcf6c',
+    MATHEMATICS: '#3b82f6',
+    SCIENCE: '#22c55e',
+    ENGLISH: '#ef4444',
+    'SOCIAL STUDIES': '#b07a3c',
   }
   return TYPE_COLORS[type] || '#7dd3fc'
+}
+
+// ---------------------------------------------------------------------------
+// SCHOOL SYSTEM — quiz question bank
+// ---------------------------------------------------------------------------
+// Four subjects, each with 3 difficulty levels (1/2/3 == QUESTION #1/#2/#3),
+// each level with 5 questions. Every question's options are [A, B, C, "SKIP"]
+// and `answer` is the 0-based index of the correct option among A/B/C.
+const ALL_SUBJECTS = ['MATHEMATICS', 'SCIENCE', 'ENGLISH', 'SOCIAL STUDIES']
+const SLOT_DAMAGE = { 1: 3, 2: 9, 3: 13 }
+
+const QUESTION_BANK = {
+  MATHEMATICS: {
+    1: [
+      { q: 'What is 7 + 8?', options: ['14', '16', '15', 'SKIP'], answer: 2 },
+      { q: 'What is 9 x 3?', options: ['27', '24', '30', 'SKIP'], answer: 0 },
+      { q: 'How many sides does a triangle have?', options: ['4', '3', '5', 'SKIP'], answer: 1 },
+      { q: 'How many minutes are in an hour?', options: ['30', '100', '60', 'SKIP'], answer: 2 },
+      { q: 'What shape has 4 equal sides?', options: ['Triangle', 'Circle', 'Square', 'SKIP'], answer: 2 },
+    ],
+    2: [
+      { q: 'What is 3/4 as a decimal?', options: ['0.34', '0.43', '0.75', 'SKIP'], answer: 2 },
+      { q: 'What is 20% of 50?', options: ['5', '15', '10', 'SKIP'], answer: 2 },
+      { q: 'What do we call a number that can only be divided by 1 and itself?', options: ['Even number', 'Prime number', 'Composite number', 'SKIP'], answer: 1 },
+      { q: 'What is the value of Pi (π), rounded to two decimal places?', options: ['3.14', '2.17', '3.41', 'SKIP'], answer: 0 },
+      { q: 'Solve for x: x + 5 = 12', options: ['6', '8', '7', 'SKIP'], answer: 2 },
+    ],
+    3: [
+      { q: 'What famous theorem is used to find the sides of a right triangle?', options: ['Fibonacci Sequence', 'Pythagorean Theorem', 'Law of Cosines', 'SKIP'], answer: 1 },
+      { q: 'What is the formula for the area of a circle?', options: ['2πr', 'πr²', 'πd', 'SKIP'], answer: 1 },
+      { q: 'In algebra, what is the value of x in 2x + 4 = 12?', options: ['8', '6', '4', 'SKIP'], answer: 2 },
+      { q: 'What is the term for the middle value in a set of numbers?', options: ['Mean', 'Mode', 'Median', 'SKIP'], answer: 2 },
+      { q: 'What branch of math deals with rates of change, like slopes and areas under curves?', options: ['Geometry', 'Calculus', 'Statistics', 'SKIP'], answer: 1 },
+    ],
+  },
+  SCIENCE: {
+    1: [
+      { q: 'What do plants need to make their own food?', options: ['Only water', 'Sunlight, water, and air', 'Soil and rocks', 'SKIP'], answer: 1 },
+      { q: 'What is the closest planet to the sun?', options: ['Venus', 'Mars', 'Mercury', 'SKIP'], answer: 2 },
+      { q: 'What gas do humans need to breathe to survive?', options: ['Oxygen', 'Nitrogen', 'Carbon dioxide', 'SKIP'], answer: 0 },
+      { q: 'What are the three states of matter?', options: ['Big, medium, small', 'Solid, liquid, gas', 'Hot, cold, warm', 'SKIP'], answer: 1 },
+      { q: 'What part of the body pumps blood?', options: ['Lungs', 'Heart', 'Brain', 'SKIP'], answer: 1 },
+    ],
+    2: [
+      { q: 'What is the process where water evaporates, condenses, and falls as rain called?', options: ['Rock cycle', 'Water cycle', 'Carbon cycle', 'SKIP'], answer: 1 },
+      { q: 'What do we call organisms that make their own food, like plants?', options: ['Consumers', 'Decomposers', 'Producers', 'SKIP'], answer: 2 },
+      { q: 'What is the largest organ in the human body?', options: ['Liver', 'Skin', 'Heart', 'SKIP'], answer: 1 },
+      { q: 'What force pulls objects toward the ground?', options: ['Magnetism', 'Friction', 'Gravity', 'SKIP'], answer: 2 },
+      { q: 'What process do plants use to convert sunlight into energy?', options: ['Respiration', 'Photosynthesis', 'Digestion', 'SKIP'], answer: 1 },
+    ],
+    3: [
+      { q: 'What is the powerhouse of the cell, responsible for producing energy?', options: ['Nucleus', 'Ribosome', 'Mitochondria', 'SKIP'], answer: 2 },
+      { q: 'What is the chemical formula for water?', options: ['CO2', 'O2', 'H2O', 'SKIP'], answer: 2 },
+      { q: 'What is the basic unit of heredity, passed from parents to offspring?', options: ['Cell', 'Gene', 'Protein', 'SKIP'], answer: 1 },
+      { q: 'What scientist is best known for developing the theory of evolution by natural selection?', options: ['Isaac Newton', 'Charles Darwin', 'Albert Einstein', 'SKIP'], answer: 1 },
+      { q: 'What is the term for the temperature at which water boils, in Celsius?', options: ['50°C', '90°C', '100°C', 'SKIP'], answer: 2 },
+    ],
+  },
+  ENGLISH: {
+    1: [
+      { q: 'What is a noun?', options: ['An action word', 'A person, place, or thing', 'A describing word', 'SKIP'], answer: 1 },
+      { q: 'What is the opposite of "hot"?', options: ['Cold', 'Wet', 'Warm', 'SKIP'], answer: 0 },
+      { q: 'Which word is a verb?', options: ['Table', 'Happy', 'Run', 'SKIP'], answer: 2 },
+      { q: 'What punctuation mark ends a question?', options: ['Period', 'Question mark', 'Comma', 'SKIP'], answer: 1 },
+      { q: 'What is the plural of "child"?', options: ['Childs', 'Childrens', 'Children', 'SKIP'], answer: 2 },
+    ],
+    2: [
+      { q: 'What is a synonym for "happy"?', options: ['Sad', 'Joyful', 'Angry', 'SKIP'], answer: 1 },
+      { q: 'What is it called when you compare two things using "like" or "as"?', options: ['Metaphor', 'Simile', 'Personification', 'SKIP'], answer: 1 },
+      { q: 'What part of a story tells you where and when it happens?', options: ['Plot', 'Setting', 'Theme', 'SKIP'], answer: 1 },
+      { q: 'What type of sentence expresses strong emotion, usually ending in an exclamation point?', options: ['Declarative sentence', 'Interrogative sentence', 'Exclamatory sentence', 'SKIP'], answer: 2 },
+      { q: 'What word describes an action in a sentence?', options: ['Adjective', 'Verb', 'Preposition', 'SKIP'], answer: 1 },
+    ],
+    3: [
+      { q: 'What is the main argument or claim of an essay called?', options: ['Introduction', 'Thesis statement', 'Conclusion', 'SKIP'], answer: 1 },
+      { q: 'What is it called when human traits are given to animals or objects?', options: ['Hyperbole', 'Foreshadowing', 'Personification', 'SKIP'], answer: 2 },
+      { q: 'What do we call the main character of a story?', options: ['Antagonist', 'Narrator', 'Protagonist', 'SKIP'], answer: 2 },
+      { q: 'What is the term for words that sound the same but have different meanings, like "flower" and "flour"?', options: ['Synonyms', 'Homophones', 'Antonyms', 'SKIP'], answer: 1 },
+      { q: 'Who wrote the famous plays "Romeo and Juliet" and "Hamlet"?', options: ['Charles Dickens', 'William Shakespeare', 'Mark Twain', 'SKIP'], answer: 1 },
+    ],
+  },
+  'SOCIAL STUDIES': {
+    1: [
+      { q: 'What do we call the place where a community of people live and are governed?', options: ['Forest', 'Ocean', 'Country', 'SKIP'], answer: 2 },
+      { q: 'What is a map used for?', options: ['Telling time', 'Showing locations and directions', 'Measuring weight', 'SKIP'], answer: 1 },
+      { q: 'Who is the leader of a country usually called?', options: ['Teacher', 'Farmer', 'President or Prime Minister', 'SKIP'], answer: 2 },
+      { q: 'What do we call money used to buy things?', options: ['Currency', 'Recipe', 'Schedule', 'SKIP'], answer: 0 },
+      { q: 'What are the four cardinal directions?', options: ['Up, down, left, right', 'North, South, East, West', 'Hot, cold, wet, dry', 'SKIP'], answer: 1 },
+    ],
+    2: [
+      { q: 'How many continents are there on Earth?', options: ['5', '7', '6', 'SKIP'], answer: 1 },
+      { q: 'What ancient civilization is famous for building the pyramids?', options: ['Greece', 'Rome', 'Egypt', 'SKIP'], answer: 2 },
+      { q: 'What do we call natural materials from the Earth used by people, like water and trees?', options: ['Manufactured goods', 'Natural resources', 'Imports', 'SKIP'], answer: 1 },
+      { q: 'What ocean is the largest in the world?', options: ['Atlantic Ocean', 'Indian Ocean', 'Pacific Ocean', 'SKIP'], answer: 2 },
+      { q: 'What is the imaginary line that divides the Earth into Northern and Southern halves called?', options: ['Prime Meridian', 'Equator', 'Tropic of Cancer', 'SKIP'], answer: 1 },
+    ],
+    3: [
+      { q: "What document declared the United States' independence from Britain in 1776?", options: ['The Constitution', 'The Declaration of Independence', 'The Bill of Rights', 'SKIP'], answer: 1 },
+      { q: 'What was the primary cause that triggered World War I?', options: ['The Great Depression', 'The assassination of Archduke Franz Ferdinand', 'The invention of nuclear weapons', 'SKIP'], answer: 1 },
+      { q: 'What economic system is based on private ownership and free markets?', options: ['Communism', 'Feudalism', 'Capitalism', 'SKIP'], answer: 2 },
+      { q: 'What is a government run by the people through elected officials called?', options: ['Monarchy', 'Dictatorship', 'Democracy', 'SKIP'], answer: 2 },
+      { q: 'What war was fought between the northern and southern United States from 1861-1865?', options: ['The Revolutionary War', 'World War I', 'The Civil War', 'SKIP'], answer: 2 },
+    ],
+  },
+}
+
+// Records a question index as already-shown for a (subject, level) pair so the
+// enemy never re-asks it within the same question slot.
+function addAsked(asked, subject, level, index) {
+  const key = `${subject}|${level}`
+  const arr = asked[key] || []
+  return { ...asked, [key]: arr.includes(index) ? arr : [...arr, index] }
+}
+
+// Picks a not-yet-shown question at random; if every question in the level has
+// been shown, it falls back to any question in that level.
+function pickQuestion(subject, level, asked) {
+  const bank = QUESTION_BANK[subject][level]
+  const key = `${subject}|${level}`
+  const used = asked[key] || []
+  const all = bank.map((_, i) => i)
+  const available = all.filter((i) => !used.includes(i))
+  const pool = available.length > 0 ? available : all
+  const index = pool[Math.floor(Math.random() * pool.length)]
+  return { index, question: { index, text: bank[index].q, options: bank[index].options, correctIndex: bank[index].answer } }
+}
+
+// The hollow battle (vs PAOLO JANSEN ENRERA) is a Fire/Grass/Water rock-paper-
+// scissors. This draws it as three type icons with curved arrows pointing from
+// each type to the one it is strong against (Fire → Grass → Water → Fire).
+// `size` 'small' is the compact badge in the hover trigger; 'full' is the
+// larger version shown on hover. No labels, circles, or legend — just icons
+// and arrows.
+function TypeChart({ size = 'full' }) {
+  const isSmall = size === 'small'
+  const nodes = [
+    { id: 'Fire', emoji: '🔥', x: 100, y: 55 },
+    { id: 'Grass', emoji: '🌿', x: 142, y: 120 },
+    { id: 'Water', emoji: '💧', x: 58, y: 120 },
+  ]
+  // Straight arrows in a triangular layout. Each arrow starts a clear gap away
+  // from its source icon and ends a clear gap before the target icon so the
+  // arrowhead sits in front of the icon without touching it. Arrows use the
+  // site's cyan accent (#7dd3fc) with a soft glow to match the rest of the UI.
+  const ARROW_COLOR = '#7dd3fc'
+  const GAP_START = 18
+  const GAP_END = 24
+  const rel = [
+    { from: 'Fire', to: 'Grass' },
+    { from: 'Grass', to: 'Water' },
+    { from: 'Water', to: 'Fire' },
+  ]
+  // Every arrow is a straight line between its gap-adjusted endpoints, so the
+  // three edges form a uniform triangle. No curving: the bottom edge (Grass →
+  // Water) runs horizontally through the open gap between the two bottom icons,
+  // reading as a balanced cycle just like the two slanted edges.
+  const arrowPath = (from, to) => {
+    const dx = to.x - from.x
+    const dy = to.y - from.y
+    const len = Math.hypot(dx, dy)
+    const ux = dx / len
+    const uy = dy / len
+    const sx = from.x + ux * GAP_START
+    const sy = from.y + uy * GAP_START
+    const ex = to.x - ux * GAP_END
+    const ey = to.y - uy * GAP_END
+    return `M ${sx} ${sy} L ${ex} ${ey}`
+  }
+  const nodeById = Object.fromEntries(nodes.map((n) => [n.id, n]))
+  return (
+    <svg
+      className="type-chart-svg"
+      viewBox="22 33 156 105"
+      role="img"
+      aria-label="Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire."
+      style={isSmall ? { width: 36, height: 24 } : { width: 165, height: 111 }}
+    >
+      <defs>
+        <marker id="tc-arrow" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="5.5" markerHeight="5.5" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill={ARROW_COLOR} />
+        </marker>
+        <filter id="tc-glow" filterUnits="userSpaceOnUse" x="22" y="33" width="156" height="105">
+          <feDropShadow dx="0" dy="0" stdDeviation="2.2" floodColor={ARROW_COLOR} floodOpacity="0.75" />
+        </filter>
+      </defs>
+      {nodes.map((n) => (
+        <text
+          key={n.id}
+          x={n.x}
+          y={n.y + (isSmall ? 5 : 7)}
+          textAnchor="middle"
+          fontSize={isSmall ? 16 : 24}
+        >{n.emoji}</text>
+      ))}
+      {rel.map((r) => (
+        <path
+          key={`${r.from}-${r.to}`}
+          d={arrowPath(nodeById[r.from], nodeById[r.to])}
+          fill="none"
+          stroke={ARROW_COLOR}
+          strokeWidth={isSmall ? 3.5 : 4.5}
+          strokeLinecap="round"
+          markerEnd="url(#tc-arrow)"
+          filter="url(#tc-glow)"
+        />
+      ))}
+    </svg>
+  )
 }
 
 function App() {
@@ -231,24 +425,27 @@ function App() {
         isResolving: false,
         sequence: [],
         sequenceIndex: 0,
-        enemyTurnIndex: 0,
         unlockSection: null,
       })
     } else if (bossId === 'school') {
       setBattleState({
         mode: 'school',
-        player: { name: playerName, displayName: playerName, hp: 100, maxHp: 100, type: 'Normal', speed: 120, knowledgeStage: 0, knowledgeStatus: 'Knowledge: Neutral', dodgeTurn: false },
-        enemy: { name: 'DR. SKOO L. CEESTIM', displayName: 'DR. SKOO L. CEESTIM', hp: 100, maxHp: 100, type: 'Unknown', speed: 60 },
-        battleText: 'The battle begins!',
-        semesterTurnsLeft: 3,
-        enemyTurnIndex: 0,
+        player: { name: playerName, displayName: playerName, hp: 100, maxHp: 100, type: 'Normal', speed: 120 },
+        enemy: { name: 'SCHOOL SYSTEM', displayName: 'SCHOOL SYSTEM', hp: 100, maxHp: 100, type: 'Normal', speed: 60 },
+        battleText: 'SCHOOL SYSTEM stands in your way!',
         result: null,
         isResolving: true,
+        school: {
+          subjectsUsed: [],
+          qAnswered: { 1: false, 2: false, 3: false },
+          skipsRemaining: 1,
+          asked: {},
+          currentQuestion: null,
+          activeSlot: null,
+        },
         sequence: [
-          { text: 'DR. SKOO L. CEESTIM\'s ability BACK 2 SCHOOL has been activated.', apply: (prev) => ({ ...prev }), sound: 'In-Battle Ability Activate' },
+          { text: `SCHOOL SYSTEM's ability BACK 2 SCHOOL has been activated.`, apply: (prev) => ({ ...prev }), sound: 'In-Battle Ability Activate' },
           { text: `${playerName}'s type changed into Student.`, apply: (prev) => ({ ...prev, player: { ...prev.player, type: 'Student' } }), sound: 'In-Battle Ability Activate' },
-          { text: `${playerName}'s defense stat has been changed into knowledge stat. You have become a part of the school semester.`, apply: (prev) => ({ ...prev }), sound: null },
-          { text: 'Turns until the semester ends: 3', apply: (prev) => ({ ...prev, semesterTurnsLeft: 3 }), sound: null },
         ],
         sequenceIndex: 0,
         unlockSection: null,
@@ -719,59 +916,164 @@ function App() {
       return
     }
 
+    // ----- SCHOOL SYSTEM fight: quiz mechanics -----
+    const school = battleState.school
+    const playerName = battleState.player.name
+    const enemyName = battleState.enemy.name
+    const subject = battleState.enemy.type
     const steps = []
-    const turnNumber = battleState.enemyTurnIndex ?? 0
-    const enemyMove = turnNumber === 0 ? 'Midterm Exam' : turnNumber === 1 ? 'Pre-Final Exam' : 'Final Examination'
-    let nextKnowledgeStage = battleState.player.knowledgeStage
-    let nextKnowledgeStatus = battleState.player.knowledgeStatus
-    let dodgeThisTurn = false
-    let damageToPlayer = 0
 
-    if (move.id === 'study') {
-      nextKnowledgeStage = Math.min(3, battleState.player.knowledgeStage + 1)
-      nextKnowledgeStatus = getKnowledgeStatus(nextKnowledgeStage)
-      steps.push({ text: `${battleState.player.name} used STUDY.`, apply: (prev) => ({ ...prev, player: { ...prev.player, knowledgeStage: nextKnowledgeStage, knowledgeStatus: nextKnowledgeStatus } }), sound: 'Study' })
-      steps.push({ text: `Knowledge advanced to ${nextKnowledgeStatus}.`, apply: (prev) => ({ ...prev, player: { ...prev.player, knowledgeStage: nextKnowledgeStage, knowledgeStatus: nextKnowledgeStatus } }), sound: 'Stat Increase' })
-    } else if (move.id === 'throw-book') {
-      nextKnowledgeStage = Math.max(-2, battleState.player.knowledgeStage - 1)
-      nextKnowledgeStatus = getKnowledgeStatus(nextKnowledgeStage)
-      steps.push({ text: `${battleState.player.name} used THROW A BOOK.`, apply: (prev) => ({ ...prev, player: { ...prev.player, knowledgeStage: nextKnowledgeStage, knowledgeStatus: nextKnowledgeStatus } }), sound: null })
-      steps.push({ text: `Knowledge decreased to ${nextKnowledgeStatus}.`, apply: (prev) => ({ ...prev, player: { ...prev.player, knowledgeStage: nextKnowledgeStage, knowledgeStatus: nextKnowledgeStatus } }), sound: 'Stat Decrease' })
-      steps.push({ text: 'This opponent is a concept and thus, is immune to any physical attacks.', apply: (prev) => ({ ...prev }), sound: null })
-    } else if (move.id === 'skip-class') {
-      dodgeThisTurn = true
-      steps.push({ text: `${battleState.player.name} used SKIP CLASS.`, apply: (prev) => ({ ...prev, player: { ...prev.player, dodgeTurn: true } }), sound: 'Skip Class' })
-      steps.push({ text: 'The next attack will be dodged.', apply: (prev) => ({ ...prev, player: { ...prev.player, dodgeTurn: true } }), sound: null })
-    } else if (move.id === 'rest') {
-      steps.push({ text: `${battleState.player.name} used REST.`, apply: (prev) => ({ ...prev, player: { ...prev.player, hp: prev.player.maxHp } }), sound: 'Rest' })
-      steps.push({ text: `${battleState.player.name} recovered to full HP.`, apply: (prev) => ({ ...prev, player: { ...prev.player, hp: prev.player.maxHp } }), sound: 'In-Battle Heal HP Restore' })
+    // Turn 1: the player's only move is ATTEND CLASS, which triggers the enemy's
+    // CLASS IS IN SESSION (random subject pick + first question of that subject).
+    if (!school.currentQuestion) {
+      const firstSubject = ALL_SUBJECTS[Math.floor(Math.random() * ALL_SUBJECTS.length)]
+      const q1 = pickQuestion(firstSubject, 1, {})
+      steps.push({ text: `${playerName} attended class.`, apply: (prev) => prev, sound: null })
+      steps.push({
+        text: `${enemyName} used CLASS IS IN SESSION.`,
+        apply: (prev) => ({
+          ...prev,
+          enemy: { ...prev.enemy, type: firstSubject },
+          school: {
+            ...prev.school,
+            subjectsUsed: [firstSubject],
+            activeSlot: 1,
+            qAnswered: { 1: false, 2: false, 3: false },
+            skipsRemaining: 1,
+            asked: {},
+            currentQuestion: q1.question,
+          },
+        }),
+        sound: 'In-Battle Ability Activate',
+      })
+      steps.push({ text: `${firstSubject} is in session.`, apply: (prev) => prev, sound: null })
+      steps.push({ text: `${enemyName} used QUESTION #1.`, apply: (prev) => prev, sound: null })
+      steps.push({ text: q1.question.text, apply: (prev) => ({ ...prev, school: { ...prev.school, asked: addAsked(prev.school.asked, firstSubject, 1, q1.index) } }), sound: 'Question' })
+      setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+      setBattleMenuView('main')
+      return
     }
 
-    const baseRatio = enemyMove === 'Midterm Exam' ? 0.2 : enemyMove === 'Pre-Final Exam' ? 0.8 : 5.5
-    const multiplier = getKnowledgeMultiplier(nextKnowledgeStage)
-    const damage = dodgeThisTurn ? 0 : Math.floor(battleState.player.maxHp * baseRatio * multiplier)
-    damageToPlayer = damage
-    // Step 1: enemy announces its move (no damage yet)
-    steps.push({ text: `${battleState.enemy.name} used ${enemyMove}.`, apply: (prev) => ({ ...prev }), sound: enemyMove === 'Midterm Exam' ? 'Midterm Exam' : enemyMove === 'Pre-Final Exam' ? 'Pre-Final Exam' : 'Final Examination' })
-    if (dodgeThisTurn) {
-      steps.push({ text: 'The incoming attack was dodged.', apply: (prev) => ({ ...prev, player: { ...prev.player, dodgeTurn: false } }), sound: null })
-    } else {
-      // Step 2: blank text + player HP drops + hit sound simultaneously
-      steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: 'Hit Normal Damage' })
-    }
+    const slot = school.activeSlot
+    const curQ = school.currentQuestion
+    const optIndex = move.optionIndex
 
-    const newSemesterTurns = Math.max(0, battleState.semesterTurnsLeft - 1)
-    if (newSemesterTurns <= 0) {
-      if (nextKnowledgeStatus === 'Knowledge: Graduating') {
-        steps.push({ text: `${battleState.player.name} has graduated with flying colors!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection: 'education' }), sound: 'You Win' })
-      } else {
-        steps.push({ text: 'Another semester has started.', apply: (prev) => ({ ...prev, semesterTurnsLeft: 3 }), sound: null })
+    // SKIP — only allowed while skips remain; otherwise bounce back to the same
+    // set of options without advancing the turn.
+    if (optIndex === 3) {
+      if (school.skipsRemaining <= 0) {
+        steps.push({ text: 'You have no skips remaining for this subject.', apply: (prev) => prev, sound: null })
+        steps.push({ text: curQ.question.text, apply: (prev) => prev, sound: null })
+        setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+        setBattleMenuView('main')
+        return
       }
-    } else {
-      steps.push({ text: `Turns until the semester ends: ${newSemesterTurns}`, apply: (prev) => ({ ...prev, semesterTurnsLeft: newSemesterTurns }), sound: null })
+      const newSkips = school.skipsRemaining - 1
+      const newQ = pickQuestion(subject, slot, addAsked(school.asked, subject, slot, curQ.index))
+      steps.push({
+        text: newSkips > 0
+          ? `You skipped the question. You have ${newSkips} skip${newSkips === 1 ? '' : 's'} remaining for this subject.`
+          : 'You skipped the question. You have no skips remaining for this subject.',
+        apply: (prev) => ({ ...prev, school: { ...prev.school, skipsRemaining: newSkips } }),
+        sound: 'Skip',
+      })
+      steps.push({ text: `${enemyName} used QUESTION #${slot}.`, apply: (prev) => prev, sound: null })
+      steps.push({
+        text: newQ.question.text,
+        apply: (prev) => ({ ...prev, school: { ...prev.school, currentQuestion: newQ.question, asked: addAsked(prev.school.asked, subject, slot, newQ.index) } }),
+        sound: 'Question',
+      })
+      setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+      setBattleMenuView('main')
+      return
     }
-    if (battleState.player.hp - damageToPlayer <= 0) steps.push({ text: 'You lost the battle.', apply: (prev) => ({ ...prev, result: 'loss' }), sound: 'You Lost' })
-    setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null, enemyTurnIndex: (prev?.enemyTurnIndex ?? 0) + 1 }))
+
+    // Wrong answer: blank + sound -> 20 damage -> "You were wrong." -> re-ask a
+    // not-yet-shown question at the same level (the slot stays UNANSWERED).
+    if (optIndex !== curQ.correctIndex) {
+      const playerHpBefore = battleState.player.hp
+      steps.push({ text: '', apply: (prev) => prev, sound: 'answer wrong' })
+      steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - 25) } }), sound: 'Hit Super Effective' })
+      steps.push({ text: 'You were wrong.', apply: (prev) => prev, sound: null })
+      if (playerHpBefore - 25 <= 0) {
+        steps.push({ text: 'You lost the battle.', apply: (prev) => ({ ...prev, result: 'loss' }), sound: 'You Lost' })
+        setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+        setBattleMenuView('main')
+        return
+      }
+      const newQ = pickQuestion(subject, slot, addAsked(school.asked, subject, slot, curQ.index))
+      steps.push({ text: `${enemyName} used QUESTION #${slot}.`, apply: (prev) => prev, sound: null })
+      steps.push({
+        text: newQ.question.text,
+        apply: (prev) => ({ ...prev, school: { ...prev.school, currentQuestion: newQ.question, asked: addAsked(prev.school.asked, subject, slot, newQ.index) } }),
+        sound: 'Question',
+      })
+      setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+      setBattleMenuView('main')
+      return
+    }
+
+    // Correct answer.
+    const dmg = SLOT_DAMAGE[slot]
+    const enemyHpBefore = battleState.enemy.hp
+    const correctHitSound = slot === 1 ? 'Hit Weak Not Very Effective' : slot === 2 ? 'Hit Normal Damage' : 'Hit Super Effective'
+    steps.push({ text: '', apply: (prev) => prev, sound: 'answer correct' })
+    steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - dmg) } }), sound: correctHitSound })
+    steps.push({ text: 'You were correct!', apply: (prev) => prev, sound: null })
+    if (enemyHpBefore - dmg <= 0) {
+      steps.push({ text: `You defeated ${enemyName}.`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection: 'education' }), sound: 'You Win' })
+      setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+      setBattleMenuView('main')
+      return
+    }
+    if (slot < 3) {
+      // Advance to the next question slot (next difficulty level) of this subject.
+      const nextSlot = slot + 1
+      const newQ = pickQuestion(subject, nextSlot, school.asked)
+      steps.push({
+        text: `${enemyName} used QUESTION #${nextSlot}.`,
+        apply: (prev) => ({
+          ...prev,
+          school: {
+            ...prev.school,
+            activeSlot: nextSlot,
+            qAnswered: { ...prev.school.qAnswered, [slot]: true },
+            currentQuestion: newQ.question,
+            asked: addAsked(prev.school.asked, subject, nextSlot, newQ.index),
+          },
+        }),
+        sound: null,
+      })
+      steps.push({ text: newQ.question.text, apply: (prev) => prev, sound: 'Question' })
+      setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+      setBattleMenuView('main')
+      return
+    }
+    // All three answered: switch to a fresh, unused subject and reset the slots.
+    const remaining = ALL_SUBJECTS.filter((s) => !school.subjectsUsed.includes(s))
+    const newSubject = remaining[Math.floor(Math.random() * remaining.length)]
+    const newQ = pickQuestion(newSubject, 1, {})
+    steps.push({
+      text: `${enemyName} used CLASS IS IN SESSION.`,
+      apply: (prev) => ({
+        ...prev,
+        enemy: { ...prev.enemy, type: newSubject },
+        school: {
+          ...prev.school,
+          subjectsUsed: [...prev.school.subjectsUsed, newSubject],
+          activeSlot: 1,
+          qAnswered: { 1: false, 2: false, 3: false },
+          skipsRemaining: 1,
+          asked: addAsked({}, newSubject, 1, newQ.index),
+          currentQuestion: newQ.question,
+        },
+      }),
+      sound: 'In-Battle Ability Activate',
+    })
+    steps.push({ text: `${newSubject} is in session.`, apply: (prev) => prev, sound: null })
+    steps.push({ text: `${enemyName} used QUESTION #1.`, apply: (prev) => prev, sound: null })
+    steps.push({ text: newQ.question.text, apply: (prev) => prev, sound: 'Question' })
+    setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
     setBattleMenuView('main')
   }
 
@@ -793,11 +1095,7 @@ function App() {
         nextPlayer.hp = Math.max(0, nextPlayer.hp - Math.floor(nextPlayer.maxHp * 0.25))
         return { ...state, player: nextPlayer, enemy: nextEnemy, battleText: `The Master Ball was thrown, but it never worked. ${nextEnemy.name} countered with ${bossMove.label}.`, result: nextPlayer.hp <= 0 ? 'loss' : null }
       }
-      const nextPlayer = { ...state.player }
-      const enemyMove = state.enemyTurnIndex % 3 === 0 ? 'Midterm Exam' : state.enemyTurnIndex % 3 === 1 ? 'Pre-Final Exam' : 'Final Examination'
-      const damage = Math.floor(nextPlayer.maxHp * (enemyMove === 'Midterm Exam' ? 0.2 : enemyMove === 'Pre-Final Exam' ? 0.8 : 5.5) * getKnowledgeMultiplier(nextPlayer.knowledgeStage))
-      nextPlayer.hp = Math.max(0, nextPlayer.hp - damage)
-      return { ...state, player: nextPlayer, battleText: `The Master Ball was thrown, but it never worked. ${state.enemy.name} used ${enemyMove} and dealt ${damage} damage.`, result: nextPlayer.hp <= 0 ? 'loss' : null }
+      return { ...state, battleText: 'The Master Ball was thrown, but it never worked.' }
     })
     setBattleMenuView('main')
   }
@@ -853,6 +1151,22 @@ function App() {
     ? battleThemes[battleState.mode]
     : menuPlaylist[menuTrackIndex]?.file
   const nowPlayingName = nowPlayingFile ? nowPlayingFile.replace(/\.mp3$/i, '') : ''
+
+  // The move grid depends on the active battle. For the SCHOOL SYSTEM fight the
+  // player's moves are either the four ATTEND CLASS buttons (before the first
+  // subject is chosen) or the four answer options of the current question.
+  const battleMoves = battleState
+    ? battleState.mode === 'hollow'
+      ? [
+          { id: 'ember', label: 'EMBER', type: 'Fire' },
+          { id: 'water-gun', label: 'WATER GUN', type: 'Water' },
+          { id: 'vine-whip', label: 'VINE WHIP', type: 'Grass' },
+          { id: 'trick-room', label: 'TRICK ROOM', type: 'Psychic' },
+        ]
+      : (battleState.school.currentQuestion
+          ? battleState.school.currentQuestion.options.map((opt, i) => ({ id: `opt-${i}`, label: opt, type: 'Student', optionIndex: i }))
+          : Array.from({ length: 4 }, (_, i) => ({ id: `attend-${i}`, label: 'ATTEND CLASS', type: 'Student' })))
+    : []
 
   return (
     <main className="app-shell" onClick={screen === 'start' ? startFromStartScreen : undefined}>
@@ -915,7 +1229,13 @@ function App() {
             {currentMenuOption?.unlocked ? (
               <>
                 <h3>{currentMenuOption.label}</h3>
-                <p>{currentMenuOption.id === 'contact' ? 'Open your contact card and reach out.' : 'Select this option to continue.'}</p>
+                <p>{
+                  currentMenuOption.id === 'battle' ? 'Fight monsters and unlock more of the menu!' :
+                  currentMenuOption.id === 'about' ? 'Learn a bit more about the creator!' :
+                  currentMenuOption.id === 'education' ? 'Learn where the creator got his education from!' :
+                  currentMenuOption.id === 'contact' ? 'Reach out to the creator!' :
+                  'Select this option to continue.'
+                }</p>
               </>
             ) : (
               <>
@@ -969,13 +1289,25 @@ function App() {
               onChange={(event) => setNameInput(event.target.value)}
               onMouseEnter={handleButtonHover}
             />
-            <button type="submit" className="start-button" disabled={nameInput.trim() === ''} onMouseEnter={handleButtonHover}>START BATTLE</button>
+            <div className="name-entry-actions">
+              <button type="button" className="cancel-button" onClick={() => { handleButtonSelect(); playSoundEffect('esc'); setPendingBossId(null); setNameInput(''); setScreen('bossSelect') }} onMouseEnter={handleButtonHover}>CANCEL</button>
+              <button type="submit" className="start-button" disabled={nameInput.trim() === ''} onMouseEnter={handleButtonHover}>START BATTLE</button>
+            </div>
           </form>
         </section>
       )}
 
       {screen === 'battle' && battleState && (
         <section className="screen battle-screen">
+          {battleState.mode === 'hollow' && (
+            <div className="type-chart-trigger" tabIndex={0}>
+              <TypeChart size="small" />
+              <span className="type-chart-hint">Type chart</span>
+              <div className="type-chart-popover" role="tooltip">
+                <TypeChart size="full" />
+              </div>
+            </div>
+          )}
           <div className="battle-stage">
             <article className="monster-card type-tinted" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
               <p className="monster-label">You</p>
@@ -984,12 +1316,6 @@ function App() {
               <div className="monster-emoji">🧑‍💻</div>
               <div className="hp-bar"><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
               <p className="hp-text">HP {battleState.player.hp}/{battleState.player.maxHp}</p>
-              {battleState.mode === 'school' && (
-                <div className="school-status">
-                  <p>Status: {battleState.player.knowledgeStatus}</p>
-                  <p>Turns until semester ends: {battleState.semesterTurnsLeft}</p>
-                </div>
-              )}
             </article>
             <article className="monster-card opponent type-tinted" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
               <p className="monster-label">OPPONENT</p>
@@ -1015,18 +1341,8 @@ function App() {
             )}
             {battleMenuView === 'moves' && (
               <div className="move-grid">
-                {(battleState.mode === 'hollow' ? [
-                  { id: 'ember', label: 'EMBER', type: 'Fire' },
-                  { id: 'water-gun', label: 'WATER GUN', type: 'Water' },
-                  { id: 'vine-whip', label: 'VINE WHIP', type: 'Grass' },
-                  { id: 'trick-room', label: 'TRICK ROOM', type: 'Psychic' },
-                ] : [
-                  { id: 'study', label: 'STUDY', type: 'Normal' },
-                  { id: 'throw-book', label: 'THROW A BOOK', type: 'Normal' },
-                  { id: 'rest', label: 'REST', type: 'Normal' },
-                  { id: 'skip-class', label: 'SKIP CLASS', type: 'Normal' },
-                ]).map((move) => (
-                  <button key={move.id} type="button" className="move-card" style={{ '--type-color': getTypeColor(move.type) }} onClick={() => { handleButtonSelect(); handleBattleMove(move) }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={handleButtonHover}>
+                {battleMoves.map((move) => (
+                  <button key={move.id} type="button" className="move-card" style={{ '--type-color': getTypeColor(move.type) }} onClick={() => { handleButtonSelect(); handleBattleMove(move) }} disabled={battleState.isResolving || !!battleState.result || (battleState.mode === 'school' && move.optionIndex === 3 && battleState.school?.skipsRemaining <= 0)} onMouseEnter={handleButtonHover}>
                     <strong>{move.label}</strong>
                     <span>{move.type}</span>
                     {MOVE_DESCRIPTIONS[move.id] && (
@@ -1053,7 +1369,7 @@ function App() {
                   {battleState.mode === 'hollow' ? (
                     <p className="result-tip">Tip: PAOLO JANSEN ENRERA is faster than you. Find a way to reverse the speed order!</p>
                   ) : (
-                    <p className="result-tip">Your team was defeated. Regroup and take another shot at the boss.</p>
+                    <p className="result-tip">Tip: uhh...</p>
                   )}
                   <div className="result-buttons">
                     <button type="button" className="menu-button" onClick={() => { handleButtonSelect(); goToMenu() }} onMouseEnter={handleButtonHover}>MAIN MENU</button>
@@ -1063,12 +1379,11 @@ function App() {
               ) : resultScreen.type === 'won' ? (
                 <>
                   <h2>You Won!</h2>
-                  <p className="result-tip">Victory is yours. Press CONTINUE to see what you earned.</p>
                   <button type="button" className="menu-button primary" onClick={() => { handleButtonSelect(); if (resultScreen.newlyUnlocked) { setResultScreen({ type: 'unlocked', section: resultScreen.section }) } else { goToBossSelect() } }} onMouseEnter={handleButtonHover}>CONTINUE</button>
                 </>
               ) : (
                 <>
-                  <h2>You Unlocked!</h2>
+                  <h2>Unlocked!</h2>
                   <p className="result-tip">{`You unlocked ${unlockedSectionLabel(resultScreen.section)}!`}</p>
                   <button type="button" className="menu-button primary" onClick={() => { handleButtonSelect(); goToMenu() }} onMouseEnter={handleButtonHover}>CONTINUE</button>
                 </>

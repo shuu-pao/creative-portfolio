@@ -33,6 +33,26 @@
   },
   "nodes": [
     {
+      "label": "draw_chart.py",
+      "file_type": "code",
+      "source_file": "draw_chart.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "draw_chart",
+      "community": 5,
+      "norm_label": "draw_chart.py"
+    },
+    {
+      "label": "px()",
+      "file_type": "code",
+      "source_file": "draw_chart.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "draw_chart_px",
+      "community": 5,
+      "norm_label": "px()"
+    },
+    {
       "label": "eslint.config.js",
       "file_type": "code",
       "source_file": "eslint.config.js",
@@ -209,7 +229,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_js",
-      "community": 8,
+      "community": 13,
       "norm_label": "@eslint/js"
     },
     {
@@ -219,7 +239,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "eslint_js",
-      "community": 8,
+      "community": 13,
       "norm_label": "@eslint/js"
     },
     {
@@ -249,7 +269,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "package_devdependencies_types_react_dom",
-      "community": 14,
+      "community": 13,
       "norm_label": "@types/react-dom"
     },
     {
@@ -259,7 +279,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "types_react_dom",
-      "community": 14,
+      "community": 13,
       "norm_label": "@types/react-dom"
     },
     {
@@ -269,7 +289,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "package_devdependencies_vitejs_plugin_react",
-      "community": 16,
+      "community": 13,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -279,7 +299,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "vitejs_plugin_react",
-      "community": 16,
+      "community": 13,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -289,7 +309,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_devdependencies_eslint",
-      "community": 5,
+      "community": 13,
       "norm_label": "eslint"
     },
     {
@@ -299,7 +319,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "eslint",
-      "community": 5,
+      "community": 13,
       "norm_label": "eslint"
     },
     {
@@ -309,7 +329,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_plugin_react_hooks",
-      "community": 9,
+      "community": 13,
       "norm_label": "eslint-plugin-react-hooks"
     },
     {
@@ -319,7 +339,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "eslint_plugin_react_hooks",
-      "community": 9,
+      "community": 13,
       "norm_label": "eslint-plugin-react-hooks"
     },
     {
@@ -329,7 +349,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_plugin_react_refresh",
-      "community": 10,
+      "community": 13,
       "norm_label": "eslint-plugin-react-refresh"
     },
     {
@@ -339,7 +359,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "eslint_plugin_react_refresh",
-      "community": 10,
+      "community": 13,
       "norm_label": "eslint-plugin-react-refresh"
     },
     {
@@ -349,7 +369,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "package_devdependencies_globals",
-      "community": 11,
+      "community": 13,
       "norm_label": "globals"
     },
     {
@@ -359,7 +379,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "globals",
-      "community": 11,
+      "community": 13,
       "norm_label": "globals"
     },
     {
@@ -369,7 +389,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "package_devdependencies_vite",
-      "community": 15,
+      "community": 13,
       "norm_label": "vite"
     },
     {
@@ -379,8 +399,18 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "vite",
-      "community": 15,
+      "community": 13,
       "norm_label": "vite"
+    },
+    {
+      "label": "render_current.py",
+      "file_type": "code",
+      "source_file": "render_current.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "render_current",
+      "community": 8,
+      "norm_label": "render_current.py"
     },
     {
       "label": "App.jsx",
@@ -459,54 +489,44 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "src_app_audiourl",
-      "community": 0,
+      "community": 9,
       "norm_label": "audiourl()"
     },
     {
-      "label": "getKnowledgeStatus()",
+      "label": "MOVE_DESCRIPTIONS",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L53",
       "_origin": "ast",
-      "id": "src_app_getknowledgestatus",
+      "id": "src_app_move_descriptions",
       "community": 0,
-      "norm_label": "getknowledgestatus()"
-    },
-    {
-      "label": "getKnowledgeMultiplier()",
-      "file_type": "code",
-      "source_file": "src/App.jsx",
-      "source_location": "L65",
-      "_origin": "ast",
-      "id": "src_app_getknowledgemultiplier",
-      "community": 0,
-      "norm_label": "getknowledgemultiplier()"
+      "norm_label": "move_descriptions"
     },
     {
       "label": "normalizeType()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "src_app_normalizetype",
-      "community": 0,
+      "community": 10,
       "norm_label": "normalizetype()"
     },
     {
       "label": "getEffectiveness()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L79",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "src_app_geteffectiveness",
-      "community": 0,
+      "community": 10,
       "norm_label": "geteffectiveness()"
     },
     {
       "label": "getEffectivenessText()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L87",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "src_app_geteffectivenesstext",
       "community": 0,
@@ -516,20 +536,80 @@
       "label": "getTypeColor()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "src_app_gettypecolor",
-      "community": 0,
+      "community": 9,
       "norm_label": "gettypecolor()"
+    },
+    {
+      "label": "ALL_SUBJECTS",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L111",
+      "_origin": "ast",
+      "id": "src_app_all_subjects",
+      "community": 0,
+      "norm_label": "all_subjects"
+    },
+    {
+      "label": "SLOT_DAMAGE",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "src_app_slot_damage",
+      "community": 0,
+      "norm_label": "slot_damage"
+    },
+    {
+      "label": "QUESTION_BANK",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "src_app_question_bank",
+      "community": 0,
+      "norm_label": "question_bank"
+    },
+    {
+      "label": "addAsked()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L211",
+      "_origin": "ast",
+      "id": "src_app_addasked",
+      "community": 0,
+      "norm_label": "addasked()"
+    },
+    {
+      "label": "pickQuestion()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L219",
+      "_origin": "ast",
+      "id": "src_app_pickquestion",
+      "community": 0,
+      "norm_label": "pickquestion()"
+    },
+    {
+      "label": "TypeChart()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L236",
+      "_origin": "ast",
+      "id": "src_app_typechart",
+      "community": 0,
+      "norm_label": "typechart()"
     },
     {
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L108",
+      "source_location": "L313",
       "_origin": "ast",
       "id": "src_app_app",
-      "community": 0,
+      "community": 9,
       "norm_label": "app()"
     },
     {
@@ -539,7 +619,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 0,
+      "community": 9,
       "norm_label": "main.jsx"
     },
     {
@@ -796,6 +876,26 @@
     }
   ],
   "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "draw_chart.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "draw_chart",
+      "target": "draw_chart",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "draw_chart.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "draw_chart",
+      "target": "draw_chart_px",
+      "confidence_score": 1.0
+    },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1151,7 +1251,27 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L108",
+      "source_location": "L211",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_addasked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_all_subjects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L313",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_app",
@@ -1201,7 +1321,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L79",
+      "source_location": "L70",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectiveness",
@@ -1211,7 +1331,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L87",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectivenesstext",
@@ -1221,27 +1341,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L65",
-      "weight": 1.0,
-      "source": "src_app",
-      "target": "src_app_getknowledgemultiplier",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L56",
-      "weight": 1.0,
-      "source": "src_app",
-      "target": "src_app_getknowledgestatus",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L88",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_gettypecolor",
@@ -1271,10 +1371,60 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L74",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_move_descriptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_normalizetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L219",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_pickquestion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_question_bank",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_slot_damage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L236",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_app_typechart",
       "confidence_score": 1.0
     },
     {
@@ -1293,7 +1443,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L392",
+      "source_location": "L600",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_audiourl",
@@ -1304,7 +1454,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L80",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "src_app_geteffectiveness",
       "target": "src_app_normalizetype",
@@ -1315,7 +1465,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L954",
+      "source_location": "L1308",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_gettypecolor",
@@ -1461,5 +1611,5 @@
       "source_file": "src/assets/react.svg"
     }
   ],
-  "built_at_commit": "031fc2b83107020818ac961118bf264293e9d3fd"
+  "built_at_commit": "f2df8a366b09e4797fe859757926b0bf7f979d99"
 }
