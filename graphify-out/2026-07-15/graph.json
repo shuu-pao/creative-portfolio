@@ -4,30 +4,30 @@
   "graph": {
     "hyperedges": [
       {
-        "id": "readme_react_build_toolchain",
-        "label": "React + Vite Build Toolchain",
+        "id": "continue_configured_models",
+        "label": "Continue.dev configured models",
         "nodes": [
-          "readme_vitejs_plugin_react",
-          "readme_oxc",
-          "readme_swc"
+          "continue_claude4_sonnet",
+          "continue_qwen25_coder",
+          "continue_newconfig_models"
         ],
-        "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": "README.md"
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": ".continue/agents/new-config.yaml"
       },
       {
-        "id": "portfoliomon_scaffold",
-        "label": "PortfolioMon React+Vite Scaffold",
+        "id": "tech_brand_logos",
+        "label": "Tech brand logos (React / Vite)",
         "nodes": [
-          "index_portfoliomon",
-          "index_main_jsx",
-          "readme_react-vite"
+          "src_assets_react",
+          "src_assets_vite",
+          "public_favicon"
         ],
-        "relation": "form",
-        "confidence": "INFERRED",
-        "confidence_score": 0.85,
-        "source_file": "index.html"
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.95,
+        "source_file": "src/assets/react.svg"
       }
     ]
   },
@@ -39,7 +39,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "draw_chart",
-      "community": 7,
+      "community": 5,
       "norm_label": "draw_chart.py"
     },
     {
@@ -49,7 +49,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "draw_chart_px",
-      "community": 7,
+      "community": 5,
       "norm_label": "px()"
     },
     {
@@ -59,7 +59,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "eslint_config",
-      "community": 17,
+      "community": 19,
       "norm_label": "eslint.config.js"
     },
     {
@@ -119,7 +119,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "package_scripts",
-      "community": 4,
+      "community": 1,
       "norm_label": "scripts"
     },
     {
@@ -129,7 +129,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "package_scripts_dev",
-      "community": 4,
+      "community": 1,
       "norm_label": "dev"
     },
     {
@@ -139,7 +139,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "package_scripts_build",
-      "community": 4,
+      "community": 1,
       "norm_label": "build"
     },
     {
@@ -149,7 +149,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "package_scripts_lint",
-      "community": 4,
+      "community": 1,
       "norm_label": "lint"
     },
     {
@@ -159,7 +159,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "package_scripts_preview",
-      "community": 4,
+      "community": 1,
       "norm_label": "preview"
     },
     {
@@ -169,7 +169,7 @@
       "source_location": "L12",
       "_origin": "ast",
       "id": "package_dependencies",
-      "community": 1,
+      "community": 2,
       "norm_label": "dependencies"
     },
     {
@@ -179,7 +179,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "package_dependencies_react",
-      "community": 1,
+      "community": 2,
       "norm_label": "react"
     },
     {
@@ -189,7 +189,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "react",
-      "community": 1,
+      "community": 2,
       "norm_label": "react"
     },
     {
@@ -199,7 +199,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "package_dependencies_react_dom",
-      "community": 1,
+      "community": 2,
       "norm_label": "react-dom"
     },
     {
@@ -209,7 +209,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "react_dom",
-      "community": 1,
+      "community": 2,
       "norm_label": "react-dom"
     },
     {
@@ -219,7 +219,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "package_devdependencies",
-      "community": 6,
+      "community": 13,
       "norm_label": "devdependencies"
     },
     {
@@ -229,7 +229,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_js",
-      "community": 9,
+      "community": 13,
       "norm_label": "@eslint/js"
     },
     {
@@ -239,7 +239,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "eslint_js",
-      "community": 9,
+      "community": 13,
       "norm_label": "@eslint/js"
     },
     {
@@ -249,7 +249,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "package_devdependencies_types_react",
-      "community": 12,
+      "community": 13,
       "norm_label": "@types/react"
     },
     {
@@ -259,7 +259,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "types_react",
-      "community": 12,
+      "community": 13,
       "norm_label": "@types/react"
     },
     {
@@ -289,7 +289,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "package_devdependencies_vitejs_plugin_react",
-      "community": 15,
+      "community": 13,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -299,7 +299,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "vitejs_plugin_react",
-      "community": 15,
+      "community": 13,
       "norm_label": "@vitejs/plugin-react"
     },
     {
@@ -309,7 +309,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "package_devdependencies_eslint",
-      "community": 8,
+      "community": 13,
       "norm_label": "eslint"
     },
     {
@@ -319,7 +319,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "eslint",
-      "community": 8,
+      "community": 13,
       "norm_label": "eslint"
     },
     {
@@ -329,7 +329,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_plugin_react_hooks",
-      "community": 6,
+      "community": 13,
       "norm_label": "eslint-plugin-react-hooks"
     },
     {
@@ -339,7 +339,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "eslint_plugin_react_hooks",
-      "community": 6,
+      "community": 13,
       "norm_label": "eslint-plugin-react-hooks"
     },
     {
@@ -349,7 +349,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "package_devdependencies_eslint_plugin_react_refresh",
-      "community": 10,
+      "community": 13,
       "norm_label": "eslint-plugin-react-refresh"
     },
     {
@@ -359,7 +359,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "eslint_plugin_react_refresh",
-      "community": 10,
+      "community": 13,
       "norm_label": "eslint-plugin-react-refresh"
     },
     {
@@ -369,7 +369,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "package_devdependencies_globals",
-      "community": 11,
+      "community": 13,
       "norm_label": "globals"
     },
     {
@@ -379,7 +379,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "globals",
-      "community": 11,
+      "community": 13,
       "norm_label": "globals"
     },
     {
@@ -389,7 +389,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "package_devdependencies_vite",
-      "community": 14,
+      "community": 13,
       "norm_label": "vite"
     },
     {
@@ -399,7 +399,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "vite",
-      "community": 14,
+      "community": 13,
       "norm_label": "vite"
     },
     {
@@ -409,7 +409,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "render_current",
-      "community": 18,
+      "community": 8,
       "norm_label": "render_current.py"
     },
     {
@@ -463,20 +463,10 @@
       "norm_label": "battlethemes"
     },
     {
-      "label": "BOSS_ASSETS",
-      "file_type": "code",
-      "source_file": "src/App.jsx",
-      "source_location": "L37",
-      "_origin": "ast",
-      "id": "src_app_boss_assets",
-      "community": 0,
-      "norm_label": "boss_assets"
-    },
-    {
       "label": "aboutText",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "src_app_abouttext",
       "community": 0,
@@ -486,7 +476,7 @@
       "label": "educationText",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "src_app_educationtext",
       "community": 0,
@@ -496,17 +486,17 @@
       "label": "audioUrl()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L62",
+      "source_location": "L47",
       "_origin": "ast",
       "id": "src_app_audiourl",
-      "community": 5,
+      "community": 9,
       "norm_label": "audiourl()"
     },
     {
       "label": "MOVE_DESCRIPTIONS",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L68",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "src_app_move_descriptions",
       "community": 0,
@@ -516,27 +506,27 @@
       "label": "normalizeType()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L80",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "src_app_normalizetype",
-      "community": 16,
+      "community": 10,
       "norm_label": "normalizetype()"
     },
     {
       "label": "getEffectiveness()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L85",
+      "source_location": "L70",
       "_origin": "ast",
       "id": "src_app_geteffectiveness",
-      "community": 16,
+      "community": 10,
       "norm_label": "geteffectiveness()"
     },
     {
       "label": "getEffectivenessText()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "src_app_geteffectivenesstext",
       "community": 0,
@@ -546,17 +536,17 @@
       "label": "getTypeColor()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L103",
+      "source_location": "L88",
       "_origin": "ast",
       "id": "src_app_gettypecolor",
-      "community": 5,
+      "community": 9,
       "norm_label": "gettypecolor()"
     },
     {
       "label": "ALL_SUBJECTS",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L126",
+      "source_location": "L111",
       "_origin": "ast",
       "id": "src_app_all_subjects",
       "community": 0,
@@ -566,7 +556,7 @@
       "label": "SLOT_DAMAGE",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L127",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "src_app_slot_damage",
       "community": 0,
@@ -576,7 +566,7 @@
       "label": "QUESTION_BANK",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L129",
+      "source_location": "L114",
       "_origin": "ast",
       "id": "src_app_question_bank",
       "community": 0,
@@ -586,7 +576,7 @@
       "label": "addAsked()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L226",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "src_app_addasked",
       "community": 0,
@@ -596,7 +586,7 @@
       "label": "pickQuestion()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L234",
+      "source_location": "L219",
       "_origin": "ast",
       "id": "src_app_pickquestion",
       "community": 0,
@@ -606,7 +596,7 @@
       "label": "TypeChart()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L251",
+      "source_location": "L236",
       "_origin": "ast",
       "id": "src_app_typechart",
       "community": 0,
@@ -616,10 +606,10 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L328",
+      "source_location": "L313",
       "_origin": "ast",
       "id": "src_app_app",
-      "community": 5,
+      "community": 9,
       "norm_label": "app()"
     },
     {
@@ -629,7 +619,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_main",
-      "community": 5,
+      "community": 9,
       "norm_label": "main.jsx"
     },
     {
@@ -639,11 +629,71 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "vite_config",
-      "community": 19,
+      "community": 23,
       "norm_label": "vite.config.js"
     },
     {
-      "label": "Continue Example Configuration",
+      "label": "CLAUDE.md",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude",
+      "community": 7,
+      "norm_label": "claude.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "claude_graphify",
+      "community": 7,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 3,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "React + Vite",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme_react_vite",
+      "community": 3,
+      "norm_label": "react + vite"
+    },
+    {
+      "label": "React Compiler",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "readme_react_compiler",
+      "community": 3,
+      "norm_label": "react compiler"
+    },
+    {
+      "label": "Expanding the ESLint configuration",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "readme_expanding_the_eslint_configuration",
+      "community": 3,
+      "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "Continue.dev model configuration",
       "file_type": "document",
       "source_file": ".continue/agents/new-config.yaml",
       "source_location": null,
@@ -651,12 +701,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "_continue_agents_new-config",
-      "community": 3,
-      "norm_label": "continue example configuration"
+      "community": 4,
+      "norm_label": "continue.dev model configuration",
+      "id": "continue_newconfig_models"
     },
     {
-      "label": "Configured Claude 4 Sonnet Model",
+      "label": "Claude 4 Sonnet (configured model)",
       "file_type": "concept",
       "source_file": ".continue/agents/new-config.yaml",
       "source_location": null,
@@ -664,12 +714,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "_continue_agents_new_config_claude_4_sonnet",
-      "community": 3,
-      "norm_label": "configured claude 4 sonnet model"
+      "community": 4,
+      "norm_label": "claude 4 sonnet (configured model)",
+      "id": "continue_claude4_sonnet"
     },
     {
-      "label": "Configured GPT-5 Model",
+      "label": "Qwen2.5-Coder (configured model)",
       "file_type": "concept",
       "source_file": ".continue/agents/new-config.yaml",
       "source_location": null,
@@ -677,25 +727,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "_continue_agents_new_config_gpt_5",
-      "community": 3,
-      "norm_label": "configured gpt-5 model"
+      "community": 4,
+      "norm_label": "qwen2.5-coder (configured model)",
+      "id": "continue_qwen25_coder"
     },
     {
-      "label": "Configured Qwen2.5-Coder 7B Model",
-      "file_type": "concept",
-      "source_file": ".continue/agents/new-config.yaml",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "_continue_agents_new_config_qwen2_5_coder",
-      "community": 3,
-      "norm_label": "configured qwen2.5-coder 7b model"
-    },
-    {
-      "label": "Graphify Project Instructions",
+      "label": "Graphify project rules",
       "file_type": "document",
       "source_file": "CLAUDE.md",
       "source_location": null,
@@ -703,12 +740,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "claude_graphify",
-      "community": 3,
-      "norm_label": "graphify project instructions"
+      "community": 18,
+      "norm_label": "graphify project rules",
+      "id": "claude_md_graphify_rules"
     },
     {
-      "label": "React + Vite Template README",
+      "label": "React + Vite starter template",
       "file_type": "document",
       "source_file": "README.md",
       "source_location": null,
@@ -716,9 +753,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_react-vite",
-      "community": 2,
-      "norm_label": "react + vite template readme"
+      "community": 22,
+      "norm_label": "react + vite starter template",
+      "id": "readme_react_vite_template"
     },
     {
       "label": "@vitejs/plugin-react",
@@ -729,12 +766,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_vitejs_plugin_react",
-      "community": 2,
-      "norm_label": "@vitejs/plugin-react"
+      "community": 21,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "readme_plugin_react"
     },
     {
-      "label": "Oxc",
+      "label": "ESLint + TypeScript setup",
       "file_type": "concept",
       "source_file": "README.md",
       "source_location": null,
@@ -742,51 +779,12 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_oxc",
-      "community": 2,
-      "norm_label": "oxc"
+      "community": 20,
+      "norm_label": "eslint + typescript setup",
+      "id": "readme_eslint_typescript"
     },
     {
-      "label": "SWC",
-      "file_type": "concept",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_swc",
-      "community": 2,
-      "norm_label": "swc"
-    },
-    {
-      "label": "React Compiler",
-      "file_type": "concept",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_react_compiler",
-      "community": 2,
-      "norm_label": "react compiler"
-    },
-    {
-      "label": "typescript-eslint",
-      "file_type": "concept",
-      "source_file": "README.md",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "id": "readme_typescript_eslint",
-      "community": 2,
-      "norm_label": "typescript-eslint"
-    },
-    {
-      "label": "PortfolioMon Entry HTML",
+      "label": "PortfolioMon (app title)",
       "file_type": "document",
       "source_file": "index.html",
       "source_location": null,
@@ -794,22 +792,87 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_portfoliomon",
-      "community": 2,
-      "norm_label": "portfoliomon entry html"
+      "community": 12,
+      "norm_label": "portfoliomon (app title)",
+      "id": "index_portfoliomon"
     },
     {
-      "label": "src/main.jsx Entry Script",
-      "file_type": "code",
+      "label": "HTML entry / root mount",
+      "file_type": "document",
       "source_file": "index.html",
       "source_location": null,
       "source_url": null,
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "index_main_jsx",
-      "community": 2,
-      "norm_label": "src/main.jsx entry script"
+      "community": 12,
+      "norm_label": "html entry / root mount",
+      "id": "index_entry_html"
+    },
+    {
+      "label": "React logo (SVG)",
+      "file_type": "image",
+      "source_file": "src/assets/react.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 6,
+      "norm_label": "react logo (svg)",
+      "id": "src_assets_react"
+    },
+    {
+      "label": "Vite logo (SVG)",
+      "file_type": "image",
+      "source_file": "src/assets/vite.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 6,
+      "norm_label": "vite logo (svg)",
+      "id": "src_assets_vite"
+    },
+    {
+      "label": "Favicon (Vite-style lightning logo)",
+      "file_type": "image",
+      "source_file": "public/favicon.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 6,
+      "norm_label": "favicon (vite-style lightning logo)",
+      "id": "public_favicon"
+    },
+    {
+      "label": "Social/UI icon sprite (SVG)",
+      "file_type": "image",
+      "source_file": "public/icons.svg",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 17,
+      "norm_label": "social/ui icon sprite (svg)",
+      "id": "public_icons"
+    },
+    {
+      "label": "Portfolio hero image (PNG)",
+      "file_type": "image",
+      "source_file": "src/assets/hero.png",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "community": 17,
+      "norm_label": "portfolio hero image (png)",
+      "id": "src_assets_hero"
     }
   ],
   "links": [
@@ -1178,7 +1241,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L49",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_abouttext",
@@ -1188,7 +1251,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L226",
+      "source_location": "L211",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_addasked",
@@ -1198,7 +1261,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L126",
+      "source_location": "L111",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_all_subjects",
@@ -1208,7 +1271,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L328",
+      "source_location": "L313",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_app",
@@ -1218,7 +1281,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L62",
+      "source_location": "L47",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_audiourl",
@@ -1238,16 +1301,6 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "src_app",
-      "target": "src_app_boss_assets",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
       "source_location": "L12",
       "weight": 1.0,
       "source": "src_app",
@@ -1258,7 +1311,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L56",
+      "source_location": "L41",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_educationtext",
@@ -1268,7 +1321,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L85",
+      "source_location": "L70",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectiveness",
@@ -1278,7 +1331,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L95",
+      "source_location": "L80",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_geteffectivenesstext",
@@ -1288,7 +1341,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L103",
+      "source_location": "L88",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_gettypecolor",
@@ -1318,7 +1371,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L68",
+      "source_location": "L53",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_move_descriptions",
@@ -1328,7 +1381,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L80",
+      "source_location": "L65",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_normalizetype",
@@ -1338,7 +1391,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L234",
+      "source_location": "L219",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_pickquestion",
@@ -1348,7 +1401,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L129",
+      "source_location": "L114",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_question_bank",
@@ -1358,7 +1411,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L127",
+      "source_location": "L112",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_slot_damage",
@@ -1368,7 +1421,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L251",
+      "source_location": "L236",
       "weight": 1.0,
       "source": "src_app",
       "target": "src_app_typechart",
@@ -1390,7 +1443,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L638",
+      "source_location": "L600",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_audiourl",
@@ -1401,7 +1454,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L86",
+      "source_location": "L71",
       "weight": 1.0,
       "source": "src_app_geteffectiveness",
       "target": "src_app_normalizetype",
@@ -1412,7 +1465,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L1365",
+      "source_location": "L1309",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_app_gettypecolor",
@@ -1430,14 +1483,44 @@
       "confidence_score": 1.0
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": ".continue/agents/new-config.yaml",
-      "source_location": null,
+      "source_file": "CLAUDE.md",
+      "source_location": "L1",
       "weight": 1.0,
-      "source": "_continue_agents_new-config",
-      "target": "_continue_agents_new_config_claude_4_sonnet"
+      "source": "claude",
+      "target": "claude_graphify",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "readme",
+      "target": "readme_react_vite",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "readme_react_vite",
+      "target": "readme_expanding_the_eslint_configuration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "readme_react_vite",
+      "target": "readme_react_compiler",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -1446,8 +1529,8 @@
       "source_file": ".continue/agents/new-config.yaml",
       "source_location": null,
       "weight": 1.0,
-      "source": "_continue_agents_new-config",
-      "target": "_continue_agents_new_config_gpt_5"
+      "source": "continue_claude4_sonnet",
+      "target": "continue_newconfig_models"
     },
     {
       "relation": "references",
@@ -1456,127 +1539,77 @@
       "source_file": ".continue/agents/new-config.yaml",
       "source_location": null,
       "weight": 1.0,
-      "source": "_continue_agents_new-config",
-      "target": "_continue_agents_new_config_qwen2_5_coder"
+      "source": "continue_qwen25_coder",
+      "target": "continue_newconfig_models"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "AMBIGUOUS",
-      "confidence_score": 0.2,
-      "source_file": ".continue/agents/new-config.yaml",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "index.html",
       "source_location": null,
       "weight": 1.0,
-      "source": "_continue_agents_new_config_claude_4_sonnet",
-      "target": "claude_graphify"
+      "source": "index_entry_html",
+      "target": "index_portfoliomon"
     },
     {
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
       "confidence_score": 0.85,
-      "source_file": "index.html",
+      "source_file": "src/assets/react.svg",
       "source_location": null,
       "weight": 1.0,
-      "source": "index_main_jsx",
-      "target": "readme_react-vite"
+      "source": "src_assets_react",
+      "target": "src_assets_vite"
     },
     {
       "relation": "conceptually_related_to",
       "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "index.html",
+      "confidence_score": 0.75,
+      "source_file": "public/favicon.svg",
       "source_location": null,
       "weight": 1.0,
-      "source": "index_portfoliomon",
-      "target": "readme_react-vite"
+      "source": "public_favicon",
+      "target": "src_assets_vite"
     },
     {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.55,
+      "source_file": "public/icons.svg",
       "source_location": null,
       "weight": 1.0,
-      "source": "readme_react-vite",
-      "target": "readme_react_compiler"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_react-vite",
-      "target": "readme_typescript_eslint"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_react-vite",
-      "target": "readme_vitejs_plugin_react"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vitejs_plugin_react",
-      "target": "readme_oxc"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "README.md",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "readme_vitejs_plugin_react",
-      "target": "readme_swc"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "index.html",
-      "source_location": null,
-      "weight": 1.0,
-      "source": "index_portfoliomon",
-      "target": "index_main_jsx"
+      "source": "public_icons",
+      "target": "src_assets_hero"
     }
   ],
   "hyperedges": [
     {
-      "id": "readme_react_build_toolchain",
-      "label": "React + Vite Build Toolchain",
+      "id": "continue_configured_models",
+      "label": "Continue.dev configured models",
       "nodes": [
-        "readme_vitejs_plugin_react",
-        "readme_oxc",
-        "readme_swc"
+        "continue_claude4_sonnet",
+        "continue_qwen25_coder",
+        "continue_newconfig_models"
       ],
-      "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "README.md"
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": ".continue/agents/new-config.yaml"
     },
     {
-      "id": "portfoliomon_scaffold",
-      "label": "PortfolioMon React+Vite Scaffold",
+      "id": "tech_brand_logos",
+      "label": "Tech brand logos (React / Vite)",
       "nodes": [
-        "index_portfoliomon",
-        "index_main_jsx",
-        "readme_react-vite"
+        "src_assets_react",
+        "src_assets_vite",
+        "public_favicon"
       ],
-      "relation": "form",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "index.html"
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.95,
+      "source_file": "src/assets/react.svg"
     }
   ],
-  "built_at_commit": "aec1afd016bbba6925c774de70124eaa1debed57"
+  "built_at_commit": "f2df8a366b09e4797fe859757926b0bf7f979d99"
 }

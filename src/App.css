@@ -57,38 +57,109 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .lock-icon { font-size: 0.95rem; }
 .menu-hint, .info-card, .content-card { padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.06); }
 .battle-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.monster-card { padding: 18px; border-radius: 20px; background: rgba(255,255,255,0.07); }
-.monster-label { margin: 0 0 4px; color: #7dd3fc; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2rem; }
-.type-pill { display: inline-flex; margin: 4px 0 0; padding: 4px 8px; border-radius: 999px; background: rgba(125,211,252,0.18); color: #7dd3fc; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.12rem; }
-.monster-emoji { font-size: 2.4rem; margin: 12px 0; }
-.hp-bar { width: 100%; height: 10px; background: rgba(255,255,255,0.15); border-radius: 999px; overflow: hidden; }
-.hp-fill { height: 100%; border-radius: 999px; }
-.hp-fill.player { background: linear-gradient(90deg, #34d399, #22c55e); }
-.hp-fill.enemy { background: linear-gradient(90deg, #fb923c, #f43f5e); }
-/* Cards carrying a --type-color (the opponent box, and the player box which is
-   tinted to the opponent's type) recolor as one unit — background, border,
-   name, label, type pill, icon glow, hp number, and hp fill — using
-   getTypeColor(). Protean/type changes recolor the box instantly. */
+/* ── Battle info boxes (Opponent / YOU) — solid "game HUD" panels ── */
+.monster-card {
+  /* angled game corners + layered shadow give the box depth off the background */
+  padding: 12px 14px 14px;
+  border-radius: 5px 16px 5px 16px;
+  background: linear-gradient(180deg, rgba(14,19,40,0.97), rgba(7,10,22,0.97));
+  border: 1px solid rgba(255,255,255,0.16);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 0 0 1px rgba(0,0,0,0.35),
+    0 12px 26px rgba(0,0,0,0.5);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "label  label"
+    "name   type"
+    "hpbar  hpbar"
+    "hptext hptext";
+  gap: 7px 10px;
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+}
+.monster-label {
+  grid-area: label;
+  margin: 0;
+  padding-bottom: 5px;
+  color: #cbd5e1;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.26rem;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.monster-card h3 {
+  grid-area: name;
+  align-self: center;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.02rem;
+  text-transform: uppercase;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+.type-pill {
+  grid-area: type;
+  align-self: center;
+  display: inline-flex;
+  margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  color: #7dd3fc;
+  background: rgba(125,211,252,0.16);
+}
+.hp-bar {
+  grid-area: hpbar;
+  width: 100%;
+  height: 14px;
+  background: linear-gradient(180deg, #0a0e1c, #181f33);
+  border: 1px solid rgba(0,0,0,0.6);
+  border-radius: 999px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.65);
+}
+.hp-fill {
+  height: 100%;
+  border-radius: 999px;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.35);
+  transition: width 0.4s ease;
+}
+.hp-fill.player { background: linear-gradient(180deg, #6ee7b7, #16a34a); }
+.hp-fill.enemy { background: linear-gradient(180deg, #fda4af, #e11d48); }
+/* Type-tinted recolor: border, glow, panel wash, and the type badge take the
+   creature's type color (--type-color from getTypeColor()). HP keeps the
+   intuitive player=green / enemy=red convention. */
 .monster-card.type-tinted {
-  background: color-mix(in srgb, var(--type-color, #7dd3fc) 16%, rgba(255,255,255,0.07));
-  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 55%, transparent);
-  box-shadow: 0 0 24px color-mix(in srgb, var(--type-color, #7dd3fc) 30%, transparent);
+  border-color: color-mix(in srgb, var(--type-color, #7dd3fc) 70%, transparent);
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--type-color, #7dd3fc) 22%, rgba(13,18,36,0.97)),
+    color-mix(in srgb, var(--type-color, #7dd3fc) 8%, rgba(7,10,22,0.97)));
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    0 0 22px color-mix(in srgb, var(--type-color, #7dd3fc) 30%, transparent),
+    0 12px 26px rgba(0,0,0,0.5);
 }
-.monster-card.type-tinted h3,
-.monster-card.type-tinted .monster-label,
-.monster-card.type-tinted .hp-text { color: var(--type-color, #7dd3fc); }
 .monster-card.type-tinted .type-pill {
-  color: var(--type-color, #7dd3fc);
-  background: color-mix(in srgb, var(--type-color, #7dd3fc) 22%, transparent);
-  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 45%, transparent);
+  color: #0b0f1e;
+  background: var(--type-color, #7dd3fc);
+  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 55%, #ffffff);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
 }
-.monster-card.type-tinted .monster-emoji {
-  filter: drop-shadow(0 0 10px color-mix(in srgb, var(--type-color, #7dd3fc) 60%, transparent));
+.hp-text {
+  grid-area: hptext;
+  margin: 0;
+  text-align: right;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05rem;
+  font-variant-numeric: tabular-nums;
+  color: #e2e8f0;
 }
-.monster-card.type-tinted .hp-fill {
-  background: linear-gradient(90deg, var(--type-color, #7dd3fc), color-mix(in srgb, var(--type-color, #7dd3fc) 55%, #ffffff));
-}
-.hp-text { margin: 8px 0 0; }
 .school-status { margin-top: 10px; color: #d7e3f7; }
 .battle-log { padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.06); min-height: 56px; }
 .battle-menu { display: flex; flex-direction: column; gap: 12px; }
@@ -136,7 +207,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .move-card:focus-visible .move-tooltip { opacity: 1; }
 .contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
 .contact-links a { color: #7dd3fc; text-decoration: none; }
-.result-overlay { position: absolute; inset: 0; background: rgba(3,7,18,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border-radius: 24px; padding: 24px; }
+.result-overlay { position: absolute; inset: 0; z-index: 20; background: rgba(3,7,18,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border-radius: 24px; padding: 24px; }
 .result-overlay .result-tip { margin: 4px 0 8px; max-width: 32ch; color: #d7e3f7; font-size: 0.95rem; }
 .result-overlay .result-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 .result-overlay .result-buttons .menu-button { min-width: 140px; }
@@ -190,3 +261,95 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 }
 .type-chart-trigger:hover .type-chart-popover,
 .type-chart-trigger:focus-visible .type-chart-popover { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+/* ---- Pokémon-style battle scene ---- */
+/* The field carries the background image; sprites and info boxes are absolutely
+   positioned over it so they land on the platforms and the UI corners. */
+.battle-field {
+  position: relative;
+  width: min(94%, 1200px);
+  margin: 0 auto;
+  /* Clip sprites (player/enemy) to the battle background: any part of a sprite
+     that extends past the field is hidden instead of spilling onto the page. */
+  overflow: hidden;
+  border-radius: 18px; /* match .battle-bg so the clip follows the rounded corners */
+}
+.battle-bg {
+  display: block;
+  width: 100%;
+  height: auto;
+  image-rendering: pixelated; /* keep the small 344x192 art crisp when upscaled */
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+.sprite {
+  position: absolute;
+  image-rendering: pixelated;
+  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.5));
+  transform-origin: bottom center;
+  pointer-events: none;
+  z-index: 3;
+}
+.sprite-enemy {
+  width: 35%;
+  top: 0%;
+  right: 7%;
+  animation: sprite-bob 2.4s ease-in-out infinite;
+}
+.sprite-player {
+  width: 65%;
+  bottom: -50%;
+  left: -10%;
+  animation: sprite-bob 2.8s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+@keyframes sprite-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+/* Momentary shake when the sprite's HP drops. */
+.sprite.flinch { animation: sprite-flinch 0.34s ease; }
+@keyframes sprite-flinch {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+/* Fade + sink when defeated (hp hits 0). */
+.sprite.fainted {
+  animation: none;
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+/* The monster cards double as the Pokémon-style info boxes, pinned to the two
+   corners of the background (enemy top-left, you bottom-right). */
+.info-box {
+  position: absolute;
+  z-index: 4;
+  width: 42%;
+  max-width: 300px;
+}
+.info-enemy { top: 3%; left: 3%; }
+.info-player { bottom: 3%; right: 3%; }
+/* Bottom control bar: battle text on the left, action buttons on the right. */
+.battle-controls {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+  width: min(94%, 1200px); /* match .battle-field so the bottom bar aligns with the battle art */
+  margin: 0 auto;
+}
+/* 50/50 split: battle text takes one half, the action buttons the other half,
+   so both align flush with the (same-width) .battle-field above. */
+.battle-controls .battle-log { flex: 1 1 0; }
+.battle-controls .battle-menu { flex: 1 1 0; min-width: 264px; }
+@media (max-width: 780px) {
+  .battle-controls { flex-direction: column; }
+  .battle-controls .battle-menu { min-width: 0; }
+  .sprite-enemy { width: 42%; }
+  .sprite-player { width: 36%; }
+  .info-box { width: 46%; }
+}

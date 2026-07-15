@@ -1,13 +1,13 @@
 {
   ".claude/settings.json": {
-    "mtime": 1784118294.5583336,
-    "ast_hash": "fec31362e5a2d8bc433bdd4f7ccac173",
-    "semantic_hash": "fec31362e5a2d8bc433bdd4f7ccac173"
+    "mtime": 1783945798.3172429,
+    "ast_hash": "4be2b5b14d326275030d14ae45ca84ac",
+    "semantic_hash": "4be2b5b14d326275030d14ae45ca84ac"
   },
   ".claude/settings.local.json": {
-    "mtime": 1784118437.450143,
-    "ast_hash": "0646af3a637bdd7beac415c730bd7011",
-    "semantic_hash": "0646af3a637bdd7beac415c730bd7011"
+    "mtime": 1784018699.6780372,
+    "ast_hash": "d8a021f6e5b26f31e10df9467c29d1f5",
+    "semantic_hash": ""
   },
   "eslint.config.js": {
     "mtime": 1783585617.0222971,
@@ -20,9 +20,9 @@
     "semantic_hash": "5c3775f51738e5eedf5b796579ca0059"
   },
   "src/App.jsx": {
-    "mtime": 1784048497.1201174,
-    "ast_hash": "2bfa436631cd8872534dc4ef396a6436",
-    "semantic_hash": "2bfa436631cd8872534dc4ef396a6436"
+    "mtime": 1784031940.3109305,
+    "ast_hash": "c06fd4ad639b419c08483d17607109e8",
+    "semantic_hash": ""
   },
   "src/main.jsx": {
     "mtime": 1783585561.6033144,
@@ -30,9 +30,9 @@
     "semantic_hash": "e13723e2574429d9a6d849727e3ff695"
   },
   "vite.config.js": {
-    "mtime": 1784036601.5599236,
-    "ast_hash": "79a07cef1f77691bf7ce02045af8a598",
-    "semantic_hash": "79a07cef1f77691bf7ce02045af8a598"
+    "mtime": 1783585561.5545979,
+    "ast_hash": "88439104b3c207f17d33ef3160e3b080",
+    "semantic_hash": "88439104b3c207f17d33ef3160e3b080"
   },
   "public/audio/Boss Select.mp3": {
     "mtime": 1783607046.26908,
@@ -237,66 +237,41 @@
   "public/audio/Pokemon Black and White - N Final Battle Music.mp3": {
     "mtime": 1783608526.5095234,
     "ast_hash": "61461b0af1ddd502444fccc075a991ae",
-    "semantic_hash": "61461b0af1ddd502444fccc075a991ae"
+    "semantic_hash": ""
   },
   "public/audio/Pokemon Sun and Moon - Rival Gladion Battle Music.mp3": {
     "mtime": 1783608171.170674,
     "ast_hash": "11c87aac364c83011dbe5ee7a1264c50",
-    "semantic_hash": "11c87aac364c83011dbe5ee7a1264c50"
+    "semantic_hash": ""
   },
   "draw_chart.py": {
     "mtime": 1784007077.3825166,
     "ast_hash": "8f9baaf8844c5bad5dfba86bccc61068",
-    "semantic_hash": "8f9baaf8844c5bad5dfba86bccc61068"
+    "semantic_hash": ""
   },
   "render_current.py": {
     "mtime": 1784006864.3477864,
     "ast_hash": "8d9f6844bc36d71b59e38ccc458e92e9",
-    "semantic_hash": "8d9f6844bc36d71b59e38ccc458e92e9"
+    "semantic_hash": ""
   },
   "public/audio/Question.mp3": {
     "mtime": 1784027298.3868084,
     "ast_hash": "8ed4d47e68631e04506d676737990917",
-    "semantic_hash": "8ed4d47e68631e04506d676737990917"
+    "semantic_hash": ""
   },
   "public/audio/answer correct.mp3": {
     "mtime": 1784017793.279506,
     "ast_hash": "1a035a36ff93eac3dd7004cb1b1a649e",
-    "semantic_hash": "1a035a36ff93eac3dd7004cb1b1a649e"
+    "semantic_hash": ""
   },
   "public/audio/answer wrong.mp3": {
-    "mtime": 1784036163.6042805,
-    "ast_hash": "bb2656955895c7b8a80b49c2d7430e53",
-    "semantic_hash": "bb2656955895c7b8a80b49c2d7430e53"
+    "mtime": 1784017868.8794808,
+    "ast_hash": "e2b4fe6014b59b6028f895eb176a6045",
+    "semantic_hash": ""
   },
   "public/audio/Skip.mp3": {
     "mtime": 1783605709.6457047,
     "ast_hash": "dd87f79c06ec90514a53c2ba3174509d",
-    "semantic_hash": "dd87f79c06ec90514a53c2ba3174509d"
-  },
-  "public/Battle Backgrounds/Yhwach Background.png": {
-    "mtime": 1784046430.469945,
-    "ast_hash": "3047447963550988d37e5ec0144bb796",
-    "semantic_hash": "3047447963550988d37e5ec0144bb796"
-  },
-  "public/Characters/User Character Male.png": {
-    "mtime": 1784043573.402011,
-    "ast_hash": "bda551197976332f55ec0faa4955ce52",
-    "semantic_hash": "bda551197976332f55ec0faa4955ce52"
-  },
-  "public/Characters/Yhwach Boss.png": {
-    "mtime": 1784042805.7354352,
-    "ast_hash": "90263fb52b4354e507263f5f220526f6",
-    "semantic_hash": "90263fb52b4354e507263f5f220526f6"
-  },
-  "test.json": {
-    "mtime": 1784117520.8445823,
-    "ast_hash": "30ccf37249d0cdb20fd6ded01abc72c5",
-    "semantic_hash": "30ccf37249d0cdb20fd6ded01abc72c5"
-  },
-  "public/Reference/pokemon battle background 1.jpg": {
-    "mtime": 1784045400.9520273,
-    "ast_hash": "80babdd7b66791d9689571f84fb00216",
-    "semantic_hash": "80babdd7b66791d9689571f84fb00216"
+    "semantic_hash": ""
   }
 }

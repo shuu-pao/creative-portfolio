@@ -31,6 +31,21 @@ const battleThemes = {
   school: 'Pokemon Black and White - N Final Battle Music.mp3',    // Dr. Skoo -> Pokémon Black & White - N Final Battle
 }
 
+// Battle art, keyed by boss `mode`. For now every boss reuses the Yhwach assets
+// (the "Yhwach Boss.png" sprite belongs to the SCHOOL SYSTEM fight). This map is
+// where per-boss backgrounds + opponent sprites get swapped in later.
+const BOSS_ASSETS = {
+  hollow: {
+    background: '/Battle Backgrounds/Yhwach Background.png',
+    opponentSprite: '/Characters/Yhwach Boss.png',
+  },
+  school: {
+    background: '/Battle Backgrounds/Yhwach Background.png',
+    opponentSprite: '/Characters/Yhwach Boss.png', // SCHOOL SYSTEM uses the Yhwach Boss sprite
+  },
+}
+const PLAYER_SPRITE = '/Characters/User Character Male.png'
+
 const aboutText = [
   'Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
   'Skilled in configuring agent actions, Flow logic, and Agent Instructions to deliver scalable, reliable AI-driven support systems.',
@@ -340,6 +355,18 @@ function App() {
   const [characterName, setCharacterName] = useState('')
   const [pendingBossId, setPendingBossId] = useState(null)
   const [nameInput, setNameInput] = useState('')
+  // Sprite hit/defeat feedback. `flinch` momentarily shakes a sprite when its HP
+  // drops; `fainted` (derived from hp<=0 in the JSX) fades it out on defeat.
+  const [flinch, setFlinch] = useState({ player: false, enemy: false })
+  const flinchTimers = useRef({ player: null, enemy: null })
+  const prevHpRef = useRef({ player: null, enemy: null })
+  function triggerFlinch(side) {
+    setFlinch((f) => ({ ...f, [side]: true }))
+    if (flinchTimers.current[side]) clearTimeout(flinchTimers.current[side])
+    flinchTimers.current[side] = setTimeout(() => {
+      setFlinch((f) => ({ ...f, [side]: false }))
+    }, 340)
+  }
 
   // For typewriter effect
   const [displayedBattleText, setDisplayedBattleText] = useState('')
@@ -546,6 +573,17 @@ function App() {
       }
     }
   }, [battleState?.battleText])
+
+  // Sprite flinch: when a monster's HP decreases, briefly shake its sprite.
+  useEffect(() => {
+    if (!battleState) return
+    const prev = prevHpRef.current
+    const curP = battleState.player.hp
+    const curE = battleState.enemy.hp
+    if (prev.player !== null && curP < prev.player) triggerFlinch('player')
+    if (prev.enemy !== null && curE < prev.enemy) triggerFlinch('enemy')
+    prevHpRef.current = { player: curP, enemy: curE }
+  }, [battleState?.player.hp, battleState?.enemy.hp])
 
   function handleButtonHover() {
     playSoundEffect('hover-button')
@@ -1152,6 +1190,10 @@ function App() {
     : menuPlaylist[menuTrackIndex]?.file
   const nowPlayingName = nowPlayingFile ? nowPlayingFile.replace(/\.mp3$/i, '') : ''
 
+  // Battle art is selected per boss so future fights can swap in their own
+  // background + opponent sprite without touching the render code.
+  const assets = BOSS_ASSETS[battleState?.mode] || BOSS_ASSETS.school
+
   // The move grid depends on the active battle. For the SCHOOL SYSTEM fight the
   // player's moves are either the four ATTEND CLASS buttons (before the first
   // subject is chosen) or the four answer options of the current question.
@@ -1308,29 +1350,39 @@ function App() {
               </div>
             </div>
           )}
-          <div className="battle-stage">
-            <article className="monster-card type-tinted" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
-              <p className="monster-label">You</p>
-              <h3>{battleState.player.displayName}</h3>
-              <p className="type-pill">Type: {battleState.player.type}</p>
-              <div className="monster-emoji">🧑‍💻</div>
-              <div className="hp-bar"><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
-              <p className="hp-text">HP {battleState.player.hp}/{battleState.player.maxHp}</p>
-            </article>
-            <article className="monster-card opponent type-tinted" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
+          <div className="battle-field">
+            <img className="battle-bg" src={assets.background} alt="" />
+            <img
+              className={`sprite sprite-enemy ${flinch.enemy ? 'flinch' : ''} ${battleState.enemy.hp <= 0 ? 'fainted' : ''}`}
+              src={assets.opponentSprite}
+              alt={battleState.enemy.displayName}
+            />
+            <img
+              className={`sprite sprite-player ${flinch.player ? 'flinch' : ''} ${battleState.player.hp <= 0 ? 'fainted' : ''}`}
+              src={PLAYER_SPRITE}
+              alt={battleState.player.displayName}
+            />
+            <article className="monster-card type-tinted info-box info-enemy" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
               <p className="monster-label">OPPONENT</p>
               <h3>{battleState.enemy.displayName}</h3>
               <p className="type-pill">Type: {battleState.enemy.type}</p>
-              <div className="monster-emoji">👹</div>
               <div className="hp-bar"><div className="hp-fill enemy" style={{ width: `${(battleState.enemy.hp / battleState.enemy.maxHp) * 100}%` }} /></div>
               <p className="hp-text">HP {battleState.enemy.hp}/{battleState.enemy.maxHp}</p>
             </article>
+            <article className="monster-card type-tinted info-box info-player" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
+              <p className="monster-label">You</p>
+              <h3>{battleState.player.displayName}</h3>
+              <p className="type-pill">Type: {battleState.player.type}</p>
+              <div className="hp-bar"><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
+              <p className="hp-text">HP {battleState.player.hp}/{battleState.player.maxHp}</p>
+            </article>
           </div>
-          <div className="battle-log">
-            {/* Typewriter effect for battle text - only show typed text to prevent overlap/glitching */}
-            <div className="typed-text">{typeof displayedBattleText === 'string' ? displayedBattleText : ''}</div>
-          </div>
-          <div className="battle-menu">
+          <div className="battle-controls">
+            <div className="battle-log">
+              {/* Typewriter effect for battle text - only show typed text to prevent overlap/glitching */}
+              <div className="typed-text">{typeof displayedBattleText === 'string' ? displayedBattleText : ''}</div>
+            </div>
+            <div className="battle-menu">
             {battleMenuView === 'main' && (
               <div className="menu-buttons">
                 <button type="button" className="menu-button primary" onClick={() => { handleButtonSelect(); setBattleMenuView('moves') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={handleButtonHover}>FIGHT</button>
@@ -1360,6 +1412,7 @@ function App() {
                 <button type="button" className="menu-button back" onClick={() => { handleButtonSelect(); setBattleMenuView('main') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={handleButtonHover}>BACK</button>
               </div>
             )}
+          </div>
           </div>
           {resultScreen && (
             <div className="result-overlay">
