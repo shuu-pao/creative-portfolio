@@ -3,16 +3,16 @@ import './App.css'
 
 const menuOptionsBase = [
   { id: 'battle', label: 'BATTLE', unlockText: null },
-  { id: 'about', label: 'ABOUT ME', unlockText: 'Defeat "PAOLO JANSEN ENRERA" to unlock ABOUT ME.' },
+  { id: 'about', label: 'ABOUT ME', unlockText: 'Defeat "APOSTLE: TWO" to unlock ABOUT ME.' },
   { id: 'professional', label: 'PROFESSIONAL EXPERIENCE', unlockText: 'This section is still being prepared.' },
-  { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "SCHOOL SYSTEM" to unlock EDUCATION.' },
+  { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "DR. ZANGETSU" to unlock EDUCATION.' },
   { id: 'contact', label: 'CONTACT', unlockText: null },
 ]
 
 const bossOptions = [
-  { id: 'hollow', label: 'PAOLO JANSEN ENRERA', locked: false },
+  { id: 'hollow', label: 'APOSTLE: TWO', locked: false },
   { id: 'keeper', label: 'KEEPER OF PROJECTS', locked: true },
-  { id: 'school', label: 'SCHOOL SYSTEM', locked: false },
+  { id: 'school', label: 'DR. ZANGETSU', locked: false },
 ]
 
 const menuPlaylist = [
@@ -27,21 +27,21 @@ const menuPlaylist = [
 // so spaces are safely encoded in the request URL and the file still serves
 // correctly from a static host.
 const battleThemes = {
-  hollow: 'Pokemon Sun and Moon - Rival Gladion Battle Music.mp3', // "PAOLO JANSEN ENRERA" -> Pokémon Sun & Moon - Rival Gladion
+  hollow: 'Pokemon Sun and Moon - Rival Gladion Battle Music.mp3', // "PAOLO'S APOSTLE" -> Pokémon Sun & Moon - Rival Gladion
   school: 'Pokemon Black and White - N Final Battle Music.mp3',    // Dr. Skoo -> Pokémon Black & White - N Final Battle
 }
 
 // Battle art, keyed by boss `mode`. For now every boss reuses the Yhwach assets
-// (the "Yhwach Boss.png" sprite belongs to the SCHOOL SYSTEM fight). This map is
+// (the "Yhwach Boss.png" sprite belongs to the DR. ZANGETSU fight). This map is
 // where per-boss backgrounds + opponent sprites get swapped in later.
 const BOSS_ASSETS = {
   hollow: {
-    background: '/Battle Backgrounds/Yhwach Background.png',
-    opponentSprite: '/Characters/Yhwach Boss.png',
+    background: '/Battle Backgrounds/Two Background.png',
+    opponentSprite: '/Characters/Two Boss.png',
   },
   school: {
     background: '/Battle Backgrounds/Yhwach Background.png',
-    opponentSprite: '/Characters/Yhwach Boss.png', // SCHOOL SYSTEM uses the Yhwach Boss sprite
+    opponentSprite: '/Characters/Yhwach Boss.png', // DR. ZANGETSU uses the Yhwach Boss sprite
   },
 }
 const PLAYER_SPRITE = '/Characters/User Character Male.png'
@@ -118,7 +118,7 @@ function getTypeColor(type) {
 }
 
 // ---------------------------------------------------------------------------
-// SCHOOL SYSTEM — quiz question bank
+// DR. ZANGETSU — quiz question bank
 // ---------------------------------------------------------------------------
 // Four subjects, each with 3 difficulty levels (1/2/3 == QUESTION #1/#2/#3),
 // each level with 5 questions. Every question's options are [A, B, C, "SKIP"]
@@ -242,7 +242,7 @@ function pickQuestion(subject, level, asked) {
   return { index, question: { index, text: bank[index].q, options: bank[index].options, correctIndex: bank[index].answer } }
 }
 
-// The hollow battle (vs PAOLO JANSEN ENRERA) is a Fire/Grass/Water rock-paper-
+// The hollow battle (vs PAOLO'S APOSTLE) is a Fire/Grass/Water rock-paper-
 // scissors. This draws it as three type icons with curved arrows pointing from
 // each type to the one it is strong against (Fire → Grass → Water → Fire).
 // `size` 'small' is the compact badge in the hover trigger; 'full' is the
@@ -446,8 +446,8 @@ function App() {
       setBattleState({
         mode: 'hollow',
         player: { name: playerName, displayName: playerName, hp: 100, maxHp: 100, type: 'Normal', speed: 120, trickRoomTurnsLeft: 0 },
-        enemy: { name: 'PAOLO', displayName: 'PAOLO JANSEN ENRERA', hp: 100, maxHp: 100, type: 'Normal', speed: 150, lastMove: null },
-        battleText: 'PAOLO JANSEN ENRERA stands in your way!',
+        enemy: { name: 'APOSTLE: TWO', displayName: 'APOSTLE: TWO', hp: 100, maxHp: 100, type: 'Normal', speed: 150, lastMove: null },
+        battleText: 'APOSTLE: TWO stands in your way!',
         result: null,
         isResolving: false,
         sequence: [],
@@ -458,8 +458,8 @@ function App() {
       setBattleState({
         mode: 'school',
         player: { name: playerName, displayName: playerName, hp: 100, maxHp: 100, type: 'Normal', speed: 120 },
-        enemy: { name: 'SCHOOL SYSTEM', displayName: 'SCHOOL SYSTEM', hp: 100, maxHp: 100, type: 'Normal', speed: 60 },
-        battleText: 'SCHOOL SYSTEM stands in your way!',
+        enemy: { name: 'DR. ZANGETSU', displayName: 'DR. ZANGETSU', hp: 100, maxHp: 100, type: 'Normal', speed: 60 },
+        battleText: 'DR. ZANGETSU stands in your way!',
         result: null,
         isResolving: true,
         school: {
@@ -471,7 +471,7 @@ function App() {
           activeSlot: null,
         },
         sequence: [
-          { text: `SCHOOL SYSTEM's ability BACK 2 SCHOOL has been activated.`, apply: (prev) => ({ ...prev }), sound: 'In-Battle Ability Activate' },
+          { text: `DR. ZANGETSU's ability BACK 2 SCHOOL has been activated.`, apply: (prev) => ({ ...prev }), sound: 'In-Battle Ability Activate' },
           { text: `${playerName}'s type changed into Student.`, apply: (prev) => ({ ...prev, player: { ...prev.player, type: 'Student' } }), sound: 'In-Battle Ability Activate' },
         ],
         sequenceIndex: 0,
@@ -931,7 +931,7 @@ function App() {
         if (effectiveness !== 1) {
           steps.push({ text: `It was ${getEffectivenessText(effectiveness)}${effectiveness === 2 ? '!' : '.'}`, apply: (prev) => ({ ...prev }), sound: null })
         }
-        if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: `You defeated PAOLO JANSEN ENRERA.`, apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
+        if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: `You defeated APOSTLE: TWO.`, apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
       }
 
       if (trickRoomActive) {
@@ -954,7 +954,7 @@ function App() {
       return
     }
 
-    // ----- SCHOOL SYSTEM fight: quiz mechanics -----
+    // ----- DR. ZANGETSU fight: quiz mechanics -----
     const school = battleState.school
     const playerName = battleState.player.name
     const enemyName = battleState.enemy.name
@@ -1194,7 +1194,7 @@ function App() {
   // background + opponent sprite without touching the render code.
   const assets = BOSS_ASSETS[battleState?.mode] || BOSS_ASSETS.school
 
-  // The move grid depends on the active battle. For the SCHOOL SYSTEM fight the
+  // The move grid depends on the active battle. For the DR. ZANGETSU fight the
   // player's moves are either the four ATTEND CLASS buttons (before the first
   // subject is chosen) or the four answer options of the current question.
   const battleMoves = battleState
@@ -1365,14 +1365,14 @@ function App() {
             <article className="monster-card type-tinted info-box info-enemy" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
               <p className="monster-label">OPPONENT</p>
               <h3>{battleState.enemy.displayName}</h3>
-              <p className="type-pill">Type: {battleState.enemy.type}</p>
+              <p className="type-pill">{battleState.enemy.type}</p>
               <div className="hp-bar"><div className="hp-fill enemy" style={{ width: `${(battleState.enemy.hp / battleState.enemy.maxHp) * 100}%` }} /></div>
               <p className="hp-text">HP {battleState.enemy.hp}/{battleState.enemy.maxHp}</p>
             </article>
             <article className="monster-card type-tinted info-box info-player" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
               <p className="monster-label">You</p>
               <h3>{battleState.player.displayName}</h3>
-              <p className="type-pill">Type: {battleState.player.type}</p>
+              <p className="type-pill">{battleState.player.type}</p>
               <div className="hp-bar"><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
               <p className="hp-text">HP {battleState.player.hp}/{battleState.player.maxHp}</p>
             </article>
@@ -1420,7 +1420,7 @@ function App() {
                 <>
                   <h2>Try Again?</h2>
                   {battleState.mode === 'hollow' ? (
-                    <p className="result-tip">Tip: PAOLO JANSEN ENRERA is faster than you. Find a way to reverse the speed order!</p>
+                    <p className="result-tip">Tip: APOSTLE: TWO is faster than you. Find a way to reverse the speed order!</p>
                   ) : (
                     <p className="result-tip">Tip: uhh...</p>
                   )}

@@ -293,7 +293,7 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 }
 .sprite-enemy {
   width: 35%;
-  top: 0%;
+  top: 5%;
   right: 7%;
   animation: sprite-bob 2.4s ease-in-out infinite;
 }
