@@ -1,73 +1,232 @@
-﻿body {
-  margin: 0;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e293b 45%, #111827);
-  color: white;
+/* =========================================================================
+   PortfolioMon — retro/8-bit UI system
+   Replaces soft glassmorphism with chunky NES-style frames (double border +
+   hard offset shadow, square corners), a pixel display font, blinking
+   cursors, segmented HP bars, and a CRT scanline overlay (see index.css).
+   ========================================================================= */
+
+body {
+  font-family: var(--font-body);
 }
+
 * { box-sizing: border-box; }
-.app-shell { min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 24px; position: relative; }
-.screen { width: min(100%, 1100px); border: 1px solid rgba(255,255,255,0.2); border-radius: 24px; padding: 28px; background: rgba(9,12,26,0.82); box-shadow: 0 24px 60px rgba(0,0,0,0.35); backdrop-filter: blur(16px); }
-.start-screen, .menu-screen, .boss-select-screen, .battle-screen, .content-screen { display: flex; flex-direction: column; gap: 20px; }
-.start-screen { min-height: 70vh; align-items: center; justify-content: center; text-align: center; }
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  position: relative;
+}
+
+/* ── Reusable chunky frame: light pixel border + uniform dark outline + the
+   hard offset drop (no blur). Applied to every panel for a unified look. ── */
+.screen,
+.menu-hint,
+.content-card,
+.info-card,
+.audio-controls,
+.monster-card,
+.result-overlay,
+.type-chart-popover,
+.battle-field {
+  border-radius: 0;
+  background: var(--c-panel);
+  border: 3px solid var(--c-frame);
+  box-shadow:
+    0 0 0 3px var(--c-shadow),
+    8px 8px 0 var(--c-shadow);
+}
+
+.screen {
+  position: relative;
+  width: min(100%, 1100px);
+  padding: 28px;
+}
+.start-screen, .menu-screen, .boss-select-screen, .battle-screen, .content-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.start-screen {
+  min-height: 70vh;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
 .menu-screen { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 20px; }
-.screen-label { margin: 0; font-size: 0.85rem; letter-spacing: 0.35rem; text-transform: uppercase; color: #7dd3fc; }
-h1 { margin: 0; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1; }
+
+/* ── Typography ── */
+.screen-label {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--c-cyan);
+  text-shadow: 2px 2px 0 var(--c-shadow);
+}
+h1 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4.4vw, 2.8rem);
+  line-height: 1.15;
+  letter-spacing: 0.04rem;
+  text-shadow:
+    3px 3px 0 var(--c-shadow),
+    6px 6px 0 var(--c-purple);
+}
 h2, h3, h4 { margin: 0; }
-h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
-.screen-copy, .menu-hint p, .battle-log, .page-copy { color: #d7e3f7; }
-.start-button, .menu-button, .back-button, .cancel-button, .boss-option, .menu-option, .move-card { border: none; border-radius: 16px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
-.start-button:hover, .menu-button:hover, .back-button:hover, .cancel-button:hover, .boss-option:hover, .menu-option:hover, .move-card:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.2); }
-.start-button { padding: 14px 24px; background: linear-gradient(135deg, #f97316, #ef4444); color: white; font-weight: 700; letter-spacing: 0.2rem; }
-/* Faint, non-interactive overlay prompt on the start screen. The whole start
-   screen is clickable (and any key starts), so this is intentionally styled as
-   a soft hint rather than a button. */
+h2 {
+  font-family: var(--font-display);
+  font-size: clamp(0.9rem, 2.4vw, 1.3rem);
+  line-height: 1.5;
+  text-shadow: 2px 2px 0 var(--c-shadow);
+}
+h3 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  text-shadow: 2px 2px 0 var(--c-shadow);
+}
+h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08rem; }
+
+/* Long-form copy stays in the readable pixel/terminal body font. */
+.screen-copy,
+.menu-hint p,
+.battle-log,
+.page-copy {
+  color: var(--c-ink);
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+.page-copy { margin: 0 0 12px; }
+.name-entry-screen h2 { font-family: var(--font-body); font-size: 1.7rem; text-shadow: none; line-height: 1.3; }
+
+/* ── Chunky retro buttons (shared press behavior) ── */
+.start-button, .menu-button, .back-button, .cancel-button,
+.boss-option, .menu-option, .move-card, .audio-toggle {
+  border: 3px solid var(--c-frame);
+  border-radius: 0;
+  background: var(--c-panel-2);
+  color: var(--c-ink);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.start-button:hover, .menu-button:hover, .back-button:hover, .cancel-button:hover,
+.boss-option:hover, .menu-option:hover, .move-card:hover, .audio-toggle:hover {
+  filter: brightness(1.12);
+}
+.start-button:active, .menu-button:active, .back-button:active, .cancel-button:active,
+.boss-option:active, .menu-option:active, .move-card:active, .audio-toggle:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--c-shadow);
+}
+
+.start-button {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, var(--c-orange), var(--c-red));
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+/* ── Title screen ── */
+/* Faint, non-interactive overlay prompt. The whole start screen is clickable,
+   so this is a soft hint, not a button. */
 .start-prompt-lines {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 14px;
-  width: min(420px, 80%);
+  width: min(460px, 86%);
 }
 .start-line {
   display: block;
   width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 50%, rgba(255,255,255,0) 100%);
-  animation: start-prompt-pulse 2.4s ease-in-out infinite;
+  height: 4px;
+  background: var(--c-cyan);
+  box-shadow: 0 0 8px var(--c-cyan);
 }
 .start-prompt {
   margin: 0;
   padding: 0;
-  color: rgba(255,255,255,0.55);
-  font-size: 0.95rem;
-  letter-spacing: 0.3rem;
+  color: var(--c-cyan);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   text-align: center;
   user-select: none;
-  animation: start-prompt-pulse 2.4s ease-in-out infinite;
+  animation: start-prompt-blink 1.1s step-end infinite;
 }
-@keyframes start-prompt-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.85; }
+@keyframes start-prompt-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
 }
-.menu-list, .boss-list, .move-grid { display: flex; flex-direction: column; gap: 10px; }
-.menu-option, .boss-option { padding: 14px 16px; background: rgba(255,255,255,0.08); color: white; display: flex; justify-content: space-between; align-items: center; text-align: left; }
-.menu-option.active, .boss-option.active { background: linear-gradient(135deg, #2563eb, #7c3aed); }
-.menu-option.locked, .boss-option.locked { opacity: 0.75; }
-.lock-icon { font-size: 0.95rem; }
-.menu-hint, .info-card, .content-card { padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.06); }
+
+/* ── Menu / boss option lists ── */
+.menu-list, .boss-list, .move-grid { display: flex; flex-direction: column; gap: 12px; }
+.menu-option, .boss-option {
+  position: relative;
+  padding: 14px 18px 14px 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-family: var(--font-body);
+  font-size: 1.45rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.menu-option.active, .boss-option.active {
+  background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+  border-color: var(--c-cyan);
+  text-shadow: 2px 2px 0 var(--c-shadow);
+}
+.menu-option.locked, .boss-option.locked {
+  opacity: 0.55;
+  border-color: #2c3360;
+}
+.lock-icon { font-size: 1rem; }
+
+/* Blinking ► cursor drawn as a CSS triangle so it never depends on a glyph
+   being present in the pixel font. */
+.menu-option.active::before, .boss-option.active::before {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 7px 0 7px 11px;
+  border-color: transparent transparent transparent var(--c-cyan);
+  animation: cursor-blink 1.05s step-end infinite;
+}
+@keyframes cursor-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+.menu-hint, .info-card, .content-card {
+  padding: 16px;
+  background: var(--c-panel-2);
+}
+.menu-hint h3, .info-card h4 { color: var(--c-cyan); }
+
+/* ── Battle stage ── */
 .battle-stage { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
 /* ── Battle info boxes (Opponent / YOU) — solid "game HUD" panels ── */
 .monster-card {
-  /* angled game corners + layered shadow give the box depth off the background */
   padding: 12px 14px 14px;
-  border-radius: 5px 16px 5px 16px;
-  background: linear-gradient(180deg, rgba(14,19,40,0.97), rgba(7,10,22,0.97));
-  border: 1px solid rgba(255,255,255,0.16);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    inset 0 0 0 1px rgba(0,0,0,0.35),
-    0 12px 26px rgba(0,0,0,0.5);
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-areas:
@@ -76,28 +235,30 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
     "hpbar  hpbar"
     "hptext hptext";
   gap: 7px 10px;
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: var(--font-body);
 }
 .monster-label {
   grid-area: label;
   margin: 0;
   padding-bottom: 5px;
-  color: #cbd5e1;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.26rem;
+  color: var(--c-muted);
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255,255,255,0.12);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.18);
 }
 .monster-card h3 {
   grid-area: name;
   align-self: center;
   margin: 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  letter-spacing: 0.02rem;
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
   text-transform: uppercase;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  text-shadow: 2px 2px 0 var(--c-shadow);
 }
 .type-pill {
   grid-area: type;
@@ -105,79 +266,196 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
   display: inline-flex;
   margin: 0;
   padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14rem;
+  border-radius: 0;
+  border: 2px solid currentColor;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
-  color: #7dd3fc;
-  background: rgba(125,211,252,0.16);
+  color: var(--c-cyan);
+  background: rgba(69, 230, 255, 0.14);
 }
 .hp-bar {
+  position: relative;
   grid-area: hpbar;
   width: 100%;
-  height: 14px;
-  background: linear-gradient(180deg, #0a0e1c, #181f33);
-  border: 1px solid rgba(0,0,0,0.6);
-  border-radius: 999px;
+  height: 16px;
+  background: #0a0e1c;
+  border: 2px solid var(--c-shadow);
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: inset 0 2px 4px rgba(0,0,0,0.65);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.65);
+}
+/* 8-bit segment ticks overlaid on the HP bar. */
+.hp-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.45) 0 2px,
+    transparent 2px 12px
+  );
 }
 .hp-fill {
   height: 100%;
-  border-radius: 999px;
-  box-shadow: inset 0 2px 3px rgba(255,255,255,0.35);
-  transition: width 0.4s ease;
+  border-radius: 0;
+  box-shadow: inset 0 2px 3px rgba(255, 255, 255, 0.35);
+  transition: width 0.4s steps(8, end);
 }
-.hp-fill.player { background: linear-gradient(180deg, #6ee7b7, #16a34a); }
-.hp-fill.enemy { background: linear-gradient(180deg, #fda4af, #e11d48); }
+.hp-fill.player { background: linear-gradient(180deg, var(--c-green), #16a34a); }
+.hp-fill.enemy { background: linear-gradient(180deg, #fda4af, var(--c-red)); }
 /* Type-tinted recolor: border, glow, panel wash, and the type badge take the
-   creature's type color (--type-color from getTypeColor()). HP keeps the
-   intuitive player=green / enemy=red convention. */
+   creature's type color (--type-color from getTypeColor()). */
 .monster-card.type-tinted {
-  border-color: color-mix(in srgb, var(--type-color, #7dd3fc) 70%, transparent);
-  background: linear-gradient(180deg,
-    color-mix(in srgb, var(--type-color, #7dd3fc) 22%, rgba(13,18,36,0.97)),
-    color-mix(in srgb, var(--type-color, #7dd3fc) 8%, rgba(7,10,22,0.97)));
+  border-color: var(--type-color, var(--c-cyan));
+  background: color-mix(in srgb, var(--type-color, var(--c-cyan)) 24%, var(--c-panel));
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.08),
-    0 0 22px color-mix(in srgb, var(--type-color, #7dd3fc) 30%, transparent),
-    0 12px 26px rgba(0,0,0,0.5);
+    0 0 0 3px var(--c-shadow),
+    0 0 16px color-mix(in srgb, var(--type-color, var(--c-cyan)) 45%, transparent),
+    8px 8px 0 var(--c-shadow);
 }
 .monster-card.type-tinted .type-pill {
   color: #0b0f1e;
-  background: var(--type-color, #7dd3fc);
-  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 55%, #ffffff);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  background: var(--type-color, var(--c-cyan));
+  border-color: #0b0f1e;
 }
 .hp-text {
   grid-area: hptext;
   margin: 0;
   text-align: right;
-  font-size: 0.85rem;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 0.05rem;
   font-variant-numeric: tabular-nums;
-  color: #e2e8f0;
+  color: var(--c-ink);
 }
-.school-status { margin-top: 10px; color: #d7e3f7; }
-.battle-log { padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.06); min-height: 56px; }
-.battle-menu { display: flex; flex-direction: column; gap: 12px; }
-.audio-controls { position: absolute; left: 20px; bottom: 20px; display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 10px 12px; border-radius: 18px; background: rgba(9,12,26,0.8); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); }
+.school-status { margin-top: 10px; color: var(--c-muted); font-size: 1.25rem; }
+
+.battle-log { padding: 14px 16px; min-height: 56px; }
+/* The menu keeps a FIXED height across views so the surrounding UI (the
+   battle-log panel beside it, the whole battle row) never resizes when the
+   BACK control appears after pressing FIGHT. The 2x2 grid of battle buttons
+   is what sizes the panel; the BACK button is absolutely positioned inside a
+   reserved bottom padding strip, so it adds NO layout height and the panel
+   stays constant between the main and moves/party views. */
+.battle-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+  position: relative;
+  padding-bottom: 64px;
+  min-height: 210px;
+}
+
+/* ── Audio controls ── */
+.audio-controls {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 10px 12px;
+  background: var(--c-panel);
+}
 .audio-buttons { display: flex; align-items: center; gap: 10px; }
-.now-playing { margin: 0; font-size: 0.72rem; letter-spacing: 0.04rem; color: #cbd5e1; }
-.audio-toggle { border: none; border-radius: 999px; width: 38px; height: 38px; background: rgba(255,255,255,0.12); color: white; cursor: pointer; }
-.audio-toggle.next-song { width: auto; padding: 0 10px; font-size: 0.72rem; letter-spacing: 0.08rem; text-transform: uppercase; }
-.audio-controls input[type='range'] { accent-color: #7dd3fc; cursor: pointer; }
+.now-playing {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  letter-spacing: 0.02rem;
+  color: var(--c-muted);
+}
+.audio-toggle {
+  border-radius: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--c-panel-2);
+  color: var(--c-ink);
+  font-size: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.audio-toggle.next-song {
+  width: auto;
+  padding: 0 12px;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+.audio-controls input[type='range'] { accent-color: var(--c-cyan); cursor: pointer; }
+
+/* ── Menu / battle action buttons ── */
 .menu-buttons { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.menu-button, .back-button { padding: 14px 16px; background: rgba(255,255,255,0.08); color: white; text-align: center; }
-.menu-button.primary, .back-button { background: linear-gradient(135deg, #2563eb, #7c3aed); }
+.menu-button, .back-button {
+  padding: 14px 16px;
+  font-family: var(--font-display);
+  font-size: 0.82rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  text-align: center;
+  min-height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+/* BACK is a compact "BACK" text button, absolutely positioned inside the
+   battle-menu's reserved bottom padding strip so it adds NO layout height.
+   This is what keeps the panel (and the battle-log beside it) from resizing
+   when BACK appears after pressing FIGHT. Small in width, centered. */
+.menu-button.back {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  flex: 0 0 auto;
+  width: auto;
+  min-height: 0;
+  padding: 10px 24px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1rem;
+}
+.menu-button.primary, .back-button {
+  background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+  border-color: var(--c-frame);
+}
 .move-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-.move-card { padding: 14px; display: flex; flex-direction: column; gap: 4px; text-align: left; position: relative; background: color-mix(in srgb, var(--type-color, #7dd3fc) 16%, rgba(255,255,255,0.07)); border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 45%, transparent); color: white; }
-.move-card span { color: var(--type-color, #7dd3fc); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.16rem; }
-/* Hover tooltip that points at its move. `.move-card .move-tooltip` (higher
-   specificity than `.move-card span`) overrides the inherited uppercase/type
-   styling so the description reads as normal sentence text. */
+.move-card {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  min-height: 64px;
+  text-align: left;
+  position: relative;
+  background: color-mix(in srgb, var(--type-color, var(--c-cyan)) 18%, var(--c-panel-2));
+  border: 3px solid color-mix(in srgb, var(--type-color, var(--c-cyan)) 60%, transparent);
+  color: var(--c-ink);
+}
+.move-card strong {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+  line-height: 1;
+}
+.move-card span {
+  font-family: var(--font-display);
+  color: var(--type-color, var(--c-cyan));
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12rem;
+}
+/* Hover tooltip that points at its move. */
 .move-card .move-tooltip {
   position: absolute;
   bottom: calc(100% + 10px);
@@ -186,18 +464,19 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
   width: max-content;
   max-width: 240px;
   padding: 8px 12px;
-  border-radius: 12px;
-  background: rgba(9,12,26,0.96);
-  border: 1px solid color-mix(in srgb, var(--type-color, #7dd3fc) 60%, transparent);
-  color: #d7e3f7;
-  font-size: 0.8rem;
+  border-radius: 0;
+  border: 3px solid color-mix(in srgb, var(--type-color, var(--c-cyan)) 70%, transparent);
+  background: var(--c-panel);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.01rem;
   text-transform: none;
   text-align: center;
   white-space: normal;
   line-height: 1.35;
-  box-shadow: 0 10px 24px rgba(0,0,0,0.4);
+  box-shadow: 6px 6px 0 var(--c-shadow);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.15s ease;
@@ -205,29 +484,132 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 }
 .move-card:hover .move-tooltip,
 .move-card:focus-visible .move-tooltip { opacity: 1; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 10px; }
-.contact-links a { color: #7dd3fc; text-decoration: none; }
-.result-overlay { position: absolute; inset: 0; z-index: 20; background: rgba(3,7,18,0.82); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; text-align: center; border-radius: 24px; padding: 24px; }
-.result-overlay .result-tip { margin: 4px 0 8px; max-width: 32ch; color: #d7e3f7; font-size: 0.95rem; }
+
+.contact-links { display: flex; flex-wrap: wrap; gap: 12px; }
+.contact-links a {
+  color: var(--c-cyan);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  padding: 12px 16px;
+  border: 3px solid var(--c-cyan);
+  background: var(--c-panel-2);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.contact-links a:hover { filter: brightness(1.15); }
+.contact-links a:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+
+/* ── Result overlay ── */
+.result-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  background: rgba(3, 7, 18, 0.92);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  border-radius: 0;
+  padding: 24px;
+  border: 3px solid var(--c-frame);
+  box-shadow:
+    0 0 0 3px var(--c-shadow),
+    8px 8px 0 var(--c-shadow);
+}
+.result-overlay .result-tip {
+  margin: 4px 0 8px;
+  max-width: 34ch;
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--c-muted);
+}
 .result-overlay .result-buttons { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
 .result-overlay .result-buttons .menu-button { min-width: 140px; }
-.page-copy { line-height: 1.7; margin: 0 0 12px; }
-.name-entry-screen { display: flex; flex-direction: column; gap: 20px; align-items: center; justify-content: center; text-align: center; min-height: 70vh; }
-.name-entry-form { display: flex; flex-direction: column; gap: 16px; align-items: center; width: min(100%, 420px); }
-.name-input { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(255,255,255,0.25); background: rgba(255,255,255,0.08); color: white; font-size: 1rem; letter-spacing: 0.08rem; outline: none; }
-.name-input:focus { border-color: #7dd3fc; box-shadow: 0 0 0 3px rgba(125,211,252,0.25); }
-.name-input::placeholder { color: #94a3b8; }
-.name-entry-form .start-button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
-.name-entry-actions { display: flex; flex-direction: row; justify-content: space-between; gap: 16px; width: 100%; }
-.cancel-button { padding: 14px 24px; background: rgba(255,255,255,0.08); color: #cbd5e1; font-weight: 700; letter-spacing: 0.2rem; cursor: pointer; }
-.cancel-button:hover { background: rgba(239,68,68,0.18); color: #fecaca; }
-.name-entry-actions .start-button, .name-entry-actions .cancel-button { flex: 1; }
-.move-card:disabled { opacity: 0.45; cursor: not-allowed; }
-@media (max-width: 780px) { .menu-screen, .battle-stage, .move-grid, .menu-buttons { grid-template-columns: 1fr; display: grid; } .screen { padding: 20px; } }
 
-/* Hover/focus trigger that reveals the hollow battle's Fire/Grass/Water type
-   chart. The small chart doubles as the always-visible badge; the larger
-   labeled chart lives in the popover and appears on hover or keyboard focus. */
+/* ── Name entry ── */
+.name-entry-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+}
+.name-entry-form { display: flex; flex-direction: column; gap: 16px; align-items: center; width: min(100%, 420px); }
+.name-input {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 0;
+  border: 3px solid var(--c-frame);
+  background: var(--c-panel-2);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  outline: none;
+  box-shadow: 4px 4px 0 var(--c-shadow);
+}
+.name-input:focus {
+  border-color: var(--c-cyan);
+  box-shadow: 0 0 0 3px var(--c-cyan), 4px 4px 0 var(--c-shadow);
+}
+.name-input::placeholder { color: var(--c-muted); text-transform: none; letter-spacing: 0.02rem; }
+.name-entry-form .start-button:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0 var(--c-shadow); filter: none; }
+.name-entry-actions { display: flex; flex-direction: row; justify-content: space-between; gap: 16px; width: 100%; }
+.cancel-button {
+  padding: 14px 24px;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.cancel-button:hover { background: color-mix(in srgb, var(--c-red) 30%, var(--c-panel-2)); color: #fecaca; }
+.name-entry-actions .start-button, .name-entry-actions .cancel-button { flex: 1; }
+
+/* ── Gender picker (below the name input) ── */
+.gender-picker { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
+.gender-prompt {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.gender-options { display: flex; gap: 18px; }
+.gender-button {
+  width: 72px;
+  height: 72px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  border: 3px solid var(--c-frame);
+  background: var(--c-panel-2);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease, border-color 0.12s ease;
+}
+.gender-button:hover { filter: brightness(1.12); }
+.gender-button:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+.gender-button .gender-icon { width: 100%; height: 100%; }
+/* Male reads cyan/blue, female reads magenta/pink so the two are distinct. */
+.gender-button .gender-icon.male { color: var(--c-cyan); }
+.gender-button .gender-icon.female { color: #ff5fa2; }
+.gender-button.selected { border-color: var(--c-yellow); box-shadow: 0 0 0 3px var(--c-yellow), 4px 4px 0 var(--c-shadow); }
+.gender-button:focus-visible { outline: 3px solid var(--c-yellow); outline-offset: 3px; }
+.move-card:disabled { opacity: 0.45; cursor: not-allowed; transform: none; box-shadow: 4px 4px 0 var(--c-shadow); }
+
+/* ── Type chart badge + popover (hollow battle) ── */
 .type-chart-trigger {
   position: relative;
   justify-self: end;
@@ -235,25 +617,31 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
   align-items: center;
   gap: 8px;
   padding: 6px 10px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 0;
+  background: var(--c-panel-2);
+  border: 3px solid var(--c-frame);
   cursor: help;
   width: max-content;
   margin-left: auto;
+  box-shadow: 4px 4px 0 var(--c-shadow);
 }
-.type-chart-trigger:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 2px; }
-.type-chart-hint { font-size: 0.75rem; letter-spacing: 0.12rem; text-transform: uppercase; color: #cbd5e1; }
+.type-chart-trigger:focus-visible { outline: 3px solid var(--c-cyan); outline-offset: 2px; }
+.type-chart-hint {
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
 .type-chart-popover {
   position: absolute;
   top: calc(100% + 10px);
   right: 0;
   z-index: 60;
   padding: 16px;
-  border-radius: 18px;
-  background: rgba(9,12,26,0.96);
-  border: 1px solid rgba(255,255,255,0.18);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.5);
+  background: var(--c-panel);
+  border: 3px solid var(--c-frame);
+  box-shadow: 6px 6px 0 var(--c-shadow);
   opacity: 0;
   pointer-events: none;
   transform: translateY(-4px);
@@ -262,53 +650,104 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
 .type-chart-trigger:hover .type-chart-popover,
 .type-chart-trigger:focus-visible .type-chart-popover { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
-/* ---- Pokémon-style battle scene ---- */
-/* The field carries the background image; sprites and info boxes are absolutely
-   positioned over it so they land on the platforms and the UI corners. */
+/* Type chart matrix (hollow battle popover). Rows = attacking type, columns =
+   defending type. Green cells are super effective (2×), red are resisted (½×). */
+.type-chart-matrix {
+  display: grid;
+  grid-template-columns: auto repeat(3, 84px);
+  gap: 5px;
+  align-items: center;
+  font-family: var(--font-display);
+  min-width: 320px;
+}
+.tc-row { display: contents; }
+.tc-corner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.5rem;
+  letter-spacing: 0.04rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  white-space: nowrap;
+  padding-right: 4px;
+}
+.tc-axis-arrow {
+  width: 11px;
+  height: 11px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.tc-head-cell {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  letter-spacing: 0.01rem;
+  white-space: nowrap;
+}
+.tc-row-head {
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+  font-size: 0.5rem;
+  letter-spacing: 0.01rem;
+  white-space: nowrap;
+  padding-right: 8px;
+}
+.tc-cell {
+  text-align: center;
+  padding: 9px 0;
+  border: 2px solid var(--c-frame);
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1;
+  background: var(--c-panel-2);
+}
+.tc-strong {
+  color: #bbf7d0;
+  background: rgba(34, 197, 94, 0.22);
+  border-color: #22c55e;
+}
+.tc-weak {
+  color: #fecaca;
+  background: rgba(239, 68, 68, 0.16);
+  border-color: rgba(239, 68, 68, 0.45);
+}
+
+/* ── Pokémon-style battle scene ── */
 .battle-field {
   position: relative;
   width: min(94%, 1200px);
   margin: 0 auto;
-  /* Clip sprites (player/enemy) to the battle background: any part of a sprite
-     that extends past the field is hidden instead of spilling onto the page. */
-  overflow: hidden;
-  border-radius: 18px; /* match .battle-bg so the clip follows the rounded corners */
+  overflow: hidden; /* clip sprites to the background */
+  border-radius: 0;
 }
 .battle-bg {
   display: block;
   width: 100%;
   height: auto;
-  image-rendering: pixelated; /* keep the small 344x192 art crisp when upscaled */
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  image-rendering: pixelated;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
 }
 .sprite {
   position: absolute;
   image-rendering: pixelated;
-  filter: drop-shadow(0 8px 6px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.5));
   transform-origin: bottom center;
   pointer-events: none;
   z-index: 3;
 }
-.sprite-enemy {
-  width: 35%;
-  top: 5%;
-  right: 7%;
-  animation: sprite-bob 2.4s ease-in-out infinite;
-}
-.sprite-player {
-  width: 65%;
-  bottom: -50%;
-  left: -10%;
-  animation: sprite-bob 2.8s ease-in-out infinite;
-  animation-delay: 0.4s;
-}
+.sprite-enemy { width: 35%; top: 5%; right: 7%; animation: sprite-bob 2.4s ease-in-out infinite; }
+.sprite-player { width: 65%; bottom: -50%; left: -10%; animation: sprite-bob 2.8s ease-in-out infinite; animation-delay: 0.4s; }
 @keyframes sprite-bob {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-6px); }
 }
-/* Momentary shake when the sprite's HP drops. */
 .sprite.flinch { animation: sprite-flinch 0.34s ease; }
 @keyframes sprite-flinch {
   0% { transform: translateX(0); }
@@ -317,39 +756,59 @@ h2 { font-size: clamp(1.8rem, 3.2vw, 2.4rem); }
   75% { transform: translateX(-4px); }
   100% { transform: translateX(0); }
 }
-/* Fade + sink when defeated (hp hits 0). */
-.sprite.fainted {
-  animation: none;
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-/* The monster cards double as the Pokémon-style info boxes, pinned to the two
-   corners of the background (enemy top-left, you bottom-right). */
-.info-box {
-  position: absolute;
-  z-index: 4;
-  width: 42%;
-  max-width: 300px;
-}
+.sprite.fainted { animation: none; opacity: 0; transform: translateY(22px); transition: opacity 0.5s ease, transform 0.5s ease; }
+
+/* Both cards share a fixed, widened width so the player (left) and opponent
+   (right) boxes reach near the middle of the battle background and stay the
+   same size even when a longer name is entered (the name wraps inside). */
+.info-box { position: absolute; z-index: 4; width: 42%; max-width: 560px; }
 .info-enemy { top: 3%; left: 3%; }
 .info-player { bottom: 3%; right: 3%; }
-/* Bottom control bar: battle text on the left, action buttons on the right. */
+
 .battle-controls {
   display: flex;
   gap: 16px;
   align-items: stretch;
-  width: min(94%, 1200px); /* match .battle-field so the bottom bar aligns with the battle art */
+  width: min(94%, 1200px);
   margin: 0 auto;
+  /* Establish a stacking context above the battle-field's player card
+     (z-index: 4) so move tooltips paint on top of it instead of behind. */
+  position: relative;
+  z-index: 5;
 }
-/* 50/50 split: battle text takes one half, the action buttons the other half,
-   so both align flush with the (same-width) .battle-field above. */
 .battle-controls .battle-log { flex: 1 1 0; }
 .battle-controls .battle-menu { flex: 1 1 0; min-width: 264px; }
+
+/* ── Focus visibility (keyboard) ── */
+.menu-option:focus-visible, .boss-option:focus-visible,
+.menu-button:focus-visible, .start-button:focus-visible,
+.back-button:focus-visible, .cancel-button:focus-visible,
+.move-card:focus-visible, .audio-toggle:focus-visible, .name-input:focus-visible {
+  outline: 3px solid var(--c-yellow);
+  outline-offset: 3px;
+}
+
+/* ── Responsive ── */
 @media (max-width: 780px) {
-  .battle-controls { flex-direction: column; }
-  .battle-controls .battle-menu { min-width: 0; }
-  .sprite-enemy { width: 42%; }
-  .sprite-player { width: 36%; }
-  .info-box { width: 46%; }
+  .menu-screen, .battle-stage, .move-grid, .menu-buttons { grid-template-columns: 1fr; display: grid; }
+  /* On narrow screens the menu stacks into a single column (4 moves), so the
+     grid is taller — raise the reserved height (grid + BACK strip) to match. */
+  .battle-menu { min-height: 364px; }
+  .screen { padding: 20px; }
+  h1 { font-size: clamp(1.4rem, 7vw, 2rem); }
+  .screen-label { font-size: 0.6rem; }
+  .start-prompt { font-size: 0.6rem; }
+}
+@media (max-width: 480px) {
+  .app-shell { padding: 12px; }
+  .screen { padding: 16px; box-shadow: 0 0 0 3px var(--c-shadow), 5px 5px 0 var(--c-shadow); }
+}
+
+/* ── Reduced motion: kill shimmer, bob, pulses, blinking cursor ── */
+@media (prefers-reduced-motion: reduce) {
+  .start-prompt,
+  .menu-option.active::before,
+  .boss-option.active::before { animation: none; opacity: 1; }
+  .sprite-enemy, .sprite-player { animation: none; }
+  .hp-fill { transition: none; }
 }

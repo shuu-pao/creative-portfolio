@@ -1,0 +1,20 @@
+- main [ref=e3]:
+  - generic [ref=e50]:
+    - paragraph [ref=e51]: YOUR CHARACTER
+    - heading "Please tell us the name of your character." [level=2] [ref=e52]
+    - generic [ref=e53]:
+      - textbox "Enter character name" [active] [ref=e54]
+      - generic [ref=e55]:
+        - paragraph [ref=e56]: SELECT GENDER
+        - generic [ref=e57]:
+          - button "Male" [pressed] [ref=e58] [cursor=pointer]
+          - button "Female" [ref=e63] [cursor=pointer]
+      - generic [ref=e66]:
+        - button "CANCEL" [ref=e67] [cursor=pointer]
+        - button "START BATTLE" [disabled] [ref=e68]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Black and White OST - Driftveil City"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - button "NEXT SONG" [ref=e15] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

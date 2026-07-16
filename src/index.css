@@ -1,9 +1,34 @@
 :root {
-  font-family: Inter, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.5;
+  /* ── Retro 8-bit palette (punchy NES-ish hues) ── */
+  --c-bg: #070912;
+  --c-bg-2: #0d1024;
+  --c-panel: #161a33;
+  --c-panel-2: #1f2547;
+  --c-ink: #f4f6ff;
+  --c-muted: #9aa3c7;
+  --c-cyan: #45e6ff;
+  --c-purple: #b14aed;
+  --c-blue: #3b6bff;
+  --c-orange: #ff8a3d;
+  --c-red: #ff3b5c;
+  --c-green: #3df58a;
+  --c-yellow: #ffd23d;
+
+  /* Frame = light pixel border; shadow = hard offset drop (no blur). */
+  --c-frame: #e8ecff;
+  --c-shadow: #000000;
+
+  /* Soft accent kept for type-tint fallback. */
+  --type-color: #45e6ff;
+
+  --font-display: 'Press Start 2P', 'Courier New', monospace;
+  --font-body: 'VT323', 'Courier New', monospace;
+
+  font-family: var(--font-body);
+  line-height: 1.4;
   font-weight: 400;
-  color: #f8fafc;
-  background-color: #020617;
+  color: var(--c-ink);
+  background-color: var(--c-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -18,7 +43,37 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background: radial-gradient(circle at top, #1d4ed8 0%, #020617 55%, #030712 100%);
+  /* Flat near-black field with a faint pixel grid + corner glow. */
+  background-color: var(--c-bg);
+  background-image:
+    radial-gradient(circle at 18% 12%, rgba(69, 230, 255, 0.10), transparent 42%),
+    radial-gradient(circle at 82% 88%, rgba(177, 74, 237, 0.12), transparent 45%),
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 28px 28px, 28px 28px;
+}
+
+/* ── CRT / scanline overlay ──
+   Fixed, non-interactive, sits above everything but never blocks clicks.
+   Two layers: faint horizontal scanlines + a vignette to round the corners
+   of the "tube". Kept low-opacity so text stays legible. */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.16) 0px,
+      rgba(0, 0, 0, 0.16) 1px,
+      transparent 1px,
+      transparent 3px
+    ),
+    radial-gradient(ellipse at center, transparent 62%, rgba(0, 0, 0, 0.45) 100%);
+  mix-blend-mode: multiply;
+  opacity: 0.7;
 }
 
 button,
@@ -32,4 +87,12 @@ button {
 
 #root {
   min-height: 100vh;
+}
+
+/* Respect users who prefer less motion: kill scanline shimmer, sprite bob,
+   pulses and the blinking cursor (handled in App.css via this query). */
+@media (prefers-reduced-motion: reduce) {
+  body::after {
+    animation: none;
+  }
 }

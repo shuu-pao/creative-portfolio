@@ -1,0 +1,27 @@
+- main [ref=e3]:
+  - generic [ref=e149]:
+    - generic [ref=e150]:
+      - img "DR. ZANGETSU"
+      - img "PAOLO"
+      - article [ref=e151]:
+        - paragraph [ref=e152]: OPPONENT
+        - heading "DR. ZANGETSU" [level=3] [ref=e153]
+        - paragraph [ref=e154]: Normal
+        - paragraph [ref=e157]: HP 100/100
+      - article [ref=e158]:
+        - paragraph [ref=e159]: You
+        - heading "PAOLO" [level=3] [ref=e160]
+        - paragraph [ref=e161]: Student
+        - paragraph [ref=e164]: HP 100/100
+    - generic [ref=e165]:
+      - generic [ref=e166]: PAOLO's type changed into Student.
+      - generic [ref=e169]:
+        - button "FIGHT" [ref=e170] [cursor=pointer]
+        - button "BAG" [ref=e171] [cursor=pointer]
+        - button "MONS" [ref=e172] [cursor=pointer]
+        - button "RUN" [ref=e173] [cursor=pointer]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Black and White - N Final Battle Music"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

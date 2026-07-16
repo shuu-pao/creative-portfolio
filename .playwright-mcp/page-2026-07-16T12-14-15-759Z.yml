@@ -1,0 +1,11 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - paragraph [ref=e5]: TURN-BASED PORTFOLIO
+    - heading "PortfolioMon" [level=1] [ref=e6]
+    - paragraph [ref=e9]: PRESS ANYWHERE TO START
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Black and White OST - Driftveil City"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - button "NEXT SONG" [ref=e15] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

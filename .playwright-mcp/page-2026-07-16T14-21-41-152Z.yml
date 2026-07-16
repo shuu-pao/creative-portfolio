@@ -1,0 +1,26 @@
+- main [ref=e3]:
+  - generic [ref=e17]:
+    - generic [ref=e18]:
+      - paragraph [ref=e19]: MAIN MENU
+      - heading "Choose an option" [level=2] [ref=e20]
+      - generic [ref=e21]:
+        - button "BATTLE" [ref=e22] [cursor=pointer]
+        - button "ABOUT ME 🔒" [ref=e24] [cursor=pointer]:
+          - generic [ref=e25]: ABOUT ME
+          - generic [ref=e26]: 🔒
+        - button "PROFESSIONAL EXPERIENCE 🔒" [ref=e27] [cursor=pointer]:
+          - generic [ref=e28]: PROFESSIONAL EXPERIENCE
+          - generic [ref=e29]: 🔒
+        - button "EDUCATION 🔒" [ref=e30] [cursor=pointer]:
+          - generic [ref=e31]: EDUCATION
+          - generic [ref=e32]: 🔒
+        - button "CONTACT" [ref=e33] [cursor=pointer]
+    - complementary [ref=e35]:
+      - heading "BATTLE" [level=3] [ref=e36]
+      - paragraph [ref=e37]: Fight monsters and unlock more of the menu!
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Black and White OST - Driftveil City"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - button "NEXT SONG" [ref=e15] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

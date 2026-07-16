@@ -1,0 +1,38 @@
+- main [ref=e3]:
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - 'img "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire." [ref=e71]':
+        - generic [ref=e72]: 🔥
+        - generic [ref=e73]: 🌿
+        - generic [ref=e74]: 💧
+      - generic [ref=e77]: Type chart
+      - 'tooltip "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire."':
+        - 'img "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire."':
+          - generic: 🔥
+          - generic: 🌿
+          - generic: 💧
+    - generic [ref=e78]:
+      - 'img "APOSTLE: TWO"'
+      - img "ASH"
+      - article [ref=e79]:
+        - paragraph [ref=e80]: OPPONENT
+        - 'heading "APOSTLE: TWO" [level=3] [ref=e81]'
+        - paragraph [ref=e82]: Normal
+        - paragraph [ref=e85]: HP 100/100
+      - article [ref=e86]:
+        - paragraph [ref=e87]: You
+        - heading "ASH" [level=3] [ref=e88]
+        - paragraph [ref=e89]: Normal
+        - paragraph [ref=e92]: HP 100/100
+    - generic [ref=e93]:
+      - generic [ref=e94]: "APOSTLE: TWO stands in your way!"
+      - generic [ref=e118]:
+        - button "FIGHT" [ref=e119] [cursor=pointer]
+        - button "MONS" [ref=e120] [cursor=pointer]
+        - button "BALLS" [ref=e121] [cursor=pointer]
+        - button "RUN" [ref=e122] [cursor=pointer]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Sun and Moon - Rival Gladion Battle Music"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

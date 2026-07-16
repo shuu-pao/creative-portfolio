@@ -1,0 +1,53 @@
+- main [ref=e3]:
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - 'img "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire." [ref=e71]':
+        - generic [ref=e72]: 🔥
+        - generic [ref=e73]: 🌿
+        - generic [ref=e74]: 💧
+      - generic [ref=e77]: Type chart
+      - 'tooltip "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire."':
+        - 'img "Type chart: Fire is strong against Grass, Grass is strong against Water, Water is strong against Fire."':
+          - generic: 🔥
+          - generic: 🌿
+          - generic: 💧
+    - generic [ref=e78]:
+      - 'img "APOSTLE: TWO"'
+      - img "ASH"
+      - article [ref=e79]:
+        - paragraph [ref=e80]: OPPONENT
+        - 'heading "APOSTLE: TWO" [level=3] [ref=e81]'
+        - paragraph [ref=e82]: Normal
+        - paragraph [ref=e85]: HP 100/100
+      - article [ref=e86]:
+        - paragraph [ref=e87]: You
+        - heading "ASH" [level=3] [ref=e88]
+        - paragraph [ref=e89]: Normal
+        - paragraph [ref=e92]: HP 100/100
+    - generic [ref=e93]:
+      - generic [ref=e94]: "APOSTLE: TWO stands in your way!"
+      - generic [ref=e96]:
+        - generic [ref=e122]:
+          - button "EMBER Fire Deals minor fire damage" [ref=e123] [cursor=pointer]:
+            - strong [ref=e124]: EMBER
+            - generic [ref=e125]: Fire
+            - tooltip "Deals minor fire damage"
+          - button "WATER GUN Water Deal minor water damage" [ref=e126] [cursor=pointer]:
+            - strong [ref=e127]: WATER GUN
+            - generic [ref=e128]: Water
+            - tooltip "Deal minor water damage"
+          - button "VINE WHIP Grass Deals minor grass damage" [ref=e129] [cursor=pointer]:
+            - strong [ref=e130]: VINE WHIP
+            - generic [ref=e131]: Grass
+            - tooltip "Deals minor grass damage"
+          - button "TRICK ROOM Psychic Reverses the speed order" [ref=e132] [cursor=pointer]:
+            - strong [ref=e133]: TRICK ROOM
+            - generic [ref=e134]: Psychic
+            - tooltip "Reverses the speed order"
+        - button "Back" [ref=e135] [cursor=pointer]:
+          - generic [ref=e136]: ◄
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Sun and Moon - Rival Gladion Battle Music"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"
