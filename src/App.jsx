@@ -136,6 +136,15 @@ function App() {
     setContentView(null)
   }
 
+  // Jump straight from one content page to another (used by the ABOUT ME chat
+  // CTAs: "See the full experience", "Check out my education", "Go to contact").
+  // Stays on the content screen and just swaps the active view.
+  function handleContentNavigate(target) {
+    if (!['professional', 'education', 'contact'].includes(target)) return
+    setScreen('content')
+    setContentView(target)
+  }
+
   function handleNameCancel() {
     audio.handleButtonSelect()
     audio.playSoundEffect('esc')
@@ -273,7 +282,13 @@ function App() {
       )}
 
       {screen === 'content' && contentView && (
-        <ContentScreen contentView={contentView} onBack={handleContentBack} onHover={audio.handleButtonHover} />
+        <ContentScreen
+          contentView={contentView}
+          onBack={handleContentBack}
+          onHover={audio.handleButtonHover}
+          onSelect={audio.handleButtonSelect}
+          onNavigate={handleContentNavigate}
+        />
       )}
 
       <AudioControls

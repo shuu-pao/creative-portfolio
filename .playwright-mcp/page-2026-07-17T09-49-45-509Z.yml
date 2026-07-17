@@ -1,0 +1,26 @@
+- main [ref=f3e3]:
+  - generic [ref=f3e17]:
+    - generic [ref=f3e18]:
+      - paragraph [ref=f3e19]: MAIN MENU
+      - heading "Choose an option" [level=2] [ref=f3e20]
+      - generic [ref=f3e21]:
+        - button "BATTLE" [ref=f3e22] [cursor=pointer]
+        - button "ABOUT ME 🔒" [ref=f3e24] [cursor=pointer]:
+          - generic [ref=f3e25]: ABOUT ME
+          - generic [ref=f3e26]: 🔒
+        - button "PROFESSIONAL EXPERIENCE 🔒" [ref=f3e27] [cursor=pointer]:
+          - generic [ref=f3e28]: PROFESSIONAL EXPERIENCE
+          - generic [ref=f3e29]: 🔒
+        - button "EDUCATION 🔒" [ref=f3e30] [cursor=pointer]:
+          - generic [ref=f3e31]: EDUCATION
+          - generic [ref=f3e32]: 🔒
+        - button "CONTACT" [ref=f3e33] [cursor=pointer]
+    - complementary [ref=f3e35]:
+      - heading "LOCKED" [level=3] [ref=f3e36]
+      - paragraph [ref=f3e37]: This section is still being prepared.
+  - generic [ref=f3e11]:
+    - paragraph [ref=f3e12]: "Now playing: Pokemon Black and White OST - Driftveil City"
+    - generic [ref=f3e13]:
+      - button "🔊" [ref=f3e14] [cursor=pointer]
+      - button "NEXT SONG" [ref=f3e15] [cursor=pointer]
+      - slider "Master volume" [ref=f3e16] [cursor=pointer]: "0.5"

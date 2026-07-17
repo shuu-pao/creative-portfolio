@@ -1,0 +1,17 @@
+- main [ref=e3]:
+  - generic [ref=e38]:
+    - paragraph [ref=e39]: BOSS SELECT
+    - heading "Choose your opponent" [level=2] [ref=e40]
+    - generic [ref=e41]:
+      - button "TWO" [ref=e42] [cursor=pointer]
+      - button "KEEPER OF PROJECTS 🔒" [ref=e44] [cursor=pointer]:
+        - generic [ref=e45]: KEEPER OF PROJECTS
+        - generic [ref=e46]: 🔒
+      - button "DR. ZANGETSU" [ref=e47] [cursor=pointer]
+    - button "BACK TO MENU" [ref=e49] [cursor=pointer]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Black and White OST - Driftveil City"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - button "NEXT SONG" [ref=e15] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

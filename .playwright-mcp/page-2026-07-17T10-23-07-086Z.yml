@@ -1,0 +1,56 @@
+- main [ref=e3]:
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - 'img "Type chart: Fire, Water, and Grass." [ref=e71]'
+      - generic [ref=e75]: Type chart
+      - tooltip "Type chart. Rows (labeled ATK, pointing down) are the attacking type; columns (labeled DEF, pointing right) are the defending type. Fire beats Grass, Water beats Fire, Grass beats Water (green 2×); each type resists itself and the type it is weak to (red ½×).":
+        - img "Type chart. Rows (labeled ATK, pointing down) are the attacking type; columns (labeled DEF, pointing right) are the defending type. Fire beats Grass, Water beats Fire, Grass beats Water (green 2×); each type resists itself and the type it is weak to (red ½×).":
+          - generic:
+            - generic:
+              - generic: DEF
+              - generic: ATK
+            - generic: 🔥 Fire
+            - generic: 💧 Water
+            - generic: 🌿 Grass
+          - generic:
+            - generic: 🔥 Fire
+            - 'generic "Fire vs Fire: not very effective (½×)"': ½×
+            - 'generic "Fire vs Water: not very effective (½×)"': ½×
+            - 'generic "Fire vs Grass: super effective (2×)"': 2×
+          - generic:
+            - generic: 💧 Water
+            - 'generic "Water vs Fire: super effective (2×)"': 2×
+            - 'generic "Water vs Water: not very effective (½×)"': ½×
+            - 'generic "Water vs Grass: not very effective (½×)"': ½×
+          - generic:
+            - generic: 🌿 Grass
+            - 'generic "Grass vs Fire: not very effective (½×)"': ½×
+            - 'generic "Grass vs Water: super effective (2×)"': 2×
+            - 'generic "Grass vs Grass: not very effective (½×)"': ½×
+    - generic [ref=e76]:
+      - generic:
+        - img "TWO"
+      - generic:
+        - img "TESTER"
+      - article [ref=e77]:
+        - paragraph [ref=e78]: OPPONENT
+        - heading "TWO" [level=3] [ref=e79]
+        - paragraph [ref=e80]: Fire
+        - paragraph [ref=e83]: HP 100/100
+      - article [ref=e84]:
+        - paragraph [ref=e85]: You
+        - heading "TESTER" [level=3] [ref=e86]
+        - paragraph [ref=e87]: Normal
+        - paragraph [ref=e90]: HP 100/100
+    - generic [ref=e91]:
+      - generic [ref=e92]: TWO stands in your way!
+      - generic [ref=e94]:
+        - button "CALL REINFORCEMENTS x99" [ref=e101] [cursor=pointer]:
+          - strong [ref=e102]: CALL REINFORCEMENTS
+          - generic [ref=e103]: x99
+        - button "BACK" [ref=e104] [cursor=pointer]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Sun and Moon - Rival Gladion Battle Music"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

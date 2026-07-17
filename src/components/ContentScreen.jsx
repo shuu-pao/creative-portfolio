@@ -1,15 +1,34 @@
 import { aboutText, educationText, contactLinks } from '../data/content'
+import ChatAppAboutMe from './ChatAppAboutMe'
 
-// Portfolio content pages (About / Education / Contact). `contentView` selects
-// which; back navigation is owned by App.
-export default function ContentScreen({ contentView, onBack, onHover }) {
+// Portfolio content pages (About / Professional / Education / Contact).
+// `contentView` selects which; back navigation is owned by App.
+//
+// ABOUT ME is special: it renders the Persona 5-style chat experience, which
+// brings its own header + CLOSE control, so it replaces the standard content
+// chrome entirely. The chat's CTAs jump to other sections via `onNavigate`.
+export default function ContentScreen({ contentView, onBack, onHover, onSelect, onNavigate }) {
+  if (contentView === 'about') {
+    return (
+      <section className="screen content-screen content-screen-chat">
+        <ChatAppAboutMe onBack={onBack} onHover={onHover} onSelect={onSelect} onNavigate={onNavigate} />
+      </section>
+    )
+  }
+
   return (
     <section className="screen content-screen">
       <div className="content-header">
         <p className="screen-label">PORTFOLIO PAGE</p>
-        <h2>{contentView === 'about' ? 'About Me' : contentView === 'education' ? 'Education' : 'Contact'}</h2>
+        <h2>
+          {contentView === 'professional'
+            ? 'Professional Experience'
+            : contentView === 'education'
+              ? 'Education'
+              : 'Contact'}
+        </h2>
       </div>
-      {contentView === 'about' && (
+      {contentView === 'professional' && (
         <div className="content-card">
           {aboutText.map((paragraph) => <p key={paragraph} className="page-copy">{paragraph}</p>)}
         </div>
