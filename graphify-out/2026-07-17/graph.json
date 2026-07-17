@@ -770,7 +770,7 @@
       "label": "TYPES",
       "file_type": "code",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_typechart_types",
       "community": 16,
@@ -780,7 +780,7 @@
       "label": "EMOJI",
       "file_type": "code",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_typechart_emoji",
       "community": 16,
@@ -790,17 +790,27 @@
       "label": "COLOR",
       "file_type": "code",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L9",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_typechart_color",
       "community": 16,
       "norm_label": "color"
     },
     {
+      "label": "AxisArrow()",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "src_components_typechart_axisarrow",
+      "community": 16,
+      "norm_label": "axisarrow()"
+    },
+    {
       "label": "TypeChart()",
       "file_type": "code",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L11",
+      "source_location": "L26",
       "_origin": "ast",
       "id": "src_components_typechart_typechart",
       "community": 16,
@@ -8053,7 +8063,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_indexes",
-      "community": 79,
+      "community": 29,
       "norm_label": "indexes.md"
     },
     {
@@ -8403,7 +8413,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules",
-      "community": 34,
+      "community": 79,
       "norm_label": "security_rules.md"
     },
     {
@@ -10774,7 +10784,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L124",
+      "source_location": "L139",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_components_battlescreen_unlockedsectionlabel",
@@ -10797,7 +10807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L63",
+      "source_location": "L67",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_types_gettypecolor"
@@ -10932,7 +10942,17 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L9",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_axisarrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "src_components_typechart",
       "target": "src_components_typechart_color",
@@ -10942,7 +10962,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L8",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_typechart",
       "target": "src_components_typechart_emoji",
@@ -10952,7 +10972,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L11",
+      "source_location": "L26",
       "weight": 1.0,
       "source": "src_components_typechart",
       "target": "src_components_typechart_typechart",
@@ -10962,7 +10982,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/TypeChart.jsx",
-      "source_location": "L7",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_typechart",
       "target": "src_components_typechart_types",
@@ -11723,7 +11743,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L30",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "src_hooks_usebattle_usebattle",
       "target": "src_hooks_usetypewriter_usetypewriter"
@@ -19977,5 +19997,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "76335fa6e745c7e0f7e92cbf6b69f9635589396a"
+  "built_at_commit": "919ba9882171756eda1ba19c41170b1d6984d9bc"
 }

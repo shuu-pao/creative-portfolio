@@ -11,7 +11,7 @@ function hollowFraction(side, effectiveness) {
 }
 
 // Builds the sequence of {text, apply, sound} steps for one turn of the
-// APOSTLE: TWO fight. Pure: it only reads `battleState` and `move`, returning
+// TWO fight. Pure: it only reads `battleState` and `move`, returning
 // the steps array. The caller is responsible for dispatching them into state.
 export function buildHollowSteps(battleState, move) {
   const steps = []
@@ -23,7 +23,7 @@ export function buildHollowSteps(battleState, move) {
 
   // Protean makes the enemy take on the type of the move it uses. The move is
   // chosen up front so both apply functions share it.
-  // APOSTLE: TWO is a Fire type, so it never opens with FLAMETHROWER — its first
+  // TWO is a Fire type, so it never opens with FLAMETHROWER — its first
   // move is HYDRO PUMP or LEAF STORM. After the first turn the cycle is unchanged
   // (skip the last move, fall back to FLAMETHROWER if none remain).
   const MOVE_POOL = [
@@ -55,7 +55,7 @@ export function buildHollowSteps(battleState, move) {
     steps.push({ text: `${enemyName} used ${enemyMove.label}.`, apply: (prev) => ({ ...prev }), sound: enemyMove.id === 'hydro-pump' ? 'Hydro Pump' : enemyMove.id === 'flamethrower' ? 'Flamethrower' : 'Leaf Storm' })
     // Step 3: blank text + player HP drops + hit sound simultaneously
     const enemyHitSound = effectiveness === 2 ? 'Hit Super Effective' : effectiveness === 0.5 ? 'Hit Weak Not Very Effective' : 'Hit Normal Damage'
-    steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) } }), sound: enemyHitSound })
+    steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - damage) }, lastHit: { side: 'player', effectiveness } }), sound: enemyHitSound })
     // Step 4 (only if not neutral): effectiveness text, no sound (damage already done)
     if (effectiveness !== 1) {
       steps.push({ text: `It was ${getEffectivenessText(effectiveness)}${effectiveness === 2 ? '!' : '.'}`, apply: (prev) => ({ ...prev }), sound: null })
@@ -84,12 +84,12 @@ export function buildHollowSteps(battleState, move) {
     // Step 1: announce the move (no damage yet)
     steps.push({ text: `${battleState.player.name} used ${move.label}.`, apply: (prev) => ({ ...prev }), sound: move.id === 'ember' ? 'Ember' : move.id === 'water-gun' ? 'Water Gun' : move.id === 'vine-whip' ? 'Vine Whip' : null })
     // Step 2: blank text + opponent HP drops + hit sound simultaneously
-    steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - playerDamage) } }), sound: playerHitSound })
+    steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - playerDamage) }, lastHit: { side: 'enemy', effectiveness } }), sound: playerHitSound })
     // Step 3 (only if not neutral): effectiveness text, no sound (damage already done)
     if (effectiveness !== 1) {
       steps.push({ text: `It was ${getEffectivenessText(effectiveness)}${effectiveness === 2 ? '!' : '.'}`, apply: (prev) => ({ ...prev }), sound: null })
     }
-    if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'You defeated APOSTLE: TWO!', apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
+    if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'You defeated TWO!', apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
   }
 
   if (trickRoomActive) {

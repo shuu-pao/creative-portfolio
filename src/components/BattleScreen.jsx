@@ -13,7 +13,7 @@ function unlockedSectionLabel(section) {
 // The battle screen. `battle` is the full object returned by the useBattle hook;
 // `onHover`/`onSelect` come from the useAudio hook for button sounds.
 export default function BattleScreen({ battle, onHover, onSelect }) {
-  const { battleState, battleMenuView, setBattleMenuView, reinforcementUses, resultScreen, setResultScreen, flinch, displayedBattleText, handleBattleMove, handleUseItem, handleRun, retryBattle, goToBossSelect, goToMenu } = battle
+  const { battleState, battleMenuView, setBattleMenuView, reinforcementUses, resultScreen, setResultScreen, flinch, damageEvent, screenShake, displayedBattleText, handleBattleMove, handleUseItem, handleRun, retryBattle, goToBossSelect, goToMenu } = battle
 
   if (!battleState) return null
 
@@ -48,30 +48,44 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
           </div>
         </div>
       )}
-      <div className="battle-field">
+      <div className={`battle-field ${screenShake ? 'shake' : ''}`}>
         <img className="battle-bg" src={assets.background} alt="" />
-        <img
-          className={`sprite sprite-enemy ${flinch.enemy ? 'flinch' : ''} ${battleState.enemy.hp <= 0 ? 'fainted' : ''}`}
-          src={assets.opponentSprite}
-          alt={battleState.enemy.displayName}
-        />
-        <img
-          className={`sprite sprite-player ${flinch.player ? 'flinch' : ''} ${battleState.player.hp <= 0 ? 'fainted' : ''}`}
-          src={PLAYER_SPRITE}
-          alt={battleState.player.displayName}
-        />
+        <div className="sprite-slot sprite-slot-enemy">
+          <img
+            className={`sprite sprite-enemy ${flinch.enemy ? 'flinch' : ''} ${battleState.enemy.hp <= 0 ? 'fainted' : ''}`}
+            src={assets.opponentSprite}
+            alt={battleState.enemy.displayName}
+          />
+          {damageEvent?.side === 'enemy' && (
+            <div key={damageEvent.hitId} className={`damage-float ${damageEvent.effectiveness === 2 ? 'super' : damageEvent.effectiveness === 0.5 ? 'weak' : ''}`}>
+              -{damageEvent.amount}
+            </div>
+          )}
+        </div>
+        <div className="sprite-slot sprite-slot-player">
+          <img
+            className={`sprite sprite-player ${flinch.player ? 'flinch' : ''} ${battleState.player.hp <= 0 ? 'fainted' : ''}`}
+            src={PLAYER_SPRITE}
+            alt={battleState.player.displayName}
+          />
+          {damageEvent?.side === 'player' && (
+            <div key={damageEvent.hitId} className={`damage-float ${damageEvent.effectiveness === 2 ? 'super' : damageEvent.effectiveness === 0.5 ? 'weak' : ''}`}>
+              -{damageEvent.amount}
+            </div>
+          )}
+        </div>
         <article className="monster-card type-tinted info-box info-enemy" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
           <p className="monster-label">OPPONENT</p>
           <h3>{battleState.enemy.displayName}</h3>
           <p className="type-pill">{battleState.enemy.type}</p>
-          <div className="hp-bar"><div className="hp-fill enemy" style={{ width: `${(battleState.enemy.hp / battleState.enemy.maxHp) * 100}%` }} /></div>
+          <div className={`hp-bar ${damageEvent?.side === 'enemy' ? 'shake' : ''}`}><div className="hp-fill enemy" style={{ width: `${(battleState.enemy.hp / battleState.enemy.maxHp) * 100}%` }} /></div>
           <p className="hp-text">HP {battleState.enemy.hp}/{battleState.enemy.maxHp}</p>
         </article>
         <article className="monster-card type-tinted info-box info-player" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
           <p className="monster-label">You</p>
           <h3>{battleState.player.displayName}</h3>
           <p className="type-pill">{battleState.player.type}</p>
-          <div className="hp-bar"><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
+          <div className={`hp-bar ${damageEvent?.side === 'player' ? 'shake' : ''}`}><div className="hp-fill player" style={{ width: `${(battleState.player.hp / battleState.player.maxHp) * 100}%` }} /></div>
           <p className="hp-text">HP {battleState.player.hp}/{battleState.player.maxHp}</p>
         </article>
       </div>

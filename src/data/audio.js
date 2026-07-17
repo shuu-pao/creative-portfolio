@@ -23,4 +23,5 @@ export const soundVolumes = {
   'Hit Super Effective': 0.3,
   'Hit Weak Not Very Effective': 0.6,
   'Hit Normal Damage': 0.6,
+  Fainted: 0.6,
 }

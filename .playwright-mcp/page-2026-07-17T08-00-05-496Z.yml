@@ -1,0 +1,70 @@
+- main [ref=e3]:
+  - generic [ref=e69]:
+    - generic [ref=e70]:
+      - 'img "Type chart: Fire, Water, and Grass." [ref=e71]'
+      - generic [ref=e75]: Type chart
+      - tooltip "Type chart. Rows (labeled ATK, pointing down) are the attacking type; columns (labeled DEF, pointing right) are the defending type. Fire beats Grass, Water beats Fire, Grass beats Water (green 2×); each type resists itself and the type it is weak to (red ½×).":
+        - img "Type chart. Rows (labeled ATK, pointing down) are the attacking type; columns (labeled DEF, pointing right) are the defending type. Fire beats Grass, Water beats Fire, Grass beats Water (green 2×); each type resists itself and the type it is weak to (red ½×).":
+          - generic:
+            - generic:
+              - generic: DEF
+              - generic: ATK
+            - generic: 🔥 Fire
+            - generic: 💧 Water
+            - generic: 🌿 Grass
+          - generic:
+            - generic: 🔥 Fire
+            - 'generic "Fire vs Fire: not very effective (½×)"': ½×
+            - 'generic "Fire vs Water: not very effective (½×)"': ½×
+            - 'generic "Fire vs Grass: super effective (2×)"': 2×
+          - generic:
+            - generic: 💧 Water
+            - 'generic "Water vs Fire: super effective (2×)"': 2×
+            - 'generic "Water vs Water: not very effective (½×)"': ½×
+            - 'generic "Water vs Grass: not very effective (½×)"': ½×
+          - generic:
+            - generic: 🌿 Grass
+            - 'generic "Grass vs Fire: not very effective (½×)"': ½×
+            - 'generic "Grass vs Water: super effective (2×)"': 2×
+            - 'generic "Grass vs Grass: not very effective (½×)"': ½×
+    - generic [ref=e76]:
+      - generic:
+        - 'img "APOSTLE: TWO"'
+      - generic:
+        - img "TESTER"
+      - article [ref=e77]:
+        - paragraph [ref=e78]: OPPONENT
+        - 'heading "APOSTLE: TWO" [level=3] [ref=e79]'
+        - paragraph [ref=e80]: Fire
+        - paragraph [ref=e83]: HP 100/100
+      - article [ref=e84]:
+        - paragraph [ref=e85]: You
+        - heading "TESTER" [level=3] [ref=e86]
+        - paragraph [ref=e87]: Normal
+        - paragraph [ref=e90]: HP 100/100
+    - generic [ref=e91]:
+      - generic [ref=e92]: "APOSTLE: TWO stands in your way!"
+      - generic [ref=e94]:
+        - generic [ref=e100]:
+          - button "EMBER Fire Deals minor fire damage" [ref=e101] [cursor=pointer]:
+            - strong [ref=e102]: EMBER
+            - generic [ref=e103]: Fire
+            - tooltip "Deals minor fire damage"
+          - button "WATER GUN Water Deal minor water damage" [ref=e104] [cursor=pointer]:
+            - strong [ref=e105]: WATER GUN
+            - generic [ref=e106]: Water
+            - tooltip "Deal minor water damage"
+          - button "VINE WHIP Grass Deals minor grass damage" [ref=e107] [cursor=pointer]:
+            - strong [ref=e108]: VINE WHIP
+            - generic [ref=e109]: Grass
+            - tooltip "Deals minor grass damage"
+          - button "TRICK ROOM Psychic Reverses the speed order" [ref=e110] [cursor=pointer]:
+            - strong [ref=e111]: TRICK ROOM
+            - generic [ref=e112]: Psychic
+            - tooltip "Reverses the speed order"
+        - button "BACK" [ref=e113] [cursor=pointer]
+  - generic [ref=e11]:
+    - paragraph [ref=e12]: "Now playing: Pokemon Sun and Moon - Rival Gladion Battle Music"
+    - generic [ref=e13]:
+      - button "🔊" [ref=e14] [cursor=pointer]
+      - slider "Master volume" [ref=e16] [cursor=pointer]: "0.5"

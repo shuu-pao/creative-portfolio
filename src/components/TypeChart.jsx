@@ -1,6 +1,6 @@
 import { EFFECTIVENESS_CHART } from '../game/types'
 
-// APOSTLE: TWO is a Fire/Water/Grass rock-paper-scissors. The chart shows, for
+// TWO is a Fire/Water/Grass rock-paper-scissors. The chart shows, for
 // each attacking type (row, labeled "ATK ↓"), how effective it is against each
 // defending type (column, labeled "DEF →"). Cells show the multiplier:
 // green 2× = super effective, red ½× = resisted. This is the same cycle the

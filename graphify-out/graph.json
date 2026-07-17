@@ -10784,7 +10784,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L135",
+      "source_location": "L149",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_components_battlescreen_unlockedsectionlabel",
@@ -10807,7 +10807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L63",
+      "source_location": "L77",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_types_gettypecolor"
@@ -11743,7 +11743,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L35",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "src_hooks_usebattle_usebattle",
       "target": "src_hooks_usetypewriter_usetypewriter"
@@ -19997,5 +19997,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "76335fa6e745c7e0f7e92cbf6b69f9635589396a"
+  "built_at_commit": "919ba9882171756eda1ba19c41170b1d6984d9bc"
 }

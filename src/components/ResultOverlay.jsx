@@ -11,7 +11,7 @@ export default function ResultOverlay({ resultScreen, isHollow, sectionLabel, on
       <>
         <h2>Try Again?</h2>
         {isHollow ? (
-          <p className="result-tip">Tip: APOSTLE: TWO is faster than you. Find a way to reverse the speed order!</p>
+          <p className="result-tip">Tip: TWO is faster than you, making it hard to predict his next type. Find a way to reverse the speed order!</p>
         ) : (
           <p className="result-tip">Tip: uhh...</p>
         )}

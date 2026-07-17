@@ -31,6 +31,13 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   const [flinch, setFlinch] = useState({ player: false, enemy: false })
   const flinchTimers = useRef({ player: null, enemy: null })
   const prevHpRef = useRef({ player: null, enemy: null })
+  // Per-hit feedback derived from HP drops: `damageEvent` drives the floating
+  // damage number, `screenShake` is set for super-effective hits. `hitId`
+  // increments each hit so identical damage re-triggers the float animation.
+  const [damageEvent, setDamageEvent] = useState(null)
+  const [screenShake, setScreenShake] = useState(false)
+  const hitId = useRef(0)
+  const hitTimers = useRef({ damage: null, shake: null })
 
   const { displayed: displayedBattleText, isTyping } = useTypewriter(battleState?.battleText)
 
@@ -42,14 +49,36 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     }, 340)
   }
 
-  // Sprite flinch: when a monster's HP decreases, briefly shake its sprite.
+  // Sprite feedback: when a monster's HP decreases, shake+flash it. We also
+  // derive the damage amount from the HP delta and read lastHit.effectiveness
+  // (surfaced by the battle engines) to drive a floating number + screen shake.
   useEffect(() => {
     if (!battleState) return
     const prev = prevHpRef.current
     const curP = battleState.player.hp
     const curE = battleState.enemy.hp
-    if (prev.player !== null && curP < prev.player) triggerFlinch('player')
-    if (prev.enemy !== null && curE < prev.enemy) triggerFlinch('enemy')
+    const handleDrop = (side) => {
+      const prevHp = side === 'player' ? prev.player : prev.enemy
+      const curHp = side === 'player' ? curP : curE
+      const amount = prevHp - curHp
+      if (amount <= 0) return
+      triggerFlinch(side)
+      const effectiveness = battleState.lastHit?.side === side ? battleState.lastHit.effectiveness : 1
+      hitId.current += 1
+      setDamageEvent({ side, amount, effectiveness, hitId: hitId.current })
+      if (effectiveness === 2) {
+        setScreenShake(true)
+        if (hitTimers.current.shake) clearTimeout(hitTimers.current.shake)
+        hitTimers.current.shake = setTimeout(() => setScreenShake(false), 360)
+      }
+      if (hitTimers.current.damage) clearTimeout(hitTimers.current.damage)
+      hitTimers.current.damage = setTimeout(() => setDamageEvent(null), 1100)
+      // Faint cue: play alongside the sprite's faint animation (which the JSX
+      // triggers on hp <= 0) for both the opponent and the player character.
+      if (curHp <= 0) playSoundEffect('Fainted')
+    }
+    if (prev.player !== null && curP < prev.player) handleDrop('player')
+    if (prev.enemy !== null && curE < prev.enemy) handleDrop('enemy')
     prevHpRef.current = { player: curP, enemy: curE }
   }, [battleState?.player.hp, battleState?.enemy.hp])
 
@@ -143,6 +172,9 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   // Builds and starts a battle against the given boss, addressing the player by
   // the character name they entered.
   function startBattle(bossId, playerNameArg, playerGenderArg) {
+    setDamageEvent(null)
+    setScreenShake(false)
+    hitId.current = 0
     // Re-arm the battle music gate — the theme must wait for the Boss Select cue
     // to finish before it starts (it is un-gated in the Boss Select 'ended' handler).
     setBattleMusicReady(false)
@@ -159,8 +191,8 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
       setBattleState({
         mode: 'hollow',
         player: { name: playerName, displayName: playerName, gender: playerGender, hp: 100, maxHp: 100, type: 'Normal', speed: 120, trickRoomTurnsLeft: 0 },
-        enemy: { name: 'APOSTLE: TWO', displayName: 'APOSTLE: TWO', hp: 100, maxHp: 100, type: 'Fire', speed: 150, lastMove: null },
-        battleText: 'APOSTLE: TWO stands in your way!',
+        enemy: { name: 'TWO', displayName: 'TWO', hp: 100, maxHp: 100, type: 'Fire', speed: 150, lastMove: null },
+        battleText: 'TWO stands in your way!',
         result: null,
         isResolving: false,
         sequence: [],
@@ -242,12 +274,12 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     const steps = [
       { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
       { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
-      { text: 'The CREATOR looks disappointed.', apply: (prev) => ({ ...prev }), sound: null },
-      { text: '', apply: (prev) => ({ ...prev }), sound: 'Disappointed' },
       { text: 'The CREATOR snapped his fingers!', apply: (prev) => ({ ...prev }), sound: null },
       { text: '', apply: (prev) => ({ ...prev }), sound: 'Finger Snap' },
-      { text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - 999) } }), sound: 'Hit Super Effective' },
-      { text: `${enemyName} was one shotted!`, apply: (prev) => ({ ...prev }), sound: null },
+      { text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - 999) }, lastHit: { side: 'enemy', effectiveness: 2 } }), sound: 'Hit Super Effective' },
+      { text: `${enemyName} was one-shotted!`, apply: (prev) => ({ ...prev }), sound: null },
+      { text: 'The CREATOR looks disappointed.', apply: (prev) => ({ ...prev }), sound: null },
+      { text: '', apply: (prev) => ({ ...prev }), sound: 'Disappointed' },
       { text: `The CREATOR defeated ${enemyName} for you!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection }), sound: 'You Win' },
     ]
     setReinforcementUses((n) => Math.max(0, n - 1))
@@ -304,6 +336,8 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     battleMusicReady,
     bossCuePlaying,
     flinch,
+    damageEvent,
+    screenShake,
     displayedBattleText,
     startBattle,
     playBossSelectCue,

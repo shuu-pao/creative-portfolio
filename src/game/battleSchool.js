@@ -74,7 +74,7 @@ export function buildSchoolSteps(battleState, move) {
   if (optIndex !== curQ.correctIndex) {
     const playerHpBefore = battleState.player.hp
     steps.push({ text: '', apply: (prev) => prev, sound: 'answer wrong' })
-    steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - WRONG_ANSWER_DAMAGE) } }), sound: 'Hit Super Effective' })
+    steps.push({ text: '', apply: (prev) => ({ ...prev, player: { ...prev.player, hp: Math.max(0, prev.player.hp - WRONG_ANSWER_DAMAGE) }, lastHit: { side: 'player', effectiveness: 1 } }), sound: 'Hit Super Effective' })
     steps.push({ text: 'You were wrong.', apply: (prev) => prev, sound: null })
     if (playerHpBefore - WRONG_ANSWER_DAMAGE <= 0) {
       steps.push({ text: 'You lost the battle.', apply: (prev) => ({ ...prev, result: 'loss' }), sound: 'You Lost' })
@@ -93,9 +93,10 @@ export function buildSchoolSteps(battleState, move) {
   // Correct answer.
   const dmg = SLOT_DAMAGE[slot]
   const enemyHpBefore = battleState.enemy.hp
+  const effectiveness = slot === 1 ? 0.5 : slot === 3 ? 2 : 1
   const correctHitSound = slot === 1 ? 'Hit Weak Not Very Effective' : slot === 2 ? 'Hit Normal Damage' : 'Hit Super Effective'
   steps.push({ text: '', apply: (prev) => prev, sound: 'answer correct' })
-  steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - dmg) } }), sound: correctHitSound })
+  steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - dmg) }, lastHit: { side: 'enemy', effectiveness } }), sound: correctHitSound })
   steps.push({ text: 'You were correct!', apply: (prev) => prev, sound: null })
   if (enemyHpBefore - dmg <= 0) {
     steps.push({ text: `You defeated ${enemyName}!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection: 'education' }), sound: 'You Win' })

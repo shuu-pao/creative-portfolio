@@ -1,16 +1,16 @@
-# Graph Report - creative-portfolio  (2026-07-16)
+# Graph Report - creative-portfolio  (2026-07-17)
 
 ## Corpus Check
-- 282 files · ~174,899 words
+- 282 files · ~179,938 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 961 nodes · 1015 edges · 81 communities (76 shown, 5 thin omitted)
+- 962 nodes · 1016 edges · 81 communities (76 shown, 5 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `76335fa6`
+- Built from commit: `919ba988`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -169,7 +169,7 @@ Cohesion: 0.08
 Nodes (24): Access Levels, Anti-Patterns, @auth Directive, auth.token Fields, Authorization Data Lookup, Authorization Patterns, Available Bindings, CEL Expressions (+16 more)
 
 ### Community 16 - "Type Effectiveness Logic"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (22): BattleScreen(), unlockedSectionLabel(), ResultOverlay(), COLOR, EMOJI, TypeChart(), TYPES, battleThemes (+14 more)
 
 ### Community 20 - "Firebase Crashlytics iOS Setup Guide"
@@ -209,7 +209,7 @@ Cohesion: 0.13
 Nodes (14): 1. Import and Initialize, 2. Type-Safe Data Models (Codable), 3. Basic CRUD Operations, 4. Pipeline Queries, 5. Realtime Listeners in SwiftUI (Lifecycle Best Practices), ⛔️ CRITICAL RULE: NO FirebaseFirestoreSwift ⛔️, ⛔️ CRITICAL RULE: NO INLINE INITIALIZATION ⛔️, Examples (+6 more)
 
 ### Community 29 - "Firestore Indexes Reference"
-Cohesion: 0.13
+Cohesion: 0.12
 Nodes (15): 1. High Write Rates (Sequential Values), 2. Large String/Map/Array Fields, 3. TTL Fields, Automatic vs. Manual Management, Best Practices & Exemptions, CLI Commands, Composite Indexes, Config files (+7 more)
 
 ### Community 30 - "⛔️ CRITICAL RULES & ENVIRONMENT CHECKS"
@@ -229,7 +229,7 @@ Cohesion: 0.14
 Nodes (14): 1. Generate Firestore Rules, 3. Strict Path and Relationship Scoping, 4. Secure Counter Updates, 5. **CRITICAL** Ensure Application Validity, Advanced Validation for Business Logic, Critical Constraints, Critical Directives for Secure Generation, **CRITICAL** RBAC Guidelines (+6 more)
 
 ### Community 34 - "Advanced Validation for Business Logic"
-Cohesion: 0.13
+Cohesion: 0.14
 Nodes (14): 1. Generate Firestore Rules, 3. Strict Path and Relationship Scoping, 4. Secure Counter Updates, 5. **CRITICAL** Ensure Application Validity, Advanced Validation for Business Logic, Critical Constraints, Critical Directives for Secure Generation, **CRITICAL** RBAC Guidelines (+6 more)
 
 ### Community 35 - "Cloud Functions Integration Reference"
