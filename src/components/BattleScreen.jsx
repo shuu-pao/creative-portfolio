@@ -5,6 +5,7 @@ import { BOSS_ASSETS, PLAYER_SPRITE_MALE, PLAYER_SPRITE_FEMALE, MOVE_DESCRIPTION
 import { buildBattleMoves } from '../game/battleMoves'
 
 function unlockedSectionLabel(section) {
+  if (section === 'professional') return 'PROFESSIONAL EXPERIENCE'
   if (section === 'about') return 'ABOUT ME'
   if (section === 'education') return 'EDUCATION'
   return String(section).toUpperCase()
@@ -20,8 +21,17 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
   // Battle art is selected per boss so future fights can swap in their own
   // background + opponent sprite without touching the render code.
   const assets = BOSS_ASSETS[battleState.mode] || BOSS_ASSETS.school
+  // During the ASGORE intro the opponent CARD stays GHOST's (dead) while ASGORE's
+  // sprite looms; `enemyCard` overrides what the card shows until the reveal step
+  // clears it. Falls back to the real enemy otherwise.
+  const enemyCardInfo = battleState.enemyCard ?? battleState.enemy
   const battleMoves = buildBattleMoves(battleState)
   const isHollow = battleState.mode === 'hollow'
+  // ACT menu options. On GHOST, after the 2nd TALK the option becomes JOKE;
+  // in every other fight (and before that on GHOST) it is just TALK.
+  const actOptions = battleState.mode === 'ghost' && (battleState.ghost?.talkStage ?? 0) >= 2
+    ? [{ id: 'joke', label: 'JOKE' }]
+    : [{ id: 'talk', label: 'TALK' }]
   // Player sprite follows the chosen gender so the named character is
   // represented by the matching sprite in battle.
   const PLAYER_SPRITE = battleState.player.gender === 'female' ? PLAYER_SPRITE_FEMALE : PLAYER_SPRITE_MALE
@@ -49,8 +59,14 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
         </div>
       )}
       <div className={`battle-field ${screenShake ? 'shake' : ''}`}>
-        <img className="battle-bg" src={assets.background} alt="" />
-        <div className="sprite-slot sprite-slot-enemy">
+        {/* GHOST / ASGORE have no background — render an empty, correctly-sized
+            placeholder so the battle field keeps the same dimensions. */}
+        {assets.background ? (
+          <img className="battle-bg" src={assets.background} alt="" />
+        ) : (
+          <div className="battle-bg battle-bg-empty" />
+        )}
+        <div className={`sprite-slot sprite-slot-enemy ${battleState.mode === 'asgore' ? 'sprite-slot-asgore' : ''}`}>
           <img
             className={`sprite sprite-enemy ${flinch.enemy ? 'flinch' : ''} ${battleState.enemy.hp <= 0 ? 'fainted' : ''}`}
             src={assets.opponentSprite}
@@ -74,12 +90,12 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
             </div>
           )}
         </div>
-        <article className="monster-card type-tinted info-box info-enemy" style={{ '--type-color': getTypeColor(battleState.enemy.type) }}>
+        <article className="monster-card type-tinted info-box info-enemy" style={{ '--type-color': getTypeColor(enemyCardInfo.type) }}>
           <p className="monster-label">OPPONENT</p>
-          <h3>{battleState.enemy.displayName}</h3>
-          <p className="type-pill">{battleState.enemy.type}</p>
-          <div className={`hp-bar ${damageEvent?.side === 'enemy' ? 'shake' : ''}`}><div className="hp-fill enemy" style={{ width: `${(battleState.enemy.hp / battleState.enemy.maxHp) * 100}%` }} /></div>
-          <p className="hp-text">HP {battleState.enemy.hp}/{battleState.enemy.maxHp}</p>
+          <h3>{enemyCardInfo.displayName}</h3>
+          <p className="type-pill">{enemyCardInfo.type}</p>
+          <div className={`hp-bar ${damageEvent?.side === 'enemy' ? 'shake' : ''}`}><div className="hp-fill enemy" style={{ width: `${(enemyCardInfo.hp / enemyCardInfo.maxHp) * 100}%` }} /></div>
+          <p className="hp-text">HP {enemyCardInfo.hp}/{enemyCardInfo.maxHp}</p>
         </article>
         <article className="monster-card type-tinted info-box info-player" style={{ '--type-color': getTypeColor(battleState.player.type) }}>
           <p className="monster-label">You</p>
@@ -98,9 +114,11 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
           {battleMenuView === 'main' && (
             <div className="menu-buttons">
               <button type="button" className="menu-button primary" onClick={() => { onSelect(); setBattleMenuView('moves') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>FIGHT</button>
+              <button type="button" className="menu-button" onClick={() => { onSelect(); setBattleMenuView('act') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>ACT</button>
               <button type="button" className="menu-button" onClick={() => { onSelect(); setBattleMenuView('bag') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>BAG</button>
-              <button type="button" className="menu-button" onClick={() => { onSelect(); setBattleMenuView('party') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>MONS</button>
-              <button type="button" className="menu-button" onClick={() => { onSelect(); handleRun() }} disabled={!!battleState.result} onMouseEnter={onHover}>RUN</button>
+              {!battleState.runDestroyed && (
+                <button type="button" className="menu-button" onClick={() => { onSelect(); handleRun() }} disabled={(battleState.isResolving && !battleState.introActive) || !!battleState.result} onMouseEnter={onHover}>RUN</button>
+              )}
             </div>
           )}
           {battleMenuView === 'moves' && (
@@ -119,11 +137,14 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
               <button type="button" className="menu-button back" onClick={() => { onSelect(); setBattleMenuView('main') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>BACK</button>
             </>
           )}
-          {battleMenuView === 'party' && (
+          {battleMenuView === 'act' && (
             <>
-              <div className="info-card">
-                <h4>Party</h4>
-                <ul><li>{battleState.player.name}</li></ul>
+              <div className="move-grid">
+                {actOptions.map((opt) => (
+                  <button key={opt.id} type="button" className="move-card" style={{ '--type-color': '#7dd3fc' }} onClick={() => { onSelect(); handleBattleMove({ id: opt.id, label: opt.label }) }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>
+                    <strong>{opt.label}</strong>
+                  </button>
+                ))}
               </div>
               <button type="button" className="menu-button back" onClick={() => { onSelect(); setBattleMenuView('main') }} disabled={battleState.isResolving || !!battleState.result} onMouseEnter={onHover}>BACK</button>
             </>
@@ -146,6 +167,7 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
           <ResultOverlay
             resultScreen={resultScreen}
             isHollow={isHollow}
+            mode={battleState.mode}
             sectionLabel={unlockedSectionLabel(resultScreen.section)}
             onContinue={handleContinue}
             onMainMenu={() => { onSelect(); goToMenu() }}

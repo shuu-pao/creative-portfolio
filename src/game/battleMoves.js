@@ -5,7 +5,10 @@ import { movesFor } from '../data/bosses'
 // subject is chosen) or the four answer options of the current question.
 export function buildBattleMoves(battleState) {
   if (!battleState) return []
-  if (battleState.mode === 'hollow') return movesFor('hollow')
+  // The TWO (hollow), GHOST, and ASGORE fights all share the same FIGHT move set.
+  if (battleState.mode === 'hollow' || battleState.mode === 'ghost' || battleState.mode === 'asgore') {
+    return movesFor(battleState.mode)
+  }
   if (battleState.school?.currentQuestion) {
     return battleState.school.currentQuestion.options.map((opt, i) => ({
       id: `opt-${i}`,

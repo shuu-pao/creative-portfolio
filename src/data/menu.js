@@ -2,16 +2,17 @@
 export const menuOptionsBase = [
   { id: 'battle', label: 'BATTLE', unlockText: null },
   { id: 'about', label: 'ABOUT ME', unlockText: 'Defeat "TWO" to unlock ABOUT ME.' },
-  { id: 'professional', label: 'PROFESSIONAL EXPERIENCE', unlockText: 'This section is still being prepared.' },
+  { id: 'professional', label: 'PROFESSIONAL EXPERIENCE', unlockText: 'Defeat "GHOST" to unlock PROFESSIONAL EXPERIENCE.' },
   { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "DR. ZANGETSU" to unlock EDUCATION.' },
   { id: 'contact', label: 'CONTACT', unlockText: null },
 ]
 
-// Selectable bosses. `keeper` is currently locked and has no battle configured
-// yet (see the guard in useBattle.startBattle), so selecting it is a no-op.
+// Selectable bosses. The 2nd boss (GHOST) unlocks PROFESSIONAL EXPERIENCE by
+// befriending him (ACT -> TALK -> TALK -> JOKE); killing him instead chains into
+// the ASGORE follow-up fight.
 export const bossOptions = [
   { id: 'hollow', label: 'TWO', locked: false },
-  { id: 'keeper', label: 'KEEPER OF PROJECTS', locked: true },
+  { id: 'ghost', label: 'GHOST', locked: false },
   { id: 'school', label: 'DR. ZANGETSU', locked: false },
 ]
 

@@ -20,6 +20,7 @@ export const soundVolumes = {
   Flamethrower: 0.6,
   'Hydro Pump': 0.6,
   'Leaf Storm': 0.6,
+  'Asgore Blade': 0.6,
   'Hit Super Effective': 0.3,
   'Hit Weak Not Very Effective': 0.6,
   'Hit Normal Damage': 0.6,

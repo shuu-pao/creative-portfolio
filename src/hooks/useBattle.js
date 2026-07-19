@@ -2,6 +2,9 @@ import { useEffect, useRef, useState } from 'react'
 import { useTypewriter } from './useTypewriter'
 import { buildHollowSteps } from '../game/battleHollow'
 import { buildSchoolSteps } from '../game/battleSchool'
+import { buildGhostSteps } from '../game/battleGhost'
+import { buildAsgoreSteps } from '../game/battleAsgore'
+import { buildTalkSteps } from '../game/battleTalk'
 
 // Owns the entire battle subsystem: state, the turn-sequence engine, sprite
 // feedback, and the post-battle unlock flow. `characterName` is read at call
@@ -89,7 +92,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     if (!battleState?.isResolving || !battleState.sequence?.length) return undefined
     const stepIndex = battleState.sequenceIndex ?? 0
     if (stepIndex >= battleState.sequence.length) {
-      setBattleState((prev) => (prev ? { ...prev, isResolving: false } : prev))
+      setBattleState((prev) => (prev ? { ...prev, isResolving: false, introActive: false } : prev))
       setBattleMenuView('main')
       return undefined
     }
@@ -140,7 +143,14 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     if (battleState.result === 'victory') {
       const section = battleState.unlockSection
       const newlyUnlocked = !!(section && !unlockedSections.includes(section))
-      setResultScreen({ type: 'won', newlyUnlocked, section })
+      if (battleState.directUnlock) {
+        // GHOST was befriended via JOKE: skip the "You Won!" screen and go
+        // straight to "Unlocked!" (the Unlocked SFX plays via the resultScreen
+        // effect below).
+        setResultScreen({ type: 'unlocked', section })
+      } else {
+        setResultScreen({ type: 'won', newlyUnlocked, section })
+      }
     } else {
       setResultScreen({ type: 'tryAgain' })
     }
@@ -150,15 +160,17 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     // moment. Re-running after we unlock would double-fire navigation.
   }, [battleState?.result, battleState?.isResolving])
 
-  // Persist the unlock exactly once, when the "You Won!" screen for a fight that
-  // unlocked something first becomes visible. The Unlock screen is only ever
-  // shown after this, so the section is already in state by the time it renders.
+  // Persist the unlock when a victory screen that unlocked something becomes
+  // visible. Covers both the normal "You Won!" -> "Unlocked!" flow and the
+  // GHOST-joke direct "Unlocked!" flow (resultScreen.type === 'unlocked').
   useEffect(() => {
-    if (resultScreen?.type !== 'won' || !resultScreen.newlyUnlocked) return undefined
+    if (!resultScreen) return undefined
+    if (resultScreen.type !== 'won' && resultScreen.type !== 'unlocked') return undefined
     const section = resultScreen.section
+    if (!section) return undefined
     setUnlockedSections((value) => (value.includes(section) ? value : [...value, section]))
     return undefined
-  }, [resultScreen?.type, resultScreen?.newlyUnlocked, resultScreen?.section])
+  }, [resultScreen?.type, resultScreen?.section])
 
   // Play the "Unlocked" cue exactly when the Unlock screen becomes visible —
   // it should accompany that screen, not fire inline with the battle text.
@@ -169,15 +181,47 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     return undefined
   }, [resultScreen?.type])
 
+  // When GHOST is killed, the death sequence ends by requesting a transition to
+  // the ASGORE fight. Start it fresh (trick room cleared, music ready to play
+  // immediately) so the follow-up begins cleanly. Deferred via setTimeout so the
+  // state updates happen outside the effect body (avoids cascading renders).
+  useEffect(() => {
+    if (!battleState?.transitionTo) return undefined
+    const next = battleState.transitionTo
+    const timer = setTimeout(() => {
+      startBattle(next, undefined, undefined, true, true)
+    }, 0)
+    return () => clearTimeout(timer)
+  }, [battleState?.transitionTo])
+
+  // CALL REINFORCEMENTS on a damaged GHOST heals him and makes him run away,
+  // exiting the battle. Return to Boss Select silently (Run.mp3 already played
+  // inline with the battle text). Deferred via setTimeout to avoid cascading
+  // renders.
+  useEffect(() => {
+    if (!battleState?.exitBattle) return undefined
+    const timer = setTimeout(() => {
+      setScreen('bossSelect')
+      setBattleState(null)
+      setBattleMenuView('main')
+      setContentView(null)
+      setResultScreen(null)
+    }, 0)
+    return () => clearTimeout(timer)
+  }, [battleState?.exitBattle])
+
   // Builds and starts a battle against the given boss, addressing the player by
-  // the character name they entered.
-  function startBattle(bossId, playerNameArg, playerGenderArg) {
+  // the character name they entered. `musicReady` is true only when a battle is
+  // started mid-session without the Boss Select cue (the GHOST -> ASGORE
+  // transition), so the theme can begin immediately.
+  function startBattle(bossId, playerNameArg, playerGenderArg, musicReady = false, withIntro = false) {
     setDamageEvent(null)
     setScreenShake(false)
     hitId.current = 0
     // Re-arm the battle music gate — the theme must wait for the Boss Select cue
     // to finish before it starts (it is un-gated in the Boss Select 'ended' handler).
-    setBattleMusicReady(false)
+    // For the GHOST -> ASGORE transition we pass musicReady=true instead.
+    setBattleMusicReady(musicReady)
     // Prefer an explicitly passed name (set synchronously in submitCharacterName)
     // so the first battle after naming shows the name immediately. Fall back to
     // the component state for battles started later via handleBossSelected.
@@ -221,10 +265,74 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
         ],
         sequenceIndex: 0,
         unlockSection: null,
+        // True only during the opening "BACK 2 SCHOOL" ability sequence. While
+        // it is true, RUN stays usable (the one exception to the normal
+        // "disabled while resolving" rule) so the player can flee before the
+        // fight actually begins. Cleared when the intro sequence finishes.
+        introActive: true,
       })
+    } else if (bossId === 'ghost') {
+      setBattleState({
+        mode: 'ghost',
+        player: { name: playerName, displayName: playerName, gender: playerGender, hp: 100, maxHp: 100, type: 'Normal', speed: 120, trickRoomTurnsLeft: 0 },
+        enemy: { name: 'GHOST', displayName: 'GHOST', hp: 100, maxHp: 100, type: 'GHOST', speed: 200, lastMove: null },
+        ghost: { attacksReceived: 0, talkStage: 0, dialogue: 'GHOST is minding his own business.', fatalSurvived: false },
+        battleText: 'A GHOST appeared!',
+        result: null,
+        isResolving: false,
+        sequence: [],
+        sequenceIndex: 0,
+        unlockSection: null,
+      })
+    } else if (bossId === 'asgore') {
+      if (withIntro) {
+        // Scripted intro played only when ASGORE is reached via the GHOST-death
+        // transition. ASGORE's sprite (Asgore Boss.png) appears but the opponent
+        // CARD stays GHOST's (dead, 0 HP) until the reveal step. He swings
+        // (Asgore Blade.mp3), destroys the RUN button (Delete.mp3), then the card
+        // flips to ASGORE and his theme starts. Trick room is cleared by this fresh state.
+        const enemyName = 'ASGORE'
+        setBattleState({
+          mode: 'asgore',
+          player: { name: playerName, displayName: playerName, gender: playerGender, hp: 100, maxHp: 100, type: 'Normal', speed: 120, trickRoomTurnsLeft: 0 },
+          enemy: { name: enemyName, displayName: enemyName, hp: 100, maxHp: 100, type: 'Monster', speed: 50, lastMove: null },
+          // Keep GHOST's card on screen (dead, 0 HP) while ASGORE's sprite looms,
+          // until the intro's reveal step clears this override to null.
+          enemyCard: { name: 'GHOST', displayName: 'GHOST', hp: 0, maxHp: 100, type: 'GHOST', lastMove: null },
+          asgore: { comboStep: 0 },
+          runDestroyed: false,
+          allowMusic: false, // theme held until the reveal step
+          battleText: '',
+          result: null,
+          isResolving: true,
+          sequence: [
+            { text: `${enemyName} attacks.`, apply: (p) => ({ ...p }), sound: null },
+            { text: '', apply: (p) => ({ ...p }), sound: 'Asgore Blade' },
+            { text: '', apply: (p) => ({ ...p, runDestroyed: true }), sound: 'Delete' },
+            { text: `${enemyName} destroyed the RUN button.`, apply: (p) => ({ ...p }), sound: null },
+            { text: `${enemyName} stands in your way!`, apply: (p) => ({ ...p, enemyCard: null, allowMusic: true }), sound: null },
+          ],
+          sequenceIndex: 0,
+          unlockSection: null,
+        })
+      } else {
+        // Normal ASGORE start (e.g. retry): full fight, RUN available, theme plays.
+        setBattleState({
+          mode: 'asgore',
+          player: { name: playerName, displayName: playerName, gender: playerGender, hp: 100, maxHp: 100, type: 'Normal', speed: 120, trickRoomTurnsLeft: 0 },
+          enemy: { name: 'ASGORE', displayName: 'ASGORE', hp: 100, maxHp: 100, type: 'Monster', speed: 50, lastMove: null },
+          asgore: { comboStep: 0 },
+          runDestroyed: false,
+          battleText: '',
+          result: null,
+          isResolving: false,
+          sequence: [],
+          sequenceIndex: 0,
+          unlockSection: null,
+        })
+      }
     } else {
-      // No battle is configured for this boss yet (e.g. the still-locked
-      // "KEEPER OF PROJECTS"). Fail safe instead of crashing.
+      // No battle is configured for this boss yet. Fail safe instead of crashing.
       console.warn(`useBattle.startBattle: no battle configured for boss "${bossId}"`)
       return
     }
@@ -248,46 +356,85 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   }
 
   // Dispatches a player move as a freshly-built turn sequence. The build is pure
-  // (see game/battleHollow.js / game/battleSchool.js); this only wires it in.
+  // (see game/battle*.js); this only wires it in.
   function handleBattleMove(move) {
     if (!battleState || battleState.result || battleState.isResolving) return
-    const steps = battleState.mode === 'hollow'
-      ? buildHollowSteps(battleState, move)
-      : buildSchoolSteps(battleState, move)
+    let steps
+    if (battleState.mode === 'ghost') {
+      // GHOST handles TALK / JOKE / attack / trick-room all in one builder.
+      steps = buildGhostSteps(battleState, move)
+    } else if (move.id === 'talk' || move.id === 'joke') {
+      // TALK / JOKE in every other fight (opponent is unresponsive, then acts).
+      steps = buildTalkSteps(battleState, move)
+    } else if (battleState.mode === 'hollow') {
+      steps = buildHollowSteps(battleState, move)
+    } else if (battleState.mode === 'school') {
+      steps = buildSchoolSteps(battleState, move)
+    } else {
+      steps = buildAsgoreSteps(battleState, move)
+    }
     setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
     setBattleMenuView('main')
   }
 
-  // Uses the CALL REINFORCEMENTS bag item. This "move" always goes first and
-  // always resolves the fight: it builds a fixed sequence that ends with the
-  // opponent taking 999 damage (a guaranteed KO) and the standard victory flow
-  // for whichever boss is being fought. Because the sequence contains no enemy
-  // move, the opponent never gets to retaliate. One use is spent per activation
-  // (the count persists across battles via reinforcementUses).
+  // Uses the CALL REINFORCEMENTS bag item. This "move" always goes first.
+  // For TWO / DR. ZANGETSU the CREATOR one-shots the opponent (standard victory).
+  // For GHOST (when hurt) the CREATOR heals him and he flees, exiting the battle.
+  // For a full-HP GHOST or for ASGORE the CREATOR deliberately ignores you.
+  // One use is spent per activation (the count persists across battles via
+  // reinforcementUses).
   function handleUseItem() {
     if (!battleState || battleState.result || battleState.isResolving) return
     if (reinforcementUses <= 0) return
     const playerName = battleState.player.name
     const enemyName = battleState.enemy.name
-    // Victory here unlocks the same section the boss's normal win would.
-    const unlockSection = battleState.mode === 'school' ? 'education' : 'about'
-    const steps = [
-      { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
-      { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
-      { text: 'The CREATOR snapped his fingers!', apply: (prev) => ({ ...prev }), sound: null },
-      { text: '', apply: (prev) => ({ ...prev }), sound: 'Finger Snap' },
-      { text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - 999) }, lastHit: { side: 'enemy', effectiveness: 2 } }), sound: 'Hit Super Effective' },
-      { text: `${enemyName} was one-shotted!`, apply: (prev) => ({ ...prev }), sound: null },
-      { text: 'The CREATOR looks disappointed.', apply: (prev) => ({ ...prev }), sound: null },
-      { text: '', apply: (prev) => ({ ...prev }), sound: 'Disappointed' },
-      { text: `The CREATOR defeated ${enemyName} for you!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection }), sound: 'You Win' },
-    ]
+    let steps
+
+    if (battleState.mode === 'ghost' || battleState.mode === 'asgore') {
+      const ghostHurt = battleState.mode === 'ghost' && battleState.enemy.hp < battleState.enemy.maxHp
+      if (ghostHurt) {
+        // Hurt GHOST: heal to full, then he runs away and the battle exits.
+        steps = [
+          { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
+          { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
+          { text: 'The CREATOR healed GHOST.', apply: (prev) => ({ ...prev }), sound: null },
+          { text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: prev.enemy.maxHp }, lastHit: { side: 'enemy', effectiveness: 1 } }), sound: 'In-Battle Heal HP Restore' },
+          { text: 'GHOST was healed back to full HP.', apply: (prev) => ({ ...prev }), sound: null },
+          { text: 'GHOST ran away.', apply: (prev) => ({ ...prev, ghost: { ...prev.ghost, dialogue: 'GHOST ran away.' } }), sound: null },
+          { text: '', apply: (prev) => ({ ...prev, exitBattle: true }), sound: 'Run' },
+        ]
+      } else {
+        // Full-HP GHOST or ASGORE: the CREATOR ignores the call for help.
+        steps = [
+          { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
+          { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
+          { text: 'The CREATOR is deliberately ignoring you.', apply: (prev) => ({ ...prev }), sound: null },
+        ]
+      }
+    } else {
+      // Victory here unlocks the same section the boss's normal win would.
+      const unlockSection = battleState.mode === 'school' ? 'education' : 'about'
+      steps = [
+        { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
+        { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
+        { text: 'The CREATOR snapped his fingers!', apply: (prev) => ({ ...prev }), sound: null },
+        { text: '', apply: (prev) => ({ ...prev }), sound: 'Finger Snap' },
+        { text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - 999) }, lastHit: { side: 'enemy', effectiveness: 2 } }), sound: 'Hit Super Effective' },
+        { text: `${enemyName} was one-shotted!`, apply: (prev) => ({ ...prev }), sound: null },
+        { text: 'The CREATOR is disappointed in you.', apply: (prev) => ({ ...prev }), sound: null },
+        { text: '', apply: (prev) => ({ ...prev }), sound: 'Disappointed' },
+        { text: `The CREATOR defeated ${enemyName} for you!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection }), sound: 'You Win' },
+      ]
+    }
     setReinforcementUses((n) => Math.max(0, n - 1))
     setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
     setBattleMenuView('main')
   }
 
   function handleRun() {
+    // Once ASGORE destroys the RUN button it can no longer be used (and the
+    // ESC shortcut that mirrors it is blocked too).
+    if (battleState?.runDestroyed) return
     playSoundEffect('Run')
     setScreen('bossSelect')
     setBattleState(null)
@@ -319,7 +466,8 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   // already named, so we go straight back into the battle (skipping the Boss
   // Select cue) and re-arm the battle music immediately.
   function retryBattle() {
-    const bossId = battleState?.mode === 'school' ? 'school' : 'hollow'
+    const mode = battleState?.mode
+    const bossId = mode === 'school' ? 'school' : mode === 'ghost' ? 'ghost' : mode === 'asgore' ? 'asgore' : 'hollow'
     setResultScreen(null)
     startBattle(bossId, characterName, characterGender)
     setBattleMusicReady(true)

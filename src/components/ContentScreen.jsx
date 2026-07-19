@@ -1,4 +1,4 @@
-import { aboutText, educationText, contactLinks } from '../data/content'
+import { aboutText, educationText, contactLinks, professionalExperience } from '../data/content'
 import ChatAppAboutMe from './ChatAppAboutMe'
 
 // Portfolio content pages (About / Professional / Education / Contact).
@@ -30,7 +30,20 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
       </div>
       {contentView === 'professional' && (
         <div className="content-card">
-          {aboutText.map((paragraph) => <p key={paragraph} className="page-copy">{paragraph}</p>)}
+          <div className="experience-head">
+            <h3 className="experience-role">{professionalExperience.role}</h3>
+            <p className="experience-company">{professionalExperience.company}</p>
+            <p className="experience-meta">{professionalExperience.duration} · {professionalExperience.location}</p>
+          </div>
+          <p className="page-copy experience-summary">{professionalExperience.summary}</p>
+          {professionalExperience.sections.map((section) => (
+            <div className="experience-section" key={section.title}>
+              <h4 className="experience-section-title">{section.title}</h4>
+              <ul className="experience-list">
+                {section.points.map((point) => <li key={point}>{point}</li>)}
+              </ul>
+            </div>
+          ))}
         </div>
       )}
       {contentView === 'education' && (

@@ -33,10 +33,11 @@ export default function MainMenu({ menuOptions, menuIndex, currentMenuOption, se
           <>
             <h3>{currentMenuOption.label}</h3>
             <p>{
-              currentMenuOption.id === 'battle' ? 'Fight monsters and unlock more of the menu!' :
+              currentMenuOption.id === 'battle' ? 'Fight to unlock more of the menu!' :
               currentMenuOption.id === 'about' ? 'Learn a bit more about the CREATOR!' :
               currentMenuOption.id === 'education' ? 'Learn where the CREATOR got his education from!' :
               currentMenuOption.id === 'contact' ? 'Reach out to the CREATOR!' :
+              currentMenuOption.id === 'professional' ? "Learn about the CREATOR's professional career!" :
               'Select this option to continue.'
             }</p>
           </>

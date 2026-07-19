@@ -41,10 +41,22 @@ export function useBackgroundMusic({
       return undefined
     }
 
+    // Stop the looping battle theme immediately when a battle flags it (e.g.
+    // GHOST's HP hitting 0, before the ASGORE transition). Pause and drop the
+    // loaded track so the follow-up fight starts its own theme cleanly.
+    if (battleState?.stopMusic) {
+      audio.pause()
+      loadedTrackRef.current = null
+      return undefined
+    }
+
     const inBattle = screen === 'battle' && !!battleState
     // Don't start the battle theme until the "Boss Select" cue has finished
     // playing — the menu music keeps running through the cue, then swaps in.
     if (inBattle && !battleMusicReady) return undefined
+    // The ASGORE intro holds its theme until the scripted reveal step clears
+    // this flag — the GHOST theme keeps looping underneath until then.
+    if (inBattle && battleState.allowMusic === false) return undefined
 
     // A stable identity for the track we want, e.g. "menu:0" or "battle:hollow".
     // We compare THIS (not the raw URL) so we don't reload on every state update.

@@ -102,6 +102,39 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   line-height: 1.45;
 }
 .page-copy { margin: 0 0 12px; }
+
+/* ── Professional Experience (job card) ── */
+.experience-head { margin-bottom: 16px; }
+.experience-role {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.06rem;
+  margin: 0 0 4px;
+}
+.experience-company { font-size: 1.4rem; color: var(--c-ink); margin: 0 0 2px; font-weight: bold; }
+.experience-meta {
+  font-size: 1.05rem;
+  color: var(--c-ink);
+  opacity: 0.75;
+  margin: 0 0 14px;
+}
+.experience-summary { margin-bottom: 18px; }
+.experience-section { margin-bottom: 16px; }
+.experience-section-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  color: var(--c-red);
+  margin: 0 0 8px;
+}
+.experience-list { margin: 0 0 0 18px; padding: 0; list-style: square; }
+.experience-list li {
+  color: var(--c-ink);
+  font-size: 1.2rem;
+  line-height: 1.45;
+  margin-bottom: 8px;
+}
 .name-entry-screen h2 { font-family: var(--font-body); font-size: 1.7rem; text-shadow: none; line-height: 1.3; }
 
 /* ── Chunky retro buttons (shared press behavior) ── */
@@ -785,6 +818,14 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
      The 1.06 scale hides the edges revealed by the pan. */
   animation: bg-drift 22s ease-in-out infinite;
 }
+/* GHOST / ASGORE have no background art — this keeps the battle field at the
+   same size as a real 344x192 background so sprites stay positioned correctly. */
+.battle-bg-empty {
+  width: 100%;
+  aspect-ratio: 344 / 192;
+  background: #000;
+  border-radius: 0;
+}
 @keyframes bg-drift {
   0%   { transform: scale(1.06) translate(0, 0); }
   50%  { transform: scale(1.06) translate(-1.6%, -1.2%); }
@@ -798,6 +839,9 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   z-index: 3;
 }
 .sprite-slot-enemy { width: 35%; top: 5%; right: 7%; animation: sprite-enter-enemy 0.7s cubic-bezier(0.22, 0.9, 0.3, 1.1) both; }
+/* ASGORE-only override — wins over .sprite-slot-enemy without touching other bosses.
+   Tune `width` for size; `top`/`right` for position. */
+.sprite-slot-asgore { width: 50%; top: -10%; right: 0%; }
 .sprite-slot-player { width: 65%; bottom: -50%; left: -10%; animation: sprite-enter-player 0.75s cubic-bezier(0.22, 0.9, 0.3, 1.1) both; animation-delay: 0.08s; }
 /* Entrance: sprites slide in from offscreen toward their resting spots. */
 @keyframes sprite-enter-enemy {

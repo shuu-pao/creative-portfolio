@@ -2,16 +2,27 @@
 // titles (with spaces); audioUrl encodes them for static serving.
 export const battleThemes = {
   hollow: 'Pokemon Sun and Moon - Rival Gladion Battle Music.mp3', // "PAOLO'S APOSTLE" -> Pokémon Sun & Moon - Rival Gladion
+  ghost: 'Ghost Fight (UNDERTALE Soundtrack) - Toby Fox.mp3',     // GHOST fight theme
   school: 'Pokemon Black and White - N Final Battle Music.mp3',    // Dr. Skoo -> Pokémon Black & White - N Final Battle
+  asgore: 'ASGORE (UNDERTALE Soundtrack) - Toby Fox.mp3',          // ASGORE fight theme
 }
 
 // Battle art, keyed by boss `mode`. For now every boss reuses the Yhwach assets
 // (the "Yhwach Boss.png" sprite belongs to the DR. ZANGETSU fight). This map is
-// where per-boss backgrounds + opponent sprites get swapped in later.
+// where per-boss backgrounds + opponent sprites get swapped in later. GHOST and
+// ASGORE use `background: null` (rendered as an empty, correctly-sized field).
 export const BOSS_ASSETS = {
   hollow: {
     background: '/Battle Backgrounds/Two Background.png',
     opponentSprite: '/Characters/Two Boss.png',
+  },
+  ghost: {
+    background: null, // no background — rendered as an empty field of the same size
+    opponentSprite: '/Characters/Ghost Boss.png',
+  },
+  asgore: {
+    background: null, // no background — rendered as an empty field of the same size
+    opponentSprite: '/Characters/Asgore Boss.png',
   },
   school: {
     background: '/Battle Backgrounds/Yhwach Background.png',
@@ -37,6 +48,8 @@ export const TYPE_COLORS = {
   SCIENCE: '#22c55e',
   ENGLISH: '#ef4444',
   'SOCIAL STUDIES': '#b07a3c',
+  GHOST: '#735797',
+  Monster: '#6d28d9',
 }
 
 // Short flavor text shown in a tooltip when the player hovers a move button.
@@ -59,9 +72,10 @@ export const HOLLOW_DAMAGE = {
 
 // Static move sets for the FIGHT menu. The "school" fight builds its move list
 // dynamically from the current question (see game/battleMoves.js), so it returns
-// an empty array here.
+// an empty array here. The GHOST and ASGORE fights reuse the TWO (hollow) move
+// set per the spec ("same moveset as the TWO fight").
 export function movesFor(mode) {
-  if (mode === 'hollow') {
+  if (mode === 'hollow' || mode === 'ghost' || mode === 'asgore') {
     return [
       { id: 'ember', label: 'EMBER', type: 'Fire' },
       { id: 'water-gun', label: 'WATER GUN', type: 'Water' },

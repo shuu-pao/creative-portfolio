@@ -49,6 +49,7 @@ function App() {
     if (option.id === 'battle' || option.id === 'contact') return { ...option, unlocked: true }
     if (option.id === 'about') return { ...option, unlocked: battle.unlockedSections.includes('about') }
     if (option.id === 'education') return { ...option, unlocked: battle.unlockedSections.includes('education') }
+    if (option.id === 'professional') return { ...option, unlocked: battle.unlockedSections.includes('professional') }
     return { ...option, unlocked: false }
   }), [battle.unlockedSections])
 
@@ -122,6 +123,10 @@ function App() {
     if (option.id === 'education') {
       setScreen('content')
       setContentView('education')
+    }
+    if (option.id === 'professional') {
+      setScreen('content')
+      setContentView('professional')
     }
     if (option.id === 'contact') {
       setScreen('content')
@@ -213,7 +218,9 @@ function App() {
       if (event.key !== 'Escape') return
       event.preventDefault()
       if (screen === 'battle' && battle.battleState) {
-        if (battle.battleState.isResolving) return
+        // ESC always exits the battle, regardless of whether battle text is
+        // currently resolving. handleRun itself still enforces the one hard
+        // block: once ASGORE has destroyed the RUN button (runDestroyed).
         battle.handleRun() // also plays Run.mp3
         return
       }

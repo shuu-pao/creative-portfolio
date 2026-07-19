@@ -1,0 +1,3024 @@
+{
+  "nodes": [
+    {
+      "id": "package",
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_name",
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_private",
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_version",
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_type",
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_dev",
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_build",
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_lint",
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_scripts_preview",
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_dependencies",
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_dependencies_firebase",
+      "label": "firebase",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "firebase",
+      "label": "firebase",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_dependencies_react",
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "react",
+      "label": "react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_dependencies_react_dom",
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "react_dom",
+      "label": "react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies",
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint_js",
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "eslint_js",
+      "label": "@eslint/js",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_types_react",
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "types_react",
+      "label": "@types/react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_types_react_dom",
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "types_react_dom",
+      "label": "@types/react-dom",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "vitejs_plugin_react",
+      "label": "@vitejs/plugin-react",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint",
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "eslint",
+      "label": "eslint",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint_plugin_react_hooks",
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "eslint_plugin_react_hooks",
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_eslint_plugin_react_refresh",
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "eslint_plugin_react_refresh",
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_globals",
+      "label": "globals",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "globals",
+      "label": "globals",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "_origin": "ast"
+    },
+    {
+      "id": "package_devdependencies_vite",
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "vite",
+      "label": "vite",
+      "file_type": "concept",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app",
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_app_app",
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L18",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_audiocontrols",
+      "label": "AudioControls.jsx",
+      "file_type": "code",
+      "source_file": "src/components/AudioControls.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_audiocontrols_audiocontrols",
+      "label": "AudioControls()",
+      "file_type": "code",
+      "source_file": "src/components/AudioControls.jsx",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_battlescreen",
+      "label": "BattleScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_battlescreen_unlockedsectionlabel",
+      "label": "unlockedSectionLabel()",
+      "file_type": "code",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_battlescreen_battlescreen",
+      "label": "BattleScreen()",
+      "file_type": "code",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_bossselect",
+      "label": "BossSelect.jsx",
+      "file_type": "code",
+      "source_file": "src/components/BossSelect.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_bossselect_bossselect",
+      "label": "BossSelect()",
+      "file_type": "code",
+      "source_file": "src/components/BossSelect.jsx",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_chatappaboutme",
+      "label": "ChatAppAboutMe.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_chatappaboutme_chatappaboutme",
+      "label": "ChatAppAboutMe()",
+      "file_type": "code",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_chatappaboutme_chatmessage",
+      "label": "ChatMessage()",
+      "file_type": "code",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L212",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_contentscreen",
+      "label": "ContentScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_contentscreen_contentscreen",
+      "label": "ContentScreen()",
+      "file_type": "code",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_mainmenu",
+      "label": "MainMenu.jsx",
+      "file_type": "code",
+      "source_file": "src/components/MainMenu.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_mainmenu_mainmenu",
+      "label": "MainMenu()",
+      "file_type": "code",
+      "source_file": "src/components/MainMenu.jsx",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_nameentry",
+      "label": "NameEntry.jsx",
+      "file_type": "code",
+      "source_file": "src/components/NameEntry.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_nameentry_nameentry",
+      "label": "NameEntry()",
+      "file_type": "code",
+      "source_file": "src/components/NameEntry.jsx",
+      "source_location": "L5",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_resultoverlay",
+      "label": "ResultOverlay.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ResultOverlay.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_resultoverlay_resultoverlay",
+      "label": "ResultOverlay()",
+      "file_type": "code",
+      "source_file": "src/components/ResultOverlay.jsx",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_startscreen",
+      "label": "StartScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/StartScreen.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_startscreen_startscreen",
+      "label": "StartScreen()",
+      "file_type": "code",
+      "source_file": "src/components/StartScreen.jsx",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart",
+      "label": "TypeChart.jsx",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart_types",
+      "label": "TYPES",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart_emoji",
+      "label": "EMOJI",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart_color",
+      "label": "COLOR",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart_axisarrow",
+      "label": "AxisArrow()",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_components_typechart_typechart",
+      "label": "TypeChart()",
+      "file_type": "code",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L26",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_audio",
+      "label": "audio.js",
+      "file_type": "code",
+      "source_file": "src/data/audio.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_audio_audiourl",
+      "label": "audioUrl()",
+      "file_type": "code",
+      "source_file": "src/data/audio.js",
+      "source_location": "L4",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_audio_soundvolumes",
+      "label": "soundVolumes",
+      "file_type": "code",
+      "source_file": "src/data/audio.js",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses",
+      "label": "bosses.js",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_battlethemes",
+      "label": "battleThemes",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_boss_assets",
+      "label": "BOSS_ASSETS",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_type_colors",
+      "label": "TYPE_COLORS",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L39",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_move_descriptions",
+      "label": "MOVE_DESCRIPTIONS",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L57",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_hollow_damage",
+      "label": "HOLLOW_DAMAGE",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L68",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_movesfor",
+      "label": "movesFor()",
+      "file_type": "code",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L77",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_bosses_rationale_66",
+      "label": "NOTE: the hollow enemy deals the same fraction on super-effective and neutral",
+      "file_type": "rationale",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L66",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_chatdata",
+      "label": "chatData.js",
+      "file_type": "code",
+      "source_file": "src/data/chatData.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_chatdata_user_options",
+      "label": "USER_OPTIONS",
+      "file_type": "code",
+      "source_file": "src/data/chatData.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_content",
+      "label": "content.js",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_content_abouttext",
+      "label": "aboutText",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_content_educationtext",
+      "label": "educationText",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_content_contactlinks",
+      "label": "contactLinks",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L14",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_content_professionaltext",
+      "label": "professionalText",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L23",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_menu",
+      "label": "menu.js",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_menu_menuoptionsbase",
+      "label": "menuOptionsBase",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L2",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_menu_bossoptions",
+      "label": "bossOptions",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L13",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_menu_menuplaylist",
+      "label": "menuPlaylist",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L20",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions",
+      "label": "questions.js",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions_all_subjects",
+      "label": "ALL_SUBJECTS",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L7",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions_slot_damage",
+      "label": "SLOT_DAMAGE",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions_question_bank",
+      "label": "QUESTION_BANK",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L15",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions_addasked",
+      "label": "addAsked()",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L112",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_data_questions_pickquestion",
+      "label": "pickQuestion()",
+      "file_type": "code",
+      "source_file": "src/data/questions.js",
+      "source_location": "L120",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleasgore",
+      "label": "battleAsgore.js",
+      "file_type": "code",
+      "source_file": "src/game/battleAsgore.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleasgore_buildasgoresteps",
+      "label": "buildAsgoreSteps()",
+      "file_type": "code",
+      "source_file": "src/game/battleAsgore.js",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleghost",
+      "label": "battleGhost.js",
+      "file_type": "code",
+      "source_file": "src/game/battleGhost.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleghost_buildghoststeps",
+      "label": "buildGhostSteps()",
+      "file_type": "code",
+      "source_file": "src/game/battleGhost.js",
+      "source_location": "L9",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battlehollow",
+      "label": "battleHollow.js",
+      "file_type": "code",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battlehollow_hollowfraction",
+      "label": "hollowFraction()",
+      "file_type": "code",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battlehollow_buildhollowsteps",
+      "label": "buildHollowSteps()",
+      "file_type": "code",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battlemoves",
+      "label": "battleMoves.js",
+      "file_type": "code",
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battlemoves_buildbattlemoves",
+      "label": "buildBattleMoves()",
+      "file_type": "code",
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleschool",
+      "label": "battleSchool.js",
+      "file_type": "code",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battleschool_buildschoolsteps",
+      "label": "buildSchoolSteps()",
+      "file_type": "code",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battletalk",
+      "label": "battleTalk.js",
+      "file_type": "code",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_battletalk_buildtalksteps",
+      "label": "buildTalkSteps()",
+      "file_type": "code",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L8",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types",
+      "label": "types.js",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types_normalizetype",
+      "label": "normalizeType()",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L3",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types_effectiveness_chart",
+      "label": "EFFECTIVENESS_CHART",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L10",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types_geteffectiveness",
+      "label": "getEffectiveness()",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L16",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types_geteffectivenesstext",
+      "label": "getEffectivenessText()",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L22",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_game_types_gettypecolor",
+      "label": "getTypeColor()",
+      "file_type": "code",
+      "source_file": "src/game/types.js",
+      "source_location": "L28",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useaudio",
+      "label": "useAudio.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_useaudio_useaudio",
+      "label": "useAudio()",
+      "file_type": "code",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usebackgroundmusic",
+      "label": "useBackgroundMusic.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usebackgroundmusic_usebackgroundmusic",
+      "label": "useBackgroundMusic()",
+      "file_type": "code",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L11",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usebattle",
+      "label": "useBattle.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usebattle_usebattle",
+      "label": "useBattle()",
+      "file_type": "code",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L12",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usetypewriter",
+      "label": "useTypewriter.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useTypewriter.js",
+      "source_location": "L1",
+      "_origin": "ast"
+    },
+    {
+      "id": "src_hooks_usetypewriter_usetypewriter",
+      "label": "useTypewriter()",
+      "file_type": "code",
+      "source_file": "src/hooks/useTypewriter.js",
+      "source_location": "L6",
+      "_origin": "ast"
+    }
+  ],
+  "edges": [
+    {
+      "source": "package",
+      "target": "package_name",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_private",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_version",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_type",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_scripts",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_dev",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_build",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_lint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "package_scripts",
+      "target": "package_scripts_preview",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "package",
+      "target": "package_dependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_firebase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies_firebase",
+      "target": "firebase",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies_react",
+      "target": "react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_dependencies",
+      "target": "package_dependencies_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "package_dependencies_react_dom",
+      "target": "react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package",
+      "target": "package_devdependencies",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_js",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_eslint_js",
+      "target": "eslint_js",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_types_react",
+      "target": "types_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_types_react_dom",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_types_react_dom",
+      "target": "types_react_dom",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vitejs_plugin_react",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_vitejs_plugin_react",
+      "target": "vitejs_plugin_react",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_eslint",
+      "target": "eslint",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_hooks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_eslint_plugin_react_hooks",
+      "target": "eslint_plugin_react_hooks",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_eslint_plugin_react_refresh",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_eslint_plugin_react_refresh",
+      "target": "eslint_plugin_react_refresh",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_globals",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_globals",
+      "target": "globals",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "package_devdependencies",
+      "target": "package_devdependencies_vite",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "package_devdependencies_vite",
+      "target": "vite",
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "context": "import"
+    },
+    {
+      "source": "src_app",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_app_css",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_menu",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_menu_menuoptionsbase",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_menu_menuplaylist",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_menu_bossoptions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_data_bosses_battlethemes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_useaudio",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_useaudio_useaudio",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_usebattle",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_usebattle_usebattle",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_usebackgroundmusic",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_hooks_usebackgroundmusic_usebackgroundmusic",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_startscreen",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_mainmenu",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_bossselect",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_nameentry",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_battlescreen",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_contentscreen",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_audiocontrols",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_app_app",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_audiocontrols",
+      "target": "src_components_audiocontrols_audiocontrols",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/AudioControls.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_typechart",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_resultoverlay",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_game_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_game_types_gettypecolor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_data_bosses_boss_assets",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_bosses_player_sprite_male",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_bosses_player_sprite_female",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_data_bosses_move_descriptions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_game_battlemoves",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_game_battlemoves_buildbattlemoves",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_battlescreen_unlockedsectionlabel",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_battlescreen_battlescreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen_battlescreen",
+      "target": "src_components_battlescreen_unlockedsectionlabel",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L164",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bossselect",
+      "target": "src_data_menu",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BossSelect.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bossselect",
+      "target": "src_data_menu_bossoptions",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BossSelect.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_bossselect",
+      "target": "src_components_bossselect_bossselect",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BossSelect.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "src_data_chatdata",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_chatdata_bot_opening",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "src_data_chatdata_user_options",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_chatdata_bot_wrapup",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_chatdata_restart_label",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_chatdata_bot_name",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_chatdata_user_name",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_components_chatappaboutme_css",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "src_components_chatappaboutme_chatappaboutme",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme",
+      "target": "src_components_chatappaboutme_chatmessage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_data_content",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_abouttext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_educationtext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_contactlinks",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_professionaltext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_components_chatappaboutme",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_components_contentscreen_contentscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_mainmenu",
+      "target": "src_components_mainmenu_mainmenu",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/MainMenu.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_nameentry",
+      "target": "src_components_nameentry_nameentry",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/NameEntry.jsx",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_resultoverlay",
+      "target": "src_components_resultoverlay_resultoverlay",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ResultOverlay.jsx",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_startscreen",
+      "target": "src_components_startscreen_startscreen",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/StartScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_game_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_game_types_effectiveness_chart",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_types",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_emoji",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_color",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_axisarrow",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_typechart",
+      "target": "src_components_typechart_typechart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/TypeChart.jsx",
+      "source_location": "L26",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_audio",
+      "target": "src_data_audio_audiourl",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/audio.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_audio",
+      "target": "src_data_audio_soundvolumes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/audio.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_battlethemes",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_boss_assets",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_type_colors",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L39",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_move_descriptions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L57",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_hollow_damage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses",
+      "target": "src_data_bosses_movesfor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_bosses_rationale_66",
+      "target": "src_data_bosses",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/bosses.js",
+      "source_location": "L66",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_chatdata",
+      "target": "src_data_chatdata_user_options",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/chatData.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_content",
+      "target": "src_data_content_abouttext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_content",
+      "target": "src_data_content_educationtext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_content",
+      "target": "src_data_content_contactlinks",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_content",
+      "target": "src_data_content_professionaltext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_menu",
+      "target": "src_data_menu_menuoptionsbase",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_menu",
+      "target": "src_data_menu_bossoptions",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_menu",
+      "target": "src_data_menu_menuplaylist",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L20",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_questions",
+      "target": "src_data_questions_all_subjects",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/questions.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_questions",
+      "target": "src_data_questions_slot_damage",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/questions.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_questions",
+      "target": "src_data_questions_question_bank",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/questions.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_questions",
+      "target": "src_data_questions_addasked",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/questions.js",
+      "source_location": "L112",
+      "weight": 1.0
+    },
+    {
+      "source": "src_data_questions",
+      "target": "src_data_questions_pickquestion",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/questions.js",
+      "source_location": "L120",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleasgore",
+      "target": "src_game_battleasgore_buildasgoresteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleAsgore.js",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleghost",
+      "target": "src_game_battleghost_buildghoststeps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleGhost.js",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_game_types",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_game_types_geteffectiveness",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_game_types_geteffectivenesstext",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_data_bosses_hollow_damage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_game_battlehollow_hollowfraction",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow",
+      "target": "src_game_battlehollow_buildhollowsteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow_buildhollowsteps",
+      "target": "src_game_battlehollow_hollowfraction",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlemoves",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlemoves",
+      "target": "src_data_bosses_movesfor",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlemoves",
+      "target": "src_game_battlemoves_buildbattlemoves",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_data_questions",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_data_questions_all_subjects",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_data_questions_slot_damage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "c_users_paolo_onedrive_documents_repositories_creative_portfolio_src_data_questions_wrong_answer_damage",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_data_questions_addasked",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_data_questions_pickquestion",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool",
+      "target": "src_game_battleschool_buildschoolsteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk",
+      "target": "src_game_battlehollow",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk",
+      "target": "src_game_battlehollow_buildhollowsteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk",
+      "target": "src_game_battleasgore",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk",
+      "target": "src_game_battleasgore_buildasgoresteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk",
+      "target": "src_game_battletalk_buildtalksteps",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_data_bosses_type_colors",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_game_types_normalizetype",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_game_types_effectiveness_chart",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_game_types_geteffectiveness",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_game_types_geteffectivenesstext",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L22",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types",
+      "target": "src_game_types_gettypecolor",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_types_geteffectiveness",
+      "target": "src_game_types_normalizetype",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/game/types.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useaudio",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useaudio",
+      "target": "src_data_audio",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useaudio",
+      "target": "src_data_audio_audiourl",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useaudio",
+      "target": "src_data_audio_soundvolumes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_useaudio",
+      "target": "src_hooks_useaudio_useaudio",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useAudio.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_audio",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_audio_audiourl",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_bosses",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_bosses_battlethemes",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_menu",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_data_menu_menuplaylist",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic",
+      "target": "src_hooks_usebackgroundmusic_usebackgroundmusic",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_hooks_usetypewriter",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_hooks_usetypewriter_usetypewriter",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battlehollow",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battlehollow_buildhollowsteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L3",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleschool",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleschool_buildschoolsteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleghost",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleghost_buildghoststeps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleasgore",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battleasgore_buildasgoresteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battletalk",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_game_battletalk_buildtalksteps",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L7",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle",
+      "target": "src_hooks_usebattle_usebattle",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetypewriter",
+      "target": "ref_react",
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useTypewriter.js",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usetypewriter",
+      "target": "src_hooks_usetypewriter_usetypewriter",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useTypewriter.js",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_startscreen_startscreen",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_mainmenu_mainmenu",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_bossselect_bossselect",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_nameentry_nameentry",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L13",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_battlescreen_battlescreen",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L14",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_contentscreen_contentscreen",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app",
+      "target": "src_components_audiocontrols_audiocontrols",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_typechart_typechart",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen",
+      "target": "src_components_resultoverlay_resultoverlay",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_contentscreen",
+      "target": "src_components_chatappaboutme_chatappaboutme",
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_useaudio_useaudio",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L34",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_usebattle_usebattle",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "src_app_app",
+      "target": "src_hooks_usebackgroundmusic_usebackgroundmusic",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen_battlescreen",
+      "target": "src_game_battlemoves_buildbattlemoves",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_battlescreen_battlescreen",
+      "target": "src_game_types_gettypecolor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/BattleScreen.jsx",
+      "source_location": "L88",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow_buildhollowsteps",
+      "target": "src_game_types_geteffectiveness",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlehollow_buildhollowsteps",
+      "target": "src_game_types_geteffectivenesstext",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleHollow.js",
+      "source_location": "L61",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battlemoves_buildbattlemoves",
+      "target": "src_data_bosses_movesfor",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleMoves.js",
+      "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool_buildschoolsteps",
+      "target": "src_data_questions_pickquestion",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battleschool_buildschoolsteps",
+      "target": "src_data_questions_addasked",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleSchool.js",
+      "source_location": "L38",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk_buildtalksteps",
+      "target": "src_game_battlehollow_buildhollowsteps",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "src_game_battletalk_buildtalksteps",
+      "target": "src_game_battleasgore_buildasgoresteps",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/game/battleTalk.js",
+      "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebackgroundmusic_usebackgroundmusic",
+      "target": "src_data_audio_audiourl",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useBackgroundMusic.js",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "src_hooks_usebattle_usebattle",
+      "target": "src_hooks_usetypewriter_usetypewriter",
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L45",
+      "weight": 1.0
+    },
+    {
+      "source": "src_components_chatappaboutme_chatappaboutme",
+      "target": "src_data_chatdata_user_options",
+      "relation": "references",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ChatAppAboutMe.jsx",
+      "source_location": "L28",
+      "weight": 1.0
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

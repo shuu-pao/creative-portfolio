@@ -567,186 +567,6 @@
       "norm_label": "render_current.py"
     },
     {
-      "label": "resolve.mjs",
-      "file_type": "code",
-      "source_file": "resolve.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "resolve",
-      "community": 84,
-      "norm_label": "resolve.mjs"
-    },
-    {
-      "label": "resolve()",
-      "file_type": "code",
-      "source_file": "resolve.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "resolve_resolve",
-      "community": 84,
-      "norm_label": "resolve()"
-    },
-    {
-      "label": "sim.test.mjs",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "sim_test",
-      "community": 16,
-      "norm_label": "sim.test.mjs"
-    },
-    {
-      "label": "clone()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "sim_test_clone",
-      "community": 16,
-      "norm_label": "clone()"
-    },
-    {
-      "label": "startGhost()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "sim_test_startghost",
-      "community": 16,
-      "norm_label": "startghost()"
-    },
-    {
-      "label": "startAsgore()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "sim_test_startasgore",
-      "community": 16,
-      "norm_label": "startasgore()"
-    },
-    {
-      "label": "startHollow()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L26",
-      "_origin": "ast",
-      "id": "sim_test_starthollow",
-      "community": 16,
-      "norm_label": "starthollow()"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L35",
-      "_origin": "ast",
-      "id": "sim_test_run",
-      "community": 16,
-      "norm_label": "run()"
-    },
-    {
-      "label": "check()",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L50",
-      "_origin": "ast",
-      "id": "sim_test_check",
-      "community": 16,
-      "norm_label": "check()"
-    },
-    {
-      "label": "g",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L57",
-      "_origin": "ast",
-      "id": "sim_test_g",
-      "community": 16,
-      "norm_label": "g"
-    },
-    {
-      "label": "r",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L58",
-      "_origin": "ast",
-      "id": "sim_test_r",
-      "community": 16,
-      "norm_label": "r"
-    },
-    {
-      "label": "attack",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L82",
-      "_origin": "ast",
-      "id": "sim_test_attack",
-      "community": 16,
-      "norm_label": "attack"
-    },
-    {
-      "label": "killTexts",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L83",
-      "_origin": "ast",
-      "id": "sim_test_killtexts",
-      "community": 16,
-      "norm_label": "killtexts"
-    },
-    {
-      "label": "seq",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L100",
-      "_origin": "ast",
-      "id": "sim_test_seq",
-      "community": 16,
-      "norm_label": "seq"
-    },
-    {
-      "label": "a",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L109",
-      "_origin": "ast",
-      "id": "sim_test_a",
-      "community": 16,
-      "norm_label": "a"
-    },
-    {
-      "label": "asTexts",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L110",
-      "_origin": "ast",
-      "id": "sim_test_astexts",
-      "community": 16,
-      "norm_label": "astexts"
-    },
-    {
-      "label": "playerDmgTaken",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L111",
-      "_origin": "ast",
-      "id": "sim_test_playerdmgtaken",
-      "community": 16,
-      "norm_label": "playerdmgtaken"
-    },
-    {
-      "label": "h",
-      "file_type": "code",
-      "source_file": "sim.test.mjs",
-      "source_location": "L133",
-      "_origin": "ast",
-      "id": "sim_test_h",
-      "community": 16,
-      "norm_label": "h"
-    },
-    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
@@ -810,7 +630,7 @@
       "label": "BattleScreen()",
       "file_type": "code",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_battlescreen_battlescreen",
       "community": 16,
@@ -837,36 +657,6 @@
       "norm_label": "bossselect()"
     },
     {
-      "label": "ChatAppAboutMe.jsx",
-      "file_type": "code",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_components_chatappaboutme",
-      "community": 5,
-      "norm_label": "chatappaboutme.jsx"
-    },
-    {
-      "label": "ChatAppAboutMe()",
-      "file_type": "code",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "src_components_chatappaboutme_chatappaboutme",
-      "community": 5,
-      "norm_label": "chatappaboutme()"
-    },
-    {
-      "label": "ChatMessage()",
-      "file_type": "code",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
-      "_origin": "ast",
-      "id": "src_components_chatappaboutme_chatmessage",
-      "community": 5,
-      "norm_label": "chatmessage()"
-    },
-    {
       "label": "ContentScreen.jsx",
       "file_type": "code",
       "source_file": "src/components/ContentScreen.jsx",
@@ -880,7 +670,7 @@
       "label": "ContentScreen()",
       "file_type": "code",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_contentscreen_contentscreen",
       "community": 5,
@@ -1073,14 +863,14 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_data_bosses_battlethemes",
-      "community": 5,
+      "community": 16,
       "norm_label": "battlethemes"
     },
     {
       "label": "BOSS_ASSETS",
       "file_type": "code",
       "source_file": "src/data/bosses.js",
-      "source_location": "L14",
+      "source_location": "L11",
       "_origin": "ast",
       "id": "src_data_bosses_boss_assets",
       "community": 16,
@@ -1090,7 +880,7 @@
       "label": "TYPE_COLORS",
       "file_type": "code",
       "source_file": "src/data/bosses.js",
-      "source_location": "L39",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "src_data_bosses_type_colors",
       "community": 16,
@@ -1100,7 +890,7 @@
       "label": "MOVE_DESCRIPTIONS",
       "file_type": "code",
       "source_file": "src/data/bosses.js",
-      "source_location": "L57",
+      "source_location": "L44",
       "_origin": "ast",
       "id": "src_data_bosses_move_descriptions",
       "community": 16,
@@ -1110,7 +900,7 @@
       "label": "HOLLOW_DAMAGE",
       "file_type": "code",
       "source_file": "src/data/bosses.js",
-      "source_location": "L68",
+      "source_location": "L55",
       "_origin": "ast",
       "id": "src_data_bosses_hollow_damage",
       "community": 16,
@@ -1120,7 +910,7 @@
       "label": "movesFor()",
       "file_type": "code",
       "source_file": "src/data/bosses.js",
-      "source_location": "L77",
+      "source_location": "L63",
       "_origin": "ast",
       "id": "src_data_bosses_movesfor",
       "community": 16,
@@ -1130,31 +920,11 @@
       "label": "NOTE: the hollow enemy deals the same fraction on super-effective and neutral",
       "file_type": "rationale",
       "source_file": "src/data/bosses.js",
-      "source_location": "L66",
+      "source_location": "L53",
       "_origin": "ast",
-      "id": "src_data_bosses_rationale_66",
+      "id": "src_data_bosses_rationale_53",
       "community": 16,
       "norm_label": "note: the hollow enemy deals the same fraction on super-effective and neutral"
-    },
-    {
-      "label": "chatData.js",
-      "file_type": "code",
-      "source_file": "src/data/chatData.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_data_chatdata",
-      "community": 5,
-      "norm_label": "chatdata.js"
-    },
-    {
-      "label": "USER_OPTIONS",
-      "file_type": "code",
-      "source_file": "src/data/chatData.js",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "src_data_chatdata_user_options",
-      "community": 5,
-      "norm_label": "user_options"
     },
     {
       "label": "content.js",
@@ -1197,16 +967,6 @@
       "norm_label": "contactlinks"
     },
     {
-      "label": "professionalExperience",
-      "file_type": "code",
-      "source_file": "src/data/content.js",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "src_data_content_professionalexperience",
-      "community": 5,
-      "norm_label": "professionalexperience"
-    },
-    {
       "label": "menu.js",
       "file_type": "code",
       "source_file": "src/data/menu.js",
@@ -1230,7 +990,7 @@
       "label": "bossOptions",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "src_data_menu_bossoptions",
       "community": 5,
@@ -1240,7 +1000,7 @@
       "label": "menuPlaylist",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L19",
       "_origin": "ast",
       "id": "src_data_menu_menuplaylist",
       "community": 5,
@@ -1253,7 +1013,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_questions",
-      "community": 16,
+      "community": 5,
       "norm_label": "questions.js"
     },
     {
@@ -1263,7 +1023,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_data_questions_all_subjects",
-      "community": 16,
+      "community": 5,
       "norm_label": "all_subjects"
     },
     {
@@ -1273,7 +1033,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_data_questions_slot_damage",
-      "community": 16,
+      "community": 5,
       "norm_label": "slot_damage"
     },
     {
@@ -1283,7 +1043,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_data_questions_question_bank",
-      "community": 16,
+      "community": 5,
       "norm_label": "question_bank"
     },
     {
@@ -1293,7 +1053,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "src_data_questions_addasked",
-      "community": 16,
+      "community": 5,
       "norm_label": "addasked()"
     },
     {
@@ -1303,48 +1063,8 @@
       "source_location": "L120",
       "_origin": "ast",
       "id": "src_data_questions_pickquestion",
-      "community": 16,
+      "community": 5,
       "norm_label": "pickquestion()"
-    },
-    {
-      "label": "battleAsgore.js",
-      "file_type": "code",
-      "source_file": "src/game/battleAsgore.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_game_battleasgore",
-      "community": 16,
-      "norm_label": "battleasgore.js"
-    },
-    {
-      "label": "buildAsgoreSteps()",
-      "file_type": "code",
-      "source_file": "src/game/battleAsgore.js",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "src_game_battleasgore_buildasgoresteps",
-      "community": 16,
-      "norm_label": "buildasgoresteps()"
-    },
-    {
-      "label": "battleGhost.js",
-      "file_type": "code",
-      "source_file": "src/game/battleGhost.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_game_battleghost",
-      "community": 16,
-      "norm_label": "battleghost.js"
-    },
-    {
-      "label": "buildGhostSteps()",
-      "file_type": "code",
-      "source_file": "src/game/battleGhost.js",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "src_game_battleghost_buildghoststeps",
-      "community": 16,
-      "norm_label": "buildghoststeps()"
     },
     {
       "label": "battleHollow.js",
@@ -1403,7 +1123,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_game_battleschool",
-      "community": 16,
+      "community": 5,
       "norm_label": "battleschool.js"
     },
     {
@@ -1413,28 +1133,8 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_game_battleschool_buildschoolsteps",
-      "community": 16,
+      "community": 5,
       "norm_label": "buildschoolsteps()"
-    },
-    {
-      "label": "battleTalk.js",
-      "file_type": "code",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_game_battletalk",
-      "community": 16,
-      "norm_label": "battletalk.js"
-    },
-    {
-      "label": "buildTalkSteps()",
-      "file_type": "code",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "src_game_battletalk_buildtalksteps",
-      "community": 16,
-      "norm_label": "buildtalksteps()"
     },
     {
       "label": "types.js",
@@ -1543,14 +1243,14 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_usebattle",
-      "community": 16,
+      "community": 5,
       "norm_label": "usebattle.js"
     },
     {
       "label": "useBattle()",
       "file_type": "code",
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L12",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_hooks_usebattle_usebattle",
       "community": 5,
@@ -1563,7 +1263,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_hooks_usetypewriter",
-      "community": 16,
+      "community": 5,
       "norm_label": "usetypewriter.js"
     },
     {
@@ -1573,7 +1273,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_hooks_usetypewriter_usetypewriter",
-      "community": 16,
+      "community": 5,
       "norm_label": "usetypewriter()"
     },
     {
@@ -1663,7 +1363,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_core_capabilities",
-      "community": 67,
+      "community": 41,
       "norm_label": "core capabilities"
     },
     {
@@ -1673,7 +1373,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_text_only_generation",
-      "community": 67,
+      "community": 41,
       "norm_label": "text-only generation"
     },
     {
@@ -1683,7 +1383,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_multimodal_text_images_audio_video_pdf_input",
-      "community": 67,
+      "community": 41,
       "norm_label": "multimodal (text + images/audio/video/pdf input)"
     },
     {
@@ -1693,7 +1393,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_chat_session_multi_turn",
-      "community": 67,
+      "community": 41,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -1703,7 +1403,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_streaming_responses",
-      "community": 67,
+      "community": 41,
       "norm_label": "streaming responses"
     },
     {
@@ -1713,7 +1413,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_generate_images_with_nano_banana",
-      "community": 67,
+      "community": 41,
       "norm_label": "generate images with nano banana"
     },
     {
@@ -1723,7 +1423,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_search_grounding_with_the_built_in_googlesearch_tool",
-      "community": 67,
+      "community": 41,
       "norm_label": "search grounding with the built in googlesearch tool"
     },
     {
@@ -1773,7 +1473,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_security_production",
-      "community": 83,
+      "community": 41,
       "norm_label": "security & production"
     },
     {
@@ -1783,7 +1483,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_app_check",
-      "community": 83,
+      "community": 41,
       "norm_label": "app check"
     },
     {
@@ -1793,7 +1493,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_remote_config",
-      "community": 83,
+      "community": 41,
       "norm_label": "remote config"
     },
     {
@@ -1893,7 +1593,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup",
-      "community": 57,
+      "community": 46,
       "norm_label": "ios_setup.md"
     },
     {
@@ -1903,7 +1603,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_firebase_ai_logic_ios_setup_guide",
-      "community": 57,
+      "community": 46,
       "norm_label": "firebase ai logic ios setup guide"
     },
     {
@@ -1913,7 +1613,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_1_import_and_initialize",
-      "community": 57,
+      "community": 46,
       "norm_label": "1. import and initialize"
     },
     {
@@ -1923,7 +1623,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_2_swiftui_integration_best_practices",
-      "community": 57,
+      "community": 46,
       "norm_label": "2. swiftui integration (best practices)"
     },
     {
@@ -1933,7 +1633,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_3_safety_settings",
-      "community": 57,
+      "community": 46,
       "norm_label": "3. safety settings"
     },
     {
@@ -1943,7 +1643,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_advanced_features",
-      "community": 57,
+      "community": 46,
       "norm_label": "advanced features"
     },
     {
@@ -1953,7 +1653,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_chat_session_multi_turn",
-      "community": 57,
+      "community": 46,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -1963,7 +1663,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_function_calling_tools",
-      "community": 57,
+      "community": 46,
       "norm_label": "function calling (tools)"
     },
     {
@@ -1983,7 +1683,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_firebase_ai_logic_on_android_kotlin",
-      "community": 63,
+      "community": 46,
       "norm_label": "firebase ai logic on android (kotlin)"
     },
     {
@@ -1993,7 +1693,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_0_enable_firebase_ai_logic_via_cli",
-      "community": 63,
+      "community": 46,
       "norm_label": "0. enable firebase ai logic via cli"
     },
     {
@@ -2003,7 +1703,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_1_add_dependencies",
-      "community": 63,
+      "community": 46,
       "norm_label": "1. add dependencies"
     },
     {
@@ -2013,7 +1713,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_2_initialize_and_generate_content",
-      "community": 63,
+      "community": 46,
       "norm_label": "2. initialize and generate content"
     },
     {
@@ -2023,7 +1723,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_jetpack_compose_modern",
-      "community": 63,
+      "community": 46,
       "norm_label": "jetpack compose (modern)"
     },
     {
@@ -2033,7 +1733,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_3_multimodal_input_text_and_images",
-      "community": 63,
+      "community": 46,
       "norm_label": "3. multimodal input (text and images)"
     },
     {
@@ -2043,7 +1743,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_4_chat_session_multi_turn",
-      "community": 63,
+      "community": 46,
       "norm_label": "4. chat session (multi-turn)"
     },
     {
@@ -2053,7 +1753,7 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_5_streaming_responses",
-      "community": 63,
+      "community": 46,
       "norm_label": "5. streaming responses"
     },
     {
@@ -2073,7 +1773,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_firebase_ai_logic_basics",
-      "community": 64,
+      "community": 46,
       "norm_label": "firebase ai logic basics"
     },
     {
@@ -2083,7 +1783,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_initialization_pattern",
-      "community": 64,
+      "community": 46,
       "norm_label": "initialization pattern"
     },
     {
@@ -2093,7 +1793,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_core_capabilities",
-      "community": 64,
+      "community": 46,
       "norm_label": "core capabilities"
     },
     {
@@ -2103,7 +1803,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_multimodal_text_images_audio_video_pdf_input",
-      "community": 64,
+      "community": 46,
       "norm_label": "multimodal (text + images/audio/video/pdf input)"
     },
     {
@@ -2113,7 +1813,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_chat_session_multi_turn",
-      "community": 64,
+      "community": 46,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -2123,7 +1823,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_streaming_responses",
-      "community": 64,
+      "community": 46,
       "norm_label": "streaming responses"
     },
     {
@@ -2133,7 +1833,7 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_advanced_features",
-      "community": 64,
+      "community": 46,
       "norm_label": "advanced features"
     },
     {
@@ -4373,7 +4073,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill",
-      "community": 60,
+      "community": 56,
       "norm_label": "skill.md"
     },
     {
@@ -5643,7 +5343,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_the_refresh_directive",
-      "community": 87,
+      "community": 36,
       "norm_label": "the @refresh directive"
     },
     {
@@ -5653,7 +5353,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_time_based_polling_every",
-      "community": 87,
+      "community": 36,
       "norm_label": "time-based polling (`every`)"
     },
     {
@@ -5663,7 +5363,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_explicit_mutation_signals_onmutationexecuted",
-      "community": 87,
+      "community": 36,
       "norm_label": "explicit mutation signals (`onmutationexecuted`)"
     },
     {
@@ -5673,7 +5373,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_combining_multiple_refresh_directives",
-      "community": 87,
+      "community": 36,
       "norm_label": "combining multiple @refresh directives"
     },
     {
@@ -5993,7 +5693,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_usage_examples",
-      "community": 56,
+      "community": 60,
       "norm_label": "usage examples"
     },
     {
@@ -6003,7 +5703,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_1_impersonating_an_unauthenticated_user",
-      "community": 56,
+      "community": 60,
       "norm_label": "1. impersonating an unauthenticated user"
     },
     {
@@ -6013,7 +5713,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_2_impersonating_a_specific_user_cloud_functions",
-      "community": 56,
+      "community": 60,
       "norm_label": "2. impersonating a specific user (cloud functions)"
     },
     {
@@ -6023,7 +5723,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_3_impersonating_a_specific_user_plain_http",
-      "community": 56,
+      "community": 60,
       "norm_label": "3. impersonating a specific user (plain http)"
     },
     {
@@ -6033,7 +5733,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_4_running_with_unrestricted_access",
-      "community": 56,
+      "community": 60,
       "norm_label": "4. running with unrestricted access"
     },
     {
@@ -6043,7 +5743,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_android",
-      "community": 60,
+      "community": 56,
       "norm_label": "sdk_android.md"
     },
     {
@@ -6153,7 +5853,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_flutter",
-      "community": 60,
+      "community": 56,
       "norm_label": "sdk_flutter.md"
     },
     {
@@ -7473,7 +7173,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_indexes",
-      "community": 47,
+      "community": 79,
       "norm_label": "indexes.md"
     },
     {
@@ -7573,7 +7273,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup",
-      "community": 79,
+      "community": 28,
       "norm_label": "ios_setup.md"
     },
     {
@@ -7583,7 +7283,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_firestore_enterprise_native_mode_on_ios",
-      "community": 79,
+      "community": 28,
       "norm_label": "firestore enterprise native mode on ios"
     },
     {
@@ -7593,7 +7293,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_critical_rule_no_firebasefirestoreswift",
-      "community": 79,
+      "community": 28,
       "norm_label": "\u26d4\ufe0f critical rule: no firebasefirestoreswift \u26d4\ufe0f"
     },
     {
@@ -8363,7 +8063,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_indexes",
-      "community": 79,
+      "community": 29,
       "norm_label": "indexes.md"
     },
     {
@@ -8713,7 +8413,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules",
-      "community": 34,
+      "community": 79,
       "norm_label": "security_rules.md"
     },
     {
@@ -10580,298 +10280,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "resolve.mjs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "resolve",
-      "target": "resolve_resolve",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L109",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_a",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L110",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_astexts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L82",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_attack",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L50",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_check",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_clone",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L57",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_g",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L133",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_h",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L83",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_killtexts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L111",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_playerdmgtaken",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L58",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_r",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L35",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_run",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L100",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_seq",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_startasgore",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_startghost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L26",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "sim_test_starthollow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battleasgore",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battleasgore_buildasgoresteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battleghost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battleghost_buildghoststeps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battlehollow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battlehollow_buildhollowsteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battletalk",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "sim_test",
-      "target": "src_game_battletalk_buildtalksteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L40",
-      "weight": 1.0,
-      "source": "sim_test_run",
-      "target": "src_game_battleasgore_buildasgoresteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L37",
-      "weight": 1.0,
-      "source": "sim_test_run",
-      "target": "src_game_battleghost_buildghoststeps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L39",
-      "weight": 1.0,
-      "source": "sim_test_run",
-      "target": "src_game_battlehollow_buildhollowsteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "sim.test.mjs",
-      "source_location": "L38",
-      "weight": 1.0,
-      "source": "sim_test_run",
-      "target": "src_game_battletalk_buildtalksteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
       "source_location": "L18",
       "weight": 1.0,
@@ -11234,7 +10642,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "src_components_battlescreen",
       "target": "src_components_battlescreen_battlescreen",
@@ -11376,7 +10784,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L171",
+      "source_location": "L149",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_components_battlescreen_unlockedsectionlabel",
@@ -11388,7 +10796,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L28",
+      "source_location": "L23",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_battlemoves_buildbattlemoves"
@@ -11399,7 +10807,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L93",
+      "source_location": "L77",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_types_gettypecolor"
@@ -11439,83 +10847,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "src_components_chatappaboutme",
-      "target": "src_components_chatappaboutme_chatappaboutme",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
-      "weight": 1.0,
-      "source": "src_components_chatappaboutme",
-      "target": "src_components_chatappaboutme_chatmessage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_components_chatappaboutme",
-      "target": "src_data_chatdata",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_components_chatappaboutme",
-      "target": "src_data_chatdata_user_options",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_components_contentscreen",
-      "target": "src_components_chatappaboutme",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "src_components_chatappaboutme_chatappaboutme",
-      "target": "src_data_chatdata_user_options"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_components_contentscreen",
-      "target": "src_components_chatappaboutme_chatappaboutme",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_contentscreen_contentscreen",
@@ -11563,17 +10896,6 @@
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_data_content_educationtext",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_components_contentscreen",
-      "target": "src_data_content_professionalexperience",
       "confidence_score": 1.0
     },
     {
@@ -11758,7 +11080,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L65",
+      "source_location": "L53",
       "weight": 1.0,
       "source": "src_hooks_usebackgroundmusic_usebackgroundmusic",
       "target": "src_data_audio_audiourl"
@@ -11788,7 +11110,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L14",
+      "source_location": "L11",
       "weight": 1.0,
       "source": "src_data_bosses",
       "target": "src_data_bosses_boss_assets",
@@ -11798,7 +11120,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L68",
+      "source_location": "L55",
       "weight": 1.0,
       "source": "src_data_bosses",
       "target": "src_data_bosses_hollow_damage",
@@ -11808,7 +11130,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L57",
+      "source_location": "L44",
       "weight": 1.0,
       "source": "src_data_bosses",
       "target": "src_data_bosses_move_descriptions",
@@ -11818,7 +11140,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L77",
+      "source_location": "L63",
       "weight": 1.0,
       "source": "src_data_bosses",
       "target": "src_data_bosses_movesfor",
@@ -11828,7 +11150,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L39",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "src_data_bosses",
       "target": "src_data_bosses_type_colors",
@@ -11838,9 +11160,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "src/data/bosses.js",
-      "source_location": "L66",
+      "source_location": "L53",
       "weight": 1.0,
-      "source": "src_data_bosses_rationale_66",
+      "source": "src_data_bosses_rationale_53",
       "target": "src_data_bosses",
       "confidence_score": 1.0
     },
@@ -11938,20 +11260,10 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/game/battleMoves.js",
-      "source_location": "L10",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_game_battlemoves_buildbattlemoves",
       "target": "src_data_bosses_movesfor"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/data/chatData.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "src_data_chatdata",
-      "target": "src_data_chatdata_user_options",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11986,18 +11298,8 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/data/content.js",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "src_data_content",
-      "target": "src_data_content_professionalexperience",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L12",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_bossoptions",
@@ -12017,7 +11319,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L19",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_menuplaylist",
@@ -12145,7 +11447,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/game/battleSchool.js",
-      "source_location": "L39",
+      "source_location": "L38",
       "weight": 1.0,
       "source": "src_game_battleschool_buildschoolsteps",
       "target": "src_data_questions_addasked"
@@ -12171,103 +11473,6 @@
       "weight": 1.0,
       "source": "src_game_battleschool_buildschoolsteps",
       "target": "src_data_questions_pickquestion"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleAsgore.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "src_game_battleasgore",
-      "target": "src_game_battleasgore_buildasgoresteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_game_battletalk",
-      "target": "src_game_battleasgore",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battleasgore",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "src_game_battletalk",
-      "target": "src_game_battleasgore_buildasgoresteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L24",
-      "weight": 1.0,
-      "source": "src_game_battletalk_buildtalksteps",
-      "target": "src_game_battleasgore_buildasgoresteps"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battleasgore_buildasgoresteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleGhost.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "src_game_battleghost",
-      "target": "src_game_battleghost_buildghoststeps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battleghost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battleghost_buildghoststeps",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -12326,17 +11531,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_game_battletalk",
-      "target": "src_game_battlehollow",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "src/hooks/useBattle.js",
       "source_location": "L3",
       "weight": 1.0,
@@ -12376,28 +11570,6 @@
       "weight": 1.0,
       "source": "src_game_battlehollow_buildhollowsteps",
       "target": "src_game_types_geteffectivenesstext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "src_game_battletalk",
-      "target": "src_game_battlehollow_buildhollowsteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L22",
-      "weight": 1.0,
-      "source": "src_game_battletalk_buildtalksteps",
-      "target": "src_game_battlehollow_buildhollowsteps"
     },
     {
       "relation": "imports",
@@ -12450,38 +11622,6 @@
       "weight": 1.0,
       "source": "src_hooks_usebattle",
       "target": "src_game_battleschool_buildschoolsteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/game/battleTalk.js",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "src_game_battletalk",
-      "target": "src_game_battletalk_buildtalksteps",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battletalk",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBattle.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "src_hooks_usebattle",
-      "target": "src_game_battletalk_buildtalksteps",
       "confidence_score": 1.0
     },
     {
@@ -12569,7 +11709,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L12",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_hooks_usebattle",
       "target": "src_hooks_usebattle_usebattle",
@@ -12603,7 +11743,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L45",
+      "source_location": "L42",
       "weight": 1.0,
       "source": "src_hooks_usebattle_usebattle",
       "target": "src_hooks_usetypewriter_usetypewriter"
@@ -20857,5 +19997,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "47b304467aade474ab83838ade0d512d97398f0b"
+  "built_at_commit": "919ba9882171756eda1ba19c41170b1d6984d9bc"
 }

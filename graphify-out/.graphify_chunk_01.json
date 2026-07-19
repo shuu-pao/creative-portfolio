@@ -1,0 +1,103 @@
+{
+  "nodes": [
+    {
+      "id": "index",
+      "label": "PortfolioMon HTML Index Entry",
+      "file_type": "document",
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "src_main",
+      "label": "App Entry Module (src/main.jsx)",
+      "file_type": "code",
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_press_start_2p",
+      "label": "Press Start 2P Font (Google Fonts)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "source_url": "https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "index_vt323",
+      "label": "VT323 Font (Google Fonts)",
+      "file_type": "concept",
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "source_url": "https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap",
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "index",
+      "target": "src_main",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_press_start_2p",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "index",
+      "target": "index_vt323",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "index_press_start_2p",
+      "target": "index_vt323",
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "portfoliomon_retro_typography",
+      "label": "PortfolioMon Retro Typography Theme",
+      "nodes": ["index", "index_press_start_2p", "index_vt323"],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "C:\\Users\\paolo\\OneDrive\\Documents\\Repositories\\creative-portfolio\\index.html"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

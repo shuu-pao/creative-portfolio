@@ -16,8 +16,10 @@ export function buildSchoolSteps(battleState, move) {
     const firstSubject = ALL_SUBJECTS[Math.floor(Math.random() * ALL_SUBJECTS.length)]
     const q1 = pickQuestion(firstSubject, 1, {})
     steps.push({ text: `${playerName} attended class.`, apply: (prev) => prev, sound: null })
+    // The "CLASS IS IN SESSION" announcement is skipped; the subject setup still
+    // happens here so the first question begins straight from "is in session."
     steps.push({
-      text: `${enemyName} used CLASS IS IN SESSION.`,
+      text: `${firstSubject} is in session.`,
       apply: (prev) => ({
         ...prev,
         enemy: { ...prev.enemy, type: firstSubject },
@@ -33,7 +35,6 @@ export function buildSchoolSteps(battleState, move) {
       }),
       sound: 'In-Battle Ability Activate',
     })
-    steps.push({ text: `${firstSubject} is in session.`, apply: (prev) => prev, sound: null })
     steps.push({ text: `${enemyName} used QUESTION #1.`, apply: (prev) => prev, sound: null })
     steps.push({ text: q1.question.text, apply: (prev) => ({ ...prev, school: { ...prev.school, asked: addAsked(prev.school.asked, firstSubject, 1, q1.index) } }), sound: 'Question' })
     return steps
@@ -127,8 +128,10 @@ export function buildSchoolSteps(battleState, move) {
   const remaining = ALL_SUBJECTS.filter((s) => !school.subjectsUsed.includes(s))
   const newSubject = remaining[Math.floor(Math.random() * remaining.length)]
   const newQ = pickQuestion(newSubject, 1, {})
+  // The "CLASS IS IN SESSION" announcement is skipped; the subject setup still
+  // happens on the "is in session" step.
   steps.push({
-    text: `${enemyName} used CLASS IS IN SESSION.`,
+    text: `${newSubject} is in session.`,
     apply: (prev) => ({
       ...prev,
       enemy: { ...prev.enemy, type: newSubject },
@@ -144,7 +147,6 @@ export function buildSchoolSteps(battleState, move) {
     }),
     sound: 'In-Battle Ability Activate',
   })
-  steps.push({ text: `${newSubject} is in session.`, apply: (prev) => prev, sound: null })
   steps.push({ text: `${enemyName} used QUESTION #1.`, apply: (prev) => prev, sound: null })
   steps.push({ text: newQ.question.text, apply: (prev) => prev, sound: 'Question' })
   return steps

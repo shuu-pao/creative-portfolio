@@ -92,12 +92,15 @@ export function buildHollowSteps(battleState, move) {
     if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'You defeated TWO!', apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
   }
 
+  // TALK on TWO reuses this builder with an `enemy-only` move: skip the player's
+  // action and just let TWO attack.
+  const skipPlayer = move.id === 'enemy-only'
   if (trickRoomActive) {
-    applyPlayerMove()
-    if (battleState.enemy.hp - playerDamage > 0 && battleState.player.hp > 0) applyEnemyMove()
+    if (!skipPlayer) applyPlayerMove()
+    if (battleState.enemy.hp - (skipPlayer ? 0 : playerDamage) > 0 && battleState.player.hp > 0) applyEnemyMove()
   } else {
     applyEnemyMove()
-    if (battleState.player.hp > 0 && battleState.enemy.hp > 0) applyPlayerMove()
+    if (!skipPlayer && battleState.player.hp > 0 && battleState.enemy.hp > 0) applyPlayerMove()
   }
 
   steps.push({ text: '', apply: (prev) => {
