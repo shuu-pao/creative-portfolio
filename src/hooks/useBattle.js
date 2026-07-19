@@ -5,6 +5,27 @@ import { buildSchoolSteps } from '../game/battleSchool'
 import { buildGhostSteps } from '../game/battleGhost'
 import { buildAsgoreSteps } from '../game/battleAsgore'
 import { buildTalkSteps } from '../game/battleTalk'
+import { UNLOCKABLE_SECTIONS } from '../data/menu'
+
+// Normalizes a battle's unlock payload (string | array | null) into an array so
+// a single victory can unlock more than one section (e.g. TWO -> about + skills).
+function normalizeSections(value) {
+  if (!value) return []
+  return Array.isArray(value) ? value : [value]
+}
+
+// Which section-star(s) a legit victory in each mode lights. One boss unlocks
+// exactly one section, so this is a 1:1 map. ASGORE is unbeatable and
+// reinforcement wins are excluded by usedReinforcements, so they credit nothing.
+// The two placeholder bosses (skillsBoss / projectsBoss) are locked, so their
+// entries here simply sit ready for when their real fights are built.
+const SECTION_STARS = {
+  hollow: ['about'],       // TWO
+  ghost: ['professional'], // GHOST (befriend)
+  school: ['education'],   // DR. ZANGETSU
+  skillsBoss: ['skills'],
+  projectsBoss: ['projects'],
+}
 
 // Owns the entire battle subsystem: state, the turn-sequence engine, sprite
 // feedback, and the post-battle unlock flow. `characterName` is read at call
@@ -21,7 +42,19 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   // (victory, before unlock screen), or 'unlocked' (victory that unlocked a new
   // section).
   const [resultScreen, setResultScreen] = useState(null)
-  const [unlockedSections, setUnlockedSections] = useState(['contact'])
+  // Unlocked portfolio sections. Starts with the always-available CONTACT plus
+  // SKILLS and PERSONAL PROJECTS (their bosses, BOSS 04 / BOSS 05, don't exist
+  // yet, so those sections are pre-unlocked to match their default-lit stars).
+  // The rest unlock during the session via battle wins or the "Unlock whole
+  // menu" button. Intentionally NOT persisted: a refresh resets to this baseline
+  // so the menu's progression — and the unlock button — stay meaningful.
+  const [unlockedSections, setUnlockedSections] = useState(['contact', 'skills', 'projects'])
+  // Sections unlocked via legit battle — drives the menu star row AND serves as
+  // the "Normal Mode" baseline (so a bulk unlock can be undone without erasing
+  // fairly-earned progress). Session-only, like unlocks. BOSS 04 and BOSS 05
+  // have no real fights yet, so their sections (skills / projects) start lit by
+  // default — treated as already earned "for now".
+  const [earnedStars, setEarnedStars] = useState(['skills', 'projects'])
   // Gates the battle theme: it must wait until the "Boss Select" cue finishes
   // before it starts. Reset to false whenever a battle begins.
   const [battleMusicReady, setBattleMusicReady] = useState(false)
@@ -141,15 +174,24 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     // actual unlock is performed by a separate effect when the won screen mounts
     // (see below), keeping this effect free of side effects.
     if (battleState.result === 'victory') {
-      const section = battleState.unlockSection
-      const newlyUnlocked = !!(section && !unlockedSections.includes(section))
+      const sections = normalizeSections(battleState.unlockSections)
+      const newlyUnlocked = sections.some((s) => !unlockedSections.includes(s))
+      // Credit the section star(s) only for a legit win — CALL
+      // REINFORCEMENTS (usedReinforcements) is a cheat and earns nothing. This
+      // also builds the "Normal Mode" baseline of fairly-earned sections.
+      if (!battleState.usedReinforcements) {
+        const earned = SECTION_STARS[battleState.mode]
+        if (earned?.length) {
+          setEarnedStars((prev) => Array.from(new Set([...prev, ...earned])))
+        }
+      }
       if (battleState.directUnlock) {
         // GHOST was befriended via JOKE: skip the "You Won!" screen and go
         // straight to "Unlocked!" (the Unlocked SFX plays via the resultScreen
         // effect below).
-        setResultScreen({ type: 'unlocked', section })
+        setResultScreen({ type: 'unlocked', sections })
       } else {
-        setResultScreen({ type: 'won', newlyUnlocked, section })
+        setResultScreen({ type: 'won', newlyUnlocked, sections })
       }
     } else {
       setResultScreen({ type: 'tryAgain' })
@@ -166,11 +208,15 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
   useEffect(() => {
     if (!resultScreen) return undefined
     if (resultScreen.type !== 'won' && resultScreen.type !== 'unlocked') return undefined
-    const section = resultScreen.section
-    if (!section) return undefined
-    setUnlockedSections((value) => (value.includes(section) ? value : [...value, section]))
+    const sections = normalizeSections(resultScreen.sections)
+    if (!sections.length) return undefined
+    setUnlockedSections((value) => {
+      const next = [...value]
+      sections.forEach((s) => { if (!next.includes(s)) next.push(s) })
+      return next
+    })
     return undefined
-  }, [resultScreen?.type, resultScreen?.section])
+  }, [resultScreen?.type, resultScreen?.sections])
 
   // Play the "Unlocked" cue exactly when the Unlock screen becomes visible —
   // it should accompany that screen, not fire inline with the battle text.
@@ -241,7 +287,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
         isResolving: false,
         sequence: [],
         sequenceIndex: 0,
-        unlockSection: null,
+        unlockSections: [],
       })
     } else if (bossId === 'school') {
       setBattleState({
@@ -264,7 +310,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
           { text: `${playerName}'s type changed into Student.`, apply: (prev) => ({ ...prev, player: { ...prev.player, type: 'Student' } }), sound: 'In-Battle Ability Activate' },
         ],
         sequenceIndex: 0,
-        unlockSection: null,
+        unlockSections: [],
         // True only during the opening "BACK 2 SCHOOL" ability sequence. While
         // it is true, RUN stays usable (the one exception to the normal
         // "disabled while resolving" rule) so the player can flee before the
@@ -282,7 +328,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
         isResolving: false,
         sequence: [],
         sequenceIndex: 0,
-        unlockSection: null,
+        unlockSections: [],
       })
     } else if (bossId === 'asgore') {
       if (withIntro) {
@@ -313,7 +359,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
             { text: `${enemyName} stands in your way!`, apply: (p) => ({ ...p, enemyCard: null, allowMusic: true }), sound: null },
           ],
           sequenceIndex: 0,
-          unlockSection: null,
+          unlockSections: [],
         })
       } else {
         // Normal ASGORE start (e.g. retry): full fight, RUN available, theme plays.
@@ -328,7 +374,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
           isResolving: false,
           sequence: [],
           sequenceIndex: 0,
-          unlockSection: null,
+          unlockSections: [],
         })
       }
     } else {
@@ -412,8 +458,10 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
         ]
       }
     } else {
-      // Victory here unlocks the same section the boss's normal win would.
-      const unlockSection = battleState.mode === 'school' ? 'education' : 'about'
+      // Victory here mirrors the boss's normal win: unlock the same section(s)
+      // per mode (see SECTION_STARS). Keeping one source of truth means the cheat
+      // path can never drift from the real unlock mapping.
+      const unlockSections = SECTION_STARS[battleState.mode] || []
       steps = [
         { text: `${playerName} called for help.`, apply: (prev) => ({ ...prev }), sound: null },
         { text: 'The CREATOR noticed your presence.', apply: (prev) => ({ ...prev }), sound: null },
@@ -423,11 +471,12 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
         { text: `${enemyName} was one-shotted!`, apply: (prev) => ({ ...prev }), sound: null },
         { text: 'The CREATOR is disappointed in you.', apply: (prev) => ({ ...prev }), sound: null },
         { text: '', apply: (prev) => ({ ...prev }), sound: 'Disappointed' },
-        { text: `The CREATOR defeated ${enemyName} for you!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection }), sound: 'You Win' },
+        { text: `The CREATOR defeated ${enemyName} for you!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSections }), sound: 'You Win' },
       ]
     }
     setReinforcementUses((n) => Math.max(0, n - 1))
-    setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null }))
+    // Flag this as a cheat win so it earns no boss-defeat star.
+    setBattleState((prev) => ({ ...prev, isResolving: true, sequence: steps, sequenceIndex: 0, battleText: '', result: null, usedReinforcements: true }))
     setBattleMenuView('main')
   }
 
@@ -462,12 +511,27 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     setResultScreen(null)
   }
 
-  // Restarts the just-finished battle against the same boss. The character is
-  // already named, so we go straight back into the battle (skipping the Boss
-  // Select cue) and re-arm the battle music immediately.
+  // Browse-bypass: reveal every unlockable section at once for visitors who just
+  // want to read the portfolio without fighting. Persists via the effect above.
+  function unlockAll() {
+    setUnlockedSections((value) => Array.from(new Set([...value, ...UNLOCKABLE_SECTIONS])))
+  }
+
+  // "Normal Mode" — undo the bulk unlock but KEEP fairly-earned progress.
+  // Restores only the sections unlocked through legit battle, so a visitor who
+  // battled their way in doesn't lose that when leaving the convenience view.
+  function normalMode() {
+    setUnlockedSections(earnedStars)
+  }
+
+  // Restarts the just-finished battle. The character is already named, so we go
+  // straight back into the battle (skipping the Boss Select cue) and re-arm the
+  // battle music immediately. Losing to ASGORE means GHOST was killed, so we
+  // restart the GHOST fight (a fresh chance to befriend him) rather than the
+  // unbeatable ASGORE.
   function retryBattle() {
     const mode = battleState?.mode
-    const bossId = mode === 'school' ? 'school' : mode === 'ghost' ? 'ghost' : mode === 'asgore' ? 'asgore' : 'hollow'
+    const bossId = mode === 'school' ? 'school' : mode === 'ghost' ? 'ghost' : mode === 'asgore' ? 'ghost' : 'hollow'
     setResultScreen(null)
     startBattle(bossId, characterName, characterGender)
     setBattleMusicReady(true)
@@ -481,6 +545,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     resultScreen,
     setResultScreen,
     unlockedSections,
+    earnedStars,
     battleMusicReady,
     bossCuePlaying,
     flinch,
@@ -495,5 +560,7 @@ export function useBattle({ setScreen, setContentView, playSoundEffect, characte
     retryBattle,
     goToBossSelect,
     goToMenu,
+    unlockAll,
+    normalMode,
   }
 }

@@ -1,24 +1,86 @@
-export const aboutText = [
-  'Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
-  'Skilled in configuring agent actions, Flow logic, and Agent Instructions to deliver scalable, reliable AI-driven support systems.',
-  'During my internship, I contributed to the Agentforce Contact Center and Knowledge Center, engineering advanced case lifecycle actions, automating account workflows, and analyzing knowledge article trends to guide content improvements. These contributions enhanced efficiency and reliability in enterprise support environments.',
-  'Beyond Salesforce, I bring exposure to AI/ML workflows, embedded systems, and full-stack development, with a proven ability to redesign inefficient logic and resolve systemic bottlenecks. Known for a fast learning curve and problem-solving mindset, I aim to drive measurable improvements in automation, enterprise AI agent deployments, and intelligent customer experience solutions.',
-]
+// ── ABOUT ME (static page) ──
+// This is the standalone ABOUT ME page. The conversational "AI guide" lives in
+// its own CHAT WITH AI section (see ChatAppAboutMe) — the two are intentionally
+// separate so visitors can either read a quick summary or chat with the bot.
+export const aboutInfo = {
+  intro: [
+    'Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
+    'Skilled in configuring agent actions, Flow logic, and Agent Instructions to deliver scalable, reliable AI-driven support systems.',
+    'Beyond Salesforce, I bring exposure to AI/ML workflows, embedded systems, and full-stack development, with a proven ability to redesign inefficient logic and resolve systemic bottlenecks. I aim to drive measurable improvements in automation, enterprise AI agent deployments, and intelligent customer experience solutions.',
+  ],
+  highlights: [
+    'Salesforce Agentforce — agent actions, Flow logic, Agent Instructions',
+    'AI/ML workflows & enterprise support automation',
+    'Embedded systems & full-stack development',
+    'Systems-first mindset: fix root causes, not symptoms',
+  ],
+}
 
-export const educationText = [
-  'SCHOOL: University of San Carlos',
-  'DEGREE: Bachelor of Science in Computer Engineering',
-  'DURATION: 2021 - Jul 2026',
-]
+// ── EDUCATION (redesigned credential card) ──
+export const educationInfo = {
+  school: 'University of San Carlos',
+  degree: 'Bachelor of Science in Computer Engineering',
+  duration: '2021 – Jul 2026',
+  location: 'Cebu City, Philippines',
+  highlights: [
+    'Learned to understand systems from first principles rather than memorize patterns — the same approach I bring to building software.',
+    'Lab and capstone work across embedded systems, circuits, and software engineering.',
+    'Built this very portfolio: a from-scratch React + Vite turn-based battle system.',
+  ],
+}
 
-export const contactLinks = [
-  { label: 'GitHub', href: 'https://github.com/shuu-pao' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/paolo-jansen-enrera/' },
-  { label: 'Instagram', href: 'https://www.instagram.com/shuu_paoo/' },
-]
+// ── CONTACT (redesigned) ──
+// `resumeHref` is left empty on purpose — drop in a PDF path (e.g.
+// '/Paolo-Enrera-Resume.pdf' in public/) and the download button appears.
+export const contactInfo = {
+  blurb:
+    "I'm actively looking for new opportunities, so timing is great. The fastest way to reach me is email or LinkedIn — I'm always happy to talk Salesforce, Agentforce, or the engineering behind this site.",
+  resumeHref: '',
+  links: [
+    { label: 'GitHub', href: 'https://github.com/shuu-pao' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/paolo-jansen-enrera/' },
+    { label: 'Instagram', href: 'https://www.instagram.com/shuu_paoo/' },
+  ],
+}
 
-// Structured body for the PROFESSIONAL EXPERIENCE section. Rendered as a job
-// card in ContentScreen (role header + summary + categorized bullet sections).
+// ── SKILLS ──
+export const skillsInfo = {
+  intro: 'A snapshot of the tools and stacks I reach for most. Grouped by where they show up in my work.',
+  categories: [
+    {
+      title: 'Salesforce / Agentforce',
+      items: ['Agent Actions', 'Flow Logic', 'Agent Instructions', 'Knowledge Base Ops', 'Case Lifecycle', 'JSON Schema'],
+    },
+    {
+      title: 'Languages',
+      items: ['JavaScript', 'Python', 'SQL', 'Java', 'C / C++'],
+    },
+    {
+      title: 'Web & Frontend',
+      items: ['React', 'Vite', 'HTML / CSS', 'REST APIs', 'TypeScript'],
+    },
+    {
+      title: 'AI / ML & Tooling',
+      items: ['LLM Workflows', 'Git', 'Figma', 'Agile / Scrum', 'Embedded Systems'],
+    },
+  ],
+}
+
+// ── PERSONAL PROJECTS ──
+export const projectsInfo = {
+  intro: 'Things I’ve built on my own time. (The site you’re on is one of them.)',
+  projects: [
+    {
+      name: 'PortfolioMon',
+      blurb:
+        'This portfolio — a full turn-based RPG battle system built from scratch with React and Vite. You’re standing inside it right now.',
+      tech: ['React', 'Vite', 'JavaScript', 'CSS'],
+      href: '',
+    },
+  ],
+}
+
+// ── PROFESSIONAL EXPERIENCE (unchanged structure) ──
 export const professionalExperience = {
   role: 'Agentforce Developer Intern',
   company: 'Accenture',

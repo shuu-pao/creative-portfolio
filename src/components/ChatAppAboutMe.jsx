@@ -24,6 +24,8 @@ export default function ChatAppAboutMe({ onBack, onHover, onSelect, onNavigate }
   const [showOptions, setShowOptions] = useState(false)
   const [isTyping, setIsTyping] = useState(false)
   const [transitioning, setTransitioning] = useState(false)
+  // Monotonic key source so user/bot bubbles never collide.
+  const msgKeyRef = useRef(0)
 
   const allVisited = USER_OPTIONS.every((opt) => visited[opt.id])
 
@@ -58,16 +60,18 @@ export default function ChatAppAboutMe({ onBack, onHover, onSelect, onNavigate }
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'end' })
   }, [messages, isTyping, showOptions, allVisited])
 
-  function handleOptionClick(option) {
+  // Shared exchange: render the user's line, mark the option visited (if any),
+  // show a typing indicator, then the bot's predetermined reply. Used by both
+  // the option buttons and the free-text input.
+  function pushExchange(userText, botResponse, optionId) {
     if (isTyping || transitioning) return
     onSelect?.()
 
-    // Render the player's chosen line, mark the option visited, hide the menu.
     setMessages((prev) => [
       ...prev,
-      { key: `user-${option.id}-${prev.length}`, sender: 'user', text: option.label },
+      { key: `u${msgKeyRef.current++}`, sender: 'user', text: userText },
     ])
-    setVisited((prev) => ({ ...prev, [option.id]: true }))
+    if (optionId) setVisited((prev) => ({ ...prev, [optionId]: true }))
     setShowOptions(false)
     setIsTyping(true)
 
@@ -78,16 +82,20 @@ export default function ChatAppAboutMe({ onBack, onHover, onSelect, onNavigate }
       setMessages((prev) => [
         ...prev,
         {
-          key: `bot-${option.id}-${prev.length}`,
+          key: `b${msgKeyRef.current++}`,
           sender: 'bot',
-          text: option.botResponse.text,
-          cta: option.botResponse.cta,
+          text: botResponse.text,
+          cta: botResponse.cta,
         },
       ])
       // Reveal the option menu again on the next tick so it slams in after the
       // bubble. If this was the final unseen option, the wrap-up shows instead.
       schedule(() => setShowOptions(true), 250)
     }, delay)
+  }
+
+  function handleOptionClick(option) {
+    pushExchange(option.label, option.botResponse, option.id)
   }
 
   function handleCTA(target) {
@@ -213,7 +221,14 @@ function ChatMessage({ message, onCTA, onHover }) {
   const isUser = message.sender === 'user'
   return (
     <div className={`chat-row ${isUser ? 'chat-row-user' : 'chat-row-bot'}`}>
-      {!isUser && <span className="chat-app-avatar chat-bubble-avatar" aria-hidden="true">AI</span>}
+      {/* Avatar first in the DOM: with .chat-row-user's row-reverse this lands
+          the YOU icon on the RIGHT of the message (AI keeps it on the left). */}
+      <span
+        className={`chat-app-avatar chat-bubble-avatar ${isUser ? 'chat-bubble-avatar-user' : ''}`}
+        aria-hidden="true"
+      >
+        {isUser ? USER_NAME : 'AI'}
+      </span>
       <div className={`chat-bubble ${isUser ? 'chat-bubble-user' : 'chat-bubble-bot'}`}>
         <p className="chat-bubble-text">{message.text}</p>
         {message.cta && (
@@ -228,7 +243,6 @@ function ChatMessage({ message, onCTA, onHover }) {
           </button>
         )}
       </div>
-      {isUser && <span className="chat-app-avatar chat-bubble-avatar chat-bubble-avatar-user" aria-hidden="true">{USER_NAME}</span>}
     </div>
   )
 }

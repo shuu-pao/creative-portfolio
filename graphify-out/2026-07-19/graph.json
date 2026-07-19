@@ -793,7 +793,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_battlescreen",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlescreen.jsx"
     },
     {
@@ -803,17 +803,17 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_battlescreen_unlockedsectionlabel",
-      "community": 16,
+      "community": 5,
       "norm_label": "unlockedsectionlabel()"
     },
     {
       "label": "BattleScreen()",
       "file_type": "code",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_battlescreen_battlescreen",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlescreen()"
     },
     {
@@ -843,7 +843,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_chatappaboutme",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatappaboutme.jsx"
     },
     {
@@ -853,17 +853,17 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_chatappaboutme_chatappaboutme",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatappaboutme()"
     },
     {
       "label": "ChatMessage()",
       "file_type": "code",
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
+      "source_location": "L220",
       "_origin": "ast",
       "id": "src_components_chatappaboutme_chatmessage",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatmessage()"
     },
     {
@@ -873,17 +873,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_contentscreen",
-      "community": 5,
+      "community": 78,
       "norm_label": "contentscreen.jsx"
+    },
+    {
+      "label": "VIEW_TITLES",
+      "file_type": "code",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_components_contentscreen_view_titles",
+      "community": 78,
+      "norm_label": "view_titles"
     },
     {
       "label": "ContentScreen()",
       "file_type": "code",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "src_components_contentscreen_contentscreen",
-      "community": 5,
+      "community": 78,
       "norm_label": "contentscreen()"
     },
     {
@@ -900,7 +910,7 @@
       "label": "MainMenu()",
       "file_type": "code",
       "source_file": "src/components/MainMenu.jsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "_origin": "ast",
       "id": "src_components_mainmenu_mainmenu",
       "community": 5,
@@ -933,7 +943,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_resultoverlay",
-      "community": 16,
+      "community": 5,
       "norm_label": "resultoverlay.jsx"
     },
     {
@@ -943,7 +953,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_resultoverlay_resultoverlay",
-      "community": 16,
+      "community": 5,
       "norm_label": "resultoverlay()"
     },
     {
@@ -973,7 +983,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_typechart",
-      "community": 16,
+      "community": 5,
       "norm_label": "typechart.jsx"
     },
     {
@@ -983,7 +993,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_typechart_types",
-      "community": 16,
+      "community": 5,
       "norm_label": "types"
     },
     {
@@ -993,7 +1003,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_typechart_emoji",
-      "community": 16,
+      "community": 5,
       "norm_label": "emoji"
     },
     {
@@ -1003,7 +1013,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_typechart_color",
-      "community": 16,
+      "community": 5,
       "norm_label": "color"
     },
     {
@@ -1013,7 +1023,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_typechart_axisarrow",
-      "community": 16,
+      "community": 5,
       "norm_label": "axisarrow()"
     },
     {
@@ -1023,7 +1033,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_components_typechart_typechart",
-      "community": 16,
+      "community": 5,
       "norm_label": "typechart()"
     },
     {
@@ -1063,7 +1073,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_bosses",
-      "community": 16,
+      "community": 5,
       "norm_label": "bosses.js"
     },
     {
@@ -1083,7 +1093,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_data_bosses_boss_assets",
-      "community": 16,
+      "community": 5,
       "norm_label": "boss_assets"
     },
     {
@@ -1093,7 +1103,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_data_bosses_type_colors",
-      "community": 16,
+      "community": 5,
       "norm_label": "type_colors"
     },
     {
@@ -1103,7 +1113,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_data_bosses_move_descriptions",
-      "community": 16,
+      "community": 5,
       "norm_label": "move_descriptions"
     },
     {
@@ -1113,7 +1123,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_data_bosses_hollow_damage",
-      "community": 16,
+      "community": 5,
       "norm_label": "hollow_damage"
     },
     {
@@ -1123,7 +1133,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_data_bosses_movesfor",
-      "community": 16,
+      "community": 5,
       "norm_label": "movesfor()"
     },
     {
@@ -1133,7 +1143,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_data_bosses_rationale_66",
-      "community": 16,
+      "community": 5,
       "norm_label": "note: the hollow enemy deals the same fraction on super-effective and neutral"
     },
     {
@@ -1143,17 +1153,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_chatdata",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatdata.js"
     },
     {
       "label": "USER_OPTIONS",
       "file_type": "code",
       "source_file": "src/data/chatData.js",
-      "source_location": "L6",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_data_chatdata_user_options",
-      "community": 5,
+      "community": 78,
       "norm_label": "user_options"
     },
     {
@@ -1163,48 +1173,68 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_content",
-      "community": 5,
+      "community": 78,
       "norm_label": "content.js"
     },
     {
-      "label": "aboutText",
+      "label": "aboutInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L1",
+      "source_location": "L5",
       "_origin": "ast",
-      "id": "src_data_content_abouttext",
-      "community": 5,
-      "norm_label": "abouttext"
+      "id": "src_data_content_aboutinfo",
+      "community": 78,
+      "norm_label": "aboutinfo"
     },
     {
-      "label": "educationText",
+      "label": "educationInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L8",
+      "source_location": "L20",
       "_origin": "ast",
-      "id": "src_data_content_educationtext",
-      "community": 5,
-      "norm_label": "educationtext"
+      "id": "src_data_content_educationinfo",
+      "community": 78,
+      "norm_label": "educationinfo"
     },
     {
-      "label": "contactLinks",
+      "label": "contactInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L14",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "src_data_content_contactlinks",
-      "community": 5,
-      "norm_label": "contactlinks"
+      "id": "src_data_content_contactinfo",
+      "community": 78,
+      "norm_label": "contactinfo"
     },
     {
-      "label": "professionalText",
+      "label": "skillsInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L23",
+      "source_location": "L47",
       "_origin": "ast",
-      "id": "src_data_content_professionaltext",
-      "community": 5,
-      "norm_label": "professionaltext"
+      "id": "src_data_content_skillsinfo",
+      "community": 78,
+      "norm_label": "skillsinfo"
+    },
+    {
+      "label": "projectsInfo",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "src_data_content_projectsinfo",
+      "community": 78,
+      "norm_label": "projectsinfo"
+    },
+    {
+      "label": "professionalExperience",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "src_data_content_professionalexperience",
+      "community": 78,
+      "norm_label": "professionalexperience"
     },
     {
       "label": "menu.js",
@@ -1220,7 +1250,7 @@
       "label": "menuOptionsBase",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L2",
+      "source_location": "L3",
       "_origin": "ast",
       "id": "src_data_menu_menuoptionsbase",
       "community": 5,
@@ -1230,7 +1260,7 @@
       "label": "bossOptions",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L18",
       "_origin": "ast",
       "id": "src_data_menu_bossoptions",
       "community": 5,
@@ -1240,11 +1270,21 @@
       "label": "menuPlaylist",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "src_data_menu_menuplaylist",
       "community": 5,
       "norm_label": "menuplaylist"
+    },
+    {
+      "label": "UNLOCKABLE_SECTIONS",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "src_data_menu_unlockable_sections",
+      "community": 5,
+      "norm_label": "unlockable_sections"
     },
     {
       "label": "questions.js",
@@ -1383,7 +1423,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_game_battlemoves",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlemoves.js"
     },
     {
@@ -1393,7 +1433,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_game_battlemoves_buildbattlemoves",
-      "community": 16,
+      "community": 5,
       "norm_label": "buildbattlemoves()"
     },
     {
@@ -1443,7 +1483,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_game_types",
-      "community": 16,
+      "community": 5,
       "norm_label": "types.js"
     },
     {
@@ -1453,7 +1493,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_game_types_normalizetype",
-      "community": 16,
+      "community": 5,
       "norm_label": "normalizetype()"
     },
     {
@@ -1463,7 +1503,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_game_types_effectiveness_chart",
-      "community": 16,
+      "community": 5,
       "norm_label": "effectiveness_chart"
     },
     {
@@ -1473,7 +1513,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_game_types_geteffectiveness",
-      "community": 16,
+      "community": 5,
       "norm_label": "geteffectiveness()"
     },
     {
@@ -1493,7 +1533,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_game_types_gettypecolor",
-      "community": 16,
+      "community": 5,
       "norm_label": "gettypecolor()"
     },
     {
@@ -1547,13 +1587,23 @@
       "norm_label": "usebattle.js"
     },
     {
-      "label": "useBattle()",
+      "label": "normalizeSections()",
       "file_type": "code",
       "source_file": "src/hooks/useBattle.js",
       "source_location": "L12",
       "_origin": "ast",
+      "id": "src_hooks_usebattle_normalizesections",
+      "community": 16,
+      "norm_label": "normalizesections()"
+    },
+    {
+      "label": "useBattle()",
+      "file_type": "code",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L20",
+      "_origin": "ast",
       "id": "src_hooks_usebattle_usebattle",
-      "community": 5,
+      "community": 16,
       "norm_label": "usebattle()"
     },
     {
@@ -1663,7 +1713,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_core_capabilities",
-      "community": 67,
+      "community": 41,
       "norm_label": "core capabilities"
     },
     {
@@ -1673,7 +1723,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_text_only_generation",
-      "community": 67,
+      "community": 41,
       "norm_label": "text-only generation"
     },
     {
@@ -1683,7 +1733,7 @@
       "source_location": "L72",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_multimodal_text_images_audio_video_pdf_input",
-      "community": 67,
+      "community": 41,
       "norm_label": "multimodal (text + images/audio/video/pdf input)"
     },
     {
@@ -1693,7 +1743,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_chat_session_multi_turn",
-      "community": 67,
+      "community": 41,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -1703,7 +1753,7 @@
       "source_location": "L86",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_streaming_responses",
-      "community": 67,
+      "community": 41,
       "norm_label": "streaming responses"
     },
     {
@@ -1713,7 +1763,7 @@
       "source_location": "L92",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_generate_images_with_nano_banana",
-      "community": 67,
+      "community": 41,
       "norm_label": "generate images with nano banana"
     },
     {
@@ -1723,7 +1773,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_search_grounding_with_the_built_in_googlesearch_tool",
-      "community": 67,
+      "community": 41,
       "norm_label": "search grounding with the built in googlesearch tool"
     },
     {
@@ -1773,7 +1823,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_security_production",
-      "community": 83,
+      "community": 41,
       "norm_label": "security & production"
     },
     {
@@ -1783,7 +1833,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_app_check",
-      "community": 83,
+      "community": 41,
       "norm_label": "app check"
     },
     {
@@ -1793,7 +1843,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_remote_config",
-      "community": 83,
+      "community": 41,
       "norm_label": "remote config"
     },
     {
@@ -1893,7 +1943,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup",
-      "community": 57,
+      "community": 46,
       "norm_label": "ios_setup.md"
     },
     {
@@ -1903,7 +1953,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_firebase_ai_logic_ios_setup_guide",
-      "community": 57,
+      "community": 46,
       "norm_label": "firebase ai logic ios setup guide"
     },
     {
@@ -1913,7 +1963,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_1_import_and_initialize",
-      "community": 57,
+      "community": 46,
       "norm_label": "1. import and initialize"
     },
     {
@@ -1923,7 +1973,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_2_swiftui_integration_best_practices",
-      "community": 57,
+      "community": 46,
       "norm_label": "2. swiftui integration (best practices)"
     },
     {
@@ -1933,7 +1983,7 @@
       "source_location": "L84",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_3_safety_settings",
-      "community": 57,
+      "community": 46,
       "norm_label": "3. safety settings"
     },
     {
@@ -1943,7 +1993,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_advanced_features",
-      "community": 57,
+      "community": 46,
       "norm_label": "advanced features"
     },
     {
@@ -1953,7 +2003,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_chat_session_multi_turn",
-      "community": 57,
+      "community": 46,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -1963,7 +2013,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_ios_setup_function_calling_tools",
-      "community": 57,
+      "community": 46,
       "norm_label": "function calling (tools)"
     },
     {
@@ -1983,7 +2033,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_firebase_ai_logic_on_android_kotlin",
-      "community": 63,
+      "community": 46,
       "norm_label": "firebase ai logic on android (kotlin)"
     },
     {
@@ -1993,7 +2043,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_0_enable_firebase_ai_logic_via_cli",
-      "community": 63,
+      "community": 46,
       "norm_label": "0. enable firebase ai logic via cli"
     },
     {
@@ -2003,7 +2053,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_1_add_dependencies",
-      "community": 63,
+      "community": 46,
       "norm_label": "1. add dependencies"
     },
     {
@@ -2013,7 +2063,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_2_initialize_and_generate_content",
-      "community": 63,
+      "community": 46,
       "norm_label": "2. initialize and generate content"
     },
     {
@@ -2023,7 +2073,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_jetpack_compose_modern",
-      "community": 63,
+      "community": 46,
       "norm_label": "jetpack compose (modern)"
     },
     {
@@ -2033,7 +2083,7 @@
       "source_location": "L106",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_3_multimodal_input_text_and_images",
-      "community": 63,
+      "community": 46,
       "norm_label": "3. multimodal input (text and images)"
     },
     {
@@ -2043,7 +2093,7 @@
       "source_location": "L126",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_4_chat_session_multi_turn",
-      "community": 63,
+      "community": 46,
       "norm_label": "4. chat session (multi-turn)"
     },
     {
@@ -2053,7 +2103,7 @@
       "source_location": "L146",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_android_5_streaming_responses",
-      "community": 63,
+      "community": 46,
       "norm_label": "5. streaming responses"
     },
     {
@@ -2073,7 +2123,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_firebase_ai_logic_basics",
-      "community": 64,
+      "community": 46,
       "norm_label": "firebase ai logic basics"
     },
     {
@@ -2083,7 +2133,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_initialization_pattern",
-      "community": 64,
+      "community": 46,
       "norm_label": "initialization pattern"
     },
     {
@@ -2093,7 +2143,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_core_capabilities",
-      "community": 64,
+      "community": 46,
       "norm_label": "core capabilities"
     },
     {
@@ -2103,7 +2153,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_multimodal_text_images_audio_video_pdf_input",
-      "community": 64,
+      "community": 46,
       "norm_label": "multimodal (text + images/audio/video/pdf input)"
     },
     {
@@ -2113,7 +2163,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_chat_session_multi_turn",
-      "community": 64,
+      "community": 46,
       "norm_label": "chat session (multi-turn)"
     },
     {
@@ -2123,7 +2173,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_streaming_responses",
-      "community": 64,
+      "community": 46,
       "norm_label": "streaming responses"
     },
     {
@@ -2133,7 +2183,7 @@
       "source_location": "L158",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_references_usage_patterns_web_advanced_features",
-      "community": 64,
+      "community": 46,
       "norm_label": "advanced features"
     },
     {
@@ -4423,7 +4473,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill_development_workflow",
-      "community": 31,
+      "community": 57,
       "norm_label": "development workflow"
     },
     {
@@ -4433,7 +4483,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill_1_define_data_model_schema_schema_gql",
-      "community": 31,
+      "community": 57,
       "norm_label": "1. define data model (`schema/schema.gql`)"
     },
     {
@@ -4443,7 +4493,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill_2_define_authorized_operations_connector_queries_gql_connector_mutations_gql",
-      "community": 31,
+      "community": 57,
       "norm_label": "2. define authorized operations (`connector/queries.gql`, `connector/mutations.gql`)"
     },
     {
@@ -4453,7 +4503,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill_3_use_type_safe_sdk_in_your_apps",
-      "community": 31,
+      "community": 57,
       "norm_label": "3. use type-safe sdk in your apps"
     },
     {
@@ -5133,7 +5183,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_1_local_prototyping_data_seeding",
-      "community": 78,
+      "community": 66,
       "norm_label": "1. local prototyping: data seeding"
     },
     {
@@ -5143,7 +5193,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_the_seed_data_gql_workflow",
-      "community": 78,
+      "community": 66,
       "norm_label": "the `seed_data.gql` workflow"
     },
     {
@@ -5153,7 +5203,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_directives_rule",
-      "community": 78,
+      "community": 66,
       "norm_label": "\u26a0\ufe0f seeding directives rule"
     },
     {
@@ -5163,7 +5213,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_independent_tables_fk_order",
-      "community": 78,
+      "community": 66,
       "norm_label": "seeding independent tables (fk order)"
     },
     {
@@ -5173,7 +5223,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_related_tables_nested_relational_inserts",
-      "community": 78,
+      "community": 66,
       "norm_label": "seeding related tables (nested relational inserts)"
     },
     {
@@ -5183,7 +5233,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_resetting_seed_data",
-      "community": 78,
+      "community": 66,
       "norm_label": "resetting seed data"
     },
     {
@@ -5643,7 +5693,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_the_refresh_directive",
-      "community": 87,
+      "community": 36,
       "norm_label": "the @refresh directive"
     },
     {
@@ -5653,7 +5703,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_time_based_polling_every",
-      "community": 87,
+      "community": 36,
       "norm_label": "time-based polling (`every`)"
     },
     {
@@ -5663,7 +5713,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_explicit_mutation_signals_onmutationexecuted",
-      "community": 87,
+      "community": 36,
       "norm_label": "explicit mutation signals (`onmutationexecuted`)"
     },
     {
@@ -5673,7 +5723,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_combining_multiple_refresh_directives",
-      "community": 87,
+      "community": 36,
       "norm_label": "combining multiple @refresh directives"
     },
     {
@@ -5953,7 +6003,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_admin_node_sdk",
-      "community": 60,
+      "community": 56,
       "norm_label": "admin node sdk"
     },
     {
@@ -5963,7 +6013,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_best_practices_for_agents",
-      "community": 60,
+      "community": 56,
       "norm_label": "best practices for agents"
     },
     {
@@ -5973,7 +6023,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_configuration_in_connector_yaml",
-      "community": 60,
+      "community": 56,
       "norm_label": "configuration in `connector.yaml`"
     },
     {
@@ -5983,7 +6033,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_generation",
-      "community": 60,
+      "community": 56,
       "norm_label": "generation"
     },
     {
@@ -6043,7 +6093,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_android",
-      "community": 60,
+      "community": 43,
       "norm_label": "sdk_android.md"
     },
     {
@@ -6563,7 +6613,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search",
-      "community": 23,
+      "community": 60,
       "norm_label": "search.md"
     },
     {
@@ -6573,7 +6623,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_search_solutions_reference_vector_full_text_search",
-      "community": 23,
+      "community": 60,
       "norm_label": "search solutions reference (vector & full-text search)"
     },
     {
@@ -6583,7 +6633,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_search_selection_guide",
-      "community": 23,
+      "community": 60,
       "norm_label": "search selection guide"
     },
     {
@@ -6593,7 +6643,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_1_vector_similarity_search_semantic",
-      "community": 23,
+      "community": 87,
       "norm_label": "1. vector similarity search (semantic)"
     },
     {
@@ -6603,7 +6653,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_schema_setup",
-      "community": 23,
+      "community": 87,
       "norm_label": "schema setup"
     },
     {
@@ -6613,7 +6663,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_automatic_embedding_generation_embed_server_value",
-      "community": 23,
+      "community": 87,
       "norm_label": "automatic embedding generation (`_embed` server value)"
     },
     {
@@ -6623,7 +6673,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_a_generation_on_insert",
-      "community": 23,
+      "community": 87,
       "norm_label": "a. generation on insert"
     },
     {
@@ -6633,7 +6683,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_b_generation_on_update",
-      "community": 23,
+      "community": 87,
       "norm_label": "b. generation on update"
     },
     {
@@ -6643,7 +6693,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_similarity_search_queries",
-      "community": 23,
+      "community": 87,
       "norm_label": "similarity search queries"
     },
     {
@@ -6653,7 +6703,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_a_auto_embedding_search",
-      "community": 23,
+      "community": 87,
       "norm_label": "a. auto-embedding search"
     },
     {
@@ -6663,7 +6713,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_b_custom_vector_search",
-      "community": 23,
+      "community": 87,
       "norm_label": "b. custom vector search"
     },
     {
@@ -6673,7 +6723,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_tuning_vector_proximity",
-      "community": 23,
+      "community": 87,
       "norm_label": "tuning vector proximity"
     },
     {
@@ -7473,7 +7523,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_indexes",
-      "community": 47,
+      "community": 79,
       "norm_label": "indexes.md"
     },
     {
@@ -7573,7 +7623,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup",
-      "community": 79,
+      "community": 28,
       "norm_label": "ios_setup.md"
     },
     {
@@ -7583,7 +7633,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_firestore_enterprise_native_mode_on_ios",
-      "community": 79,
+      "community": 28,
       "norm_label": "firestore enterprise native mode on ios"
     },
     {
@@ -7593,7 +7643,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_critical_rule_no_firebasefirestoreswift",
-      "community": 79,
+      "community": 28,
       "norm_label": "\u26d4\ufe0f critical rule: no firebasefirestoreswift \u26d4\ufe0f"
     },
     {
@@ -8713,7 +8763,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules",
-      "community": 34,
+      "community": 79,
       "norm_label": "security_rules.md"
     },
     {
@@ -8723,7 +8773,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_1_generate_firestore_rules",
-      "community": 34,
+      "community": 79,
       "norm_label": "1. generate firestore rules"
     },
     {
@@ -8733,7 +8783,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_workflow",
-      "community": 34,
+      "community": 88,
       "norm_label": "workflow"
     },
     {
@@ -8743,7 +8793,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_phase_1_codebase_analysis",
-      "community": 34,
+      "community": 88,
       "norm_label": "phase-1: codebase analysis"
     },
     {
@@ -8753,7 +8803,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_phase_2_security_rules_generation",
-      "community": 34,
+      "community": 88,
       "norm_label": "phase-2: security rules generation"
     },
     {
@@ -8763,7 +8813,7 @@
       "source_location": "L220",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_mandatory_user_data_separation_the_no_mixed_content_rule",
-      "community": 34,
+      "community": 88,
       "norm_label": "mandatory: user data separation (the \"no mixed content\" rule)"
     },
     {
@@ -8773,7 +8823,7 @@
       "source_location": "L239",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_critical_rbac_guidelines",
-      "community": 34,
+      "community": 88,
       "norm_label": "**critical** rbac guidelines"
     },
     {
@@ -8783,7 +8833,7 @@
       "source_location": "L279",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_critical_directives_for_secure_generation",
-      "community": 34,
+      "community": 88,
       "norm_label": "critical directives for secure generation"
     },
     {
@@ -8853,7 +8903,7 @@
       "source_location": "L553",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules_critical_constraints",
-      "community": 34,
+      "community": 79,
       "norm_label": "critical constraints"
     },
     {
@@ -11234,7 +11284,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "src_components_battlescreen",
       "target": "src_components_battlescreen_battlescreen",
@@ -11376,7 +11426,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L171",
+      "source_location": "L177",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_components_battlescreen_unlockedsectionlabel",
@@ -11388,7 +11438,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L28",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_battlemoves_buildbattlemoves"
@@ -11399,7 +11449,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L93",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_types_gettypecolor"
@@ -11450,7 +11500,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
+      "source_location": "L220",
       "weight": 1.0,
       "source": "src_components_chatappaboutme",
       "target": "src_components_chatappaboutme_chatmessage",
@@ -11483,7 +11533,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_chatappaboutme",
@@ -11495,7 +11545,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "src_components_chatappaboutme_chatappaboutme",
       "target": "src_data_chatdata_user_options"
@@ -11505,7 +11555,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_chatappaboutme_chatappaboutme",
@@ -11515,10 +11565,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_contentscreen_contentscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_components_contentscreen_view_titles",
       "confidence_score": 1.0
     },
     {
@@ -11540,7 +11600,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_abouttext",
+      "target": "src_data_content_aboutinfo",
       "confidence_score": 1.0
     },
     {
@@ -11551,7 +11611,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_contactlinks",
+      "target": "src_data_content_contactinfo",
       "confidence_score": 1.0
     },
     {
@@ -11562,7 +11622,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_educationtext",
+      "target": "src_data_content_educationinfo",
       "confidence_score": 1.0
     },
     {
@@ -11573,14 +11633,36 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_professionaltext",
+      "target": "src_data_content_professionalexperience",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_projectsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_skillsinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/MainMenu.jsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_components_mainmenu",
       "target": "src_components_mainmenu_mainmenu",
@@ -11947,7 +12029,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/chatData.js",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_data_chatdata",
       "target": "src_data_chatdata_user_options",
@@ -11957,47 +12039,67 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L1",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_abouttext",
+      "target": "src_data_content_aboutinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L14",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_contactlinks",
+      "target": "src_data_content_contactinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L8",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_educationtext",
+      "target": "src_data_content_educationinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L23",
+      "source_location": "L98",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_professionaltext",
+      "target": "src_data_content_professionalexperience",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "src_data_content",
+      "target": "src_data_content_projectsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "src_data_content",
+      "target": "src_data_content_skillsinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L18",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_bossoptions",
@@ -12007,7 +12109,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_menuoptionsbase",
@@ -12017,10 +12119,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L25",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_menuplaylist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_unlockable_sections",
       "confidence_score": 1.0
     },
     {
@@ -12035,6 +12147,17 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle",
+      "target": "src_data_menu",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -12043,6 +12166,17 @@
       "weight": 1.0,
       "source": "src_hooks_usebackgroundmusic",
       "target": "src_data_menu_menuplaylist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle",
+      "target": "src_data_menu_unlockable_sections",
       "confidence_score": 1.0
     },
     {
@@ -12221,7 +12355,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/game/battleTalk.js",
-      "source_location": "L17",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "src_game_battletalk_buildtalksteps",
       "target": "src_game_battleasgore_buildasgoresteps"
@@ -12394,7 +12528,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/game/battleTalk.js",
-      "source_location": "L15",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "src_game_battletalk_buildtalksteps",
       "target": "src_game_battlehollow_buildhollowsteps"
@@ -12572,6 +12706,16 @@
       "source_location": "L12",
       "weight": 1.0,
       "source": "src_hooks_usebattle",
+      "target": "src_hooks_usebattle_normalizesections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle",
       "target": "src_hooks_usebattle_usebattle",
       "confidence_score": 1.0
     },
@@ -12601,9 +12745,20 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle_usebattle",
+      "target": "src_hooks_usebattle_normalizesections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L45",
+      "source_location": "L64",
       "weight": 1.0,
       "source": "src_hooks_usebattle_usebattle",
       "target": "src_hooks_usetypewriter_usetypewriter"
@@ -20857,5 +21012,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "47b304467aade474ab83838ade0d512d97398f0b"
+  "built_at_commit": "27844ed091574bd5f4649721615945ea50a8ed5e"
 }

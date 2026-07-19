@@ -1,16 +1,16 @@
 # Graph Report - creative-portfolio  (2026-07-19)
 
 ## Corpus Check
-- 289 files · ~196,348 words
+- 289 files · ~198,053 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 992 nodes · 1069 edges · 88 communities (82 shown, 6 thin omitted)
+- 997 nodes · 1079 edges · 85 communities (78 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 2 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `47b30446`
+- Built from commit: `27844ed0`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -74,11 +74,8 @@
 - SKILL.md
 - Schema Reference
 - Manual Initialization
-- Firebase AI Logic on Android (Kotlin)
-- Firebase AI Logic Basics
 - Firebase Auth & Google Sign-In for Flutter
 - Data Seeding & Bulk Operations Reference
-- Core Capabilities
 - Cloud Firestore in Flutter
 - Cloud Firestore in Flutter
 - Manual Initialization
@@ -94,10 +91,10 @@
 - Antigravity Setup
 - Recommended Method: Using Plugins
 - Cursor Setup
-- Security & Production
 - Android Studio Setup
 - PackageDescription
 - The @refresh Directive
+- Workflow
 
 ## God Nodes (most connected - your core abstractions)
 1. `Firebase Authentication Web SDK` - 15 edges
@@ -130,7 +127,7 @@
 - **React + Vite Build Toolchain** — readme_vitejs_plugin_react, readme_oxc, readme_swc [INFERRED 0.85]
 - **PortfolioMon React+Vite Scaffold** — index_portfoliomon, index_main_jsx, readme_react-vite [INFERRED 0.85]
 
-## Communities (88 total, 6 thin omitted)
+## Communities (85 total, 7 thin omitted)
 
 ### Community 0 - "PortfolioMon Battle Game (App.jsx)"
 Cohesion: 0.06
@@ -153,8 +150,8 @@ Cohesion: 0.07
 Nodes (26): Aliases, Basic Query, Contents, Create, Create with Server Values, Delete, Embedded Queries, Expression Operators (Compare with Server Values) (+18 more)
 
 ### Community 5 - "App Component & Audio/Color Helpers"
-Cohesion: 0.10
-Nodes (22): App(), AudioControls(), BossSelect(), ChatAppAboutMe(), ContentScreen(), MainMenu(), NameEntry(), StartScreen() (+14 more)
+Cohesion: 0.07
+Nodes (33): App(), AudioControls(), BattleScreen(), unlockedSectionLabel(), BossSelect(), MainMenu(), NameEntry(), ResultOverlay() (+25 more)
 
 ### Community 6 - "ESLint React Hooks Plugin"
 Cohesion: 0.06
@@ -177,8 +174,8 @@ Cohesion: 0.08
 Nodes (24): Access Levels, Anti-Patterns, @auth Directive, auth.token Fields, Authorization Data Lookup, Authorization Patterns, Available Bindings, CEL Expressions (+16 more)
 
 ### Community 16 - "Type Effectiveness Logic"
-Cohesion: 0.06
-Nodes (41): a, asTexts, attack, g, h, killTexts, playerDmgTaken, r (+33 more)
+Cohesion: 0.10
+Nodes (25): a, asTexts, attack, g, h, killTexts, playerDmgTaken, r (+17 more)
 
 ### Community 20 - "Firebase Crashlytics iOS Setup Guide"
 Cohesion: 0.08
@@ -193,8 +190,8 @@ Cohesion: 0.11
 Nodes (11): Exploring Commands, Initialization, Refresh Android Studio Local Environment, Refresh Antigravity Local Environment, Refresh Claude Code Local Environment, Refresh Gemini CLI Local Environment, Refresh Other Local Environment, Common Issues (+3 more)
 
 ### Community 23 - "1. Vector Similarity Search (Semantic)"
-Cohesion: 0.11
-Nodes (17): 1. Query Formats (`queryFormat` argument), 1. Vector Similarity Search (Semantic), 2. Full-Text Search (Lexical), 2. Relevance Thresholding (`relevanceThreshold` and `_metadata.relevance`), A. Auto-Embedding Search, A. Generation on Insert, Automatic Embedding Generation (`_embed` server value), B. Custom Vector Search (+9 more)
+Cohesion: 0.33
+Nodes (6): 1. Query Formats (`queryFormat` argument), 2. Full-Text Search (Lexical), 2. Relevance Thresholding (`relevanceThreshold` and `_metadata.relevance`), Full-Text Search Queries, Schema Setup, Tuning Full-Text Queries
 
 ### Community 24 - "main.swift"
 Cohesion: 0.33
@@ -213,8 +210,8 @@ Cohesion: 0.13
 Nodes (14): Best Practices for Agents, Calling Operations, Client-Side Caching, Data Type Mapping Reference, Initialization, Installation, Resilient Enum Handling, Subscriptions (Realtime) (+6 more)
 
 ### Community 28 - "⛔️ CRITICAL RULE: NO INLINE INITIALIZATION ⛔️"
-Cohesion: 0.17
-Nodes (12): 1. Import and Initialize, 2. Type-Safe Data Models (Codable), 3. Basic CRUD Operations, 4. Pipeline Queries, 5. Realtime Listeners in SwiftUI (Lifecycle Best Practices), ⛔️ CRITICAL RULE: NO INLINE INITIALIZATION ⛔️, Examples, Initialization (+4 more)
+Cohesion: 0.13
+Nodes (14): 1. Import and Initialize, 2. Type-Safe Data Models (Codable), 3. Basic CRUD Operations, 4. Pipeline Queries, 5. Realtime Listeners in SwiftUI (Lifecycle Best Practices), ⛔️ CRITICAL RULE: NO FirebaseFirestoreSwift ⛔️, ⛔️ CRITICAL RULE: NO INLINE INITIALIZATION ⛔️, Examples (+6 more)
 
 ### Community 29 - "Firestore Indexes Reference"
 Cohesion: 0.13
@@ -225,8 +222,8 @@ Cohesion: 0.13
 Nodes (14): 1. The Anti-Ruby Mandate, 2. Modern Xcode Folder Synchronization, 3. Allowed Scripting Languages, 4. Toolchain Verification, 5. Mandatory Linker Flags for Static Frameworks (Firebase), **CRITICAL: Always Use Latest SDK Version**, ⛔️ CRITICAL RULES & ENVIRONMENT CHECKS, Empty Directory Workflow (+6 more)
 
 ### Community 31 - "Firebase SQL Connect"
-Cohesion: 0.14
-Nodes (14): 1. Define Data Model (`schema/schema.gql`), 2. Define Authorized Operations (`connector/queries.gql`, `connector/mutations.gql`), 3. Use type-safe SDK in your apps, Deployment & CLI, Development Workflow, Examples, Feature Capability Map, Firebase SQL Connect (+6 more)
+Cohesion: 0.20
+Nodes (10): Deployment & CLI, Examples, Feature Capability Map, Firebase SQL Connect, How to build apps using SQL Connect locally, How to deploy SQL Connect to Cloud SQL, How to initialize SQL Connect in a Firebase project, Key Tools for Validation (+2 more)
 
 ### Community 32 - "Writing Data"
 Cohesion: 0.14
@@ -237,16 +234,16 @@ Cohesion: 0.14
 Nodes (14): 1. Generate Firestore Rules, 3. Strict Path and Relationship Scoping, 4. Secure Counter Updates, 5. **CRITICAL** Ensure Application Validity, Advanced Validation for Business Logic, Critical Constraints, Critical Directives for Secure Generation, **CRITICAL** RBAC Guidelines (+6 more)
 
 ### Community 34 - "Advanced Validation for Business Logic"
-Cohesion: 0.13
-Nodes (14): 1. Generate Firestore Rules, 3. Strict Path and Relationship Scoping, 4. Secure Counter Updates, 5. **CRITICAL** Ensure Application Validity, Advanced Validation for Business Logic, Critical Constraints, Critical Directives for Secure Generation, **CRITICAL** RBAC Guidelines (+6 more)
+Cohesion: 0.33
+Nodes (6): 3. Strict Path and Relationship Scoping, 4. Secure Counter Updates, 5. **CRITICAL** Ensure Application Validity, Advanced Validation for Business Logic, Phase-3: Devil's Advocate Attack, Phase-4: Syntactic Validation
 
 ### Community 35 - "Cloud Functions Integration Reference"
 Cohesion: 0.15
 Nodes (12): Accessing User Authentication Context, Auth Context Mappings, Auth Extraction Example, Cloud Functions Integration Reference, Comprehensive Example, Core Trigger Configuration, 🚨 Critical Infinite Loop Constraint, Event Filtering (+4 more)
 
 ### Community 36 - "Realtime Reference"
-Cohesion: 0.22
-Nodes (8): CEL Bindings in Conditions, Common Patterns, Contents, Implicit Entity Refresh signals, `mutation` — The Triggering Event, Realtime Reference, `request` — The Query Subscription, When to Use What
+Cohesion: 0.15
+Nodes (12): CEL Bindings in Conditions, Combining Multiple @refresh Directives, Common Patterns, Contents, Explicit Mutation Signals (`onMutationExecuted`), Implicit Entity Refresh signals, `mutation` — The Triggering Event, Realtime Reference (+4 more)
 
 ### Community 37 - "iOS SDK"
 Cohesion: 0.15
@@ -265,15 +262,15 @@ Cohesion: 0.17
 Nodes (12): Basic Query, Best Practices for Agents, Calling Operations, Client-Side Caching, Data Type Mapping Reference, Flutter SDK, Imports, Initialization (+4 more)
 
 ### Community 41 - "Firebase AI Logic Basics"
-Cohesion: 0.18
-Nodes (11): Advanced Features, Firebase AI Logic Basics, Initialization Code References, Installation, On-Device AI (Hybrid), Overview, Prerequisites, References (+3 more)
+Cohesion: 0.10
+Nodes (21): Advanced Features, App Check, Chat Session (Multi-turn), Core Capabilities, Firebase AI Logic Basics, Generate Images with Nano Banana, Initialization Code References, Installation (+13 more)
 
 ### Community 42 - "🛠️ Firebase Android Setup Guide"
 Cohesion: 0.18
 Nodes (10): 0. Create an Android application, 1. Create a Firebase Project, 2. Register Your Android App, 3. Download `google-services.json`, Before running these commands, ensure you are authenticated: `npx -y firebase-tools@latest login` (or `npx -y firebase-tools@latest login --no-localhost` on remote servers), Fetch the configuration file using the App ID (which is printed in the output of the previous command): `npx -y firebase-tools@latest apps:sdkconfig ANDROID <APP_ID> --project <PROJECT_ID>` *Example output extraction to file:* ` # (Output must be saved as app/google-services.json)`, 🛠️ Firebase Android Setup Guide, Manual Verification (+2 more)
 
 ### Community 43 - "Android SDK"
-Cohesion: 0.20
+Cohesion: 0.18
 Nodes (10): Android SDK, Basic Query, Best Practices for Agents, Calling Operations, Client-Side Caching, Data Type Mapping Reference, Dependencies (build.gradle.kts), Initialization (+2 more)
 
 ### Community 44 - "Android SDK Usage (Enterprise Native Mode)"
@@ -285,11 +282,11 @@ Cohesion: 0.18
 Nodes (10): 1. Import and Initialize, 2. Type-Safe Data Models (Codable), 3. Writing Data (Modern Concurrency & Codable), 4. Reading Data (Modern Concurrency & Codable), 5. Realtime Listeners in SwiftUI (Lifecycle Best Practices), ⛔️ CRITICAL RULE: NO FirebaseFirestoreSwift ⛔️, ⛔️ CRITICAL RULE: NO INLINE INITIALIZATION ⛔️, Firebase Firestore iOS Setup Guide (+2 more)
 
 ### Community 46 - "SKILL.md"
-Cohesion: 0.20
-Nodes (6): Chat Session, Flutter Setup for Firebase AI Logic, Initialization, Installation, Text Generation, Usage
+Cohesion: 0.06
+Nodes (28): Chat Session, Flutter Setup for Firebase AI Logic, Initialization, Installation, Text Generation, Usage, 1. Import and Initialize, 2. SwiftUI Integration (Best Practices) (+20 more)
 
 ### Community 47 - "Firestore Indexes Reference"
-Cohesion: 0.20
+Cohesion: 0.22
 Nodes (9): CLI Commands, Config files, Firestore Indexes Reference, Index Density, Index Ordering, Index Structure, Management, Query Support Examples (+1 more)
 
 ### Community 48 - "Cloud Firestore on Android (Kotlin)"
@@ -325,12 +322,12 @@ Cohesion: 0.22
 Nodes (8): 1. Initialization, 2. Decision Framework: Pipelines vs. Standard Queries, 3. Pipeline Examples, 4. Real-Time Listener & Document Operations, Full-Text Search, Relational Joins Pattern, Rules & Accountability, Web SDK Usage (Enterprise Native Mode)
 
 ### Community 56 - "Firebase AI Logic iOS Setup Guide"
-Cohesion: 0.40
-Nodes (5): 1. Impersonating an Unauthenticated User, 2. Impersonating a Specific User (Cloud Functions), 3. Impersonating a Specific User (Plain HTTP), 4. Running with Unrestricted Access, Usage Examples
+Cohesion: 0.22
+Nodes (9): 1. Impersonating an Unauthenticated User, 2. Impersonating a Specific User (Cloud Functions), 3. Impersonating a Specific User (Plain HTTP), 4. Running with Unrestricted Access, Admin Node SDK, Best Practices for Agents, Configuration in `connector.yaml`, Generation (+1 more)
 
 ### Community 57 - "Firebase AI Logic iOS Setup Guide"
-Cohesion: 0.25
-Nodes (7): 1. Import and Initialize, 2. SwiftUI Integration (Best Practices), 3. Safety Settings, Advanced Features, Chat Session (Multi-turn), Firebase AI Logic iOS Setup Guide, Function Calling (Tools)
+Cohesion: 0.50
+Nodes (4): 1. Define Data Model (`schema/schema.gql`), 2. Define Authorized Operations (`connector/queries.gql`, `connector/mutations.gql`), 3. Use type-safe SDK in your apps, Development Workflow
 
 ### Community 58 - "Basic Checks"
 Cohesion: 0.25
@@ -340,10 +337,6 @@ Nodes (7): Authentication in Security Rules, Basic Checks, Check if user is sign
 Cohesion: 0.25
 Nodes (7): 1. Configure and Verify Firebase MCP Server, 1. Install and Verify Firebase Extension, 2. Restart and Verify Connection, 2. Restart and Verify Connection, Alternative: Manual MCP Configuration (Project Scope), Gemini CLI Setup, Recommended: Installing Extensions
 
-### Community 60 - "SKILL.md"
-Cohesion: 0.25
-Nodes (4): Admin Node SDK, Best Practices for Agents, Configuration in `connector.yaml`, Generation
-
 ### Community 61 - "Schema Reference"
 Cohesion: 0.10
 Nodes (20): @col, Contents, Core Directives, Customizing Tables, Data Types, @default, Defining Types, Enumerations (+12 more)
@@ -352,25 +345,13 @@ Nodes (20): @col, Contents, Core Directives, Customizing Tables, Data Types, @de
 Cohesion: 0.25
 Nodes (8): 1. Create a Firestore Enterprise Database, 2. Create `firebase.json`, 2. Create `firestore.rules`, 3. Create `firestore.indexes.json`, Deploy rules and indexes, Local Emulation, Manual Initialization, Provisioning Firestore Enterprise Native Mode
 
-### Community 63 - "Firebase AI Logic on Android (Kotlin)"
-Cohesion: 0.25
-Nodes (8): 0. Enable Firebase AI Logic via CLI, 1. Add Dependencies, 2. Initialize and Generate Content, 3. Multimodal Input (Text and Images), 4. Chat Session (Multi-turn), 5. Streaming Responses, Firebase AI Logic on Android (Kotlin), Jetpack Compose (Modern)
-
-### Community 64 - "Firebase AI Logic Basics"
-Cohesion: 0.29
-Nodes (7): Advanced Features, Chat Session (Multi-turn), Core Capabilities, Firebase AI Logic Basics, Initialization Pattern, Multimodal (Text + Images/Audio/Video/PDF input), Streaming Responses
-
 ### Community 65 - "Firebase Auth & Google Sign-In for Flutter"
 Cohesion: 0.29
 Nodes (7): 1. `google_sign_in` 7.2.0 API Changes, 2. Initialization & Web Hang/Crash Pitfalls, 3. Web Logout Crashes, 4. Prototyping Workaround: Bypassing Firestore Composite Indices, 5. Robust `AuthService` Boilerplate, 6. Troubleshooting `auth/unauthorized-domain` on Flutter Web, Firebase Auth & Google Sign-In for Flutter
 
 ### Community 66 - "Data Seeding & Bulk Operations Reference"
-Cohesion: 0.29
-Nodes (6): 2. Production: Admin SDK Bulk Operations, 3. Production: Bulk Operations via raw SQL, 🚨 Critical SQL Operations Constraint, Data Seeding & Bulk Operations Reference, SDK Bulk APIs Features:, SDK Bulk Operations Example
-
-### Community 67 - "Core Capabilities"
-Cohesion: 0.29
-Nodes (7): Chat Session (Multi-turn), Core Capabilities, Generate Images with Nano Banana, Multimodal (Text + Images/Audio/Video/PDF input), Search Grounding with the built in googleSearch tool, Streaming Responses, Text-Only Generation
+Cohesion: 0.15
+Nodes (12): 1. Local Prototyping: Data Seeding, 2. Production: Admin SDK Bulk Operations, 3. Production: Bulk Operations via raw SQL, 🚨 Critical SQL Operations Constraint, Data Seeding & Bulk Operations Reference, Resetting Seed Data, SDK Bulk APIs Features:, SDK Bulk Operations Example (+4 more)
 
 ### Community 68 - "Cloud Firestore in Flutter"
 Cohesion: 0.29
@@ -413,8 +394,8 @@ Cohesion: 0.33
 Nodes (5): 1. Create a Firebase Project and App, 2. Installation, 3. Initialization, 4. Using Services, Firebase Web Setup Guide
 
 ### Community 78 - "1. Local Prototyping: Data Seeding"
-Cohesion: 0.33
-Nodes (6): 1. Local Prototyping: Data Seeding, Resetting Seed Data, ⚠️ Seeding Directives Rule, Seeding Independent Tables (FK Order), Seeding Related Tables (Nested Relational Inserts), The `seed_data.gql` Workflow
+Cohesion: 0.22
+Nodes (10): ChatAppAboutMe(), ContentScreen(), VIEW_TITLES, USER_OPTIONS, aboutInfo, contactInfo, educationInfo, professionalExperience (+2 more)
 
 ### Community 80 - "Antigravity Setup"
 Cohesion: 0.40
@@ -428,26 +409,26 @@ Nodes (4): 1. Install and Verify Plugins, 2. Restart and Verify Connection, Clau
 Cohesion: 0.40
 Nodes (4): 1. Install and Verify Firebase Skills, 2. Configure and Verify Firebase MCP Server, 3. Restart and Verify Connection, Cursor Setup
 
-### Community 83 - "Security & Production"
-Cohesion: 0.67
-Nodes (3): App Check, Remote Config, Security & Production
-
 ### Community 85 - "Android Studio Setup"
 Cohesion: 0.50
 Nodes (3): Android Studio Setup, MCP Setup, Skills Installation
 
 ### Community 87 - "The @refresh Directive"
-Cohesion: 0.50
-Nodes (4): Combining Multiple @refresh Directives, Explicit Mutation Signals (`onMutationExecuted`), The @refresh Directive, Time-Based Polling (`every`)
+Cohesion: 0.22
+Nodes (9): 1. Vector Similarity Search (Semantic), A. Auto-Embedding Search, A. Generation on Insert, Automatic Embedding Generation (`_embed` server value), B. Custom Vector Search, B. Generation on Update, Schema Setup, Similarity Search Queries (+1 more)
+
+### Community 88 - "Workflow"
+Cohesion: 0.33
+Nodes (6): Critical Directives for Secure Generation, **CRITICAL** RBAC Guidelines, Mandatory: User Data Separation (The "No Mixed Content" Rule), Phase-1: Codebase Analysis, Phase-2: Security Rules Generation, Workflow
 
 ## Ambiguous Edges - Review These
 - `graphify` → `Configured Claude 4 Sonnet Model`  [AMBIGUOUS]
   .continue/agents/new-config.yaml · relation: conceptually_related_to
 
 ## Knowledge Gaps
-- **585 isolated node(s):** `PackageDescription`, `Foundation`, `PathKit`, `name`, `private` (+580 more)
+- **586 isolated node(s):** `PackageDescription`, `Foundation`, `PathKit`, `name`, `private` (+581 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -455,7 +436,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **What is the exact relationship between `graphify` and `Configured Claude 4 Sonnet Model`?**
   _Edge tagged AMBIGUOUS (relation: conceptually_related_to) - confidence is low._
 - **What connects `PackageDescription`, `Foundation`, `PathKit` to the rest of the system?**
-  _585 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _586 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `PortfolioMon Battle Game (App.jsx)` be split into smaller, more focused modules?**
   _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
 - **Should `React App Dependencies (package.json)` be split into smaller, more focused modules?**
@@ -463,6 +444,6 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `NPM Scripts (build/dev/lint)` be split into smaller, more focused modules?**
   _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
 - **Should `App Component & Audio/Color Helpers` be split into smaller, more focused modules?**
-  _Cohesion score 0.09815078236130868 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07372549019607844 - nodes in this community are weakly interconnected._
 - **Should `ESLint React Hooks Plugin` be split into smaller, more focused modules?**
   _Cohesion score 0.05555555555555555 - nodes in this community are weakly interconnected._

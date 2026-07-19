@@ -62,11 +62,8 @@
   "60": "SKILL.md",
   "61": "Schema Reference",
   "62": "Manual Initialization",
-  "63": "Firebase AI Logic on Android (Kotlin)",
-  "64": "Firebase AI Logic Basics",
   "65": "Firebase Auth & Google Sign-In for Flutter",
   "66": "Data Seeding & Bulk Operations Reference",
-  "67": "Core Capabilities",
   "68": "Cloud Firestore in Flutter",
   "69": "Cloud Firestore in Flutter",
   "70": "Manual Initialization",
@@ -82,9 +79,9 @@
   "80": "Antigravity Setup",
   "81": "Recommended Method: Using Plugins",
   "82": "Cursor Setup",
-  "83": "Security & Production",
   "84": "resolve.mjs",
   "85": "Android Studio Setup",
   "86": "PackageDescription",
-  "87": "The @refresh Directive"
+  "87": "The @refresh Directive",
+  "88": "Workflow"
 }

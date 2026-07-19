@@ -26,7 +26,6 @@ body {
 .menu-hint,
 .content-card,
 .info-card,
-.audio-controls,
 .monster-card,
 .result-overlay,
 .type-chart-popover,
@@ -248,6 +247,74 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   50.01%, 100% { opacity: 0; }
 }
 
+/* ── "CHAT WITH AI" option: Persona 5 variant ──
+   Echoes the PORTFOLIO AI page (ChatAppAboutMe): black/red/white palette,
+   angular diagonal-cut corner, hard colored offset shadow, condensed poster
+   type. The chat option is always unlocked, so no locked skin is needed. */
+.menu-option-p5 {
+  --p5-red: #ff1f3d;
+  --p5-red-deep: #c00020;
+  --p5-black: #0a0a0a;
+  --p5-white: #f6f6f4;
+  background: var(--p5-black);
+  color: var(--p5-white);
+  border: 3px solid var(--p5-red);
+  box-shadow: none;
+  /* drop-shadow (not box-shadow) so the offset follows the diagonal clip-path. */
+  filter: drop-shadow(4px 4px 0 var(--p5-red));
+  /* Inherit the base menu typography (font/size/padding) so the button keeps the
+     exact height + width of its siblings; P5 identity comes from color + shape. */
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+  text-shadow: 2px 2px 0 var(--p5-red-deep);
+  transition: transform 0.08s ease, filter 0.08s ease, background 0.1s ease, color 0.1s ease, border-color 0.1s ease;
+}
+.menu-option-p5:hover:not(.locked) {
+  background: var(--p5-red);
+  color: var(--p5-white);
+  border-color: var(--p5-white);
+  filter: drop-shadow(4px 4px 0 var(--p5-black));
+  text-shadow: 2px 2px 0 var(--p5-black);
+}
+.menu-option-p5:active:not(.locked) {
+  transform: translate(4px, 4px);
+  filter: drop-shadow(0 0 0 var(--p5-red));
+}
+/* Keyboard-selected highlight: red field + white frame, on-brand. */
+.menu-option-p5.active {
+  background: var(--p5-red);
+  color: var(--p5-white);
+  border-color: var(--p5-white);
+  filter: drop-shadow(4px 4px 0 var(--p5-black));
+  text-shadow: 2px 2px 0 var(--p5-black);
+}
+/* The blinking ► cursor that marks the active option: recolor to white. */
+.menu-option-p5.active::before {
+  border-color: transparent transparent transparent var(--p5-white);
+}
+
+/* "NEW" badge on the CHAT WITH AI option — mirrors the chat page's "SEEN"
+   stamp: angled red chip, poster type, clipped corner, hard black shadow,
+   slam-in. Persistent marker (kept self-contained so it animates on the menu
+   screen even when ChatAppAboutMe.css isn't loaded). */
+.menu-option-p5-stamp {
+  flex-shrink: 0;
+  padding: 5px 11px;
+  background: var(--p5-red);
+  color: var(--p5-white);
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  clip-path: polygon(6% 0, 100% 0, 94% 100%, 0 100%);
+  box-shadow: 2px 2px 0 var(--p5-black);
+  animation: menu-p5-stamp 0.22s cubic-bezier(0.3, 1.6, 0.5, 1) both;
+}
+@keyframes menu-p5-stamp {
+  from { opacity: 0; transform: rotate(-8deg) scale(1.8); }
+  to { opacity: 1; transform: rotate(-8deg) scale(1); }
+}
+
 .menu-hint, .info-card, .content-card {
   padding: 16px;
   background: var(--c-panel-2);
@@ -433,17 +500,50 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   min-height: 210px;
 }
 
-/* ── Audio controls ── */
+/* ── Audio controls ──
+   Collapsed to a small floating button pinned to the bottom-right of the
+   viewport. Expands into a popover (above the button) only on demand, so it
+   never overlaps the main menu regardless of how tall the menu grows. */
 .audio-controls {
-  position: absolute;
+  position: fixed;
   left: 20px;
   bottom: 20px;
+  z-index: 50;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
+}
+.audio-fab {
+  border-radius: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--c-panel);
+  border: 3px solid var(--c-frame);
+  box-shadow:
+    0 0 0 3px var(--c-shadow),
+    4px 4px 0 var(--c-shadow);
+  color: var(--c-ink);
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.audio-fab:hover { filter: brightness(1.12); }
+.audio-row { display: flex; align-items: center; gap: 10px; }
+.audio-popover {
   padding: 10px 12px;
   background: var(--c-panel);
+  border: 3px solid var(--c-frame);
+  box-shadow:
+    0 0 0 3px var(--c-shadow),
+    8px 8px 0 var(--c-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
 }
 .audio-buttons { display: flex; align-items: center; gap: 10px; }
 .now-playing {
@@ -452,6 +552,7 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   font-size: 1.15rem;
   letter-spacing: 0.02rem;
   color: var(--c-muted);
+  text-shadow: 1px 1px 0 var(--c-shadow);
 }
 .audio-toggle {
   border-radius: 0;
@@ -465,6 +566,14 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   justify-content: center;
 }
 .audio-toggle.next-song {
+  width: auto;
+  padding: 0 12px;
+  font-family: var(--font-display);
+  font-size: 0.55rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+}
+.audio-toggle.playlist-toggle {
   width: auto;
   padding: 0 12px;
   font-family: var(--font-display);
@@ -957,4 +1066,147 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   .battle-field.shake { animation: none; }
   .damage-float { display: none; }
   .hp-fill { transition: none; }
+}
+
+/* ── Main menu: browse bypass + explainer ── */
+.menu-browse-row { margin-top: 18px; display: flex; flex-direction: column; gap: 8px; }
+.menu-browse {
+  align-self: flex-start;
+  padding: 12px 18px;
+  font-family: var(--font-display);
+  font-size: 0.62rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  color: var(--c-yellow);
+  background: rgba(255, 214, 74, 0.08);
+  border: 3px solid var(--c-yellow);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.menu-browse:hover { filter: brightness(1.15); }
+.menu-browse:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+.menu-browse:disabled { opacity: 0.55; cursor: default; filter: none; transform: none; box-shadow: 4px 4px 0 var(--c-shadow); }
+.menu-browse.completed {
+  color: var(--c-green);
+  background: rgba(34, 197, 94, 0.12);
+  border-color: var(--c-green);
+}
+.menu-browse.completed:disabled {
+  opacity: 1;
+  cursor: default;
+  filter: none;
+  transform: none;
+  box-shadow: 4px 4px 0 var(--c-shadow);
+}
+
+/* ── Boss-defeat star row ── */
+.menu-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 2px solid var(--c-frame);
+}
+.menu-stars-label {
+  margin-right: 4px;
+  font-family: var(--font-display);
+  font-size: 0.5rem;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.menu-star {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.menu-star.empty { color: var(--c-frame); }
+.menu-star.filled {
+  color: var(--c-yellow);
+  text-shadow: 0 0 6px rgba(255, 214, 74, 0.6);
+}
+.menu-explain { margin: 0; font-family: var(--font-body); font-size: 1.05rem; color: var(--c-muted); line-height: 1.4; }
+
+/* ── About (static) page ── */
+.about-card { display: flex; flex-direction: column; gap: 14px; }
+.about-highlights { margin: 4px 0 0; padding-left: 18px; list-style: square; }
+.about-highlights li { color: var(--c-ink); font-size: 1.2rem; line-height: 1.45; margin-bottom: 8px; }
+.about-chat-link {
+  align-self: flex-start;
+  margin-top: 6px;
+  padding: 12px 18px;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--c-cyan);
+  background: var(--c-panel-2);
+  border: 3px solid var(--c-cyan);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.about-chat-link:hover { filter: brightness(1.15); }
+.about-chat-link:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+
+/* ── Education (redesigned) ── */
+.edu-card { display: flex; flex-direction: column; gap: 14px; }
+.edu-head { display: flex; flex-direction: column; gap: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--c-frame); }
+.edu-degree { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04rem; color: var(--c-ink); }
+.edu-school { font-size: 1.5rem; font-weight: bold; color: var(--c-cyan); margin: 0; }
+.edu-meta { font-size: 1.05rem; color: var(--c-muted); margin: 0; }
+.edu-highlights { margin: 0; padding-left: 18px; list-style: square; }
+.edu-highlights li { color: var(--c-ink); font-size: 1.2rem; line-height: 1.45; margin-bottom: 8px; }
+
+/* ── Skills ── */
+.skills-card { display: flex; flex-direction: column; gap: 16px; }
+.skills-intro { margin: 0; }
+.skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.skill-category { padding: 14px; background: var(--c-panel-2); border: 3px solid var(--c-frame); box-shadow: 4px 4px 0 var(--c-shadow); }
+.skill-category-title { font-family: var(--font-display); font-size: 0.72rem; letter-spacing: 0.06rem; text-transform: uppercase; color: var(--c-red); margin: 0 0 10px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.skill-tag {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  color: var(--c-cyan);
+  padding: 6px 12px;
+  border: 2px solid var(--c-cyan);
+  background: rgba(69, 230, 255, 0.08);
+}
+
+/* ── Projects ── */
+.projects-card { display: flex; flex-direction: column; gap: 16px; }
+.projects-intro { margin: 0; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; }
+.project-card { display: flex; flex-direction: column; gap: 10px; padding: 16px; background: var(--c-panel-2); border: 3px solid var(--c-frame); box-shadow: 4px 4px 0 var(--c-shadow); }
+.project-name { font-family: var(--font-display); font-size: 0.92rem; letter-spacing: 0.04rem; color: var(--c-ink); margin: 0; }
+.project-blurb { font-size: 1.15rem; line-height: 1.45; color: var(--c-ink); margin: 0; }
+.project-tech { display: flex; flex-wrap: wrap; gap: 8px; }
+.tech-tag { font-family: var(--font-display); font-size: 0.5rem; letter-spacing: 0.06rem; text-transform: uppercase; color: var(--c-ink); padding: 5px 10px; border: 2px solid var(--c-muted); background: rgba(255, 255, 255, 0.04); }
+.project-link { align-self: flex-start; margin-top: 2px; font-family: var(--font-display); font-size: 0.6rem; letter-spacing: 0.08rem; text-transform: uppercase; color: var(--c-cyan); text-decoration: none; border-bottom: 2px solid var(--c-cyan); }
+
+/* ── Contact (redesigned) ── */
+.contact-card { display: flex; flex-direction: column; gap: 16px; }
+.contact-blurb { margin: 0; }
+.resume-btn {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, var(--c-blue), var(--c-purple));
+  border: 3px solid var(--c-frame);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+}
+.resume-btn:hover { filter: brightness(1.12); }
+.resume-btn:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+
+/* ── New content pages: stack grids on narrow screens ── */
+@media (max-width: 780px) {
+  .skills-grid { grid-template-columns: 1fr; }
 }

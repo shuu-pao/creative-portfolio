@@ -89,7 +89,7 @@ export function buildHollowSteps(battleState, move) {
     if (effectiveness !== 1) {
       steps.push({ text: `It was ${getEffectivenessText(effectiveness)}${effectiveness === 2 ? '!' : '.'}`, apply: (prev) => ({ ...prev }), sound: null })
     }
-    if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'You defeated TWO!', apply: (prev) => ({ ...prev, result: 'victory', unlockSection: 'about' }), sound: 'You Win' })
+    if (battleState.enemy.hp - playerDamage <= 0) steps.push({ text: 'You defeated TWO!', apply: (prev) => ({ ...prev, result: 'victory', unlockSections: ['about'] }), sound: 'You Win' })
   }
 
   // TALK on TWO reuses this builder with an `enemy-only` move: skip the player's

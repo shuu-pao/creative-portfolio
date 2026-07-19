@@ -5,8 +5,8 @@
     "semantic_hash": "fec31362e5a2d8bc433bdd4f7ccac173"
   },
   ".claude/settings.local.json": {
-    "mtime": 1784283919.284833,
-    "ast_hash": "c487ba79e758457953d49ed6534d3e62",
+    "mtime": 1784485712.4305706,
+    "ast_hash": "6b03f8db6accf08e8e853491fd7aa4f8",
     "semantic_hash": ""
   },
   "eslint.config.js": {
@@ -20,8 +20,8 @@
     "semantic_hash": ""
   },
   "src/App.jsx": {
-    "mtime": 1784469173.449537,
-    "ast_hash": "48322707f0faeb6c1c4e13cc2c6d9191",
+    "mtime": 1784486262.5843232,
+    "ast_hash": "c90df1db1a94094dacafe2184a2af751",
     "semantic_hash": ""
   },
   "src/main.jsx": {
@@ -108,11 +108,6 @@
     "mtime": 1783609421.11886,
     "ast_hash": "5b8732921617964303eae1bb3e2e5ebb",
     "semantic_hash": "5b8732921617964303eae1bb3e2e5ebb"
-  },
-  "public/audio/Pokemon RubySapphireEmerald- Littleroot Town.mp3": {
-    "mtime": 1783609475.9972243,
-    "ast_hash": "1697d61e694602bb5f28cb445282d2eb",
-    "semantic_hash": "1697d61e694602bb5f28cb445282d2eb"
   },
   "public/audio/Pre-Final Exam.mp3": {
     "mtime": 1783605897.015321,
@@ -345,13 +340,13 @@
     "semantic_hash": ""
   },
   "src/components/AudioControls.jsx": {
-    "mtime": 1784201605.0536091,
-    "ast_hash": "211c4d3d884ed8e89e700e93c5d243cb",
+    "mtime": 1784486257.9734986,
+    "ast_hash": "02ff40c0ec035f0001c7f3cf51ffce8a",
     "semantic_hash": ""
   },
   "src/components/BattleScreen.jsx": {
-    "mtime": 1784469168.7107732,
-    "ast_hash": "dad13ed5566bb1148cc9ea8e3e84626f",
+    "mtime": 1784473611.8237908,
+    "ast_hash": "34586b0ab601b2c12c16cee13982f3a8",
     "semantic_hash": ""
   },
   "src/components/BossSelect.jsx": {
@@ -360,13 +355,13 @@
     "semantic_hash": ""
   },
   "src/components/ContentScreen.jsx": {
-    "mtime": 1784468291.0497303,
-    "ast_hash": "74a1412651b8c3045a2d950f173e2feb",
+    "mtime": 1784473712.2050967,
+    "ast_hash": "aa4a8e6db349fe4299e936e485d205a2",
     "semantic_hash": ""
   },
   "src/components/MainMenu.jsx": {
-    "mtime": 1784224358.046631,
-    "ast_hash": "de28c9483701e3c7f40be2ad9e0afa95",
+    "mtime": 1784488681.7960315,
+    "ast_hash": "cdbecdfc313282755ee81d5a514abe59",
     "semantic_hash": ""
   },
   "src/components/NameEntry.jsx": {
@@ -390,8 +385,8 @@
     "semantic_hash": ""
   },
   "src/data/audio.js": {
-    "mtime": 1784457899.0688798,
-    "ast_hash": "79436a29014544ea18397b4d8f19f38c",
+    "mtime": 1784484200.9972167,
+    "ast_hash": "b3b3e23da27510ba87d40ce24bb8fb0a",
     "semantic_hash": ""
   },
   "src/data/bosses.js": {
@@ -400,13 +395,13 @@
     "semantic_hash": ""
   },
   "src/data/content.js": {
-    "mtime": 1784468276.4922752,
-    "ast_hash": "566ec95b7026095ca7ea91a43d9ad14d",
+    "mtime": 1784487058.9189234,
+    "ast_hash": "f54d1f3c6a32e9e6f5f511b1a2442e9a",
     "semantic_hash": ""
   },
   "src/data/menu.js": {
-    "mtime": 1784457850.5797648,
-    "ast_hash": "ce42a0bb50c7584895df0f6dfcd9bc47",
+    "mtime": 1784486242.6315978,
+    "ast_hash": "aba8caf5dea39e1e71a7e99020e20eb9",
     "semantic_hash": ""
   },
   "src/data/questions.js": {
@@ -415,8 +410,8 @@
     "semantic_hash": ""
   },
   "src/game/battleHollow.js": {
-    "mtime": 1784457979.250666,
-    "ast_hash": "a4a5afe403b31e3114d6f119b4247b51",
+    "mtime": 1784478431.5249763,
+    "ast_hash": "121a92430278fa5c583e240357071cd8",
     "semantic_hash": ""
   },
   "src/game/battleMoves.js": {
@@ -425,8 +420,8 @@
     "semantic_hash": ""
   },
   "src/game/battleSchool.js": {
-    "mtime": 1784464105.626175,
-    "ast_hash": "2521dfda8ca808c8d2fbd0a9d7d6d2d6",
+    "mtime": 1784473577.7083871,
+    "ast_hash": "67dbfd6c7924889737096d7aa4a3f005",
     "semantic_hash": ""
   },
   "src/game/types.js": {
@@ -440,13 +435,13 @@
     "semantic_hash": ""
   },
   "src/hooks/useBackgroundMusic.js": {
-    "mtime": 1784464087.2997897,
-    "ast_hash": "71fbd6334f45fe21a2369758aa3c38a0",
+    "mtime": 1784489004.1167076,
+    "ast_hash": "5b26c6a24b84b14b6aa83f99b2a3a5c7",
     "semantic_hash": ""
   },
   "src/hooks/useBattle.js": {
-    "mtime": 1784469163.7312682,
-    "ast_hash": "14fe582a538b101411209199fbb40333",
+    "mtime": 1784483583.8468645,
+    "ast_hash": "6b093341d114eafe058b1ebad6e4319a",
     "semantic_hash": ""
   },
   "src/hooks/useTypewriter.js": {
@@ -1900,13 +1895,13 @@
     "semantic_hash": ""
   },
   "src/components/ChatAppAboutMe.jsx": {
-    "mtime": 1784283571.289029,
-    "ast_hash": "b8ab39364c94c09744f50c601c9e600a",
+    "mtime": 1784488295.32314,
+    "ast_hash": "df11187d4b08b765be5404836d03c2a1",
     "semantic_hash": ""
   },
   "src/data/chatData.js": {
-    "mtime": 1784280750.0647545,
-    "ast_hash": "3b534962b06fb8c1f79d9f2f4db5ad1c",
+    "mtime": 1784474790.331459,
+    "ast_hash": "25bd7405bf0055cff514cd346f8b0a7c",
     "semantic_hash": ""
   },
   "src/game/battleAsgore.js": {
@@ -1915,8 +1910,8 @@
     "semantic_hash": ""
   },
   "src/game/battleGhost.js": {
-    "mtime": 1784464028.3912957,
-    "ast_hash": "e64d41bc385376be5359d7c596bb78ec",
+    "mtime": 1784478443.7278814,
+    "ast_hash": "beda7de438ff13054798b5d8ce8addb1",
     "semantic_hash": ""
   },
   "src/game/battleTalk.js": {
@@ -2032,6 +2027,46 @@
   "public/audio/Ghost Fight (UNDERTALE Soundtrack) - Toby Fox.mp3": {
     "mtime": 1784460445.2468877,
     "ast_hash": "accd1ce4c567e9ef849993ca398c139a",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 4 OST - Heaven.mp3": {
+    "mtime": 1784482794.3941166,
+    "ast_hash": "491457159ec8e94f4ddeefb8cdb05fe0",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 5 OST 109 - With the Stars and Us (Hoshi to Bokura to).mp3": {
+    "mtime": 1784482242.0137794,
+    "ast_hash": "36aab4b1561bbf848c33e0de359c30e5",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 5 OST 29 - Beneath the Mask.mp3": {
+    "mtime": 1784482989.7757075,
+    "ast_hash": "dc2bfee089ab4a17004c51960e8edff9",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 5 OST 69 - Sweet.mp3": {
+    "mtime": 1784483013.7520826,
+    "ast_hash": "73bc33d2336a193ffd6dc20d2059a04a",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 5 Royal - No More What Ifs.mp3": {
+    "mtime": 1784482358.162228,
+    "ast_hash": "7388c212e7473f360111a68a1b23da8b",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 4 OST - Heartbeat Heartbreak.mp3": {
+    "mtime": 1784482020.88303,
+    "ast_hash": "d4633e722a93a7737975ae796296d8ad",
+    "semantic_hash": ""
+  },
+  "public/audio/Persona 5 - Wake Up Get up Get Out There.mp3": {
+    "mtime": 1784482951.325602,
+    "ast_hash": "13f80101182d0a0d8a3830bcc4242271",
+    "semantic_hash": ""
+  },
+  "public/audio/Pokemon RubySapphireEmerald - Littleroot Town.mp3": {
+    "mtime": 1783609475.9972243,
+    "ast_hash": "1697d61e694602bb5f28cb445282d2eb",
     "semantic_hash": ""
   }
 }

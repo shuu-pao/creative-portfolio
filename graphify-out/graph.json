@@ -780,7 +780,7 @@
       "label": "AudioControls()",
       "file_type": "code",
       "source_file": "src/components/AudioControls.jsx",
-      "source_location": "L3",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_audiocontrols_audiocontrols",
       "community": 5,
@@ -793,7 +793,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_battlescreen",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlescreen.jsx"
     },
     {
@@ -803,17 +803,17 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "src_components_battlescreen_unlockedsectionlabel",
-      "community": 16,
+      "community": 5,
       "norm_label": "unlockedsectionlabel()"
     },
     {
       "label": "BattleScreen()",
       "file_type": "code",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "src_components_battlescreen_battlescreen",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlescreen()"
     },
     {
@@ -843,7 +843,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_chatappaboutme",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatappaboutme.jsx"
     },
     {
@@ -853,17 +853,17 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_chatappaboutme_chatappaboutme",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatappaboutme()"
     },
     {
       "label": "ChatMessage()",
       "file_type": "code",
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
+      "source_location": "L220",
       "_origin": "ast",
       "id": "src_components_chatappaboutme_chatmessage",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatmessage()"
     },
     {
@@ -873,17 +873,27 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_contentscreen",
-      "community": 5,
+      "community": 78,
       "norm_label": "contentscreen.jsx"
+    },
+    {
+      "label": "VIEW_TITLES",
+      "file_type": "code",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "src_components_contentscreen_view_titles",
+      "community": 78,
+      "norm_label": "view_titles"
     },
     {
       "label": "ContentScreen()",
       "file_type": "code",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L28",
       "_origin": "ast",
       "id": "src_components_contentscreen_contentscreen",
-      "community": 5,
+      "community": 78,
       "norm_label": "contentscreen()"
     },
     {
@@ -900,7 +910,7 @@
       "label": "MainMenu()",
       "file_type": "code",
       "source_file": "src/components/MainMenu.jsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_mainmenu_mainmenu",
       "community": 5,
@@ -933,7 +943,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_resultoverlay",
-      "community": 16,
+      "community": 5,
       "norm_label": "resultoverlay.jsx"
     },
     {
@@ -943,7 +953,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_components_resultoverlay_resultoverlay",
-      "community": 16,
+      "community": 5,
       "norm_label": "resultoverlay()"
     },
     {
@@ -973,7 +983,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_components_typechart",
-      "community": 16,
+      "community": 5,
       "norm_label": "typechart.jsx"
     },
     {
@@ -983,7 +993,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "src_components_typechart_types",
-      "community": 16,
+      "community": 5,
       "norm_label": "types"
     },
     {
@@ -993,7 +1003,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "src_components_typechart_emoji",
-      "community": 16,
+      "community": 5,
       "norm_label": "emoji"
     },
     {
@@ -1003,7 +1013,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_components_typechart_color",
-      "community": 16,
+      "community": 5,
       "norm_label": "color"
     },
     {
@@ -1013,7 +1023,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "src_components_typechart_axisarrow",
-      "community": 16,
+      "community": 5,
       "norm_label": "axisarrow()"
     },
     {
@@ -1023,7 +1033,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "src_components_typechart_typechart",
-      "community": 16,
+      "community": 5,
       "norm_label": "typechart()"
     },
     {
@@ -1063,7 +1073,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_bosses",
-      "community": 16,
+      "community": 5,
       "norm_label": "bosses.js"
     },
     {
@@ -1083,7 +1093,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "src_data_bosses_boss_assets",
-      "community": 16,
+      "community": 5,
       "norm_label": "boss_assets"
     },
     {
@@ -1093,7 +1103,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "src_data_bosses_type_colors",
-      "community": 16,
+      "community": 5,
       "norm_label": "type_colors"
     },
     {
@@ -1103,7 +1113,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "src_data_bosses_move_descriptions",
-      "community": 16,
+      "community": 5,
       "norm_label": "move_descriptions"
     },
     {
@@ -1113,7 +1123,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "src_data_bosses_hollow_damage",
-      "community": 16,
+      "community": 5,
       "norm_label": "hollow_damage"
     },
     {
@@ -1123,7 +1133,7 @@
       "source_location": "L77",
       "_origin": "ast",
       "id": "src_data_bosses_movesfor",
-      "community": 16,
+      "community": 5,
       "norm_label": "movesfor()"
     },
     {
@@ -1133,7 +1143,7 @@
       "source_location": "L66",
       "_origin": "ast",
       "id": "src_data_bosses_rationale_66",
-      "community": 16,
+      "community": 5,
       "norm_label": "note: the hollow enemy deals the same fraction on super-effective and neutral"
     },
     {
@@ -1143,17 +1153,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_chatdata",
-      "community": 5,
+      "community": 78,
       "norm_label": "chatdata.js"
     },
     {
       "label": "USER_OPTIONS",
       "file_type": "code",
       "source_file": "src/data/chatData.js",
-      "source_location": "L6",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "src_data_chatdata_user_options",
-      "community": 5,
+      "community": 78,
       "norm_label": "user_options"
     },
     {
@@ -1163,47 +1173,67 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_data_content",
-      "community": 5,
+      "community": 78,
       "norm_label": "content.js"
     },
     {
-      "label": "aboutText",
+      "label": "aboutInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L1",
+      "source_location": "L5",
       "_origin": "ast",
-      "id": "src_data_content_abouttext",
-      "community": 5,
-      "norm_label": "abouttext"
+      "id": "src_data_content_aboutinfo",
+      "community": 78,
+      "norm_label": "aboutinfo"
     },
     {
-      "label": "educationText",
+      "label": "educationInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L8",
+      "source_location": "L20",
       "_origin": "ast",
-      "id": "src_data_content_educationtext",
-      "community": 5,
-      "norm_label": "educationtext"
+      "id": "src_data_content_educationinfo",
+      "community": 78,
+      "norm_label": "educationinfo"
     },
     {
-      "label": "contactLinks",
+      "label": "contactInfo",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L14",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "src_data_content_contactlinks",
-      "community": 5,
-      "norm_label": "contactlinks"
+      "id": "src_data_content_contactinfo",
+      "community": 78,
+      "norm_label": "contactinfo"
+    },
+    {
+      "label": "skillsInfo",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "src_data_content_skillsinfo",
+      "community": 78,
+      "norm_label": "skillsinfo"
+    },
+    {
+      "label": "projectsInfo",
+      "file_type": "code",
+      "source_file": "src/data/content.js",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "src_data_content_projectsinfo",
+      "community": 78,
+      "norm_label": "projectsinfo"
     },
     {
       "label": "professionalExperience",
       "file_type": "code",
       "source_file": "src/data/content.js",
-      "source_location": "L22",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "src_data_content_professionalexperience",
-      "community": 5,
+      "community": 78,
       "norm_label": "professionalexperience"
     },
     {
@@ -1220,7 +1250,7 @@
       "label": "menuOptionsBase",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L2",
+      "source_location": "L3",
       "_origin": "ast",
       "id": "src_data_menu_menuoptionsbase",
       "community": 5,
@@ -1230,21 +1260,71 @@
       "label": "bossOptions",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "src_data_menu_bossoptions",
       "community": 5,
       "norm_label": "bossoptions"
     },
     {
-      "label": "menuPlaylist",
+      "label": "pokemonPlaylist",
       "file_type": "code",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "src_data_menu_menuplaylist",
+      "id": "src_data_menu_pokemonplaylist",
       "community": 5,
-      "norm_label": "menuplaylist"
+      "norm_label": "pokemonplaylist"
+    },
+    {
+      "label": "personaPlaylist",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "src_data_menu_personaplaylist",
+      "community": 5,
+      "norm_label": "personaplaylist"
+    },
+    {
+      "label": "menuPlaylists",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "src_data_menu_menuplaylists",
+      "community": 5,
+      "norm_label": "menuplaylists"
+    },
+    {
+      "label": "PLAYLIST_DEFAULT_TRACK",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L64",
+      "_origin": "ast",
+      "id": "src_data_menu_playlist_default_track",
+      "community": 5,
+      "norm_label": "playlist_default_track"
+    },
+    {
+      "label": "UNLOCKABLE_SECTIONS",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "src_data_menu_unlockable_sections",
+      "community": 5,
+      "norm_label": "unlockable_sections"
+    },
+    {
+      "label": "STAR_SLOTS",
+      "file_type": "code",
+      "source_file": "src/data/menu.js",
+      "source_location": "L88",
+      "_origin": "ast",
+      "id": "src_data_menu_star_slots",
+      "community": 5,
+      "norm_label": "star_slots"
     },
     {
       "label": "questions.js",
@@ -1383,7 +1463,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_game_battlemoves",
-      "community": 16,
+      "community": 5,
       "norm_label": "battlemoves.js"
     },
     {
@@ -1393,7 +1473,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "src_game_battlemoves_buildbattlemoves",
-      "community": 16,
+      "community": 5,
       "norm_label": "buildbattlemoves()"
     },
     {
@@ -1443,7 +1523,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "src_game_types",
-      "community": 16,
+      "community": 5,
       "norm_label": "types.js"
     },
     {
@@ -1453,7 +1533,7 @@
       "source_location": "L3",
       "_origin": "ast",
       "id": "src_game_types_normalizetype",
-      "community": 16,
+      "community": 5,
       "norm_label": "normalizetype()"
     },
     {
@@ -1463,7 +1543,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "src_game_types_effectiveness_chart",
-      "community": 16,
+      "community": 5,
       "norm_label": "effectiveness_chart"
     },
     {
@@ -1473,7 +1553,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "src_game_types_geteffectiveness",
-      "community": 16,
+      "community": 5,
       "norm_label": "geteffectiveness()"
     },
     {
@@ -1493,7 +1573,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "src_game_types_gettypecolor",
-      "community": 16,
+      "community": 5,
       "norm_label": "gettypecolor()"
     },
     {
@@ -1530,7 +1610,7 @@
       "label": "useBackgroundMusic()",
       "file_type": "code",
       "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L11",
+      "source_location": "L10",
       "_origin": "ast",
       "id": "src_hooks_usebackgroundmusic_usebackgroundmusic",
       "community": 5,
@@ -1547,13 +1627,33 @@
       "norm_label": "usebattle.js"
     },
     {
-      "label": "useBattle()",
+      "label": "normalizeSections()",
       "file_type": "code",
       "source_file": "src/hooks/useBattle.js",
       "source_location": "L12",
       "_origin": "ast",
+      "id": "src_hooks_usebattle_normalizesections",
+      "community": 16,
+      "norm_label": "normalizesections()"
+    },
+    {
+      "label": "SECTION_STARS",
+      "file_type": "code",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "src_hooks_usebattle_section_stars",
+      "community": 16,
+      "norm_label": "section_stars"
+    },
+    {
+      "label": "useBattle()",
+      "file_type": "code",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L33",
+      "_origin": "ast",
       "id": "src_hooks_usebattle_usebattle",
-      "community": 5,
+      "community": 16,
       "norm_label": "usebattle()"
     },
     {
@@ -1773,7 +1873,7 @@
       "source_location": "L121",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_security_production",
-      "community": 83,
+      "community": 89,
       "norm_label": "security & production"
     },
     {
@@ -1783,7 +1883,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_app_check",
-      "community": 83,
+      "community": 89,
       "norm_label": "app check"
     },
     {
@@ -1793,7 +1893,7 @@
       "source_location": "L133",
       "_origin": "ast",
       "id": "continue_skills_firebase_ai_logic_basics_skill_remote_config",
-      "community": 83,
+      "community": 89,
       "norm_label": "remote config"
     },
     {
@@ -4373,7 +4473,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_skill",
-      "community": 60,
+      "community": 56,
       "norm_label": "skill.md"
     },
     {
@@ -5133,7 +5233,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_1_local_prototyping_data_seeding",
-      "community": 78,
+      "community": 66,
       "norm_label": "1. local prototyping: data seeding"
     },
     {
@@ -5143,7 +5243,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_the_seed_data_gql_workflow",
-      "community": 78,
+      "community": 66,
       "norm_label": "the `seed_data.gql` workflow"
     },
     {
@@ -5153,7 +5253,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_directives_rule",
-      "community": 78,
+      "community": 66,
       "norm_label": "\u26a0\ufe0f seeding directives rule"
     },
     {
@@ -5163,7 +5263,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_independent_tables_fk_order",
-      "community": 78,
+      "community": 66,
       "norm_label": "seeding independent tables (fk order)"
     },
     {
@@ -5173,7 +5273,7 @@
       "source_location": "L54",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_seeding_related_tables_nested_relational_inserts",
-      "community": 78,
+      "community": 66,
       "norm_label": "seeding related tables (nested relational inserts)"
     },
     {
@@ -5183,7 +5283,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_data_seeding_resetting_seed_data",
-      "community": 78,
+      "community": 66,
       "norm_label": "resetting seed data"
     },
     {
@@ -5603,7 +5703,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime",
-      "community": 36,
+      "community": 56,
       "norm_label": "realtime.md"
     },
     {
@@ -5643,7 +5743,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_the_refresh_directive",
-      "community": 87,
+      "community": 36,
       "norm_label": "the @refresh directive"
     },
     {
@@ -5653,7 +5753,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_time_based_polling_every",
-      "community": 87,
+      "community": 36,
       "norm_label": "time-based polling (`every`)"
     },
     {
@@ -5663,7 +5763,7 @@
       "source_location": "L63",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_explicit_mutation_signals_onmutationexecuted",
-      "community": 87,
+      "community": 36,
       "norm_label": "explicit mutation signals (`onmutationexecuted`)"
     },
     {
@@ -5673,7 +5773,7 @@
       "source_location": "L105",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_realtime_combining_multiple_refresh_directives",
-      "community": 87,
+      "community": 36,
       "norm_label": "combining multiple @refresh directives"
     },
     {
@@ -5943,7 +6043,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node",
-      "community": 60,
+      "community": 56,
       "norm_label": "sdk_admin_node.md"
     },
     {
@@ -5953,7 +6053,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_admin_node_sdk",
-      "community": 60,
+      "community": 56,
       "norm_label": "admin node sdk"
     },
     {
@@ -5963,7 +6063,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_best_practices_for_agents",
-      "community": 60,
+      "community": 56,
       "norm_label": "best practices for agents"
     },
     {
@@ -5973,7 +6073,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_configuration_in_connector_yaml",
-      "community": 60,
+      "community": 56,
       "norm_label": "configuration in `connector.yaml`"
     },
     {
@@ -5983,7 +6083,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_generation",
-      "community": 60,
+      "community": 56,
       "norm_label": "generation"
     },
     {
@@ -5993,7 +6093,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_usage_examples",
-      "community": 56,
+      "community": 60,
       "norm_label": "usage examples"
     },
     {
@@ -6003,7 +6103,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_1_impersonating_an_unauthenticated_user",
-      "community": 56,
+      "community": 60,
       "norm_label": "1. impersonating an unauthenticated user"
     },
     {
@@ -6013,7 +6113,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_2_impersonating_a_specific_user_cloud_functions",
-      "community": 56,
+      "community": 60,
       "norm_label": "2. impersonating a specific user (cloud functions)"
     },
     {
@@ -6023,7 +6123,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_3_impersonating_a_specific_user_plain_http",
-      "community": 56,
+      "community": 60,
       "norm_label": "3. impersonating a specific user (plain http)"
     },
     {
@@ -6033,7 +6133,7 @@
       "source_location": "L129",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_admin_node_4_running_with_unrestricted_access",
-      "community": 56,
+      "community": 60,
       "norm_label": "4. running with unrestricted access"
     },
     {
@@ -6043,7 +6143,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_android",
-      "community": 60,
+      "community": 56,
       "norm_label": "sdk_android.md"
     },
     {
@@ -6153,7 +6253,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_sdk_flutter",
-      "community": 60,
+      "community": 40,
       "norm_label": "sdk_flutter.md"
     },
     {
@@ -6593,7 +6693,7 @@
       "source_location": "L31",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_1_vector_similarity_search_semantic",
-      "community": 23,
+      "community": 87,
       "norm_label": "1. vector similarity search (semantic)"
     },
     {
@@ -6603,7 +6703,7 @@
       "source_location": "L36",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_schema_setup",
-      "community": 23,
+      "community": 87,
       "norm_label": "schema setup"
     },
     {
@@ -6613,7 +6713,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_automatic_embedding_generation_embed_server_value",
-      "community": 23,
+      "community": 87,
       "norm_label": "automatic embedding generation (`_embed` server value)"
     },
     {
@@ -6623,7 +6723,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_a_generation_on_insert",
-      "community": 23,
+      "community": 87,
       "norm_label": "a. generation on insert"
     },
     {
@@ -6633,7 +6733,7 @@
       "source_location": "L80",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_b_generation_on_update",
-      "community": 23,
+      "community": 87,
       "norm_label": "b. generation on update"
     },
     {
@@ -6643,7 +6743,7 @@
       "source_location": "L98",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_similarity_search_queries",
-      "community": 23,
+      "community": 87,
       "norm_label": "similarity search queries"
     },
     {
@@ -6653,7 +6753,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_a_auto_embedding_search",
-      "community": 23,
+      "community": 87,
       "norm_label": "a. auto-embedding search"
     },
     {
@@ -6663,7 +6763,7 @@
       "source_location": "L122",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_b_custom_vector_search",
-      "community": 23,
+      "community": 87,
       "norm_label": "b. custom vector search"
     },
     {
@@ -6673,7 +6773,7 @@
       "source_location": "L141",
       "_origin": "ast",
       "id": "continue_skills_firebase_data_connect_reference_search_tuning_vector_proximity",
-      "community": 23,
+      "community": 87,
       "norm_label": "tuning vector proximity"
     },
     {
@@ -7573,7 +7673,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup",
-      "community": 79,
+      "community": 28,
       "norm_label": "ios_setup.md"
     },
     {
@@ -7583,7 +7683,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_firestore_enterprise_native_mode_on_ios",
-      "community": 79,
+      "community": 28,
       "norm_label": "firestore enterprise native mode on ios"
     },
     {
@@ -7593,7 +7693,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_enterprise_ios_setup_critical_rule_no_firebasefirestoreswift",
-      "community": 79,
+      "community": 28,
       "norm_label": "\u26d4\ufe0f critical rule: no firebasefirestoreswift \u26d4\ufe0f"
     },
     {
@@ -8713,7 +8813,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "continue_skills_firebase_firestore_references_standard_security_rules",
-      "community": 34,
+      "community": 79,
       "norm_label": "security_rules.md"
     },
     {
@@ -11096,7 +11196,40 @@
       "source_location": "L4",
       "weight": 1.0,
       "source": "src_app",
-      "target": "src_data_menu_menuplaylist",
+      "target": "src_data_menu_menuplaylists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_data_menu_playlist_default_track",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_data_menu_star_slots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "src_data_menu_unlockable_sections",
       "confidence_score": 1.0
     },
     {
@@ -11181,7 +11314,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L34",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_hooks_useaudio_useaudio",
@@ -11192,7 +11325,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L36",
+      "source_location": "L37",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_hooks_usebackgroundmusic_usebackgroundmusic",
@@ -11203,7 +11336,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
-      "source_location": "L35",
+      "source_location": "L36",
       "weight": 1.0,
       "source": "src_app_app",
       "target": "src_hooks_usebattle_usebattle",
@@ -11224,7 +11357,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/AudioControls.jsx",
-      "source_location": "L3",
+      "source_location": "L8",
       "weight": 1.0,
       "source": "src_components_audiocontrols",
       "target": "src_components_audiocontrols_audiocontrols",
@@ -11234,7 +11367,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L16",
+      "source_location": "L22",
       "weight": 1.0,
       "source": "src_components_battlescreen",
       "target": "src_components_battlescreen_battlescreen",
@@ -11376,7 +11509,7 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L171",
+      "source_location": "L177",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_components_battlescreen_unlockedsectionlabel",
@@ -11388,7 +11521,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L28",
+      "source_location": "L34",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_battlemoves_buildbattlemoves"
@@ -11399,7 +11532,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/BattleScreen.jsx",
-      "source_location": "L93",
+      "source_location": "L99",
       "weight": 1.0,
       "source": "src_components_battlescreen_battlescreen",
       "target": "src_game_types_gettypecolor"
@@ -11450,7 +11583,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L212",
+      "source_location": "L220",
       "weight": 1.0,
       "source": "src_components_chatappaboutme",
       "target": "src_components_chatappaboutme_chatmessage",
@@ -11483,7 +11616,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_chatappaboutme",
@@ -11495,7 +11628,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/components/ChatAppAboutMe.jsx",
-      "source_location": "L28",
+      "source_location": "L30",
       "weight": 1.0,
       "source": "src_components_chatappaboutme_chatappaboutme",
       "target": "src_data_chatdata_user_options"
@@ -11505,7 +11638,7 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L2",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_chatappaboutme_chatappaboutme",
@@ -11515,10 +11648,20 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ContentScreen.jsx",
-      "source_location": "L10",
+      "source_location": "L28",
       "weight": 1.0,
       "source": "src_components_contentscreen",
       "target": "src_components_contentscreen_contentscreen",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_components_contentscreen_view_titles",
       "confidence_score": 1.0
     },
     {
@@ -11540,7 +11683,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_abouttext",
+      "target": "src_data_content_aboutinfo",
       "confidence_score": 1.0
     },
     {
@@ -11551,7 +11694,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_contactlinks",
+      "target": "src_data_content_contactinfo",
       "confidence_score": 1.0
     },
     {
@@ -11562,7 +11705,7 @@
       "source_location": "L1",
       "weight": 1.0,
       "source": "src_components_contentscreen",
-      "target": "src_data_content_educationtext",
+      "target": "src_data_content_educationinfo",
       "confidence_score": 1.0
     },
     {
@@ -11577,10 +11720,32 @@
       "confidence_score": 1.0
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_projectsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ContentScreen.jsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_contentscreen",
+      "target": "src_data_content_skillsinfo",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/MainMenu.jsx",
-      "source_location": "L4",
+      "source_location": "L6",
       "weight": 1.0,
       "source": "src_components_mainmenu",
       "target": "src_components_mainmenu_mainmenu",
@@ -11758,7 +11923,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L65",
+      "source_location": "L68",
       "weight": 1.0,
       "source": "src_hooks_usebackgroundmusic_usebackgroundmusic",
       "target": "src_data_audio_audiourl"
@@ -11947,7 +12112,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/chatData.js",
-      "source_location": "L6",
+      "source_location": "L9",
       "weight": 1.0,
       "source": "src_data_chatdata",
       "target": "src_data_chatdata_user_options",
@@ -11957,37 +12122,37 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L1",
+      "source_location": "L5",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_abouttext",
+      "target": "src_data_content_aboutinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L14",
+      "source_location": "L35",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_contactlinks",
+      "target": "src_data_content_contactinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L8",
+      "source_location": "L20",
       "weight": 1.0,
       "source": "src_data_content",
-      "target": "src_data_content_educationtext",
+      "target": "src_data_content_educationinfo",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/content.js",
-      "source_location": "L22",
+      "source_location": "L84",
       "weight": 1.0,
       "source": "src_data_content",
       "target": "src_data_content_professionalexperience",
@@ -11996,8 +12161,28 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "src_data_content",
+      "target": "src_data_content_projectsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/content.js",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "src_data_content",
+      "target": "src_data_content_skillsinfo",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L13",
+      "source_location": "L24",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_bossoptions",
@@ -12007,7 +12192,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L2",
+      "source_location": "L3",
       "weight": 1.0,
       "source": "src_data_menu",
       "target": "src_data_menu_menuoptionsbase",
@@ -12017,20 +12202,70 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/data/menu.js",
-      "source_location": "L20",
+      "source_location": "L52",
       "weight": 1.0,
       "source": "src_data_menu",
-      "target": "src_data_menu_menuplaylist",
+      "target": "src_data_menu_menuplaylists",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_personaplaylist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_playlist_default_track",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_pokemonplaylist",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L88",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_star_slots",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/data/menu.js",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "src_data_menu",
+      "target": "src_data_menu_unlockable_sections",
       "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L4",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "src_hooks_usebackgroundmusic",
+      "source": "src_hooks_usebattle",
       "target": "src_data_menu",
       "confidence_score": 1.0
     },
@@ -12038,11 +12273,11 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L4",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L8",
       "weight": 1.0,
-      "source": "src_hooks_usebackgroundmusic",
-      "target": "src_data_menu_menuplaylist",
+      "source": "src_hooks_usebattle",
+      "target": "src_data_menu_unlockable_sections",
       "confidence_score": 1.0
     },
     {
@@ -12559,7 +12794,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useBackgroundMusic.js",
-      "source_location": "L11",
+      "source_location": "L10",
       "weight": 1.0,
       "source": "src_hooks_usebackgroundmusic",
       "target": "src_hooks_usebackgroundmusic_usebackgroundmusic",
@@ -12570,6 +12805,26 @@
       "confidence": "EXTRACTED",
       "source_file": "src/hooks/useBattle.js",
       "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle",
+      "target": "src_hooks_usebattle_normalizesections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle",
+      "target": "src_hooks_usebattle_section_stars",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "src_hooks_usebattle",
       "target": "src_hooks_usebattle_usebattle",
@@ -12601,9 +12856,20 @@
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useBattle.js",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "src_hooks_usebattle_usebattle",
+      "target": "src_hooks_usebattle_normalizesections",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "src/hooks/useBattle.js",
-      "source_location": "L45",
+      "source_location": "L78",
       "weight": 1.0,
       "source": "src_hooks_usebattle_usebattle",
       "target": "src_hooks_usetypewriter_usetypewriter"
@@ -20857,5 +21123,5 @@
       "source_file": "index.html"
     }
   ],
-  "built_at_commit": "47b304467aade474ab83838ade0d512d97398f0b"
+  "built_at_commit": "27844ed091574bd5f4649721615945ea50a8ed5e"
 }

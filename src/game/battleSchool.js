@@ -100,7 +100,7 @@ export function buildSchoolSteps(battleState, move) {
   steps.push({ text: '', apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: Math.max(0, prev.enemy.hp - dmg) }, lastHit: { side: 'enemy', effectiveness } }), sound: correctHitSound })
   steps.push({ text: 'You were correct!', apply: (prev) => prev, sound: null })
   if (enemyHpBefore - dmg <= 0) {
-    steps.push({ text: `You defeated ${enemyName}!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSection: 'education' }), sound: 'You Win' })
+    steps.push({ text: `You defeated ${enemyName}!`, apply: (prev) => ({ ...prev, enemy: { ...prev.enemy, hp: 0 }, result: 'victory', unlockSections: ['education'] }), sound: 'You Win' })
     return steps
   }
   if (slot < 3) {

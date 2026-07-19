@@ -45,7 +45,7 @@ export function buildGhostSteps(battleState, move) {
       steps.push({ text: `${enemyName} is amused!`, apply: (p) => ({ ...p, ghost: { ...p.ghost, dialogue: `${enemyName} is amused!` } }), sound: null })
       // Befriending GHOST unlocks PROFESSIONAL EXPERIENCE directly — skip the
       // "You Won!" screen (no "You Win" SFX) and go straight to "Unlocked!".
-      steps.push({ text: `${enemyName} unlocked PROFESSIONAL EXPERIENCE for you!`, apply: (p) => ({ ...p, result: 'victory', unlockSection: 'professional', directUnlock: true }), sound: null })
+      steps.push({ text: `${enemyName} unlocked PROFESSIONAL EXPERIENCE for you!`, apply: (p) => ({ ...p, result: 'victory', unlockSections: ['professional'], directUnlock: true }), sound: null })
       return steps
     }
     // talk + full HP

@@ -150,7 +150,13 @@
   box-shadow: 2px 2px 0 var(--p5-black);
   margin-bottom: 2px;
 }
-.chat-bubble-avatar-user { background: var(--p5-white); color: var(--p5-black); }
+.chat-bubble-avatar-user {
+  background: var(--p5-white);
+  color: var(--p5-black);
+  /* Mirror of the AI icon's chip (same 26% corner notch) onto the bottom-left
+     so the YOU icon matches the AI icon's cut exactly. */
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 26% 100%, 0 74%);
+}
 
 /* Bubbles slam into place — fast snap, no fade drift. */
 .chat-bubble {

@@ -4,11 +4,17 @@ import { getTypeColor } from '../game/types'
 import { BOSS_ASSETS, PLAYER_SPRITE_MALE, PLAYER_SPRITE_FEMALE, MOVE_DESCRIPTIONS } from '../data/bosses'
 import { buildBattleMoves } from '../game/battleMoves'
 
-function unlockedSectionLabel(section) {
-  if (section === 'professional') return 'PROFESSIONAL EXPERIENCE'
-  if (section === 'about') return 'ABOUT ME'
-  if (section === 'education') return 'EDUCATION'
-  return String(section).toUpperCase()
+function unlockedSectionLabel(sections) {
+  const list = Array.isArray(sections) ? sections : sections ? [sections] : []
+  const labelFor = (section) => {
+    if (section === 'professional') return 'PROFESSIONAL EXPERIENCE'
+    if (section === 'about') return 'ABOUT ME'
+    if (section === 'education') return 'EDUCATION'
+    if (section === 'skills') return 'SKILLS'
+    if (section === 'projects') return 'PERSONAL PROJECTS'
+    return String(section).toUpperCase()
+  }
+  return list.map(labelFor).join(' & ')
 }
 
 // The battle screen. `battle` is the full object returned by the useBattle hook;
@@ -41,7 +47,7 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
   const handleContinue = () => {
     onSelect()
     if (resultScreen?.newlyUnlocked) {
-      setResultScreen({ type: 'unlocked', section: resultScreen.section })
+      setResultScreen({ type: 'unlocked', sections: resultScreen.sections })
     } else {
       goToBossSelect()
     }
@@ -168,7 +174,7 @@ export default function BattleScreen({ battle, onHover, onSelect }) {
             resultScreen={resultScreen}
             isHollow={isHollow}
             mode={battleState.mode}
-            sectionLabel={unlockedSectionLabel(resultScreen.section)}
+            sectionLabel={unlockedSectionLabel(resultScreen.sections)}
             onContinue={handleContinue}
             onMainMenu={() => { onSelect(); goToMenu() }}
             onRetry={() => { onSelect(); retryBattle() }}

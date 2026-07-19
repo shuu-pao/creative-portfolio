@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import './App.css'
 
-import { menuOptionsBase, menuPlaylist, bossOptions } from './data/menu'
+import { menuOptionsBase, bossOptions, UNLOCKABLE_SECTIONS, STAR_SLOTS, menuPlaylists, DEFAULT_PLAYLIST, DEFAULT_TRACK_INDEX, PLAYLIST_DEFAULT_TRACK } from './data/menu'
 import { battleThemes } from './data/bosses'
 import { useAudio } from './hooks/useAudio'
 import { useBattle } from './hooks/useBattle'
@@ -20,7 +20,8 @@ function App() {
   const [menuIndex, setMenuIndex] = useState(0)
   const [bossIndex, setBossIndex] = useState(0)
   const [contentView, setContentView] = useState(null)
-  const [menuTrackIndex, setMenuTrackIndex] = useState(0)
+  const [menuPlaylistKey, setMenuPlaylistKey] = useState(DEFAULT_PLAYLIST)
+  const [menuTrackIndex, setMenuTrackIndex] = useState(DEFAULT_TRACK_INDEX)
   // Character name the player types in before their first battle. Stored only in
   // component state (never persisted), so a page refresh forgets it and re-prompts.
   const [characterName, setCharacterName] = useState('')
@@ -39,6 +40,8 @@ function App() {
     battleState: battle.battleState,
     muted: audio.muted,
     volume: audio.volume,
+    menuPlaylist: menuPlaylists[menuPlaylistKey],
+    menuPlaylistKey,
     menuTrackIndex,
     setMenuTrackIndex,
     battleMusicReady: battle.battleMusicReady,
@@ -46,11 +49,10 @@ function App() {
   })
 
   const menuOptions = useMemo(() => menuOptionsBase.map((option) => {
-    if (option.id === 'battle' || option.id === 'contact') return { ...option, unlocked: true }
-    if (option.id === 'about') return { ...option, unlocked: battle.unlockedSections.includes('about') }
-    if (option.id === 'education') return { ...option, unlocked: battle.unlockedSections.includes('education') }
-    if (option.id === 'professional') return { ...option, unlocked: battle.unlockedSections.includes('professional') }
-    return { ...option, unlocked: false }
+    // BATTLE, CONTACT, and CHAT WITH AI are always available — the chatbot is a
+    // guide, not a reward, so visitors can use it without fighting.
+    if (['battle', 'contact', 'chat'].includes(option.id)) return { ...option, unlocked: true }
+    return { ...option, unlocked: battle.unlockedSections.includes(option.id) }
   }), [battle.unlockedSections])
 
   const currentMenuOption = useMemo(() => menuOptions[menuIndex] ?? menuOptions[0], [menuIndex, menuOptions])
@@ -60,7 +62,7 @@ function App() {
   // theme, otherwise we use the menu playlist track at the current index.
   const nowPlayingFile = (screen === 'battle' && battle.battleState)
     ? battleThemes[battle.battleState.mode]
-    : menuPlaylist[menuTrackIndex]?.file
+    : menuPlaylists[menuPlaylistKey][menuTrackIndex]?.file
   const nowPlayingName = nowPlayingFile ? nowPlayingFile.replace(/\.mp3$/i, '') : ''
 
   // Starts the game from the title screen. Wired to both "click anywhere" and
@@ -72,12 +74,29 @@ function App() {
 
   function handleNextSong() {
     audio.handleButtonSelect()
-    setMenuTrackIndex((value) => (value + 1) % menuPlaylist.length)
+    setMenuTrackIndex((value) => (value + 1) % menuPlaylists[menuPlaylistKey].length)
+  }
+
+  // Flip to the other menu playlist and start it on that playlist's default
+  // opening track (Persona on "Beneath the Mask", Pokemon on its first track).
+  // Using the per-playlist default (not always 0) means switching back to Persona
+  // resumes on "Beneath the Mask", and resetting the index avoids an out-of-range
+  // track when the two playlists differ in length (Persona has 7, Pokemon has 4).
+  function handleTogglePlaylist() {
+    audio.handleButtonSelect()
+    const next = menuPlaylistKey === 'persona' ? 'pokemon' : 'persona'
+    setMenuPlaylistKey(next)
+    setMenuTrackIndex(PLAYLIST_DEFAULT_TRACK[next])
   }
 
   // Called when a boss is chosen. If the player hasn't named their character yet,
   // route to the name-entry screen first; otherwise start the battle immediately.
   function handleBossSelected(bossId) {
+    // Locked bosses (the undecided placeholder bosses) can't be entered. This
+    // also guards the Boss Select keyboard Enter path, which calls this directly
+    // without the click-time `locked` check that BossSelect performs.
+    const boss = bossOptions.find((b) => b.id === bossId)
+    if (!boss || boss.locked) return
     if (!characterName) {
       // No name yet: play only the select cue, then route to name entry.
       // The Boss Select cue is held back until after the character is named.
@@ -128,10 +147,31 @@ function App() {
       setScreen('content')
       setContentView('professional')
     }
+    if (option.id === 'skills') {
+      setScreen('content')
+      setContentView('skills')
+    }
+    if (option.id === 'projects') {
+      setScreen('content')
+      setContentView('projects')
+    }
+    if (option.id === 'chat') {
+      setScreen('content')
+      setContentView('chat')
+    }
     if (option.id === 'contact') {
       setScreen('content')
       setContentView('contact')
     }
+  }
+
+  // "Unlock whole menu" toggle — reveal every unlockable section, or return to
+  // "Normal Mode" (keep fairly-earned unlocks, undo the bulk convenience).
+  function handleToggleMenuLock() {
+    audio.handleButtonSelect()
+    const allUnlocked = UNLOCKABLE_SECTIONS.every((s) => battle.unlockedSections.includes(s))
+    if (allUnlocked) battle.normalMode()
+    else battle.unlockAll()
   }
 
   function handleContentBack() {
@@ -145,7 +185,7 @@ function App() {
   // CTAs: "See the full experience", "Check out my education", "Go to contact").
   // Stays on the content screen and just swaps the active view.
   function handleContentNavigate(target) {
-    if (!['professional', 'education', 'contact'].includes(target)) return
+    if (!['professional', 'education', 'contact', 'skills', 'projects', 'chat'].includes(target)) return
     setScreen('content')
     setContentView(target)
   }
@@ -257,6 +297,9 @@ function App() {
           currentMenuOption={currentMenuOption}
           setMenuIndex={setMenuIndex}
           onChoose={handleMenuChoose}
+          onToggle={handleToggleMenuLock}
+          earnedStars={battle.earnedStars}
+          starSlots={STAR_SLOTS}
           onHover={audio.handleButtonHover}
           onSelect={audio.handleButtonSelect}
         />
@@ -305,8 +348,11 @@ function App() {
         setVolume={audio.setVolume}
         onToggle={() => { audio.handleButtonSelect(); audio.setMuted((value) => !value) }}
         onNextSong={handleNextSong}
+        onTogglePlaylist={handleTogglePlaylist}
+        playlistLabel={menuPlaylistKey === 'persona' ? 'POKEMON' : 'PERSONA'}
         onHover={audio.handleButtonHover}
         showNextSong={screen !== 'battle'}
+        showPlaylistToggle={screen !== 'battle'}
       />
     </main>
   )
