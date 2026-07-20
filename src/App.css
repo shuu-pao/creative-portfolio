@@ -110,7 +110,8 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   letter-spacing: 0.06rem;
   margin: 0 0 4px;
 }
-.experience-company { font-size: 1.4rem; color: var(--c-ink); margin: 0 0 2px; font-weight: bold; }
+.experience-company { font-size: 1.4rem; color: #9B20EF; margin: 0 0 2px; font-weight: bold; }
+.company-logo { display: inline-block; width: 28px; height: 28px; object-fit: contain; vertical-align: middle; margin-right: 8px; }
 .experience-meta {
   font-size: 1.05rem;
   color: var(--c-ink);
@@ -1158,7 +1159,7 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
 }
 .edu-head { display: flex; flex-direction: column; gap: 4px; }
 .edu-degree { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04rem; color: var(--c-ink); }
-.edu-school { font-size: 1.5rem; font-weight: bold; color: var(--c-cyan); margin: 0; }
+.edu-school { font-size: 1.5rem; font-weight: bold; color: #00AA50; margin: 0; }
 .edu-meta { font-size: 1.05rem; color: var(--c-muted); margin: 0; }
 
 /* ── Skills ── */

@@ -67,7 +67,10 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
         <div className="content-card">
           <div className="experience-head">
             <h3 className="experience-role">{professionalExperience.role}</h3>
-            <p className="experience-company">{professionalExperience.company}</p>
+            <p className="experience-company">
+              <img className="company-logo" src="/company/accenture-logo.png" alt="Accenture" />
+              {professionalExperience.company}
+            </p>
             <p className="experience-meta">{professionalExperience.duration} · {professionalExperience.location}</p>
           </div>
           <p className="page-copy experience-summary">{professionalExperience.summary}</p>
