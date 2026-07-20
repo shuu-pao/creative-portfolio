@@ -3,7 +3,7 @@
 export const menuOptionsBase = [
   { id: 'battle', label: 'BATTLE', unlockText: null },
   { id: 'chat', label: 'CHAT WITH AI', unlockText: null },
-  { id: 'about', label: 'ABOUT ME & RESUME', unlockText: 'Defeat "TWO" to unlock ABOUT ME.' },
+  { id: 'about', label: 'ABOUT ME & RESUME', unlockText: 'Defeat "TWO" to unlock ABOUT ME & RESUME.' },
   { id: 'professional', label: 'PROFESSIONAL EXPERIENCE', unlockText: 'Befriend "GHOST" to unlock PROFESSIONAL EXPERIENCE.' },
   { id: 'education', label: 'EDUCATION', unlockText: 'Defeat "DR. ZANGETSU" to unlock EDUCATION.' },
   { id: 'skills', label: 'SKILLS', unlockText: 'Defeat the upcoming boss to unlock SKILLS.' },

@@ -8,7 +8,7 @@ function unlockedSectionLabel(sections) {
   const list = Array.isArray(sections) ? sections : sections ? [sections] : []
   const labelFor = (section) => {
     if (section === 'professional') return 'PROFESSIONAL EXPERIENCE'
-    if (section === 'about') return 'ABOUT ME'
+    if (section === 'about') return 'ABOUT ME & RESUME'
     if (section === 'education') return 'EDUCATION'
     if (section === 'skills') return 'SKILLS'
     if (section === 'projects') return 'PERSONAL PROJECTS'
