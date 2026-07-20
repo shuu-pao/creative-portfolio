@@ -4,16 +4,24 @@
 // separate so visitors can either read a quick summary or chat with the bot.
 export const aboutInfo = {
   intro: [
-    'Computer Engineering graduate with hands-on Salesforce Agentforce development experience from a 540-hour Accenture internship, where I streamlined enterprise case management, optimized workflow automation, and strengthened knowledge base management to improve customer service operations.',
-    'Skilled in configuring agent actions, Flow logic, and Agent Instructions to deliver scalable, reliable AI-driven support systems.',
-    'Beyond Salesforce, I bring exposure to AI/ML workflows, embedded systems, and full-stack development, with a proven ability to redesign inefficient logic and resolve systemic bottlenecks. I aim to drive measurable improvements in automation, enterprise AI agent deployments, and intelligent customer experience solutions.',
+    'Computer Engineering graduate who builds at both ends of the stack — enterprise AI agents at Accenture and low-level firmware in the lab. At Accenture I spent 540 hours developing Salesforce Agentforce agents that create, update, and close support cases and automate account-billing workflows for both internal (Console) and customer-facing (Portal) users.',
+    'On the hardware side I built a PIC-based futsal scoreboard in embedded C (XC8) with real-time timers and 7-segment displays, and on the applied-AI side I co-developed SMARTBIN 3, an undergraduate thesis that sorts waste with YOLOv8 — where my main contribution was diagnosing a flawed classification approach that had stalled the team for two months and proposing the object-detection redesign that cleared it.',
+    'Across all of it, my instinct is to find the root cause before patching symptoms — whether that means rewriting agent instruction logic to stop wrong-action selection, or rethinking a model architecture when training stalls. I am looking for roles where that systems-first habit pays off: Salesforce, Agentforce, or building smarter customer-experience tooling.',
   ],
   highlights: [
     'Salesforce Agentforce — agent actions, Flow logic, Agent Instructions',
-    'AI/ML workflows & enterprise support automation',
-    'Embedded systems & full-stack development',
+    'Embedded systems — PIC/XC8 firmware, real-time control',
+    'Applied computer vision — YOLOv8 waste classification (thesis)',
     'Systems-first mindset: fix root causes, not symptoms',
   ],
+}
+
+// ── HERO (above-the-fold) ──
+export const heroInfo = {
+  name: 'Paolo Jansen Enrera',
+  role: 'Agentforce Developer',
+  pitch:
+    'Computer Engineering grad and Accenture Agentforce intern building AI-driven customer-service automation — and the occasional résumé you can battle your way through.',
 }
 
 // ── EDUCATION (redesigned credential card) ──
@@ -35,7 +43,7 @@ export const educationInfo = {
 export const contactInfo = {
   blurb:
     "I'm actively looking for new opportunities, so timing is great. The fastest way to reach me is email or LinkedIn — I'm always happy to talk Salesforce, Agentforce, or the engineering behind this site.",
-  resumeHref: '',
+  resumeHref: '/resume/PAOLO_JANSEN_ENRERA_CV_JULY_2026.pdf',
   links: [
     { label: 'GitHub', href: 'https://github.com/shuu-pao' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/paolo-jansen-enrera/' },
@@ -49,32 +57,46 @@ export const skillsInfo = {
   categories: [
     {
       title: 'Salesforce / Agentforce',
-      items: ['Agent Actions', 'Flow Logic', 'Agent Instructions', 'Knowledge Base Ops', 'Case Lifecycle', 'JSON Schema'],
+      items: ['Agentforce Configuration', 'Agentforce Actions', 'Flow Builder', 'Agent Instructions', 'Lightning Knowledge', 'Knowledge-Centered Service (KCS-style practices)', 'Case Management'],
     },
     {
       title: 'Languages',
-      items: ['JavaScript', 'Python', 'SQL', 'Java', 'C / C++'],
+      items: ['JavaScript', 'C / C++ (Embedded)', 'Python', 'SQL', 'HTML / CSS'],
     },
     {
       title: 'Web & Frontend',
-      items: ['React', 'Vite', 'HTML / CSS', 'REST APIs', 'TypeScript'],
+      items: ['React', 'Vite', 'REST APIs'],
     },
     {
       title: 'AI / ML & Tooling',
-      items: ['LLM Workflows', 'Git', 'Figma', 'Agile / Scrum', 'Embedded Systems'],
+      items: ['LLM Workflows (Agentforce)', 'Computer Vision (YOLOv8)', 'Git', 'Figma', 'Agile / Scrum'],
     },
   ],
 }
 
 // ── PERSONAL PROJECTS ──
 export const projectsInfo = {
-  intro: 'Things I’ve built on my own time. (The site you’re on is one of them.)',
+  intro: 'Builds from my degree and free time — from embedded firmware to applied computer vision. (This portfolio is one of them.)',
   projects: [
     {
       name: 'PortfolioMon',
       blurb:
-        'This portfolio — a full turn-based RPG battle system built from scratch with React and Vite. You’re standing inside it right now.',
+        'This very portfolio — a full turn-based RPG battle system built from scratch with React and Vite. You’re standing inside it right now.',
       tech: ['React', 'Vite', 'JavaScript', 'CSS'],
+      href: '',
+    },
+    {
+      name: 'PIC-Based Futsal Scoreboard',
+      blurb:
+        'A microcontroller scoreboard written in C (XC8) with real-time match timers and 7-segment display integration — a hands-on embedded-systems lab project.',
+      tech: ['C', 'XC8', 'Embedded', 'Microcontrollers'],
+      href: '',
+    },
+    {
+      name: 'SMARTBIN 3 (Thesis)',
+      blurb:
+        'Undergraduate thesis: a deep-learning waste-sorting bin using YOLOv8 for real-time classification with a motorized platform for auto-segregation. My contribution was diagnosing a flawed classification approach that had stalled progress for ~2 months and proposing an object-detection redesign with confidence-score thresholding — which my teammate implemented to clear the training bottleneck. The model reached 98.67% accuracy on standard waste and 92.44% on deformed items (targets: 98% / 80%).',
+      tech: ['YOLOv8', 'Computer Vision', 'Python', 'Deep Learning'],
       href: '',
     },
   ],
@@ -87,35 +109,35 @@ export const professionalExperience = {
   duration: 'Jan 2026 – Apr 2026',
   location: 'Cebu City, Philippines',
   summary:
-    'Built and refined AI-driven customer service automation on the Salesforce Agentforce platform during a 540-hour internship, streamlining case management and strengthening knowledge base operations to improve enterprise support efficiency and reliability.',
+    'Developed AI-driven customer-service automation on the Salesforce Agentforce platform during a 540-hour internship, working as part of a team of interns to build agents that create, update, and close support cases and automate account-billing workflows.',
   sections: [
     {
-      title: 'Agent Action Development',
+      title: 'Agentforce Agents (Console + Portal)',
       points: [
-        'Engineered advanced Agentforce actions covering the full case lifecycle — creation, follow-up, and closure — plus customer account workflows.',
-        'Automated knowledge article auto-attachment, customer verification, case auto-summaries, and structured closure requirements (mandatory reason for closure and required article association).',
-        'Extended automation to account management: billing email updates, payment plan creation, and automated delivery of billing history via email.',
+        'Built customer-service agents that create, update, and close cases from natural-language prompts, for both internal (Console) and customer-facing (Portal) users.',
+        'Automated account-billing workflows: changing a billing email, email-code verification, generating monthly billing statements, and creating payment plans.',
+        'Configured distinct Flow logic and Agent Instructions per environment so each agent behaved appropriately for internal vs. customer-facing use.',
       ],
     },
     {
-      title: 'Instruction Debugging & Refinement',
+      title: 'Salesforce Automation (Flow + Lightning)',
       points: [
-        'Diagnosed systemic flaws in live agent behavior, rewriting instruction logic to eliminate incorrect topic and action selection.',
-        'Strengthened workflow reliability by addressing root-cause issues rather than surface-level errors.',
+        'Used Flow Builder and Lightning components to auto-attach knowledge articles to new cases and surface a case summary on the case page and an account summary on the account page.',
+        'Added case-closure requirements (e.g., a mandatory reason for closing) to keep records clean.',
+        'Maintained the knowledge base — merging duplicate articles and adding a fallback article that attaches when no other relevant article exists.',
       ],
     },
     {
-      title: 'Knowledge Base & Analytics',
+      title: 'Instruction & Behavior Debugging',
       points: [
-        'Analyzed trends in knowledge article usage, spotlighting the most- and least-associated articles.',
-        'Used these insights to guide content-quality improvements, enabling smoother case closure and boosting agent efficiency.',
+        'Diagnosed systemic flaws in live agent behavior and rewrote instruction logic to eliminate incorrect topic and action selection.',
+        'Focused on root-cause fixes rather than surface-level patches, improving agent reliability across both environments.',
       ],
     },
     {
-      title: 'Multi-Agent Configuration & QA',
+      title: 'Knowledge-Base Analytics',
       points: [
-        'Configured distinct Flow logic and Agent Instructions for Console (internal) vs. Portal (customer-facing) agents, tailoring behavior to each scenario.',
-        'Authored test scenarios and led end-to-end QA, ensuring robust performance across both environments.',
+        'Added a Salesforce dashboard tracking the most- and least-used knowledge articles to guide content-quality improvements and smoother case closure.',
       ],
     },
   ],
