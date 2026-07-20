@@ -137,21 +137,28 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
       {contentView === 'contact' && (
         <div className="content-card contact-card">
           <p className="page-copy contact-blurb">{contactInfo.blurb}</p>
+          <div className="contact-links">
+            {contactInfo.links.map((link) => {
+              const isMailto = link.href.startsWith('mailto:')
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target={isMailto ? undefined : '_blank'}
+                  rel={isMailto ? undefined : 'noreferrer'}
+                  onMouseEnter={onHover}
+                >
+                  {link.label}
+                </a>
+              )
+            })}
+          </div>
           {contactInfo.email && (
-            <a
-              className="contact-email"
-              href={`mailto:${contactInfo.email}`}
-              onMouseEnter={onHover}
-            >
+            <p className="contact-email-address">
               <span className="email-icon" aria-hidden="true">✉</span>
               {contactInfo.email}
-            </a>
+            </p>
           )}
-          <div className="contact-links">
-            {contactInfo.links.map((link) => (
-              <a key={link.href} href={link.href} target="_blank" rel="noreferrer">{link.label}</a>
-            ))}
-          </div>
           {contactInfo.resumeHref && (
             <a className="resume-btn" href={contactInfo.resumeHref} target="_blank" rel="noreferrer" onMouseEnter={onHover}>
               Download Résumé

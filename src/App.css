@@ -692,28 +692,19 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
 .contact-links a:hover { filter: brightness(1.15); }
 .contact-links a:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
 
-/* Primary contact method — the email is shown as a readable address (not just a
-   social glyph) and opens the visitor's mail client via mailto:. Kept visually
-   distinct from the social-link row so it reads as the fastest way to reach me. */
-.contact-email {
-  align-self: flex-start;
+/* Literal address shown beneath the social-link row so it stays readable and
+   copyable — a row button labelled "EMAIL" alone would hide it. */
+.contact-email-address {
+  margin: 0;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-family: var(--font-body);
-  font-size: 1.15rem;
+  font-size: 1rem;
   letter-spacing: 0.02rem;
-  text-decoration: none;
-  color: var(--c-ink);
-  padding: 14px 18px;
-  background: linear-gradient(135deg, var(--c-panel-2), #1a2148);
-  border: 3px solid var(--c-cyan);
-  box-shadow: 4px 4px 0 var(--c-shadow);
-  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
+  color: var(--c-muted);
 }
-.contact-email .email-icon { font-size: 1.1rem; color: var(--c-cyan); }
-.contact-email:hover { filter: brightness(1.15); }
-.contact-email:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
+.contact-email-address .email-icon { color: var(--c-cyan); }
 
 /* ── Result overlay ── */
 .result-overlay {

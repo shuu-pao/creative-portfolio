@@ -89,6 +89,6 @@ export const STAR_SLOTS = [
   { id: 'about', label: 'TWO' },
   { id: 'professional', label: 'GHOST' },
   { id: 'education', label: 'DR. ZANGETSU' },
-  { id: 'skills', label: 'BOSS 04' },
-  { id: 'projects', label: 'BOSS 05' },
+  { id: 'skills', label: 'BOSS 04 - COMING SOON' },
+  { id: 'projects', label: 'BOSS 05 - COMING SOON' },
 ]

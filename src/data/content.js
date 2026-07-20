@@ -38,6 +38,7 @@ export const contactInfo = {
   email: 'paolo.enrera@gmail.com',
   resumeHref: '/resume/PAOLO_JANSEN_ENRERA_CV_JULY_2026.pdf',
   links: [
+    { label: 'EMAIL', href: 'mailto:paolo.enrera@gmail.com' },
     { label: 'GitHub', href: 'https://github.com/shuu-pao' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/paolo-jansen-enrera/' },
     { label: 'Instagram', href: 'https://www.instagram.com/shuu_paoo/' },
