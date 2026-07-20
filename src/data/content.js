@@ -16,14 +16,6 @@ export const aboutInfo = {
   ],
 }
 
-// ── HERO (above-the-fold) ──
-export const heroInfo = {
-  name: 'Paolo Jansen Enrera',
-  role: 'Agentforce Developer',
-  pitch:
-    'Computer Engineering grad and Accenture Agentforce intern building AI-driven customer-service automation — and the occasional résumé you can battle your way through.',
-}
-
 // ── EDUCATION (redesigned credential card) ──
 export const educationInfo = {
   school: 'University of San Carlos',
