@@ -1152,8 +1152,6 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
 .edu-degree { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04rem; color: var(--c-ink); }
 .edu-school { font-size: 1.5rem; font-weight: bold; color: var(--c-cyan); margin: 0; }
 .edu-meta { font-size: 1.05rem; color: var(--c-muted); margin: 0; }
-.edu-highlights { margin: 0; padding-left: 18px; list-style: square; }
-.edu-highlights li { color: var(--c-ink); font-size: 1.2rem; line-height: 1.45; margin-bottom: 8px; }
 
 /* ── Skills ── */
 .skills-card { display: flex; flex-direction: column; gap: 16px; }

@@ -89,9 +89,6 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
             <p className="edu-school">{educationInfo.school}</p>
             <p className="edu-meta">{educationInfo.duration} · {educationInfo.location}</p>
           </div>
-          <ul className="edu-highlights">
-            {educationInfo.highlights.map((item) => <li key={item}>{item}</li>)}
-          </ul>
         </div>
       )}
 

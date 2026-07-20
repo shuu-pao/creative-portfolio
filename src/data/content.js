@@ -22,11 +22,6 @@ export const educationInfo = {
   degree: 'Bachelor of Science in Computer Engineering',
   duration: '2021 – Jul 2026',
   location: 'Cebu City, Philippines',
-  highlights: [
-    'Learned to understand systems from first principles rather than memorize patterns — the same approach I bring to building software.',
-    'Lab and capstone work across embedded systems, circuits, and software engineering.',
-    'Built this very portfolio: a from-scratch React + Vite turn-based battle system.',
-  ],
 }
 
 // ── CONTACT (redesigned) ──
