@@ -34,7 +34,8 @@ export const educationInfo = {
 // '/Paolo-Enrera-Resume.pdf' in public/) and the download button appears.
 export const contactInfo = {
   blurb:
-    "I'm actively looking for new opportunities, so timing is great. The fastest way to reach me is email or LinkedIn — I'm always happy to talk Salesforce, Agentforce, or the engineering behind this site.",
+    "I'm actively looking for new opportunities, so timing is great. The fastest way to reach me is by email or LinkedIn — you can drop me a line anytime at the address below, or connect through any of the links.",
+  email: 'paolo.enrera@gmail.com',
   resumeHref: '/resume/PAOLO_JANSEN_ENRERA_CV_JULY_2026.pdf',
   links: [
     { label: 'GitHub', href: 'https://github.com/shuu-pao' },

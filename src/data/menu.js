@@ -25,8 +25,8 @@ export const bossOptions = [
   { id: 'hollow', label: 'TWO', locked: false },
   { id: 'ghost', label: 'GHOST', locked: false },
   { id: 'school', label: 'DR. ZANGETSU', locked: false },
-  { id: 'skillsBoss', label: 'BOSS 04', locked: true },
-  { id: 'projectsBoss', label: 'BOSS 05', locked: true },
+  { id: 'skillsBoss', label: 'BOSS 04 - COMING SOON', locked: true },
+  { id: 'projectsBoss', label: 'BOSS 05 - COMING SOON', locked: true },
 ]
 
 // Menu background music. Two selectable playlists the player can switch between
