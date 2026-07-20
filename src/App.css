@@ -1155,9 +1155,6 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
   object-fit: contain;
   vertical-align: middle;
   margin-right: 10px;
-  background: #fff;
-  padding: 2px;
-  border: 2px solid var(--c-frame);
 }
 .edu-head { display: flex; flex-direction: column; gap: 4px; }
 .edu-degree { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04rem; color: var(--c-ink); }
