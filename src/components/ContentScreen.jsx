@@ -162,11 +162,6 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
               {contactInfo.email}
             </p>
           )}
-          {contactInfo.resumeHref && (
-            <a className="resume-btn" href={contactInfo.resumeHref} target="_blank" rel="noreferrer" onMouseEnter={onHover}>
-              Download Résumé
-            </a>
-          )}
         </div>
       )}
 
