@@ -1146,24 +1146,6 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
 .about-card { display: flex; flex-direction: column; gap: 14px; }
 .about-highlights { margin: 4px 0 0; padding-left: 18px; list-style: square; }
 .about-highlights li { color: var(--c-ink); font-size: 1.2rem; line-height: 1.45; margin-bottom: 8px; }
-.about-chat-link {
-  align-self: flex-start;
-  margin-top: 6px;
-  padding: 12px 18px;
-  font-family: var(--font-display);
-  font-size: 0.66rem;
-  letter-spacing: 0.08rem;
-  text-transform: uppercase;
-  color: var(--c-cyan);
-  background: var(--c-panel-2);
-  border: 3px solid var(--c-cyan);
-  box-shadow: 4px 4px 0 var(--c-shadow);
-  cursor: pointer;
-  transition: transform 0.08s ease, box-shadow 0.08s ease, filter 0.12s ease;
-}
-.about-chat-link:hover { filter: brightness(1.15); }
-.about-chat-link:active { transform: translate(4px, 4px); box-shadow: 0 0 0 var(--c-shadow); }
-
 /* ── Education (redesigned) ── */
 .edu-card { display: flex; flex-direction: column; gap: 14px; }
 .edu-head { display: flex; flex-direction: column; gap: 4px; padding-bottom: 12px; border-bottom: 2px solid var(--c-frame); }

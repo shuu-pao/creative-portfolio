@@ -49,14 +49,17 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
           <ul className="about-highlights">
             {aboutInfo.highlights.map((item) => <li key={item}>{item}</li>)}
           </ul>
-          <button
-            type="button"
-            className="about-chat-link"
-            onClick={() => onNavigate('chat')}
-            onMouseEnter={onHover}
-          >
-            Chat with the AI guide →
-          </button>
+          {contactInfo.resumeHref && (
+            <a
+              className="resume-btn"
+              href={contactInfo.resumeHref}
+              target="_blank"
+              rel="noreferrer"
+              onMouseEnter={onHover}
+            >
+              Download Résumé
+            </a>
+          )}
         </div>
       )}
 
