@@ -1148,6 +1148,18 @@ h4 { font-family: var(--font-display); font-size: 0.7rem; letter-spacing: 0.08re
 .about-highlights li { color: var(--c-ink); font-size: 1.2rem; line-height: 1.45; margin-bottom: 8px; }
 /* ── Education (redesigned) ── */
 .edu-card { display: flex; flex-direction: column; gap: 14px; }
+.edu-logo {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 96px;
+  object-fit: contain;
+  background: #fff;
+  padding: 8px;
+  border: 3px solid var(--c-frame);
+  box-shadow: 4px 4px 0 var(--c-shadow);
+}
 .edu-head { display: flex; flex-direction: column; gap: 4px; }
 .edu-degree { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: 0.04rem; color: var(--c-ink); }
 .edu-school { font-size: 1.5rem; font-weight: bold; color: var(--c-cyan); margin: 0; }

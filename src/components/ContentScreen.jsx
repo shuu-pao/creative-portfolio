@@ -84,6 +84,7 @@ export default function ContentScreen({ contentView, onBack, onHover, onSelect, 
 
       {contentView === 'education' && (
         <div className="content-card edu-card">
+          <img className="edu-logo" src="/education/University-of-San-Carlos-USC.png" alt="University of San Carlos" />
           <div className="edu-head">
             <h3 className="edu-degree">{educationInfo.degree}</h3>
             <p className="edu-school">{educationInfo.school}</p>
