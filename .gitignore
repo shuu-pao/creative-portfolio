@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Generated graphify cache (AST extraction artifacts)
+graphify-out/cache/
